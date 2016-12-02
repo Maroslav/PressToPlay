@@ -198,5 +198,7 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
-/PressToPlay.sln
-/PressToPlay.CSharp.csproj
+PressToPlay.sln
+PressToPlay.CSharp.csproj
+Assembly-CSharp.csproj		
+Assembly-CSharp.csproj
