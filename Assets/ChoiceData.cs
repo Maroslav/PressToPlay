@@ -21,7 +21,7 @@ public class ChoiceData : MonoBehaviour {
         Debug.Log("Choosing option " + choiceIndex);
         if (_event != null)
         {
-            _event.SelectOption(_event.Options[choiceIndex]);
+            _event.FinishEvent(_event.Choices[choiceIndex]);
         }
     }
 }

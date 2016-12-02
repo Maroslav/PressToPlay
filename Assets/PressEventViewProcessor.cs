@@ -26,7 +26,7 @@ public class PressEventViewProcessor : MonoBehaviour {
             //choice.transform.Translate(new Vector3(dx * (i * 2 + 1), 50 * i, 0));
             if (choice.GetComponentsInChildren<Text>().Length > 0)
             {
-                choice.GetComponentsInChildren<Text>()[0].text = e.Options[i].Description;
+                choice.GetComponentsInChildren<Text>()[0].text = e.Choices[i].Description;
             }
             choices.Add(choice);
         }
