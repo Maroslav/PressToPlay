@@ -9,10 +9,10 @@ namespace Assets.Code.GameState
     {
         public WorldState()
         {
-            JournalistState=new Dictionary<string, int>();
-            JournalistState.Add(Attributes.Credibility,Attributes.MidValue);
+            JournalistState=new Attribs();
+            JournalistState.AddAttribute(Attribs.Credibility,Attribs.MidValue);
         }
-        public Dictionary<string, int> JournalistState { get; private set; }
+        public Attribs JournalistState { get; private set; }
     }
 }
 

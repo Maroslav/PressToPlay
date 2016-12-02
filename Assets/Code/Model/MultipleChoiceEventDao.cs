@@ -6,7 +6,7 @@ namespace Assets.Code.Model
     //Data Access Object, stores raw data loaded from the database.
     public struct MultipleChoiceEventDao
     {
-        public MultipleChoiceEventDao(string description, List<DecisionDao> options, DateTime? date=null) : this()
+        public MultipleChoiceEventDao(string description, List<DecisionChoiceDao> options, DateTime? date=null) : this()
         {
             Description = description;
             Options = options;
@@ -14,7 +14,7 @@ namespace Assets.Code.Model
         }
 
         public string Description { get; private set; }
-        public List<DecisionDao> Options { get; private set; }
+        public List<DecisionChoiceDao> Options { get; private set; }
         public DateTime? Date { get; private set; }
     }
 }

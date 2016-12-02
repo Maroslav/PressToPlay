@@ -30,83 +30,25 @@ namespace Assets.Code.Test
         }
 
         private int i = 0;
+
         private List<PressEvent> list = new List<PressEvent>()
         {
             new MultipleChoiceEvent(
-                new MultipleChoiceEventDao("Event1",new List<DecisionDao>()
+                new MultipleChoiceEventDao("Event1", new List<DecisionChoiceDao>()
                 {
-                    new DecisionDao("Choice 1")
+                    new DecisionChoiceDao("Choice 1")
                     {
-                        Attributes = new Dictionary<string, int>()
-                        {
-                            {Attributes.Credibility, 0}
-                        }
+                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 0}})
                     },
-                     new DecisionDao("Choice 2")
+                    new DecisionChoiceDao("Choice 2")
                     {
-                        Attributes = new Dictionary<string, int>()
-                        {
-                            {Attributes.Credibility, 700}
-                        }
+                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 700}})
                     },
-                      new DecisionDao("Choice 3")
+                    new DecisionChoiceDao("Choice 3")
                     {
-                        Attributes = new Dictionary<string, int>()
-                        {
-                            {Attributes.Credibility, 1000}
-                        }
-                    }
-                }), DateTime.Parse("7/11/2018")),
-            new MultipleChoiceEvent(
-                new MultipleChoiceEventDao("Event 2",new List<DecisionDao>()
-                {
-                    new DecisionDao("Choice 1")
-                    {
-                        Attributes = new Dictionary<string, int>()
-                        {
-                            {Attributes.Credibility, 0}
-                        }
+                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 1000}})
                     },
-                     new DecisionDao("Choice 2")
-                    {
-                        Attributes = new Dictionary<string, int>()
-                        {
-                            {Attributes.Credibility, 700}
-                        }
-                    },
-                      new DecisionDao("Choice 3")
-                    {
-                        Attributes = new Dictionary<string, int>()
-                        {
-                            {Attributes.Credibility, 1000}
-                        }
-                    }
-                }), DateTime.Parse("7/10/2018")),
-            new MultipleChoiceEvent(
-                new MultipleChoiceEventDao("Event3",new List<DecisionDao>()
-                {
-                    new DecisionDao("Choice 1")
-                    {
-                        Attributes = new Dictionary<string, int>()
-                        {
-                            {Attributes.Credibility, 0}
-                        }
-                    },
-                     new DecisionDao("Choice 2")
-                    {
-                        Attributes = new Dictionary<string, int>()
-                        {
-                            {Attributes.Credibility, 700}
-                        }
-                    },
-                      new DecisionDao("Choice 3")
-                    {
-                        Attributes = new Dictionary<string, int>()
-                        {
-                            {Attributes.Credibility, 1000}
-                        }
-                    }
-                }), DateTime.Parse("7/7/2018"))
+                }), DateTime.Parse("7/11/2018"))  
         };
     }
 }

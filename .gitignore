@@ -202,3 +202,4 @@ PressToPlay.sln
 PressToPlay.CSharp.csproj
 Assembly-CSharp.csproj		
 Assembly-CSharp.csproj
+/PressToPlay.CSharp.Editor.csproj

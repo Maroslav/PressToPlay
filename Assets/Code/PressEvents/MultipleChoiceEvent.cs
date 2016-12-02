@@ -12,18 +12,18 @@ namespace Assets.Code.PressEvents
         private MultipleChoiceEventDao data;
 
         //The list of decision options.
-        public List<DecisionOption> Options { get; private set; }
+        public List<DecisionChoice> Choices { get; private set; }
 
         public MultipleChoiceEvent(MultipleChoiceEventDao data, DateTime date) : base(date)
         {
             this.data = data;
-            GenerateOptions();
+            GenerateChoice();
         }
 
         //Potentially replace placeholders with real names etc.
-        private void GenerateOptions()
+        private void GenerateChoice()
         {
-            Options = (from x in data.Options select new DecisionOption(x)).ToList();
+            Choices = (from x in data.Options select new DecisionChoice(x)).ToList();
         }
 
 
@@ -33,14 +33,14 @@ namespace Assets.Code.PressEvents
             get { return data.Description; }
         }
 
-        public List<DecisionOption> GetClosestOptions(WorldState state, int count)
+        public List<DecisionChoice> GetClosestOptions(WorldState state, int count)
         {
             
             //TODO: IMPLEMENT
-            return new List<DecisionOption>();
+            return new List<DecisionChoice>();
         }
         //Choose the given option and end this event processing.
-        public void SelectOption(DecisionOption option)
+        public void FinishEvent(DecisionChoice selectedChoice)
         {
             //TODO: IMPLEMENT
             IsFinished = true;

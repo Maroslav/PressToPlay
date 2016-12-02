@@ -2,24 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Assets.Code.GameState;
 using Assets.Code.Model;
 
 namespace Assets.Code.PressEvents
 {
-    public class DecisionOption
+    public class DecisionChoice
     {
-        public DecisionOption(Dictionary<string, int> attributes, string description)
+        public DecisionChoice(Attribs attributes, string description)
         {
             Attributes = attributes;
             Description = description;
         }
 
-        public DecisionOption(DecisionDao source)
+        public DecisionChoice(DecisionChoiceDao source)
         {
-            Attributes = source.Attributes;
+            Attributes = source.Attribs;
             Description = source.Description;
         }
-        public Dictionary<string, int> Attributes { get; private set; }
+        public Attribs Attributes { get; private set; }
         public string Description { get; private set; }
     }
 }

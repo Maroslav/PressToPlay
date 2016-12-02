@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Assets.Code.GameState;
 
 namespace Assets.Code.Model
 {
     //Data Access Object, stores raw data loaded from the database.
-    public struct DecisionDao
+    public struct DecisionChoiceDao
     {
-        public DecisionDao(string description) : this()
+        public DecisionChoiceDao(string description) : this()
         {
             Description = description;
         }
 
         public string Description { get; private set; }
-        public Dictionary<string, int> Attributes { get; set; }
+        public Attribs Attribs { get; set; }
     }
 }
