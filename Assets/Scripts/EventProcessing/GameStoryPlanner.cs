@@ -1,4 +1,5 @@
-﻿using Assets.Code.Planning;
+﻿using System;
+using Assets.Code.Planning;
 using Assets.Code.PressEvents;
 using Assets.Code.Test;
 using UnityEngine;
@@ -20,7 +21,7 @@ namespace Assets.Scripts
         void Validate()
         {
             Assert.IsNotNull(ProcessorGameObject);
-            Assert.IsNotNull(ProcessorGameObject.GetComponent<PressEventsProcessor>());
+            Assert.IsNotNull(Processor);
         }
 
         void Start()
@@ -37,9 +38,11 @@ namespace Assets.Scripts
         {
             if (currentEvent == null)
                 return;
+
             if (currentEvent.IsFinished)
             {
                 currentEvent = scheduler.PopNextEvent();
+
                 if (currentEvent != null)
                 {
                     currentEvent.ProcessEvent(Processor);

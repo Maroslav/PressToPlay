@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
-using System.Collections;
 using Assets.Code.GameState;
 using Assets.Code.PressEvents;
 
-public class ChoiceData : MonoBehaviour
+/// <summary>
+/// Used in MultipleChoice button prefab
+/// </summary>
+public class MultipleChoiceData : MonoBehaviour
 {
+    private MultipleChoiceEvent _event;
+    private MultipleChoiceProcessor _owner;
+
+
     public int ChoiceIndex;
 
-    MultipleChoiceEvent _event;
-    private MultipleChoiceProcessor _owner;
 
     public void SetEvent(MultipleChoiceEvent newEvent, MultipleChoiceProcessor viewProcessor)
     {
@@ -16,15 +20,12 @@ public class ChoiceData : MonoBehaviour
         _owner = viewProcessor;
     }
 
-    public void ChooseOption()
+    public void OnClick()
     {
         Debug.Log("Clearing buttons before choosing option " + ChoiceIndex);
         _owner.DestroyChoices();
         Debug.Log("Choosing option " + ChoiceIndex);
 
-        if (_event != null)
-        {
-            _event.FinishEvent(_event.Choices[ChoiceIndex], new WorldState());
-        }
+        _event.Finish(ChoiceIndex);
     }
 }
