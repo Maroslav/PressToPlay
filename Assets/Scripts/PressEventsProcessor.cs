@@ -1,17 +1,27 @@
 ﻿using Assets.Code.PressEvents;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.UI;
 
-internal class PressEventsProcessor : IEventProcessor
+public class PressEventsProcessor : MonoBehaviour, IEventProcessor
 {
+    public GameObject MultipleChoiceEventDescription;
+    public GameObject MultipleChoiceEventViewer;
+
+
+    void OnValidate()
+    {
+        Assert.IsNotNull(MultipleChoiceEventDescription);
+        Assert.IsNotNull(MultipleChoiceEventDescription.GetComponent<Text>());
+        Assert.IsNotNull(MultipleChoiceEventViewer);
+        Assert.IsNotNull(MultipleChoiceEventViewer.GetComponent<MultipleChoiceProcessor>());
+    }
+
     public void ProcessEvent(MultipleChoiceEvent e)
     {
         // Set event description in the UI
-        GameObject description = GameObject.Find("HeadLineEvent");
-        description.GetComponentInChildren<Text>().text = e.Description;
-
+        MultipleChoiceEventDescription.GetComponentInChildren<Text>().text = e.Description;
         // Let the viewer set its content
-        GameObject viewer = GameObject.Find("EventViewer");
-        viewer.GetComponent<PressEventViewProcessor>().ProcessEvent(e);
+        MultipleChoiceEventViewer.GetComponent<MultipleChoiceProcessor>().ProcessEvent(e);
     }
 }
