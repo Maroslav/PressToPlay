@@ -15,9 +15,17 @@ namespace Assets.Code.PressEvents
             Description = description;
         }
 
+        public DecisionChoice()
+        {
+            
+        }
         public DecisionChoice(DecisionChoiceDao source)
         {
-            Attributes = source.Attribs;
+            Attributes = new Attribs();
+            foreach (var attrib in source.Attribs)
+            {
+                Attributes.AddAttribute(Attribs.GetAttribByName(attrib.AttributeName),attrib.Value);
+            }
             Description = source.Description;
         }
         public Attribs Attributes { get; private set; }

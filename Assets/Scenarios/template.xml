@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scenario name="name, only for the designer">
+<Events>
+  <MultipleChoiceEvent date="12/12/2017">  <!-- date is optional -->
+  <Description> Event description </Description>
+	<Preconditions>
+		<Precondition attribute="attribute_name" operation="greater" value="150"/> 
+		<Precondition attribute="credibility" operation="less" value="400"/> 
+	</Preconditions>
+	<Choices>
+	<Choice>
+		<Effect attribute="credibility" value = "250"/>
+		<Description> Description of the Choice.</Description>
+	</Choice>	
+	<Choice>
+		<Effect attribute="credibility" value = "600"/>
+		<Description> Description of the Choice 2.</Description>
+	</Choice>
+	</Choices>
+  </MultipleChoiceEvent>
+  <MultipleChoiceEvent > 
+	<Description> Event 2 description </Description>
+	<Choices>
+		<Choice>
+			<Effects>
+				<Effect attribute="credibility" value = "600"/>
+			</Effects>
+			<Description> Description of the Choice.</Description>
+		</Choice>
+	</Choices>
+  </MultipleChoiceEvent>
+  <CutsceneEvent>
+  <Preconditions>
+	<Precondition attribute = "credibility" operation="equal" value="1"/>
+  </Preconditions>
+	<ImagePath> Assets/Images/ImageName.png</ImagePath>
+	<Text> Event text </Text>
+  </CutsceneEvent>
+ </Events>
+</Scenario>

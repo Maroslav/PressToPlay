@@ -43,15 +43,15 @@ namespace Assets.Code.Test
                 {
                     new DecisionChoiceDao("Choice 1")
                     {
-                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 0}})
+                        Attribs =new AttributeDao[]{new AttributeDao(Attribs.StringCredibility,0) }
                     },
                     new DecisionChoiceDao("Choice 2")
                     {
-                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 700}})
+                        Attribs =new AttributeDao[]{new AttributeDao(Attribs.StringCredibility,700) }
                     },
                     new DecisionChoiceDao("Choice 3")
                     {
-                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 1000}})
+                        Attribs =new AttributeDao[]{new AttributeDao(Attribs.StringCredibility,1000) }
                     },
                 }), DateTime.Parse("7/11/2018")),
             new MultipleChoiceEvent(
@@ -59,15 +59,15 @@ namespace Assets.Code.Test
                 {
                     new DecisionChoiceDao("Choice 1")
                     {
-                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 0}})
+                        Attribs =new AttributeDao[]{new AttributeDao(Attribs.StringCredibility,0) }
                     },
                     new DecisionChoiceDao("Choice 2")
                     {
-                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 700}})
+                        Attribs =new AttributeDao[]{new AttributeDao(Attribs.StringCredibility,700) }
                     },
                     new DecisionChoiceDao("Choice 3")
                     {
-                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 1000}})
+                       Attribs =new AttributeDao[]{new AttributeDao(Attribs.StringCredibility,1000) }
                     },
                 }), DateTime.Parse("7/11/2018")),
 
@@ -78,15 +78,15 @@ namespace Assets.Code.Test
                 {
                     new DecisionChoiceDao("Choice 1")
                     {
-                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 0}})
+                        Attribs =new AttributeDao[]{new AttributeDao(Attribs.StringCredibility,0) }
                     },
                     new DecisionChoiceDao("Choice 2")
                     {
-                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 700}})
+                       Attribs =new AttributeDao[]{new AttributeDao(Attribs.StringCredibility,700) }
                     },
                     new DecisionChoiceDao("Choice 3")
                     {
-                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 1000}})
+                        Attribs =new AttributeDao[]{new AttributeDao(Attribs.StringCredibility,1000) }
                     },
                 }), DateTime.Parse("7/11/2018")),
 

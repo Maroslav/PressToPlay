@@ -1,20 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace Assets.Code.Model
 {
     //Data Access Object, stores raw data loaded from the database.
-    public struct MultipleChoiceEventDao
+    public class MultipleChoiceEventDao: PressEventDao
     {
-        public MultipleChoiceEventDao(string description, List<DecisionChoiceDao> options, DateTime? date=null) : this()
+        public MultipleChoiceEventDao(string description, List<DecisionChoiceDao> choices, string date=null):base(date) 
         {
             Description = description;
-            Options = options;
-            Date = date;
+            Choices = choices.ToArray();
         }
 
+        public MultipleChoiceEventDao():base(null)
+        {
+            
+        }
+        [XmlElement("Description")]
         public string Description { get; private set; }
-        public List<DecisionChoiceDao> Options { get; private set; }
-        public DateTime? Date { get; private set; }
+        [XmlArray("Choices")]
+        [XmlArrayItem("Choice",typeof(DecisionChoiceDao))]
+        public DecisionChoiceDao[] Choices { get; private set; }
+        
     }
 }

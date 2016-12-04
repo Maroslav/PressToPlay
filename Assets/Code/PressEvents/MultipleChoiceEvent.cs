@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Assets.Code.GameState;
 using Assets.Code.Model;
-using Assets.Scripts;
 
 namespace Assets.Code.PressEvents
 {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 using Assets.Code.GameState;
 
 namespace Assets.Code.Model
@@ -14,7 +15,10 @@ namespace Assets.Code.Model
             Description = description;
         }
 
+        [XmlElement("Description")]
         public string Description { get; private set; }
-        public Attribs Attribs { get; set; }
+        [XmlArray("Effects")]
+        [XmlArrayItem("Effect", typeof(AttributeDao))]
+        public AttributeDao[] Attribs { get; set; }
     }
 }

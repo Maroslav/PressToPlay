@@ -9,15 +9,30 @@ namespace Assets.Code.GameState
     {
         //STATIC CONSTANTS:
         //Values 0 - 1000;
-        public static readonly Attrib Credibility = new Attrib("Credibility");
+        public static readonly string StringCredibility = "Credibility";
+        public static readonly Attrib Credibility = new Attrib(StringCredibility);
 
         public const int MinValue = 0;
         public const int MaxValue = 1000;
         public const int MidValue = (MinValue + MaxValue)/2;
 
-        public static List<Attrib> JournalistAttributes =new List<Attrib>() {Credibility};
+        public static List<Attrib> JournalistAttributes = new List<Attrib>() {Credibility};
 
-        //CLASS DECLARATION
+        private static Dictionary<string, Attrib> attribsByName=
+            new Dictionary<string, Attrib>()
+            {
+                {StringCredibility,Credibility}
+            };
+        public static Attrib GetAttribByName(string name)
+        {
+            if (!attribsByName.ContainsKey(name))
+            {
+                throw new ArgumentException("Requiring non-existing attribute: "+name);
+            }      
+            return attribsByName[name];      
+        }
+
+    //CLASS DECLARATION
         public Attribs(Dictionary<Attrib, int> val )
         {
             _values = val;
