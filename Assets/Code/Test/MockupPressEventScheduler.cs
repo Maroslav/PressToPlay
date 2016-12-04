@@ -71,7 +71,7 @@ namespace Assets.Code.Test
                     },
                 }), DateTime.Parse("7/11/2018")),
 
-            new CutsceneEvent("TempFolder/temp.png", DateTime.Parse("7/11/2017")),
+            new CutsceneEvent("TempFolder/temp.png", "The quick brown fox jumps over the lazy dog", DateTime.Parse("7/11/2017")),
 
             new MultipleChoiceEvent(
                 new MultipleChoiceEventDao("Event3", new List<DecisionChoiceDao>()

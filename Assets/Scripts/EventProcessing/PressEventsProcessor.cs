@@ -8,6 +8,7 @@ public class PressEventsProcessor : MonoBehaviour, IEventProcessor
     public GameObject MultipleChoiceEventDescription;
     public GameObject MultipleChoiceEventViewer;
 
+    public GameObject CutsceneEventDescription;
     public GameObject CutsceneEventViewer;
 
 
@@ -18,6 +19,8 @@ public class PressEventsProcessor : MonoBehaviour, IEventProcessor
         Assert.IsNotNull(MultipleChoiceEventViewer);
         Assert.IsNotNull(MultipleChoiceEventViewer.GetComponent<MultipleChoiceProcessor>());
 
+        Assert.IsNotNull(MultipleChoiceEventDescription);
+        Assert.IsNotNull(MultipleChoiceEventDescription.GetComponent<Text>());
         Assert.IsNotNull(CutsceneEventViewer);
         Assert.IsNotNull(CutsceneEventViewer.GetComponent<CutsceneProcessor>());
     }
@@ -32,6 +35,8 @@ public class PressEventsProcessor : MonoBehaviour, IEventProcessor
 
     public void ProcessEvent(CutsceneEvent e)
     {
+        // Set event description in the UI
+        CutsceneEventDescription.GetComponentInChildren<Text>().text = e.Description;
         // Let the viewer set its content
         CutsceneEventViewer.GetComponent<CutsceneProcessor>().ProcessEvent(e);
     }
