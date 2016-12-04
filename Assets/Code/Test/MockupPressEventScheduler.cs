@@ -9,18 +9,23 @@ using Assets.Code.PressEvents;
 
 namespace Assets.Code.Test
 {
-    public class MockupPressEventScheduler:IPressEventScheduler
+    public class MockupPressEventScheduler : IPressEventScheduler
     {
-      
+
         public PressEvent PeekNextEvent()
         {
+            if (i >= list.Count)
+                return null;
+
             return list[i];
         }
 
         public PressEvent PopNextEvent()
         {
-            var x = list[i];
-            i = (i + 1)%list.Count;
+            if (i >= list.Count)
+                return null;
+
+            var x = list[i++];
             return x;
         }
 
@@ -65,6 +70,9 @@ namespace Assets.Code.Test
                         Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 1000}})
                     },
                 }), DateTime.Parse("7/11/2018")),
+
+            new CutsceneEvent("TempFolder/temp.png", "The quick brown fox jumps over the lazy dog", DateTime.Parse("7/11/2017")),
+
             new MultipleChoiceEvent(
                 new MultipleChoiceEventDao("Event3", new List<DecisionChoiceDao>()
                 {
@@ -80,7 +88,7 @@ namespace Assets.Code.Test
                     {
                         Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 1000}})
                     },
-                }), DateTime.Parse("7/11/2018"))
+                }), DateTime.Parse("7/11/2018")),
 
         };
     }
