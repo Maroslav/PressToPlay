@@ -9,7 +9,7 @@ using Assets.Code.PressEvents;
 
 namespace Assets.Code.Test
 {
-    class MockupPressEventScheduler:IPressEventScheduler
+    public class MockupPressEventScheduler:IPressEventScheduler
     {
       
         public PressEvent PeekNextEvent()
@@ -20,7 +20,7 @@ namespace Assets.Code.Test
         public PressEvent PopNextEvent()
         {
             var x = list[i];
-            i = (i + 1)%list.Capacity;
+            i = (i + 1)%list.Count;
             return x;
         }
 
@@ -48,7 +48,40 @@ namespace Assets.Code.Test
                     {
                         Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 1000}})
                     },
-                }), DateTime.Parse("7/11/2018"))  
+                }), DateTime.Parse("7/11/2018")),
+            new MultipleChoiceEvent(
+                new MultipleChoiceEventDao("Event2", new List<DecisionChoiceDao>()
+                {
+                    new DecisionChoiceDao("Choice 1")
+                    {
+                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 0}})
+                    },
+                    new DecisionChoiceDao("Choice 2")
+                    {
+                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 700}})
+                    },
+                    new DecisionChoiceDao("Choice 3")
+                    {
+                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 1000}})
+                    },
+                }), DateTime.Parse("7/11/2018")),
+            new MultipleChoiceEvent(
+                new MultipleChoiceEventDao("Event3", new List<DecisionChoiceDao>()
+                {
+                    new DecisionChoiceDao("Choice 1")
+                    {
+                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 0}})
+                    },
+                    new DecisionChoiceDao("Choice 2")
+                    {
+                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 700}})
+                    },
+                    new DecisionChoiceDao("Choice 3")
+                    {
+                        Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 1000}})
+                    },
+                }), DateTime.Parse("7/11/2018"))
+
         };
     }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Code.GameState;
 using Assets.Code.PressEvents;
 
 public class ChoiceData : MonoBehaviour {
@@ -21,7 +22,7 @@ public class ChoiceData : MonoBehaviour {
         Debug.Log("Choosing option " + choiceIndex);
         if (_event != null)
         {
-            _event.FinishEvent(_event.Choices[choiceIndex]);
+            _event.FinishEvent(_event.Choices[choiceIndex], new WorldState());
         }
     }
 }

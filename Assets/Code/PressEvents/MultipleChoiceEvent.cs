@@ -35,14 +35,12 @@ namespace Assets.Code.PressEvents
 
         public List<DecisionChoice> GetClosestOptions(WorldState state, int count)
         {
-            
-            //TODO: IMPLEMENT
-            return new List<DecisionChoice>();
+            return Algorithms.Closest(Choices,state.JournalistState,count,Attribs.JournalistAttributes);
         }
         //Choose the given option and end this event processing.
-        public void FinishEvent(DecisionChoice selectedChoice)
+        public void FinishEvent(DecisionChoice selectedChoice, WorldState state)
         {
-            //TODO: IMPLEMENT
+            Algorithms.MoveTowardsPosition(state.JournalistState,selectedChoice.Attributes,Attribs.JournalistAttributes);
             IsFinished = true;
         }
 
