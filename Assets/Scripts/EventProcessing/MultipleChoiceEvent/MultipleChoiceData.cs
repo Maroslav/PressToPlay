@@ -11,7 +11,7 @@ public class MultipleChoiceData : MonoBehaviour
     private MultipleChoiceProcessor _owner;
 
 
-    public int ChoiceIndex;
+    public DecisionChoice Choice;
 
 
     public void SetEvent(MultipleChoiceEvent newEvent, MultipleChoiceProcessor viewProcessor)
@@ -22,10 +22,10 @@ public class MultipleChoiceData : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("Clearing buttons before choosing option " + ChoiceIndex);
+        Debug.Log("Clearing buttons before choosing option " + Choice.Description);
         _owner.DestroyChoices();
-        Debug.Log("Choosing option " + ChoiceIndex);
+        Debug.Log("Choosing option " + Choice.Description);
 
-        _event.Finish(ChoiceIndex);
+        _event.Finish(Choice);
     }
 }
