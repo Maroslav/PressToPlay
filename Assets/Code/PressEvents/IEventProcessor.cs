@@ -9,5 +9,6 @@ namespace Assets.Code.PressEvents
     public interface IEventProcessor
     {
         void ProcessEvent(MultipleChoiceEvent e);
+        void ProcessEvent(CutsceneEvent e);
     }
 }

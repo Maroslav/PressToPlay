@@ -24,4 +24,9 @@ public class PressEventsProcessor : MonoBehaviour, IEventProcessor
         // Let the viewer set its content
         MultipleChoiceEventViewer.GetComponent<MultipleChoiceProcessor>().ProcessEvent(e);
     }
+
+    public void ProcessEvent(CutsceneEvent e)
+    {
+        // Let the viewer set its content
+    }
 }
