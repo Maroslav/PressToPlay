@@ -9,18 +9,23 @@ using Assets.Code.PressEvents;
 
 namespace Assets.Code.Test
 {
-    public class MockupPressEventScheduler:IPressEventScheduler
+    public class MockupPressEventScheduler : IPressEventScheduler
     {
-      
+
         public PressEvent PeekNextEvent()
         {
+            if (i >= list.Count)
+                return null;
+
             return list[i];
         }
 
         public PressEvent PopNextEvent()
         {
-            var x = list[i];
-            i = (i + 1)%list.Count;
+            if (i >= list.Count)
+                return null;
+
+            var x = list[i++];
             return x;
         }
 
