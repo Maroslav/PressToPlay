@@ -70,6 +70,9 @@ namespace Assets.Code.Test
                         Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 1000}})
                     },
                 }), DateTime.Parse("7/11/2018")),
+
+            new CutsceneEvent("TempFolder/temp.png", DateTime.Parse("7/11/2017")),
+
             new MultipleChoiceEvent(
                 new MultipleChoiceEventDao("Event3", new List<DecisionChoiceDao>()
                 {
@@ -85,7 +88,7 @@ namespace Assets.Code.Test
                     {
                         Attribs = new Attribs(new Dictionary<Attrib, int>() {{Attribs.Credibility, 1000}})
                     },
-                }), DateTime.Parse("7/11/2018"))
+                }), DateTime.Parse("7/11/2018")),
 
         };
     }
