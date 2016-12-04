@@ -22,7 +22,8 @@ namespace Assets.Code.Planning
             _eventIndexQueue = new Queue<int>(Enumerable.Range(0,_events.Length-1).OrderBy(x => r.Next()));
             if (_eventIndexQueue.Count > 0)
             {
-                _currentEvent=
+                //_currentEvent = _events[_eventIndexQueue.Dequeue()];
+                //TODO: Finish
             }
         }
 
