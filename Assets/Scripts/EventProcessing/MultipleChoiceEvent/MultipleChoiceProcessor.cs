@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Assets.Code.PressEvents;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
+using Assets.Code.Gameplay;
 
 public class MultipleChoiceProcessor : MonoBehaviour
 {
@@ -25,21 +26,16 @@ public class MultipleChoiceProcessor : MonoBehaviour
 
         RectTransform rt = (RectTransform)gameObject.transform;
 
-        var choices = e.GetClosestOptions(3);
-        float dx = rt.rect.width / choices.Count / 2;
-        float dy = rt.rect.height / choices.Count / 2;
-
+        var choices = e.GetClosestOptions(Constants.DefaultChoicesCount);
 
         for (int i = 0; i < choices.Count; ++i)
         {
             GameObject choiceGameObject = Instantiate(MultipleChoiceButtonPrefab);
             choiceGameObject.transform.SetParent(transform, true);
-            choiceGameObject.transform.Translate(new Vector3(dx * (i * 2 + 1), rt.rect.height - dy * (i * 2 + 1), 0));
 
             MultipleChoiceData multipleChoiceData = choiceGameObject.GetComponent<MultipleChoiceData>();
             multipleChoiceData.Choice = choices[i];
             multipleChoiceData.SetEvent(e, this);
-            //choice.transform.Translate(new Vector3(dx * (i * 2 + 1), 50 * i, 0));
 
             if (choiceGameObject.GetComponentsInChildren<Text>().Length > 0)
             {
@@ -48,9 +44,6 @@ public class MultipleChoiceProcessor : MonoBehaviour
 
             _choiceGameObjects.Add(choiceGameObject);
         }
-        //viewer.GetComponent<EventViewerChoicesList>().choices = choices;
-        //GameObject btn = (GameObject)GameObject.Instantiate(myHeadLineButton);
-        //TODO: Process event.
     }
 
     public void DestroyChoices()
