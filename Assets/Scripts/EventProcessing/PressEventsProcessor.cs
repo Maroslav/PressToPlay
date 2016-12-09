@@ -29,6 +29,7 @@ public class PressEventsProcessor : MonoBehaviour, IEventProcessor
     {
         // Set event description in the UI
         MultipleChoiceEventDescription.GetComponentInChildren<Text>().text = e.Description;
+        MultipleChoiceEventDescription.GetComponentsInChildren<Text>()[1].text = e.Date.ToShortDateString();
         // Let the viewer set its content
         MultipleChoiceEventViewer.GetComponent<MultipleChoiceProcessor>().ProcessEvent(e);
     }
