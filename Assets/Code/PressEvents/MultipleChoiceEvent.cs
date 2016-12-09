@@ -26,7 +26,7 @@ namespace Assets.Code.PressEvents
         {
             this.data = data;
 
-            Choices = (from x in data.Options select new DecisionChoice(x)).ToList();
+            Choices = (from x in data.Choices select new DecisionChoice(x)).ToList();
             //Potentially replace placeholders with real names etc.
         }
 
