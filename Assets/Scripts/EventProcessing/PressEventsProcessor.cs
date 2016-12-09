@@ -1,4 +1,5 @@
-﻿using Assets.Code.PressEvents;
+﻿using System.Globalization;
+using Assets.Code.PressEvents;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
@@ -29,7 +30,8 @@ public class PressEventsProcessor : MonoBehaviour, IEventProcessor
     {
         // Set event description in the UI
         MultipleChoiceEventDescription.GetComponentInChildren<Text>().text = e.Description;
-        MultipleChoiceEventDescription.GetComponentsInChildren<Text>()[1].text = e.Date.ToShortDateString();
+        CultureInfo csCz = new CultureInfo("cs-CZ");
+        MultipleChoiceEventDescription.GetComponentsInChildren<Text>()[1].text = e.Date.ToString("d", csCz);
         // Let the viewer set its content
         MultipleChoiceEventViewer.GetComponent<MultipleChoiceProcessor>().ProcessEvent(e);
     }
