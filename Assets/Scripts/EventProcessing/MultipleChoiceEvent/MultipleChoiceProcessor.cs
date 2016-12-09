@@ -8,11 +8,13 @@ public class MultipleChoiceProcessor : MonoBehaviour
 {
     private readonly List<Object> _choiceGameObjects = new List<Object>();
 
+    public GameObject ToggledParent;
     public GameObject MultipleChoiceButtonPrefab;
 
 
     void OnValidate()
     {
+        Assert.IsNotNull(ToggledParent);
         Assert.IsNotNull(MultipleChoiceButtonPrefab);
         Assert.IsNotNull(MultipleChoiceButtonPrefab.GetComponent<MultipleChoiceData>());
     }
