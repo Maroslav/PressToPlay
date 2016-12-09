@@ -22,6 +22,10 @@ namespace Assets.Code.Model
         [XmlArray("Choices")]
         [XmlArrayItem("Choice",typeof(DecisionChoiceDao))]
         public DecisionChoiceDao[] Choices { get; private set; }
-        
+
+        public override T Process<T>(IPressEventDaoProcessor<T> processor)
+        {
+            return processor.Process(this);
+        }
     }
 }

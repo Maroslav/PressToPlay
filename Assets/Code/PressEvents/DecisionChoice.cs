@@ -24,12 +24,12 @@ namespace Assets.Code.PressEvents
         public DecisionChoice(DecisionChoiceDao source)
         {
             Attributes = new Attribs();
+            Title = source.Title;
+            Description = source.Description;
             foreach (var attrib in source.Attribs)
             {
                 Attributes.AddAttribute(Attribs.GetAttribByName(attrib.AttributeName),attrib.Value);
             }
-            Title = source.Title;
-            Description = source.Description;
         }
         public Attribs Attributes { get; private set; }
         public string Title { get; private set; }

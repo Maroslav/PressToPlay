@@ -14,5 +14,10 @@ namespace Assets.Code.Model
         public string ImagePath { get; set; }
         [XmlElement("Text")]
         public string Text { get; set; }
+
+        public override T Process<T>(IPressEventDaoProcessor<T> processor)
+        {
+            return processor.Process(this);
+        }
     }
 }

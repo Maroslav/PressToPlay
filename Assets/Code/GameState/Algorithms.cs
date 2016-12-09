@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using Assets.Code.Gameplay;
 using Assets.Code.PressEvents;
 using UnityEngine;
+using Random = System.Random;
 
 namespace Assets.Code.GameState
 {
@@ -72,6 +74,13 @@ namespace Assets.Code.GameState
         public static int AttribsDifference(Attribs a, Attribs b, Attrib attributeName)
         {
             return a.Values[attributeName] - b.Values[attributeName];
+        }
+
+        public static int RandomPauseBetweenEvents()
+        {
+            Random r = new Random();
+            return (int)Math.Round(Math.Log(1-r.NextDouble())*-1*Constants.RandomEventsMeanVal);
+
         }
     }
 }
