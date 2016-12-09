@@ -5,10 +5,14 @@ using System.Text;
 
 namespace Assets.Code.Model
 {
-    interface IPressEventDaoProcessor<T>
+    /// <summary>
+    /// Event data access object visitor interface
+    /// </summary>
+    /// <typeparam name="T">return type</typeparam>
+    public interface IPressEventDaoProcessor<T>
     {
-        T process(MultipleChoiceEventDao evt);
-        T process(CutsceneEventDao evt);
+        T Process(MultipleChoiceEventDao evt);
+        T Process(CutsceneEventDao evt);
 
     }
 }

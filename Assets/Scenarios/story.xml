@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scenario name="Story scenario">
+  <Events>
+    <CutsceneEvent date="3/24/2017">
+      <Preconditions>
+      </Preconditions>
+      <ImagePath>TempFolder/temp.png</ImagePath>
+      <Text> The game starts... </Text>
+    </CutsceneEvent>
+    <CutsceneEvent date="12/24/2017">
+      <Preconditions>
+      </Preconditions>
+      <ImagePath>TempFolder/temp.png</ImagePath>
+      <Text> The game ends... </Text>
+    </CutsceneEvent>
+  </Events>
+</Scenario>

@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Code.Gameplay;
 using Assets.Code.Planning;
 using Assets.Code.PressEvents;
 using Assets.Code.Test;
@@ -12,7 +13,7 @@ namespace Assets.Scripts
         public GameObject ProcessorGameObject;
 
         private PressEvent currentEvent;
-        private IPressEventScheduler scheduler = new MockupPressEventScheduler();
+        private IPressEventScheduler scheduler = GameInit.CreateEventScheduler();
 
 
         private PressEventsProcessor Processor { get { return ProcessorGameObject.GetComponent<PressEventsProcessor>(); } }

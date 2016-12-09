@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Assets.Code.PressEvents;
@@ -41,9 +42,14 @@ namespace Assets.Code.Planning
             _currentEvent = minScenario.PopNextEvent();
             if (_currentEvent.Date > _currentDate)
             {
-                throw new InvalidOperationException("The next event has date smaller than the current date");
+                Debug.Assert(false, "The next event has date smaller than the current date");
             }
             _currentDate = _currentEvent.Date;
+            //Remove scenario if empty:
+            if (minScenario.PeekNextEvent() == null)
+            {
+                _scenarios.Remove(minScenario);
+            }
 
         }
 

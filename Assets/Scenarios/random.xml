@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scenario name="name, only for the designer">
+  <Events>
+    <MultipleChoiceEvent >
+      <Description> Policie pohřešuje osmiletou holčičku Aničku Novákovou. </Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <Effect attribute="Credibility" value = "900"/>
+          </Effects>
+          <Description>
+            Dívka odešla z domu po páté hodině odpoledne bez mobilního telefonu. Na sobě měla fialové tepláky a zelenkavou šusťákovou bundu.
+            V případě, že můžete k výskytu pohřešované podat jakékoliv informace, volejte na bezplatnou linku 158.
+          </Description>
+          <Title> Vyjádření policie</Title>
+        </Choice>
+        <Choice>
+          <Effects>
+            <Effect attribute="Credibility" value = "100"/>
+          </Effects>
+          <Description> Ztracená Anička: Další podezřelý je sexuální deviant! Matka se zhroutila!</Description>
+          <Title> Vyjádření sousedů</Title>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent>
+      <Description> V Něměcku zaznamenáno přes 150.000 trestných činů souvisejících s uprchlickou krizí. 90% těchto činů se týká překročení státní hranice bez platných cestovních dokladů. </Description>
+      <Choices>
+        <Choice>
+          <Effects>
+          <Effect attribute="Credibility" value = "1000"/>
+          </Effects>
+          <Description>
+            Uprchlická krize především přinesla administrativní zátěž
+          </Description>
+          <Title> Administrativní zátěž</Title>
+        </Choice>
+        <Choice>
+          <Effects>
+            <Effect attribute="Credibility" value = "0"/>
+          </Effects>
+          <Description> Co uprchlík to zločinec. Němci se začínají ozbrojovat.</Description>
+          <Title> Vlna zločinu</Title>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent>
+      <Description> Výtěžek ze sbírky pro romskou rodinu paterčat zamrzl na účtu charity. Pro rodinu může být situace likvidační. </Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <Effect attribute="Credibility" value = "800"/>
+          </Effects>
+          <Description>
+            Věc řeší advokát
+          </Description>
+          <Title> Věc řeší advokát</Title>
+        </Choice>
+        <Choice>
+          <Effects>
+            <Effect attribute="Credibility" value = "200"/>
+          </Effects>
+          <Description> Romská rodina se hádá o peníze ze sbírky.</Description>
+          <Title>Romská rodina se hádá o peníze ze sbírky</Title>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+  </Events>
+</Scenario>

@@ -10,7 +10,6 @@ public class MultipleChoiceData : MonoBehaviour
     private MultipleChoiceEvent _event;
     private MultipleChoiceProcessor _owner;
 
-
     public DecisionChoice Choice;
 
 
@@ -22,10 +21,14 @@ public class MultipleChoiceData : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("Clearing buttons before choosing option " + Choice.Description);
-        _owner.DestroyChoices();
-        Debug.Log("Choosing option " + Choice.Description);
+        Debug.Log("Moving to next state before choosing option " + Choice.Title);
+        _owner.MoveToNextState(Choice);
 
-        _event.Finish(Choice);
+        if (_owner.CanFinishEvent)
+        {
+            Debug.Log("Choosing option " + Choice.Title);
+
+            _event.Finish(Choice);
+        }
     }
 }

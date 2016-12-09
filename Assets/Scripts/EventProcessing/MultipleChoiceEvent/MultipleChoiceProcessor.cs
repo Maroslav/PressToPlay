@@ -3,63 +3,98 @@ using System.Collections.Generic;
 using Assets.Code.PressEvents;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
+using Assets.Code.Gameplay;
 
 public class MultipleChoiceProcessor : MonoBehaviour
 {
     private readonly List<Object> _choiceGameObjects = new List<Object>();
+    private bool _isShowingSelectedChoice = false;
+    public bool CanFinishEvent { get; private set; }
+    private MultipleChoiceEvent _event;
 
+    public GameObject ToggledParent;
     public GameObject MultipleChoiceButtonPrefab;
 
 
     void OnValidate()
     {
+        Assert.IsNotNull(ToggledParent);
         Assert.IsNotNull(MultipleChoiceButtonPrefab);
         Assert.IsNotNull(MultipleChoiceButtonPrefab.GetComponent<MultipleChoiceData>());
     }
 
+    internal void MoveToNextState(DecisionChoice choice)
+    {
+        if (_isShowingSelectedChoice)
+        {
+            DestroySelectedChoiceDescription();
+            _isShowingSelectedChoice = false;
+            CanFinishEvent = true;
+        }
+        else
+        {
+            DestroyChoices();
+            ShowSelectedChoiceDescription(choice);
+            _isShowingSelectedChoice = true;
+        }
+    }
+
     public void ProcessEvent(MultipleChoiceEvent e)
     {
+        _event = e;
+        CanFinishEvent = false;
         gameObject.transform.parent.gameObject.SetActive(true);
 
-        RectTransform rt = (RectTransform)gameObject.transform;
-
-        var choices = e.GetClosestOptions(3);
-        float dx = rt.rect.width / choices.Count / 2;
-        float dy = rt.rect.height / choices.Count / 2;
-
+        var choices = e.GetClosestOptions(Constants.DefaultChoicesCount);
 
         for (int i = 0; i < choices.Count; ++i)
         {
             GameObject choiceGameObject = Instantiate(MultipleChoiceButtonPrefab);
             choiceGameObject.transform.SetParent(transform, true);
-            choiceGameObject.transform.Translate(new Vector3(dx * (i * 2 + 1), rt.rect.height - dy * (i * 2 + 1), 0));
 
             MultipleChoiceData multipleChoiceData = choiceGameObject.GetComponent<MultipleChoiceData>();
             multipleChoiceData.Choice = choices[i];
             multipleChoiceData.SetEvent(e, this);
-            //choice.transform.Translate(new Vector3(dx * (i * 2 + 1), 50 * i, 0));
 
             if (choiceGameObject.GetComponentsInChildren<Text>().Length > 0)
             {
-                choiceGameObject.GetComponentsInChildren<Text>()[0].text = e.Choices[i].Description;
+                choiceGameObject.GetComponentsInChildren<Text>()[0].text = e.Choices[i].Title;
             }
 
             _choiceGameObjects.Add(choiceGameObject);
         }
-        //viewer.GetComponent<EventViewerChoicesList>().choices = choices;
-        //GameObject btn = (GameObject)GameObject.Instantiate(myHeadLineButton);
-        //TODO: Process event.
     }
 
     public void DestroyChoices()
     {
-        gameObject.transform.parent.gameObject.SetActive(false);
-
         foreach (Object choice in _choiceGameObjects)
         {
             Destroy(choice);
         }
 
         _choiceGameObjects.Clear();
+    }
+
+    public void ShowSelectedChoiceDescription(DecisionChoice choice)
+    {
+        GameObject choiceGameObject = Instantiate(MultipleChoiceButtonPrefab);
+        choiceGameObject.transform.SetParent(transform, true);
+
+        MultipleChoiceData multipleChoiceData = choiceGameObject.GetComponent<MultipleChoiceData>();
+        multipleChoiceData.Choice = choice;
+        multipleChoiceData.SetEvent(_event, this);
+
+        if (choiceGameObject.GetComponentsInChildren<Text>().Length > 0)
+        {
+            choiceGameObject.GetComponentsInChildren<Text>()[0].text = choice.Description;
+        }
+        _choiceGameObjects.Add(choiceGameObject);
+    }
+
+    public void DestroySelectedChoiceDescription()
+    {
+        gameObject.transform.parent.gameObject.SetActive(false);
+
+        DestroyChoices();
     }
 }

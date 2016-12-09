@@ -24,5 +24,8 @@ namespace Assets.Code.Model
         [XmlArray("Preconditions")]
         [XmlArrayItem("Precondition",typeof(PreconditionDao))]
         public PreconditionDao[] Preconditions { get; set; }
+
+        public abstract T Process<T>(IPressEventDaoProcessor<T> processor);
+
     }
 }

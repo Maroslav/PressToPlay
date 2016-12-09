@@ -6,7 +6,7 @@ using Assets.Code.PressEvents;
 
 namespace Assets.Code.Planning
 {
-    interface IPressEventScheduler:IPressScenario
+    public interface IPressEventScheduler:IPressScenario
     {
         
         void AddScenario(PressScenario scenario);
