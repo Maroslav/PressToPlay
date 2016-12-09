@@ -11,10 +11,12 @@
 	<Choice>
 		<Effect attribute="credibility" value = "250"/>
 		<Description> Description of the Choice.</Description>
+    <Title> Short choice title.</Title>
 	</Choice>	
 	<Choice>
 		<Effect attribute="credibility" value = "600"/>
 		<Description> Description of the Choice 2.</Description>
+    <Title> Short choice title.</Title>
 	</Choice>
 	</Choices>
   </MultipleChoiceEvent>
@@ -26,6 +28,7 @@
 				<Effect attribute="credibility" value = "600"/>
 			</Effects>
 			<Description> Description of the Choice.</Description>
+      <Title> Short choice title.</Title>
 		</Choice>
 	</Choices>
   </MultipleChoiceEvent>

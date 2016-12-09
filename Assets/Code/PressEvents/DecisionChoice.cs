@@ -9,9 +9,11 @@ namespace Assets.Code.PressEvents
 {
     public class DecisionChoice
     {
-        public DecisionChoice(Attribs attributes, string description)
+
+        public DecisionChoice(Attribs attributes, string title, string description)
         {
             Attributes = attributes;
+            Title = title;
             Description = description;
         }
 
@@ -26,9 +28,11 @@ namespace Assets.Code.PressEvents
             {
                 Attributes.AddAttribute(Attribs.GetAttribByName(attrib.AttributeName),attrib.Value);
             }
+            Title = source.Title;
             Description = source.Description;
         }
         public Attribs Attributes { get; private set; }
+        public string Title { get; private set; }
         public string Description { get; private set; }
     }
 }

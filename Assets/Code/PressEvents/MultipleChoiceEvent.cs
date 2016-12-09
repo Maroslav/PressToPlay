@@ -9,27 +9,23 @@ namespace Assets.Code.PressEvents
 {
     public class MultipleChoiceEvent : PressEvent
     {
-        private MultipleChoiceEventDao data;
 
 
         //The list of decision options.
         public List<DecisionChoice> Choices { get; private set; }
 
         // The question / event description displayed to the player.
-        public string Description
-        {
-            get { return data.Description; }
-        }
+        public string Description { get; set; }
+        
 
 
         public MultipleChoiceEvent(MultipleChoiceEventDao data, DateTime date) : base(date)
         {
-            this.data = data;
-
+            Description = data.Description;
             Choices = (from x in data.Choices select new DecisionChoice(x)).ToList();
             //Potentially replace placeholders with real names etc.
         }
-
+       
 
         public List<DecisionChoice> GetClosestOptions(int count)
         {

@@ -17,6 +17,8 @@ namespace Assets.Code.Model
 
         [XmlElement("Description")]
         public string Description { get; private set; }
+        [XmlElement("Title")]
+        public string Title { get; private set; }
         [XmlArray("Effects")]
         [XmlArrayItem("Effect", typeof(AttributeDao))]
         public AttributeDao[] Attribs { get; set; }
