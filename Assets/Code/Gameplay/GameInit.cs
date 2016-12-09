@@ -11,8 +11,8 @@ namespace Assets.Code.Gameplay
         public static IPressEventScheduler CreateEventScheduler()
         {
             IPressScenario randomEventsScenario = new RandomEventsScenario(Constants.StartDate,Constants.RandomEventsScenarioLoc);
-
-            return new PressEventScheduler(Constants.StartDate,Constants.EndDate,randomEventsScenario);
+            IPressScenario storyScenario= new StoryEventsScenario(Constants.StoryEventsScenarioLoc);
+            return new PressEventScheduler(Constants.StartDate,Constants.EndDate,randomEventsScenario,storyScenario);
         }
     }
 }

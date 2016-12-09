@@ -13,12 +13,16 @@ namespace Assets.Code.Planning
 {
     class RandomEventsScenario:IPressScenario
     {
-
+        private PressEvent _currentEvent;
+        private Queue<int> _eventIndexQueue;
+        private PressEventDao[] _events;
+        private DaoToEventsConverter _converter;
         private DateTime _lastDate;
+
         public RandomEventsScenario(DateTime startDate,string path)
         {
             ScenarioDao scenario = XmlUtils.LoadScenario(path);
-            converter = new DaoToEventsConverter();
+            _converter = new DaoToEventsConverter();
             _events = scenario.Events;
             Random r = new Random();
             //permutate sequence 1..n
@@ -30,23 +34,18 @@ namespace Assets.Code.Planning
         private void PrepareNextEvent()
         {
             _lastDate = _lastDate.AddDays(Algorithms.RandomPauseBetweenEvents());
-            converter.AssignedDate = _lastDate;
+            _converter.AssignedDate = _lastDate;
             if (_eventIndexQueue.Count > 0)
             {
                 var eventDao = _events[_eventIndexQueue.Dequeue()];
-                Debug.Assert(String.IsNullOrEmpty(eventDao.Date));
-                _currentEvent = eventDao.Process(converter);
+                Debug.Assert(string.IsNullOrEmpty(eventDao.Date));
+                _currentEvent = eventDao.Process(_converter);
             }
             else
             {
                 _currentEvent = null;
             }
         }
-
-        private PressEvent _currentEvent;
-        private Queue<int> _eventIndexQueue;
-        private PressEventDao[] _events;
-        private DaoToEventsConverter converter;
 
         public PressEvent PeekNextEvent()
         {
