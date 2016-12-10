@@ -21,27 +21,26 @@ public class WorldStateProvider : MonoBehaviour
         Assert.IsNotNull(WorldAttributePrefab.GetComponent<WorldAttributeChanger>(), name);
     }
 
-
     void Start()
     {
-        Assert.IsNull(State);
-        State = new WorldState();
-
-        State.JournalistState.AddAttribute(Attribs.Credibility, Attribs.MidValue);
-        // TODO: Different creation/deserialization
-
-        Debug.Log("Attribs to fill: " + State.JournalistState.Values.Count);
+        DeserializeAttributes();
 
         // Create UI elements - Attribs
-        foreach (var attributePair in State.JournalistState.Values)
+        foreach (var attributePair in State.JournalistState)
         {
             GameObject attributeGO = Instantiate(WorldAttributePrefab);
             attributeGO.transform.SetParent(WorldAttributesGameObject.transform);
-
             attributeGOs.Add(attributePair.Key, attributeGO);
         }
 
         UpdateAttributeGameObjects(true);
+    }
+
+    private void DeserializeAttributes()
+    {
+        State = new WorldState();
+        State.JournalistState[Attribs.Credibility] = Attribs.MidValue;
+        // TODO: Different creation/deserialization
     }
 
 
@@ -49,13 +48,12 @@ public class WorldStateProvider : MonoBehaviour
     {
         foreach (var attributePair in attributeGOs)
         {
-            Debug.Log("Filling " + attributePair.Key.Description);
             var attribChanger = attributePair.Value.GetComponent<WorldAttributeChanger>();
 
             if (doSetup)
                 attribChanger.DoSetup(attributePair.Key.Description, Attribs.MinValue, Attribs.MaxValue);
 
-            attribChanger.DoChange(State.JournalistState.Values[attributePair.Key]);
+            attribChanger.DoChange(State.JournalistState[attributePair.Key]);
         }
     }
 }
