@@ -2,7 +2,7 @@
 using Assets.Code.GameState;
 using Assets.Code.PressEvents;
 using NUnit.Framework;
-using Assets.Code.Test;
+
 namespace Assets.Editor.Tests
 {
     [TestFixture]

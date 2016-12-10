@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Attributes>
+  <!-- CONCEPT, NOT USED YET-->
+  <Category name="Journalist">
+    <Attribute name="Credibility" label="Serióznost"  minValue="0" maxValue="1000" initialValue="500"/>
+  </Category>
+</Attributes>

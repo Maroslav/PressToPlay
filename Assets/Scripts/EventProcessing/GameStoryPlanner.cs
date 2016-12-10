@@ -1,8 +1,6 @@
-﻿using System;
-using Assets.Code.Gameplay;
+﻿using Assets.Code.Gameplay;
 using Assets.Code.Planning;
 using Assets.Code.PressEvents;
-using Assets.Code.Test;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -13,7 +11,7 @@ namespace Assets.Scripts
         public GameObject ProcessorGameObject;
 
         private PressEvent currentEvent;
-        private IPressEventScheduler scheduler = GameInit.CreateEventScheduler();
+        private IPressEventScheduler scheduler;
 
 
         private PressEventsProcessor Processor { get { return ProcessorGameObject.GetComponent<PressEventsProcessor>(); } }
@@ -27,6 +25,7 @@ namespace Assets.Scripts
 
         void Start()
         {
+            scheduler = GameInit.CreateEventScheduler(WorldStateProvider.State);
             currentEvent = scheduler.PopNextEvent();
             if (currentEvent != null)
             {

@@ -5,8 +5,9 @@
   <Description> Event description </Description>
 	<Preconditions>
 		<Precondition attribute="attribute_name" operation="greater" value="150"/> 
-		<Precondition attribute="credibility" operation="less" value="400"/> 
-	</Preconditions>
+		<Precondition attribute="credibility" operation="less" value="400"/>
+    <Precondition attribute="other_attribute" operation="lessOrEqual" value="210"/>
+  </Preconditions>
 	<Choices>
 	<Choice>
 		<Effect attribute="credibility" value = "250"/>

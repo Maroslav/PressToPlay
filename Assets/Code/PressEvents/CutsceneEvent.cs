@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using Assets.Code.PressEvents.Preconditions;
 using UnityEngine.Assertions;
 
 namespace Assets.Code.PressEvents
@@ -9,8 +12,8 @@ namespace Assets.Code.PressEvents
         public string Description { get; private set; }
 
 
-        public CutsceneEvent(string imagePath, string description, DateTime date)
-            : base(date)
+        public CutsceneEvent(string imagePath, string description, DateTime date, List<Precondition> preconditions=null)
+            : base(date,preconditions ?? new List<Precondition>())
         {
             Assert.IsNotNull(imagePath);
             Assert.IsFalse(imagePath.StartsWith("/"), "The image path cannot start with a slash.");
