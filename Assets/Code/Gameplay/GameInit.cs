@@ -13,7 +13,7 @@ namespace Assets.Code.Gameplay
         {
             IPressScenario randomEventsScenario = new RandomEventsScenario(Constants.StartDate,Constants.RandomEventsScenarioLoc);
             IPressScenario storyScenario= new StoryEventsScenario(Constants.StoryEventsScenarioLoc);
-            return new PressEventScheduler(worldState, Constants.StartDate,Constants.EndDate,randomEventsScenario,storyScenario);
+            return new PressEventScheduler(worldState, Constants.StartDate,Constants.EndDate, storyScenario,randomEventsScenario);
         }
     }
 }

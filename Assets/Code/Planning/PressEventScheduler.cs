@@ -8,48 +8,43 @@ using Assets.Code.PressEvents;
 
 namespace Assets.Code.Planning
 {
-    class PressEventScheduler:IPressEventScheduler
+    public class PressEventScheduler : IPressEventScheduler
     {
         private List<IPressScenario> _scenarios;
         private DateTime _currentDate;
         private readonly WorldState _worldState;
         private DateTime _endDate;
-        private PressEvent _currentEvent = null;
         public PressEventScheduler(WorldState worldState, DateTime startDate, DateTime endDate, params IPressScenario[] scenarios)
         {
             _worldState = worldState;
             _endDate = endDate;
             _currentDate = startDate;
             _scenarios = scenarios.ToList();
-            PrepareNextEvent();
         }
 
-        private void PrepareNextEvent()
+        private PressEvent GetNextEvent()
         {
-            IPressScenario minScenario;
+            PressEvent pressEvent;
             do
             {
-                minScenario = GetClosestEventScenario();
+                var minScenario = GetClosestEventScenario();
                 if (minScenario == null)
                 {
-                    _currentEvent = null;
-                    return;
+                    return null;
                 }
-                _currentEvent = minScenario.PopNextEvent();
-                if (_currentEvent.Date > _currentDate)
+                pressEvent = minScenario.PopNextEvent();
+                if (pressEvent.Date > _currentDate)
                 {
                     Debug.Assert(false, "The next event has date smaller than the current date");
                 }
-                _currentDate = _currentEvent.Date;
+                _currentDate = pressEvent.Date;
                 //Remove scenario if empty:
                 if (minScenario.PeekNextEvent() == null)
                 {
                     _scenarios.Remove(minScenario);
                 }
-            } while (!_currentEvent.CheckConditions(_worldState));
-            
-
-
+            } while (!pressEvent.CheckConditions(_worldState));
+            return pressEvent;
         }
         // Gets the scenario that contains event with smallest time value
         private IPressScenario GetClosestEventScenario()
@@ -70,23 +65,28 @@ namespace Assets.Code.Planning
 
         public void AddScenario(PressScenario scenario)
         {
-            _scenarios.Add(scenario);
             while (scenario.PeekNextEvent().Date < _currentDate)
             {
                 scenario.PopNextEvent();
             }
-        }
+            if (scenario.PeekNextEvent() != null)
+            {
+                _scenarios.Add(scenario);
+            }
 
-        public PressEvent PeekNextEvent()
-        {
-            return _currentEvent;
         }
 
         public PressEvent PopNextEvent()
         {
-            var ret = _currentEvent;
-            PrepareNextEvent();
-            return ret;
+            if (_scenarios.Count == 0) return null;
+            var nextEvent = GetNextEvent();
+            if (nextEvent == null) return null;
+            if (nextEvent.Date > _endDate)
+            {
+                _scenarios.Clear();
+                return null;
+            }
+            return nextEvent;
         }
     }
 }

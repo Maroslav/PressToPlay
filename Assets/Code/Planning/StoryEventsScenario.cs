@@ -8,7 +8,7 @@ using Assets.Code.PressEvents;
 
 namespace Assets.Code.Planning
 {
-    class StoryEventsScenario:IPressScenario
+    public class StoryEventsScenario:IPressScenario
     {
         private readonly Queue<PressEventDao> _eventQueue;
         private PressEvent _nextEvent;

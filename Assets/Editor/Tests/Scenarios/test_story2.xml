@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scenario name="Story scenario">
+  <Events>
+    <CutsceneEvent date="11/19/1989">
+      <Preconditions>
+        <Precondition attribute = "Credibility" operation="lessOrEqual" value="200"/>
+      </Preconditions>
+      <ImagePath>Path/To/Image</ImagePath>
+      <Text>InsertedLow</Text>
+    </CutsceneEvent>
+    <CutsceneEvent date="11/19/1989">
+      <Preconditions>
+        <Precondition attribute = "Credibility" operation="lessOrEqual" value="200"/>
+      </Preconditions>
+      <ImagePath>Path/To/Image</ImagePath>
+      <Text>InsertedLow2</Text>
+    </CutsceneEvent>
+    <CutsceneEvent date="11/19/1989">
+      <Preconditions>
+        <Precondition attribute = "Credibility" operation="lessOrEqual" value="900"/>
+      </Preconditions>
+      <ImagePath>Path/To/Image</ImagePath>
+      <Text>InsertedNotHigh</Text>
+    </CutsceneEvent>
+    <CutsceneEvent date="11/21/1989">
+      <Preconditions>
+        <Precondition attribute = "Credibility" operation="equal" value="522"/>
+      </Preconditions>
+      <ImagePath>Path/To/EventLowCredibility</ImagePath>
+      <Text>InsertedEqual</Text>
+    </CutsceneEvent>
+    <CutsceneEvent date="11/25/1989">
+      <Preconditions>
+      </Preconditions>
+      <ImagePath>Path/To/Image</ImagePath>
+      <Text>InsertedLast</Text>
+    </CutsceneEvent>
+  </Events>
+</Scenario>

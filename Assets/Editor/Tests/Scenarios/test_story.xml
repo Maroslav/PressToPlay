@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scenario name="Story scenario">
+  <Events>
+    <CutsceneEvent date="11/17/1989">
+      <Preconditions>
+      </Preconditions>
+      <ImagePath>Path/To/Image</ImagePath>
+      <Text>Game Start</Text>
+    </CutsceneEvent>
+    <CutsceneEvent date="11/20/1989">
+      <Preconditions>
+        <Precondition attribute = "Credibility" operation="lessOrEqual" value="500"/>
+      </Preconditions>
+      <ImagePath>Path/To/EventLowCredibility</ImagePath>
+      <Text>EventLowCredibility</Text>
+    </CutsceneEvent>
+    <CutsceneEvent date="11/22/1989">
+      <Preconditions>
+        <Precondition attribute = "Credibility" operation="greater" value="500"/>
+      </Preconditions>
+      <ImagePath>Path/To/EventHighCredibility</ImagePath>
+      <Text>EventHighCredibility</Text>
+    </CutsceneEvent>
+  </Events>
+</Scenario>
