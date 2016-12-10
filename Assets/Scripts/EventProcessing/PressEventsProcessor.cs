@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PressEventsProcessor : MonoBehaviour, IEventProcessor
 {
     public GameObject MultipleChoiceEventDescription;
+    public GameObject MultipleChoiceEventDate;
     public GameObject MultipleChoiceEventViewer;
 
     public GameObject CutsceneEventDescription;
@@ -15,23 +16,25 @@ public class PressEventsProcessor : MonoBehaviour, IEventProcessor
 
     void OnValidate()
     {
-        Assert.IsNotNull(MultipleChoiceEventDescription);
-        Assert.IsNotNull(MultipleChoiceEventDescription.GetComponent<Text>());
-        Assert.IsNotNull(MultipleChoiceEventViewer);
-        Assert.IsNotNull(MultipleChoiceEventViewer.GetComponent<MultipleChoiceProcessor>());
+        Assert.IsNotNull(MultipleChoiceEventDescription, name);
+        Assert.IsNotNull(MultipleChoiceEventDescription.GetComponent<Text>(), name);
+        Assert.IsNotNull(MultipleChoiceEventDate, name);
+        Assert.IsNotNull(MultipleChoiceEventDate.GetComponent<Text>(), name);
+        Assert.IsNotNull(MultipleChoiceEventViewer, name);
+        Assert.IsNotNull(MultipleChoiceEventViewer.GetComponent<MultipleChoiceProcessor>(), name);
 
-        Assert.IsNotNull(MultipleChoiceEventDescription);
-        Assert.IsNotNull(MultipleChoiceEventDescription.GetComponent<Text>());
-        Assert.IsNotNull(CutsceneEventViewer);
-        Assert.IsNotNull(CutsceneEventViewer.GetComponent<CutsceneProcessor>());
+        Assert.IsNotNull(MultipleChoiceEventDescription, name);
+        Assert.IsNotNull(MultipleChoiceEventDescription.GetComponent<Text>(), name);
+        Assert.IsNotNull(CutsceneEventViewer, name);
+        Assert.IsNotNull(CutsceneEventViewer.GetComponent<CutsceneProcessor>(), name);
     }
 
     public void ProcessEvent(MultipleChoiceEvent e)
     {
         // Set event description in the UI
-        MultipleChoiceEventDescription.GetComponentInChildren<Text>().text = e.Description;
+        MultipleChoiceEventDescription.GetComponent<Text>().text = e.Description;
         CultureInfo csCz = new CultureInfo("cs-CZ");
-        MultipleChoiceEventDescription.GetComponentsInChildren<Text>()[1].text = e.Date.ToString("d", csCz);
+        MultipleChoiceEventDate.GetComponent<Text>().text = e.Date.ToString("d", csCz);
         // Let the viewer set its content
         MultipleChoiceEventViewer.GetComponent<MultipleChoiceProcessor>().ProcessEvent(e);
     }
