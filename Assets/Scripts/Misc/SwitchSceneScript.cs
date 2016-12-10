@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEditor;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
@@ -7,10 +7,10 @@ namespace Assets.Scripts
     public class SwitchSceneScript
             : MonoBehaviour
     {
-        public void LoadScene(string sceneName)
+        public void LoadScene(SceneAsset scene)
         {
-            Debug.Log("Loading scene: " + sceneName);
-            SceneManager.LoadScene(sceneName);
+            Debug.Log("Loading scene: " + scene);
+            SceneManager.LoadScene(scene.name);
         }
 
         public void ExitGame()

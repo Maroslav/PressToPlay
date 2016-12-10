@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections;
+using System.IO;
 using UnityEngine;
 using Assets.Code.PressEvents;
 using UnityEngine.Assertions;
@@ -9,18 +10,25 @@ public class CutsceneProcessor : MonoBehaviour
 {
     private CutsceneEvent _event;
 
+    public GameObject BackgroundDarkener;
     public GameObject ToggledParent;
+
     public string ResourceFolder = "/Cutscenes";
+    public float FinishTransitionDuration;
 
 
     private void OnValidate()
     {
-        Assert.IsNotNull(ToggledParent);
+        Assert.IsNotNull(BackgroundDarkener, name);
+        Assert.IsNotNull(BackgroundDarkener.GetComponent<Image>(), name);
+        Assert.IsNotNull(ToggledParent, name);
     }
 
     public void ProcessEvent(CutsceneEvent e)
     {
-        gameObject.transform.parent.parent.gameObject.SetActive(true);
+        ToggledParent.SetActive(true);
+        BackgroundDarkener.GetComponent<CanvasRenderer>().SetAlpha(0);
+        BackgroundDarkener.GetComponent<Image>().CrossFadeAlpha(.85f, 1, false);
         _event = e;
 
         string path = Path.Combine(ResourceFolder, e.ImagePath).Replace('\\', '/');
@@ -28,12 +36,20 @@ public class CutsceneProcessor : MonoBehaviour
         var texture = Resources.Load<Texture>(path);
         var image = GetComponent<RawImage>();
         image.texture = texture;
+        GetComponent<AspectRatioFitter>().aspectRatio = texture.width / (float)texture.height;
     }
 
     public void OnClick()
     {
-        gameObject.transform.parent.parent.gameObject.SetActive(false);
+        StartCoroutine(TransitionToFinish());
+    }
 
+    IEnumerator TransitionToFinish()
+    {
+        BackgroundDarkener.GetComponent<Image>().CrossFadeAlpha(0, FinishTransitionDuration, false);
+        yield return new WaitForSeconds(FinishTransitionDuration);
+
+        ToggledParent.SetActive(false);
         Debug.Log("Destroying cutscene");
         _event.Finish();
     }

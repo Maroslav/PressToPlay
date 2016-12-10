@@ -1,13 +1,16 @@
 ﻿using Assets.Code.Gameplay;
 using Assets.Code.Planning;
 using Assets.Code.PressEvents;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
     public class GameStoryPlanner : MonoBehaviour
     {
+        public SceneAsset MenuScene;
         public GameObject ProcessorGameObject;
 
         private PressEvent currentEvent;
@@ -19,6 +22,7 @@ namespace Assets.Scripts
 
         void Validate()
         {
+            Assert.IsNotNull(MenuScene);
             Assert.IsNotNull(ProcessorGameObject);
             Assert.IsNotNull(Processor);
         }
@@ -47,6 +51,10 @@ namespace Assets.Scripts
                 if (currentEvent != null)
                 {
                     currentEvent.ProcessEvent(Processor);
+                }
+                else
+                {
+                    SceneManager.LoadScene(MenuScene.name);
                 }
             }
         }
