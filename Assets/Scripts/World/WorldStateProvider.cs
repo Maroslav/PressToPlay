@@ -21,7 +21,7 @@ public class WorldStateProvider : MonoBehaviour
         Assert.IsNotNull(WorldAttributePrefab.GetComponent<WorldAttributeChanger>(), name);
     }
 
-    void Start()
+    void Awake()
     {
         DeserializeAttributes();
 
