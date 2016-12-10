@@ -4,14 +4,14 @@
     <CutsceneEvent date="3/24/2017">
       <Preconditions>
       </Preconditions>
-      <ImagePath>TempFolder/temp.png</ImagePath>
+      <ImagePath>Endings/event_intro</ImagePath>
       <Text> The game starts... </Text>
     </CutsceneEvent>
     <CutsceneEvent date="12/24/2017">
       <Preconditions>
         <Precondition attribute = "Credibility" operation="lessOrEqual" value="500"/>
       </Preconditions>
-      <ImagePath>TempFolder/temp.png</ImagePath>
+      <ImagePath>Endings/event bad ending</ImagePath>
       <Text>Gratulujeme! Svou odvahou popsat věci bez politické korektnosti a tak jak si každý myslí, že to je... YOU’VE MADE THE WORLD GREAT AGAIN!
       </Text>
     </CutsceneEvent>
@@ -19,7 +19,7 @@
       <Preconditions>
         <Precondition attribute = "Credibility" operation="greater" value="500"/>
       </Preconditions>
-      <ImagePath>TempFolder/temp.png</ImagePath>
+      <ImagePath>Endings/event good ending</ImagePath>
       <Text> Gratulujeme! Vlivem korporátních médií zůstal svět přesně takový, jaký vždy byl - ten nejlepší ze všech možných světů.</Text>
     </CutsceneEvent>
   </Events>

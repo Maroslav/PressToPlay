@@ -10,7 +10,7 @@ namespace Assets.Code.PressEvents.Preconditions
 
         public override bool Check(WorldState state)
         {
-            return Value <= state.JournalistState[Attribute];
+            return state.JournalistState[Attribute] <= Value;
         }
     }
 }

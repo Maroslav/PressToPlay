@@ -29,7 +29,8 @@ namespace Assets.Code.PressEvents
         public PressEvent Process(CutsceneEventDao evt)
         {
             var d = GetDate(evt);
-            return new CutsceneEvent(evt.ImagePath, evt.Text,d,GetPreconditions(evt));
+            var preconditions = GetPreconditions(evt);
+            return new CutsceneEvent(evt.ImagePath, evt.Text,d,preconditions);
         }
         private DateTime GetDate(PressEventDao evt)
         {
