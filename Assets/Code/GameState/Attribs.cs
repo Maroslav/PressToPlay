@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace Assets.Code.GameState
 {
-    public struct Attribs
+    public class Attribs : IEnumerable<KeyValuePair<Attrib,int>>
     {
         //STATIC CONSTANTS:
         //Values 0 - 1000;
@@ -37,6 +38,11 @@ namespace Assets.Code.GameState
         {
             _values = val;
         }
+
+        public Attribs()
+        {
+            
+        }
         public Dictionary<Attrib, int> Values
         {
             get
@@ -63,6 +69,22 @@ namespace Assets.Code.GameState
             Attribs  at = new Attribs();
             at.AddAttribute(Attribs.Credibility,credibilityValue);
             return at;
+        }
+
+        public int this[Attrib attrib]
+        {
+            get { return Values[attrib]; }
+            set { Values[attrib] = value; }
+        }
+
+        public IEnumerator<KeyValuePair<Attrib, int>> GetEnumerator()
+        {
+            return Values.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
