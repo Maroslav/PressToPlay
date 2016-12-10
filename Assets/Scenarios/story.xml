@@ -5,7 +5,8 @@
       <Preconditions>
       </Preconditions>
       <ImagePath>Endings/event_intro</ImagePath>
-      <Text> The game starts... </Text>
+      <Text>Gratulujeme! Stal se z tebe novinář. Od teď budeš informovat veřejnost o tom nejdůležitějším, co se stalo.
+      </Text>
     </CutsceneEvent>
     <CutsceneEvent date="12/24/2017">
       <Preconditions>
