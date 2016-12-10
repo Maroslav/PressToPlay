@@ -36,6 +36,7 @@ public class CutsceneProcessor : MonoBehaviour
         var texture = Resources.Load<Texture>(path);
         var image = GetComponent<RawImage>();
         image.texture = texture;
+        GetComponent<AspectRatioFitter>().aspectRatio = texture.width / (float)texture.height;
     }
 
     public void OnClick()
