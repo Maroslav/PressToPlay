@@ -13,7 +13,7 @@ namespace Assets.Editor.Tests
         {
             Attribs att1 = new Attribs();
 
-            att1.AddAttribute(Attribs.Credibility, 500);
+            att1[Attribs.Credibility] = 500;
             
             Assert.IsTrue(Algorithms.Distance(att1,att1,Attribs.Credibility)==0);
         }
@@ -21,29 +21,29 @@ namespace Assets.Editor.Tests
         public void NoAttributesDistanceTest()
         {
             Attribs att1 = new Attribs();
-            att1.AddAttribute(Attribs.Credibility, 500);
+            att1[Attribs.Credibility] = 500;
             Assert.IsTrue(Algorithms.Distance(att1, att1) == 0);
         }
         [Test]
         public void AttributesDistanceTest1()
         {
             Attribs att1 = new Attribs();
-            att1.AddAttribute(Attribs.Credibility, 500);
+            att1[Attribs.Credibility] = 500;
             Attribs att2 = new Attribs();
-            att2.AddAttribute(Attribs.Credibility,800);
-            att2.AddAttribute(new Attrib("Description"), 302);
-            att2.AddAttribute(new Attrib("Some other attrib"), 801);
+            att2[Attribs.Credibility] = 800;
+            att2[new Attrib("Description")] = 302;
+            att2[new Attrib("Some other attrib")] = 801;
             Assert.IsTrue(Algorithms.Distance(att1, att2,Attribs.Credibility) == 300);
         }
         [Test]
         public void AttributesDistanceTest2()
         {
             Attribs att1 = new Attribs();
-            att1.AddAttribute(Attribs.Credibility, 500);
+            att1[Attribs.Credibility] = 500;
             Attribs att2 = new Attribs();
-            att2.AddAttribute(Attribs.Credibility, 800);
-            att2.AddAttribute(new Attrib("Description"), 302);
-            att2.AddAttribute(new Attrib("Some other attrib"), 801);
+            att2[Attribs.Credibility] = 800;
+            att2[new Attrib("Description")] = 302;
+            att2[new Attrib("Some other attrib")] = 801;
             Assert.IsTrue(Algorithms.Distance(att1, att2, Attribs.Credibility, new Attrib("AttributeListsDoNotContain")) == 300);
         }
 
@@ -123,40 +123,40 @@ namespace Assets.Editor.Tests
         public void MoveTowardsTest()
         {
             Attribs att1 = new Attribs();
-            att1.AddAttribute(Attribs.Credibility, 500);
+            att1[Attribs.Credibility] = 500;
             var laziness = new Attrib("Laziness");
             var unused = new Attrib("Unused attribute");
             var partiallyUnused = new Attrib("Used only in one attributes list");
-            att1.AddAttribute(laziness,480);
-            att1.AddAttribute(partiallyUnused,900);
+            att1[laziness] = 480;
+            att1[partiallyUnused] = 900;
             Attribs att2 = new Attribs();
-            att2.AddAttribute(Attribs.Credibility, 800);
-            att2.AddAttribute(laziness,500);
+            att2[Attribs.Credibility] = 800;
+            att2[laziness] = 500;
             List<Attrib> list = new List<Attrib>() {Attribs.Credibility,laziness,unused};
             Algorithms.MoveTowardsPosition(att1,att2,list);
-            Assert.AreEqual(500+Algorithms.AttribMoveStep,att1.GetAttribute(Attribs.Credibility));
-            Assert.AreEqual(att2.GetAttribute(laziness),att1.GetAttribute(laziness));
-            Assert.AreEqual(900,att1.GetAttribute(partiallyUnused));
+            Assert.AreEqual(500+Algorithms.AttribMoveStep,att1[Attribs.Credibility]);
+            Assert.AreEqual(att2[laziness],att1[laziness]);
+            Assert.AreEqual(900,att1[partiallyUnused]);
         }
 
         [Test]
         public void MoveTowardsTest2()
         {
             Attribs att1 = new Attribs();
-            att1.AddAttribute(Attribs.Credibility, 500);
+            att1[Attribs.Credibility] = 500;
             var laziness = new Attrib("Laziness");
             var unused = new Attrib("Unused attribute");
             var partiallyUnused = new Attrib("Used only in one attributes list");
-            att1.AddAttribute(laziness, 480);
-            att1.AddAttribute(partiallyUnused, 900);
+            att1[laziness] = 480;
+            att1[partiallyUnused] = 900;
             Attribs att2 = new Attribs();
-            att2.AddAttribute(Attribs.Credibility, 100);
-            att2.AddAttribute(laziness, 440);
+            att2[Attribs.Credibility] = 100;
+            att2[laziness] = 440;
             List<Attrib> list = new List<Attrib>() { Attribs.Credibility, laziness, unused };
             Algorithms.MoveTowardsPosition(att1, att2, list);
-            Assert.AreEqual(500 - Algorithms.AttribMoveStep, att1.GetAttribute(Attribs.Credibility));
-            Assert.AreEqual(att2.GetAttribute(laziness), att1.GetAttribute(laziness));
-            Assert.AreEqual(900, att1.GetAttribute(partiallyUnused));
+            Assert.AreEqual(500 - Algorithms.AttribMoveStep, att1[Attribs.Credibility]);
+            Assert.AreEqual(att2[laziness], att1[laziness]);
+            Assert.AreEqual(900, att1[partiallyUnused]);
         }
     }
 }

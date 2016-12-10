@@ -28,7 +28,7 @@ namespace Assets.Code.PressEvents
             Description = source.Description;
             foreach (var attrib in source.Attribs)
             {
-                Attributes.AddAttribute(Attribs.GetAttribByName(attrib.AttributeName),attrib.Value);
+                Attributes[Attribs.GetAttribByName(attrib.AttributeName)] = attrib.Value;
             }
         }
         public Attribs Attributes { get; private set; }

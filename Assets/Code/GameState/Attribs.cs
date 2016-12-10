@@ -54,20 +54,11 @@ namespace Assets.Code.GameState
 
         private Dictionary<Attrib, int> _values;
 
-        public void AddAttribute(Attrib attrib, int value)
-        {
-           Values.Add(attrib,value);
-        }
-
-        public int GetAttribute(Attrib attrib)
-        {
-            return Values[attrib];
-        }
         //Creates a collection of attributes that contain only Credibility
         public static Attribs AttributesWithCredibility(int credibilityValue)
         {
             Attribs  at = new Attribs();
-            at.AddAttribute(Attribs.Credibility,credibilityValue);
+            at[Attribs.Credibility] = credibilityValue;
             return at;
         }
 
