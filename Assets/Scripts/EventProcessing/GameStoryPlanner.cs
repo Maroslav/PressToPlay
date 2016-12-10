@@ -42,6 +42,7 @@ namespace Assets.Scripts
 
             if (currentEvent.IsFinished)
             {
+                WorldStateProvider.UpdateAttributeGameObjects();
                 currentEvent = scheduler.PopNextEvent();
 
                 if (currentEvent != null)
