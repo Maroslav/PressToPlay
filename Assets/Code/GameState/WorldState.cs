@@ -10,7 +10,6 @@ namespace Assets.Code.GameState
         public WorldState()
         {
             JournalistState=new Attribs();
-            JournalistState.AddAttribute(Attribs.Credibility,Attribs.MidValue);
         }
         public Attribs JournalistState { get; private set; }
     }
