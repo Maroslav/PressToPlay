@@ -13,6 +13,8 @@ namespace Assets.Code.Model
         [XmlEnum(Name = "greater")]
         GreaterThan,
         [XmlEnum(Name = "equal")]
-        Equal
+        Equal,
+        [XmlEnum(Name = "lessOrEqual")]
+        LessOrEqual
     }
 }

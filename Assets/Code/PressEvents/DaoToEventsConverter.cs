@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Assets.Code.PressEvents;
+using Assets.Code.Model;
+using Assets.Code.PressEvents.Preconditions;
 
-namespace Assets.Code.Model
+namespace Assets.Code.PressEvents
 {
     /// <summary>
     /// Converts data access objects loaded from database to events.
@@ -18,7 +18,10 @@ namespace Assets.Code.Model
         public PressEvent Process(MultipleChoiceEventDao evt)
         {
             var d = GetDate(evt);
-            return new MultipleChoiceEvent(evt, d);
+            var choices = (from x in evt.Choices select new DecisionChoice(x)).ToList();
+            var descr = evt.Description;
+            var precond = GetPreconditions(evt);
+            return new MultipleChoiceEvent(descr,d,choices,precond);
         }
 
         
@@ -26,7 +29,8 @@ namespace Assets.Code.Model
         public PressEvent Process(CutsceneEventDao evt)
         {
             var d = GetDate(evt);
-            return new CutsceneEvent(evt.ImagePath, evt.Text,d);
+            var preconditions = GetPreconditions(evt);
+            return new CutsceneEvent(evt.ImagePath, evt.Text,d,preconditions);
         }
         private DateTime GetDate(PressEventDao evt)
         {
@@ -40,6 +44,13 @@ namespace Assets.Code.Model
             }
             d = AssignedDate;
             return d;
+        }
+
+        private List<Precondition> GetPreconditions(PressEventDao dao)
+        {
+            if (dao.Preconditions==null) return new List<Precondition>();
+            return (from x in dao.Preconditions select Precondition.FromDao(x)).ToList();
+
         }
     }
 }

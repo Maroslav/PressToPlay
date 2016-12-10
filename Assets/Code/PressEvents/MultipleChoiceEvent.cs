@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Assets.Code.GameState;
 using Assets.Code.Model;
+using Assets.Code.PressEvents.Preconditions;
 
 namespace Assets.Code.PressEvents
 {
@@ -15,17 +16,15 @@ namespace Assets.Code.PressEvents
         public List<DecisionChoice> Choices { get; private set; }
 
         // The question / event description displayed to the player.
-        public string Description { get; set; }
+        public string Description { get; private set; }
         
 
-
-        public MultipleChoiceEvent(MultipleChoiceEventDao data, DateTime date) : base(date)
+        public MultipleChoiceEvent(string descr, DateTime d, List<DecisionChoice> choices, List<Precondition> precond=null) 
+            : base(d, precond??new List<Precondition>())
         {
-            Description = data.Description;
-            Choices = (from x in data.Choices select new DecisionChoice(x)).ToList();
-            //Potentially replace placeholders with real names etc.
+            Description = descr;
+            Choices = choices;
         }
-       
 
         public List<DecisionChoice> GetClosestOptions(int count)
         {
