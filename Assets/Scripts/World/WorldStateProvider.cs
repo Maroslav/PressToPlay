@@ -8,7 +8,7 @@ public class WorldStateProvider : MonoBehaviour
 {
     public static WorldState State { get; private set; }
 
-    private Dictionary<Attrib, GameObject> attributeGOs = new Dictionary<Attrib, GameObject>();
+    private static Dictionary<Attrib, GameObject> attributeGOs = new Dictionary<Attrib, GameObject>();
 
     public GameObject WorldAttributesGameObject;
     public GameObject WorldAttributePrefab;
@@ -45,7 +45,7 @@ public class WorldStateProvider : MonoBehaviour
     }
 
 
-    public void UpdateAttributeGameObjects(bool doSetup = false)
+    public static void UpdateAttributeGameObjects(bool doSetup = false)
     {
         foreach (var attributePair in attributeGOs)
         {
