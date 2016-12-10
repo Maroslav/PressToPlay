@@ -84,9 +84,12 @@ public class MultipleChoiceProcessor : MonoBehaviour
         multipleChoiceData.Choice = choice;
         multipleChoiceData.SetEvent(_event, this);
 
-        if (choiceGameObject.GetComponentsInChildren<Text>().Length > 0)
+        Text[] textComps = choiceGameObject.GetComponentsInChildren<Text>();
+
+        if (textComps.Length > 0)
         {
-            choiceGameObject.GetComponentsInChildren<Text>()[0].text = choice.Description;
+            Text text = textComps[0];
+            text.text = choice.Description;
         }
         _choiceGameObjects.Add(choiceGameObject);
     }
