@@ -23,6 +23,7 @@ public class WorldStateProvider : MonoBehaviour
 
     void Awake()
     {
+        attributeGOs.Clear();
         DeserializeAttributes();
 
         // Create UI elements - Attribs
