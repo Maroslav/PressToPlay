@@ -11,8 +11,8 @@ namespace Assets.Code.Gameplay
         public const int DefaultChoicesCount = 2;
 
         //The scenario source files locations:
-        public const string RandomEventsScenarioLoc = "Assets/Resources/Scenarios/random.xml";
-        public const string StoryEventsScenarioLoc = "Assets/Resources/Scenarios/story.xml";
+        public const string RandomEventsScenarioLoc = "Scenarios/random";
+        public const string StoryEventsScenarioLoc = "Scenarios/story";
 
         //The expected number of days between two events:
         public const int RandomEventsMeanVal = 5;
