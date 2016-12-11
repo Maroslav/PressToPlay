@@ -1,20 +1,20 @@
 ﻿using Assets.Code.Gameplay;
 using Assets.Code.Planning;
 using Assets.Code.PressEvents;
-using UnityEditor;
+using Assets.Scripts.Misc;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
+    [RequireComponent(typeof(ScenePicker))]
     public class GameStoryPlanner : MonoBehaviour
     {
-        public SceneAsset MenuScene;
         public GameObject ProcessorGameObject;
 
-        private PressEvent currentEvent;
-        private IPressEventScheduler scheduler;
+        private PressEvent _currentEvent;
+        private IPressEventScheduler _scheduler;
 
 
         private PressEventsProcessor Processor { get { return ProcessorGameObject.GetComponent<PressEventsProcessor>(); } }
@@ -22,39 +22,39 @@ namespace Assets.Scripts
 
         void Validate()
         {
-            Assert.IsNotNull(MenuScene);
             Assert.IsNotNull(ProcessorGameObject);
             Assert.IsNotNull(Processor);
+            Assert.IsNotNull(GetComponent<ScenePicker>().scenePath);
         }
 
         void Start()
         {
-            scheduler = GameInit.CreateEventScheduler(WorldStateProvider.State);
-            currentEvent = scheduler.PopNextEvent();
-            if (currentEvent != null)
+            _scheduler = GameInit.CreateEventScheduler(WorldStateProvider.State);
+            _currentEvent = _scheduler.PopNextEvent();
+            if (_currentEvent != null)
             {
-                currentEvent.ProcessEvent(Processor);
+                _currentEvent.ProcessEvent(Processor);
             }
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (currentEvent == null)
+            if (_currentEvent == null)
                 return;
 
-            if (currentEvent.IsFinished)
+            if (_currentEvent.IsFinished)
             {
                 WorldStateProvider.UpdateAttributeGameObjects();
-                currentEvent = scheduler.PopNextEvent();
+                _currentEvent = _scheduler.PopNextEvent();
 
-                if (currentEvent != null)
+                if (_currentEvent != null)
                 {
-                    currentEvent.ProcessEvent(Processor);
+                    _currentEvent.ProcessEvent(Processor);
                 }
                 else
                 {
-                    SceneManager.LoadScene(MenuScene.name);
+                   GetComponent<ScenePicker>().LoadScene();
                 }
             }
         }
