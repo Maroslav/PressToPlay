@@ -8,12 +8,12 @@ using Assets.Code.PressEvents;
 public class MultipleChoiceData : MonoBehaviour
 {
     private MultipleChoiceEvent _event;
-    private MultipleChoiceEventProcessor _owner;
+    private MultipleChoiceProcessor _owner;
 
     public DecisionChoice Choice;
 
 
-    public void SetEvent(MultipleChoiceEvent newEvent, MultipleChoiceEventProcessor viewProcessor)
+    public void SetEvent(MultipleChoiceEvent newEvent, MultipleChoiceProcessor viewProcessor)
     {
         _event = newEvent;
         _owner = viewProcessor;

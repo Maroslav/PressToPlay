@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Assets.Code.Gameplay;
 using Assets.Code.GameState;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -39,9 +40,7 @@ public class WorldStateProvider : MonoBehaviour
 
     private void DeserializeAttributes()
     {
-        State = new WorldState();
-        State.JournalistState[Attribs.Credibility] = Attribs.MidValue;
-        // TODO: Different creation/deserialization
+        State = GameInit.CreateWorldState();
     }
 
 

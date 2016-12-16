@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Attributes>
   <!-- CONCEPT, NOT USED YET-->
-  <Category name="Journalist">
-    <Attribute name="Credibility" description="Serióznost"  minValue="0" maxValue="1000" initialValue="500"/>
+  <Category name="Journalist" description="Vlastnosti novináře">
+    <Attribute name="Credibility" description="Serióznost"   initialValue="500" isDisplayed="true"/>
+    <Attribute name="Money" description="Stav účtu" initialValue="500" isDisplayed="true"/>
   </Category>
 </Attributes>

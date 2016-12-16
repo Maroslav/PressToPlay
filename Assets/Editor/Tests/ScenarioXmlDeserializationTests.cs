@@ -11,14 +11,11 @@ namespace Assets.Editor.Tests
     class ScenarioXmlDeserializationTests
     {
         [Test]
-        public void XmlDeserializationTest()    
+        public void XmlDeserializationTest()
         {
-            StreamReader reader = new StreamReader("Assets/Scenarios/template.xml");
-            XmlSerializer xmlReader = new XmlSerializer(typeof(ScenarioDao));
-            ScenarioDao scenario= (ScenarioDao) xmlReader.Deserialize(reader);
+            var scenario = XmlUtils.LoadScenario("Scenarios/template");
             Assert.AreEqual("name, only for the designer", scenario.Name);
             Assert.AreEqual(3,scenario.Events.Length);
-            reader.Close();
         }
     }
 }

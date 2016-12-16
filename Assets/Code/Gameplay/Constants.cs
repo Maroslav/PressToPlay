@@ -13,7 +13,9 @@ namespace Assets.Code.Gameplay
         //The scenario source files locations:
         public const string RandomEventsScenarioLoc = "Scenarios/random";
         public const string StoryEventsScenarioLoc = "Scenarios/story";
-
+        
+        //Attributes definition source file:
+        public const string AttributesDefinitionLoc = "Scenarios/attributes";
         //The expected number of days between two events:
         public const int RandomEventsMeanVal = 5;
         

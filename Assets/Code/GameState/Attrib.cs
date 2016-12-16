@@ -15,5 +15,7 @@ namespace Assets.Code.GameState
         }
 
         public string Description { get; private set; }
+        public AttribsCategory Category { get; set; }
+        public bool IsDisplayed { get; set; }
     }
 }

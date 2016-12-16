@@ -33,6 +33,11 @@ namespace Assets.Code.GameState
             return attribsByName[name];      
         }
 
+        public static void SetGameAttribsCollection(Dictionary<string, Attrib> col)
+        {
+            attribsByName = col;
+        }
+
     //CLASS DECLARATION
         public Attribs(Dictionary<Attrib, int> val )
         {

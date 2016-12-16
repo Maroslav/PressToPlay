@@ -9,9 +9,10 @@ namespace Assets.Code.GameState
     {
         public WorldState()
         {
-            JournalistState=new Attribs();
         }
-        public Attribs JournalistState { get; private set; }
+        public Attribs JournalistState { get; set; }
+
+        public Dictionary<AttribsCategory, Attribs> AllStates;
     }
 }
 
