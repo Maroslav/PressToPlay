@@ -37,6 +37,7 @@ public class MultipleChoiceEventProcessor : MonoBehaviour {
         {
             _isShowingSelectedChoice = false;
             CanFinishEvent = true;
+            MultipleChoiceEventPublish.SetActive(false);
         }
         else
         {
