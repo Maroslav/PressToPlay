@@ -17,25 +17,21 @@ namespace Assets.Code.GameState
         public const int MaxValue = 1000;
         public const int MidValue = (MinValue + MaxValue)/2;
 
-        public static List<Attrib> JournalistAttributes = new List<Attrib>() {Credibility};
+        public static List<Attrib> JournalistAttributes;
 
-        private static Dictionary<string, Attrib> attribsByName=
-            new Dictionary<string, Attrib>()
-            {
-                {StringCredibility,Credibility}
-            };
+        private static Dictionary<string, Attrib> _attribsByName;
         public static Attrib GetAttribByName(string name)
         {
-            if (!attribsByName.ContainsKey(name))
+            if (!_attribsByName.ContainsKey(name))
             {
                 throw new ArgumentException("Requiring non-existing attribute: "+name);
             }      
-            return attribsByName[name];      
+            return _attribsByName[name];      
         }
 
         public static void SetGameAttribsCollection(Dictionary<string, Attrib> col)
         {
-            attribsByName = col;
+            _attribsByName = col;
         }
 
     //CLASS DECLARATION
