@@ -6,22 +6,24 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class SimpleTweener : MonoBehaviour
 {
-    public bool Active;
     public AnimationCurve TweenCurve;
     // Higher values will end the timer faster
     public float SpeedCoef = 1;
 
     // Debug vals
     public float CurrentValue;
-    public float CurrentCurveEval;
     public float CurrentTime;
     public float TargetTime;
 
 
+    private bool m_active;
+
     private Action<float> m_updateCallback;
-    private Action m_finishedCallback;
+    private Action<bool> m_finishedCallback;
+
     private float m_sourceValue;
     private float m_targetValue;
+
     private float m_sourceTime;
     private float m_length;
 
@@ -33,7 +35,7 @@ public class SimpleTweener : MonoBehaviour
 
     void Update()
     {
-        if (!Active)
+        if (!m_active)
             return;
 
         float elapsed = Time.time - m_sourceTime;
@@ -44,9 +46,9 @@ public class SimpleTweener : MonoBehaviour
                 m_updateCallback(m_targetValue); // Signal the exact value as the last one
 
             if (m_finishedCallback != null)
-                m_finishedCallback();
+                m_finishedCallback(false); // Signal that this was a graceful finish
 
-            Active = false;
+            m_active = false;
             return;
         }
 
@@ -54,14 +56,14 @@ public class SimpleTweener : MonoBehaviour
         float valScale = TweenCurve.Evaluate(pos); // Curve can evaluate outside of 0,1
         float val = (m_targetValue - m_sourceValue) * valScale + m_sourceValue;
         CurrentTime = elapsed; // Debug info
-        CurrentCurveEval = valScale;
         CurrentValue = val; // Debug info
 
         if (m_updateCallback != null)
             m_updateCallback(val);
     }
 
-    public void Init(float sourceValue, Action<float> updateCallback = null, Action finishedCallback = null)
+
+    public void Init(float sourceValue, Action<float> updateCallback = null, Action<bool> finishedCallback = null)
     {
         m_sourceValue = sourceValue;
 
@@ -69,7 +71,7 @@ public class SimpleTweener : MonoBehaviour
         m_finishedCallback = finishedCallback;
     }
 
-    public void DoStart(float targetValue, float sourceValue = float.NaN)
+    public void TweenTo(float targetValue, float sourceValue = float.NaN)
     {
         m_sourceValue = float.IsNaN(sourceValue) ? m_targetValue : sourceValue; // Use the old target value
         m_targetValue = targetValue;
@@ -77,7 +79,13 @@ public class SimpleTweener : MonoBehaviour
         m_sourceTime = Time.time;
         m_length = TweenCurve.length / SpeedCoef;
         TargetTime = m_length; // Debug info
-        Active = true;
-        Debug.Log("Starting... Time: " + TweenCurve.length);
+        m_active = true;
+    }
+
+    public void Stop()
+    {
+        m_active = false;
+        if (m_finishedCallback != null)
+            m_finishedCallback(true); // Signal that this was an abrupt finish
     }
 }

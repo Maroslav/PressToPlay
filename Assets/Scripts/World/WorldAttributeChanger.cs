@@ -35,8 +35,7 @@ public class WorldAttributeChanger : MonoBehaviour
         var sliderTweener = SliderGameObject.GetComponent<SimpleTweener>();
         sliderTweener.Init(
             (minValue + maxValue) >> 1,
-            val => s.value = val,
-            () => Debug.Log("Finished tween."));
+            val => s.value = val);
 
     }
 
@@ -44,17 +43,15 @@ public class WorldAttributeChanger : MonoBehaviour
     {
         AttributeValue = value;
 
-        //if (!fancyAnims)
-        //{
-        //    var s = SliderGameObject.GetComponent<Slider>();
-        //    s.value = value;
-        //    Debug.Log("Hard set to: " + value);
-        //    return;
-        //}
+        if (!fancyAnims)
+        {
+            var s = SliderGameObject.GetComponent<Slider>();
+            s.value = value;
+            return;
+        }
 
-        Debug.Log("Tween to: " + value);
         var tweener = SliderGameObject.GetComponent<SimpleTweener>();
-        tweener.DoStart(value);
+        tweener.TweenTo(value);
 
         //PopupGameObject.SetActive(true);
         //PopupGameObject.SetActive(false);
