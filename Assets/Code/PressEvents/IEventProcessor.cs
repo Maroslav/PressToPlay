@@ -5,5 +5,6 @@
     {
         void ProcessEvent(MultipleChoiceEvent e);
         void ProcessEvent(CutsceneEvent e);
+        void ProcessEvent(ImageChoiceEvent e);
     }
 }

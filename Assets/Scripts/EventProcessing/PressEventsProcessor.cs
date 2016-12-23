@@ -33,4 +33,9 @@ public class PressEventsProcessor : MonoBehaviour, IEventProcessor
         // Let the viewer set its content
         CutsceneEventViewer.GetComponent<CutsceneProcessor>().ProcessEvent(e);
     }
+
+    public void ProcessEvent(ImageChoiceEvent e)
+    {
+        throw new System.NotImplementedException();
+    }
 }
