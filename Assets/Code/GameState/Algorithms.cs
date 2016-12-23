@@ -68,7 +68,17 @@ namespace Assets.Code.GameState
                 }
             }
         }
-
+        ///returns the new value: 'currentValue' moved towards the 'positionValue'
+        public static int MoveTowardsPosition(int currentValue, int positionValue, int amount = AttribMoveStep)
+        {
+            int diff = currentValue - positionValue;
+            var abs = Math.Abs(diff);
+            if (abs > amount)
+            {
+                diff = Math.Sign(diff) * amount;
+            }
+            return currentValue + diff;
+        }
         public static int AttribsDifference(Attribs a, Attribs b, Attrib attributeName)
         {
             return a.Values[attributeName] - b.Values[attributeName];
