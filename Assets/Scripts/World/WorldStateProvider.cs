@@ -33,6 +33,7 @@ public class WorldStateProvider : MonoBehaviour
             GameObject attributeGO = Instantiate(WorldAttributePrefab);
             attributeGO.transform.SetParent(WorldAttributesGameObject.transform);
             attributeGOs.Add(attributePair.Key, attributeGO);
+            attributeGO.SetActive(true);
         }
 
         UpdateAttributeGameObjects(true);
