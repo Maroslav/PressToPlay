@@ -32,8 +32,8 @@ namespace Assets.Editor.Tests
 
             cat = atts.Categories[2];
             Assert.AreEqual("Cat C", cat.Name, "Name of the category does not match");
-            Assert.AreEqual(0, cat.Attributes.Length, "Count of the elements in the category does not match.");
-
+            Assert.IsTrue(cat.Attributes==null || 0==cat.Attributes.Length, "Count of the elements in the category does not match.");
+            
             cat = atts.Categories[3];
             Assert.AreEqual("Cat D", cat.Name, "Name of the category does not match");
             Assert.AreEqual(2, cat.Attributes.Length, "Count of the elements in the category does not match.");

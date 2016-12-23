@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Assets.Code.Model;
+using Assets.Code.Model.Events;
+using Assets.Code.PressEvents.Choices;
 using Assets.Code.PressEvents.Preconditions;
 
 namespace Assets.Code.PressEvents
@@ -18,13 +20,19 @@ namespace Assets.Code.PressEvents
         public PressEvent Process(MultipleChoiceEventDao evt)
         {
             var d = GetDate(evt);
-            var choices = (from x in evt.Choices select new DecisionChoice(x)).ToList();
+            var choices = (from x in evt.Choices select new TextChoice(x)).ToList();
             var descr = evt.Description;
             var precond = GetPreconditions(evt);
             return new MultipleChoiceEvent(descr,d,choices,precond);
         }
 
-        
+        public PressEvent Process(ImageChoiceEventDao evt)
+        {
+            var d = GetDate(evt);
+            var preconditions = GetPreconditions(evt);
+            var choices = (from x in evt.Choices select new ImageChoice(x)).ToList();
+            return new ImageChoiceEvent(d,preconditions,choices);
+        }
 
         public PressEvent Process(CutsceneEventDao evt)
         {

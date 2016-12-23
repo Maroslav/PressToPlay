@@ -12,8 +12,9 @@ namespace Assets.Code.PressEvents
     /// 
     public class ImageChoiceEvent:PressEvent
     {
-        public ImageChoiceEvent(DateTime date, List<Precondition> preconditions) : base(date, preconditions)
+        public ImageChoiceEvent(DateTime date, List<Precondition> preconditions, List<ImageChoice> choices) : base(date, preconditions)
         {
+            Choices = choices;
         }
 
         public string Description { get; set; }
@@ -21,6 +22,12 @@ namespace Assets.Code.PressEvents
         public override void ProcessEvent(IEventProcessor processor)
         {
             processor.ProcessEvent(this);
+        }
+
+        public void Finish(ImageChoice selectedChoice)
+        {
+            //TODO: Evaluate decision
+            IsFinished = true;
         }
     }
 }

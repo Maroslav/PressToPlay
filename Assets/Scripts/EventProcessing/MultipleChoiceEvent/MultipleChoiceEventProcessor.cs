@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Globalization;
 using Assets.Code.PressEvents;
+using Assets.Code.PressEvents.Choices;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
@@ -31,7 +32,7 @@ public class MultipleChoiceEventProcessor : MonoBehaviour {
         Assert.IsNotNull(MultipleChoiceEventViewer.GetComponent<MultipleChoiceProcessor>(), name);
     }
 
-    internal void MoveToNextState(DecisionChoice choice)
+    internal void MoveToNextState(TextChoice choice)
     {
         if (_isShowingSelectedChoice)
         {

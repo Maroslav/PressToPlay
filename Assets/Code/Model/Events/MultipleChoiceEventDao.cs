@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using Assets.Code.Model.Events.Choices;
 
 namespace Assets.Code.Model
 {
     //Data Access Object, stores raw data loaded from the database.
     public class MultipleChoiceEventDao: PressEventDao
     {
-        public MultipleChoiceEventDao(string description, List<DecisionChoiceDao> choices, string date=null):base(date) 
+        public MultipleChoiceEventDao(string description, List<TextChoiceDao> choices, string date=null):base(date) 
         {
             Description = description;
             Choices = choices.ToArray();
@@ -20,8 +21,8 @@ namespace Assets.Code.Model
         [XmlElement("Description")]
         public string Description { get; private set; }
         [XmlArray("Choices")]
-        [XmlArrayItem("Choice",typeof(DecisionChoiceDao))]
-        public DecisionChoiceDao[] Choices { get; private set; }
+        [XmlArrayItem("Choice",typeof(TextChoiceDao))]
+        public TextChoiceDao[] Choices { get; private set; }
 
         public override T Process<T>(IPressEventDaoProcessor<T> processor)
         {

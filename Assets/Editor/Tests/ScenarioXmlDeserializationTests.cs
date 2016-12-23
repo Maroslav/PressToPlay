@@ -15,7 +15,7 @@ namespace Assets.Editor.Tests
         {
             var scenario = XmlUtils.LoadScenario("Scenarios/template");
             Assert.AreEqual("name, only for the designer", scenario.Name);
-            Assert.AreEqual(3,scenario.Events.Length);
+            Assert.AreEqual(4,scenario.Events.Length);
         }
     }
 }

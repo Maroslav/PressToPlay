@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Assets.Code.GameState;
 using Assets.Code.PressEvents;
+using Assets.Code.PressEvents.Choices;
 using NUnit.Framework;
 
 namespace Assets.Editor.Tests
@@ -50,12 +51,12 @@ namespace Assets.Editor.Tests
         [Test]
         public void ClosestChoicesTest()
         {
-           List<DecisionChoice>  choices = new List<DecisionChoice>()
+           List<TextChoice>  choices = new List<TextChoice>()
            {
-               new DecisionChoice(Attribs.AttributesWithCredibility(500),"Choice 1","Long description of the choice 1"),
-               new DecisionChoice(Attribs.AttributesWithCredibility(700),"Choice 2","Long description of the choice 2"),
-               new DecisionChoice(Attribs.AttributesWithCredibility(200),"Choice 2","Long description of the choice 3"),
-               new DecisionChoice(Attribs.AttributesWithCredibility(200),"Choice 4","Long description of the choice 4")
+               new TextChoice(Attribs.AttributesWithCredibility(500),"Choice 1","Long description of the choice 1"),
+               new TextChoice(Attribs.AttributesWithCredibility(700),"Choice 2","Long description of the choice 2"),
+               new TextChoice(Attribs.AttributesWithCredibility(200),"Choice 2","Long description of the choice 3"),
+               new TextChoice(Attribs.AttributesWithCredibility(200),"Choice 4","Long description of the choice 4")
            };
             Attribs journalist = Attribs.AttributesWithCredibility(650);
             var closest = Algorithms.Closest(choices, journalist, 2, new List<Attrib>() { Attribs.Credibility });
@@ -68,12 +69,12 @@ namespace Assets.Editor.Tests
         [Test]
         public void ClosestChoicesTest2()
         {
-            List<DecisionChoice> choices = new List<DecisionChoice>()
+            List<TextChoice> choices = new List<TextChoice>()
            {
-               new DecisionChoice(Attribs.AttributesWithCredibility(200),"Choice 3","Long description of the choice 1"),
-               new DecisionChoice(Attribs.AttributesWithCredibility(201),"Choice 4","Long description of the choice 2"),
-               new DecisionChoice(Attribs.AttributesWithCredibility(500),"Choice 1","Long description of the choice 3"),
-               new DecisionChoice(Attribs.AttributesWithCredibility(700),"Choice 2","Long description of the choice 4")
+               new TextChoice(Attribs.AttributesWithCredibility(200),"Choice 3","Long description of the choice 1"),
+               new TextChoice(Attribs.AttributesWithCredibility(201),"Choice 4","Long description of the choice 2"),
+               new TextChoice(Attribs.AttributesWithCredibility(500),"Choice 1","Long description of the choice 3"),
+               new TextChoice(Attribs.AttributesWithCredibility(700),"Choice 2","Long description of the choice 4")
            };
             Attribs journalist = Attribs.AttributesWithCredibility(900);
             var closest = Algorithms.Closest(choices, journalist, 6, new List<Attrib>() { Attribs.Credibility });
@@ -88,12 +89,12 @@ namespace Assets.Editor.Tests
         [Test]
         public void ClosestChoicesTest3()
         {
-            List<DecisionChoice> choices = new List<DecisionChoice>()
+            List<TextChoice> choices = new List<TextChoice>()
            {
-               new DecisionChoice(Attribs.AttributesWithCredibility(200),"Choice 3","Long description of the choice 1"),
-               new DecisionChoice(Attribs.AttributesWithCredibility(201),"Choice 4","Long description of the choice 2"),
-               new DecisionChoice(Attribs.AttributesWithCredibility(500),"Choice 1","Long description of the choice 3"),
-               new DecisionChoice(Attribs.AttributesWithCredibility(700),"Choice 2","Long description of the choice 4")
+               new TextChoice(Attribs.AttributesWithCredibility(200),"Choice 3","Long description of the choice 1"),
+               new TextChoice(Attribs.AttributesWithCredibility(201),"Choice 4","Long description of the choice 2"),
+               new TextChoice(Attribs.AttributesWithCredibility(500),"Choice 1","Long description of the choice 3"),
+               new TextChoice(Attribs.AttributesWithCredibility(700),"Choice 2","Long description of the choice 4")
            };
             Attribs journalist = Attribs.AttributesWithCredibility(900);
             var closest = Algorithms.Closest(choices, journalist, 1, new List<Attrib>() { Attribs.Credibility });
@@ -105,12 +106,12 @@ namespace Assets.Editor.Tests
         [Test]
         public void ClosestChoicesTest4()
         {
-            List<DecisionChoice> choices = new List<DecisionChoice>()
+            List<TextChoice> choices = new List<TextChoice>()
            {
-               new DecisionChoice(Attribs.AttributesWithCredibility(200),"Choice 3","Long description of the choice 1"),
-               new DecisionChoice(Attribs.AttributesWithCredibility(201),"Choice 4","Long description of the choice 2"),
-               new DecisionChoice(Attribs.AttributesWithCredibility(500),"Choice 1","Long description of the choice 3"),
-               new DecisionChoice(Attribs.AttributesWithCredibility(700),"Choice 2","Long description of the choice 4")
+               new TextChoice(Attribs.AttributesWithCredibility(200),"Choice 3","Long description of the choice 1"),
+               new TextChoice(Attribs.AttributesWithCredibility(201),"Choice 4","Long description of the choice 2"),
+               new TextChoice(Attribs.AttributesWithCredibility(500),"Choice 1","Long description of the choice 3"),
+               new TextChoice(Attribs.AttributesWithCredibility(700),"Choice 2","Long description of the choice 4")
            };
             Attribs journalist = Attribs.AttributesWithCredibility(202);
             var closest = Algorithms.Closest(choices, journalist, 1, new List<Attrib>() { Attribs.Credibility });

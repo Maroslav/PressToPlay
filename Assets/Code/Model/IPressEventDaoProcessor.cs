@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Assets.Code.Model.Events;
 
 namespace Assets.Code.Model
 {
@@ -13,6 +14,6 @@ namespace Assets.Code.Model
     {
         T Process(MultipleChoiceEventDao evt);
         T Process(CutsceneEventDao evt);
-
+        T Process(ImageChoiceEventDao evt);
     }
 }

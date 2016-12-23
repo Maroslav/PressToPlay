@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Assets.Code.Gameplay;
 using Assets.Code.PressEvents;
+using Assets.Code.PressEvents.Choices;
 using Random = System.Random;
 
 namespace Assets.Code.GameState
@@ -30,12 +31,12 @@ namespace Assets.Code.GameState
             return Distance(coll1, coll2, comparedAttributes.ToList());
         }
         //
-        public static List<DecisionChoice> Closest(List<DecisionChoice> allOptions, Attribs comparedState,  int count,
+        public static List<TextChoice> Closest(List<TextChoice> allOptions, Attribs comparedState,  int count,
             List<Attrib> comparedAttributes)
         {
             var choices = (from x in allOptions select new {opt= x, dist=Distance(x.Attributes,comparedState,comparedAttributes)})
                 .OrderBy(y=>y.dist).Take(count).Select(x=>x.opt).ToList();
-            List<DecisionChoice> res = new List<DecisionChoice>(count);
+            List<TextChoice> res = new List<TextChoice>(count);
             foreach (var op in allOptions)
             {
                 if (choices.Contains(op))

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Assets.Code.GameState;
 using Assets.Code.PressEvents;
+using Assets.Code.PressEvents.Choices;
 
 /// <summary>
 /// Used in MultipleChoice button prefab
@@ -10,7 +11,7 @@ public class MultipleChoiceData : MonoBehaviour
     private MultipleChoiceEvent _event;
     private MultipleChoiceEventProcessor _owner;
 
-    public DecisionChoice Choice;
+    public TextChoice Choice;
 
 
     public void SetEvent(MultipleChoiceEvent newEvent, MultipleChoiceEventProcessor viewProcessor)
