@@ -33,6 +33,7 @@ public class WorldStateProvider : MonoBehaviour
             GameObject attributeGO = Instantiate(WorldAttributePrefab);
             attributeGO.transform.SetParent(WorldAttributesGameObject.transform);
             attributeGOs.Add(attributePair.Key, attributeGO);
+            attributeGO.SetActive(true);
         }
 
         UpdateAttributeGameObjects(true);
@@ -53,7 +54,7 @@ public class WorldStateProvider : MonoBehaviour
             if (doSetup)
                 attribChanger.DoSetup(attributePair.Key.Description, Attribs.MinValue, Attribs.MaxValue);
 
-            attribChanger.DoChange(State.JournalistState[attributePair.Key]);
+            attribChanger.DoChange(State.JournalistState[attributePair.Key], !doSetup);
         }
     }
 }
