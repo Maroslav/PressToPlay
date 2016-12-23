@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Xml.Serialization;
 using Assets.Code.GameState;
 using Assets.Code.Model;
 using Assets.Code.PressEvents;
+using Assets.Code.PressEvents.Construction;
 
 namespace Assets.Code.Planning
 {

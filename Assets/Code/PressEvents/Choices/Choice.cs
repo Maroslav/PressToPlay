@@ -4,25 +4,25 @@ using System.Linq;
 using System.Text;
 using Assets.Code.GameState;
 using Assets.Code.Model.Events.Choices;
+using Assets.Code.Model.Events.Effects;
 
 namespace Assets.Code.PressEvents.Choices
 {
     public class Choice
     {
-        public Attribs Attributes { get; private set; }
+        public List<Effect> Effects { get; private set; }
 
-        public Choice(ChoiceDao source)
+        public Choice(List<Effect> effects)
         {
-            Attributes = new Attribs();
-            foreach (var attrib in source.Attribs)
-            {
-                Attributes[Attribs.GetAttribByName(attrib.AttributeName)] = attrib.Value;
-            }
+            Effects = effects;
         }
 
-        public Choice(Attribs attributes)
+        public void ApplyEffects(WorldState state)
         {
-            Attributes = attributes;
+            foreach (var effect in Effects)
+            {
+                effect.Apply(state);
+            }
         }
     }
 }

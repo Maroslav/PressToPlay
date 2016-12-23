@@ -24,15 +24,13 @@ namespace Assets.Code.PressEvents
 
         public List<TextChoice> GetClosestOptions(int count)
         {
-            return Algorithms.Closest(Choices, WorldStateProvider.State.JournalistState, count,
-                Attribs.JournalistAttributes);
+            return Algorithms.Closest(Choices, WorldStateProvider.State, count);
         }
 
         //Choose the given option and end this event processing.
-        public void Finish(TextChoice selectedChoice)
+        public void Finish(TextChoice selectedChoice,WorldState state)
         {
-            Algorithms.MoveTowardsPosition(WorldStateProvider.State.JournalistState, selectedChoice.Attributes,
-                Attribs.JournalistAttributes);
+            selectedChoice.ApplyEffects(state);
             IsFinished = true;
         }
 

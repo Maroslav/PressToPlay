@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Assets.Code.Gameplay;
+using Assets.Code.Model.Events.Effects;
 using Assets.Code.PressEvents;
 using Assets.Code.PressEvents.Choices;
 using Random = System.Random;
@@ -25,17 +26,20 @@ namespace Assets.Code.GameState
             return distance;
         }
 
-        public static int Distance(Attribs coll1, Attribs coll2,
-            params Attrib[] comparedAttributes)
+
+        private static int Distance(List<Effect> effects, WorldState state)
         {
-            return Distance(coll1, coll2, comparedAttributes.ToList());
+            int dist = 0;
+            foreach (var effect in effects)
+            {
+                dist += effect.GetDistance(state);
+            }
+            return dist;
         }
-        //
-        public static List<TextChoice> Closest(List<TextChoice> allOptions, Attribs comparedState,  int count,
-            List<Attrib> comparedAttributes)
+        public static List<TextChoice> Closest(List<TextChoice> allOptions,WorldState worldState, int count)
         {
-            var choices = (from x in allOptions select new {opt= x, dist=Distance(x.Attributes,comparedState,comparedAttributes)})
-                .OrderBy(y=>y.dist).Take(count).Select(x=>x.opt).ToList();
+            var choices = (from x in allOptions select new { opt = x, dist = Distance(x.Effects, worldState) })
+                .OrderBy(y => y.dist).Take(count).Select(x => x.opt).ToList();
             List<TextChoice> res = new List<TextChoice>(count);
             foreach (var op in allOptions)
             {
@@ -47,27 +51,8 @@ namespace Assets.Code.GameState
             return res;
         }
         //How much each attribute can move towards another attribute in one step:
-        public const int AttribMoveStep=100;
+        public const int AttribMoveStep = 100;
 
-        ///Modifies the 'vector' of attributes 'updatedAttribs' in such a way that it moves
-        /// closer to the vector 'position' 
-        /// The transformation is applied only on the attributes in the 'modifiedAttributes' collection.
-        public static void MoveTowardsPosition(Attribs updatedAttribs, Attribs position, List<Attrib> modifiedAttributes) 
-        {
-            foreach (var attrib in modifiedAttributes)
-            {
-                if (updatedAttribs.Values.ContainsKey(attrib) && position.Values.ContainsKey(attrib))
-                {
-                    int diff = -AttribsDifference(updatedAttribs, position, attrib);
-                    var abs = Math.Abs(diff);
-                    if (abs > AttribMoveStep)
-                    {
-                        diff = diff/abs*AttribMoveStep;
-                    }
-                    updatedAttribs.Values[attrib] = updatedAttribs.Values[attrib] + diff;
-                }
-            }
-        }
         ///returns the new value: 'currentValue' moved towards the 'positionValue'
         public static int MoveTowardsPosition(int currentValue, int positionValue, int amount = AttribMoveStep)
         {
@@ -87,7 +72,7 @@ namespace Assets.Code.GameState
         public static int RandomPauseBetweenEvents()
         {
             Random r = new Random();
-            return (int)Math.Round(Math.Log(1-r.NextDouble())*-1*Constants.RandomEventsMeanVal);
+            return (int)Math.Round(Math.Log(1 - r.NextDouble()) * -1 * Constants.RandomEventsMeanVal);
 
         }
     }

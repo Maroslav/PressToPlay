@@ -55,12 +55,6 @@ namespace Assets.Code.Gameplay
             AttribsCategory journalist = (from x in stateVariables.Keys where x.Name == "Journalist" select x).First();
             Debug.Assert(journalist != null, "The list of attributes does not contain the Journalist category.");
             state.JournalistState = stateVariables[journalist];
-
-            Attribs.JournalistAttributes=new List<Attrib>();
-            foreach (var s in state.JournalistState.Values)
-            {
-                Attribs.JournalistAttributes.Add(s.Key);
-            }
         }
     }
 }

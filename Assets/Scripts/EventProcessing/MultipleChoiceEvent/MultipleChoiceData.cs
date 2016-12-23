@@ -29,7 +29,7 @@ public class MultipleChoiceData : MonoBehaviour
         {
             Debug.Log("Choosing option " + Choice.Title);
 
-            _event.Finish(Choice);
+            _event.Finish(Choice,WorldStateProvider.State);
         }
     }
 }

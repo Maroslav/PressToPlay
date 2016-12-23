@@ -1,5 +1,7 @@
-﻿using Assets.Code.GameState;
+﻿using System.Collections.Generic;
+using Assets.Code.GameState;
 using Assets.Code.Model.Events.Choices;
+using Assets.Code.Model.Events.Effects;
 
 namespace Assets.Code.PressEvents.Choices
 {
@@ -7,16 +9,10 @@ namespace Assets.Code.PressEvents.Choices
     public class TextChoice :Choice
     {
 
-        public TextChoice(Attribs attributes, string title, string description):base(attributes)
+        public TextChoice(List<Effect> effects, string title, string description):base(effects)
         {
             Title = title;
             Description = description;
-        }
-
-        public TextChoice(TextChoiceDao source):base(source)
-        {
-            Title = source.Title;
-            Description = source.Description;
         }
        
         public string Title { get; private set; }
