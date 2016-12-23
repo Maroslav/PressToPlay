@@ -4,25 +4,27 @@ using UnityEngine.Assertions;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
-public class SimpleTweener : MonoBehaviour
+public abstract class SimpleTweenerBase<T>
+    : MonoBehaviour
+    where T : struct
 {
     public AnimationCurve TweenCurve;
     // Higher values will end the timer faster
     public float SpeedCoef = 1;
 
     // Debug vals
-    public float CurrentValue;
+    public T CurrentValue;
     public float CurrentTime;
     public float TargetTime;
 
 
     private bool m_active;
 
-    private Action<float> m_updateCallback;
+    private Action<T> m_updateCallback;
     private Action<bool> m_finishedCallback;
 
-    private float m_sourceValue;
-    private float m_targetValue;
+    protected T SourceValue;
+    protected T TargetValue;
 
     private float m_sourceTime;
     private float m_length;
@@ -43,7 +45,7 @@ public class SimpleTweener : MonoBehaviour
         if (elapsed >= m_length)
         {
             if (m_updateCallback != null)
-                m_updateCallback(m_targetValue); // Signal the exact value as the last one
+                m_updateCallback(TargetValue); // Signal the exact value as the last one
 
             if (m_finishedCallback != null)
                 m_finishedCallback(false); // Signal that this was a graceful finish
@@ -52,9 +54,9 @@ public class SimpleTweener : MonoBehaviour
             return;
         }
 
-        float pos = elapsed / m_length; // Between 0,1
-        float valScale = TweenCurve.Evaluate(pos); // Curve can evaluate outside of 0,1
-        float val = (m_targetValue - m_sourceValue) * valScale + m_sourceValue;
+        float timePosition = elapsed / m_length; // Between 0,1
+        float tweenPosition = TweenCurve.Evaluate(timePosition); // Curve can evaluate outside of 0,1
+        T val = GetVal(tweenPosition);
         CurrentTime = elapsed; // Debug info
         CurrentValue = val; // Debug info
 
@@ -63,18 +65,21 @@ public class SimpleTweener : MonoBehaviour
     }
 
 
-    public void Init(float sourceValue, Action<float> updateCallback = null, Action<bool> finishedCallback = null)
+    protected abstract T GetVal(float tweenPosition);
+
+    public void Init(T sourceValue, Action<T> updateCallback = null, Action<bool> finishedCallback = null)
     {
-        m_sourceValue = sourceValue;
+        SourceValue = sourceValue;
+        TargetValue = sourceValue;
 
         m_updateCallback = updateCallback;
         m_finishedCallback = finishedCallback;
     }
 
-    public void TweenTo(float targetValue, float sourceValue = float.NaN)
+    public void TweenTo(T targetValue, T? sourceValue = null)
     {
-        m_sourceValue = float.IsNaN(sourceValue) ? m_targetValue : sourceValue; // Use the old target value
-        m_targetValue = targetValue;
+        SourceValue = sourceValue ?? TargetValue; // Use the old target value by default
+        TargetValue = targetValue;
 
         m_sourceTime = Time.time;
         m_length = TweenCurve.length / SpeedCoef;
