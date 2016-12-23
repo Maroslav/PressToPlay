@@ -46,7 +46,13 @@ public class WorldAttributeChanger : MonoBehaviour
         sliderTweener.Init(
             (minValue + maxValue) >> 1,
             val => s.value = val, // 3. keep changing slider value
-            abrupt => PopupGameObject.SetActive(false)); // 4. hide the popup
+            abrupt =>
+            {
+                if (!abrupt)
+                    PopupGameObject.SetActive(false);
+                // Assert showing the correct value
+                s.value = AttributeValue;
+            }); // 4. hide the popup
     }
 
     public void DoChange(int value, bool fancyAnims = false)
@@ -75,14 +81,19 @@ public class WorldAttributeChanger : MonoBehaviour
         PopupGameObject.transform.localScale = Vector3.one;
 
         var popupTweener = PopupGameObject.GetComponent<Vector3Tweener>();
-        var sliderTweener = SliderGameObject.GetComponent<FloatTweener>();
 
-        // Re-init the tweener to update the finish function (it takes this method's parameter as argument)
+        // Re-init the tweener to update the finish function
         popupTweener.Init(
             PopupGameObject.transform.localScale,
             val => PopupGameObject.transform.localScale = val, // 1. keep chaning popup scale
-            abrupt => sliderTweener.TweenTo(value)); // 2. start slider tween
+            abrupt => StartSliderTween()); // 2. start slider tween
 
         popupTweener.TweenTo(new Vector3(2, 2, 2));
+    }
+
+    private void StartSliderTween()
+    {
+        var sliderTweener = SliderGameObject.GetComponent<FloatTweener>();
+        sliderTweener.TweenTo(AttributeValue); // Use the current value as the target
     }
 }

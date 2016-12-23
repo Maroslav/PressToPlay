@@ -69,6 +69,9 @@ public abstract class SimpleTweenerBase<T>
 
     public void Init(T sourceValue, Action<T> updateCallback = null, Action<bool> finishedCallback = null)
     {
+        if (m_active)
+            Stop();
+
         SourceValue = sourceValue;
         TargetValue = sourceValue;
 
@@ -78,6 +81,9 @@ public abstract class SimpleTweenerBase<T>
 
     public void TweenTo(T targetValue, T? sourceValue = null)
     {
+        if (m_active)
+            Stop();
+
         SourceValue = sourceValue ?? TargetValue; // Use the old target value by default
         TargetValue = targetValue;
 
