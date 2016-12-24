@@ -60,7 +60,7 @@ namespace Assets.Code.GameState
             var abs = Math.Abs(diff);
             if (abs > amount)
             {
-                diff = Math.Sign(diff) * amount;
+                diff = -Math.Sign(diff) * amount;
             }
             return currentValue + diff;
         }

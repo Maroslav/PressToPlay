@@ -68,7 +68,7 @@
       <Choices>
         <Choice>
           <Effects>
-            <Effect attribute="Credibility" value = "600"/>
+            <MoveTowardsEffect attribute="Credibility" value = "600"/>
           </Effects>
           <Description>
             “Je to unikátní projekt, který zvyší prestiž Českých Budějovic na mezinárodní urovni,” říká k návrhu operního sálu ve tvaru Olihně Tomáš Nejedlý z katedry architektury na ČVUT.
