@@ -27,7 +27,7 @@ namespace Assets.Code.GameState
             return _attribsByName[name];      
         }
 
-        public static void SetGameAttribsCollection(Dictionary<string, Attrib> col)
+        public static void SetAttribsCollection(Dictionary<string, Attrib> col)
         {
             _attribsByName = col;
         }

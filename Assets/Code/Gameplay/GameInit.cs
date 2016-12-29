@@ -44,7 +44,7 @@ namespace Assets.Code.Gameplay
                 }   
             }
             WorldState state = new WorldState {AllStates = stateVariables};
-            Attribs.SetGameAttribsCollection(attribsByName);
+            Attribs.SetAttribsCollection(attribsByName);
             PutCategoriesIntoVariables(stateVariables, state);
 
             return state;
