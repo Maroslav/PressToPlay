@@ -8,7 +8,7 @@ using Assets.Code.PressEvents;
 
 namespace Assets.Code.Model
 {
-    [XmlRoot("Scenario")]
+    [XmlRoot(elementName:"Scenario", Namespace = "http://presstoplaygame.com/scenario")]
     public class ScenarioDao
     {
         [XmlAttribute("name")]

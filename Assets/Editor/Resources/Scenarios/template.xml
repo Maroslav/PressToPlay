@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Scenario name="name, only for the designer">
+<Scenario name="name, only for the designer"
+          xmlns="http://presstoplaygame.com/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://presstoplaygame.com/scenario ../../../Resources/Scenarios/scenario_schema.xsd"
+          >
 <Events>
-  <MultipleChoiceEvent date="12/12/2017">  <!-- date is optional -->
-  <Description> Event description </Description>
+  <!--Warning! Day and month values have to be padded to two digits eg. "5" -> "05"-->
+  <MultipleChoiceEvent date="2017-12-12">  <!-- date is optional -->
 	<Preconditions>
 		<Precondition attribute="attribute_name" operation="greater" value="150"/> 
 		<Precondition attribute="Credibility" operation="less" value="400"/>
     <Precondition attribute="other_attribute" operation="lessOrEqual" value="210"/>
   </Preconditions>
+  <Description> Event description </Description>
 	<Choices>
 	<Choice>
     <Effects>
 		  <MoveTowardsEffect attribute="Credibility" value = "250"/>  
     </Effects>
-		<Description> Description of the Choice.</Description>
     <Title> Short choice title.</Title>
+		<Description> Description of the Choice.</Description>
 	</Choice>	
 	<Choice>
     <Effects>
       <MoveTowardsEffect attribute="Credibility" value = "600" amount="50"/>
       <ModifyEffect attribute="Money" value ="-50"/>
     </Effects>
-		<Description> Description of the Choice 2.</Description>
     <Title> Short choice title.</Title>
+		<Description> Description of the Choice 2.</Description>
 	</Choice>
 	</Choices>
   </MultipleChoiceEvent>
@@ -33,8 +38,8 @@
 			<Effects>
 				<SetEffect attribute="Credibility" value = "600"/>
 			</Effects>
-			<Description> Description of the Choice.</Description>
       <Title> Short choice title.</Title>
+			<Description> Description of the Choice.</Description>
 		</Choice>
 	</Choices>
   </MultipleChoiceEvent>
@@ -42,14 +47,14 @@
   <Preconditions>
 	<Precondition attribute = "Credibility" operation="equal" value="1"/>
   </Preconditions>
-	<ImagePath> Assets/Images/ImageName.png</ImagePath>
+	<ImagePath> Assets/Images/ImageName</ImagePath>
 	<Text> Event text </Text>
   </CutsceneEvent>
   <ImageChoiceEvent>
-    <Description>Description of the image choice event</Description>
     <Preconditions>
       <Precondition attribute="Credibility" operation="greater" value="500"/>
     </Preconditions>
+    <Description>Description of the image choice event</Description>
     <Choices>
       <Choice>
         <Effects>

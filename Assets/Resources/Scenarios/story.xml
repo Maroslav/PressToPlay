@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Scenario name="Story scenario">
+<Scenario name="Story scenario" xmlns="http://presstoplaygame.com/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://presstoplaygame.com/scenario scenario_schema.xsd"
+          >
   <Events>
-    <CutsceneEvent date="3/24/2017">
+    <!--Warning! Day and month values have to be padded to two digits eg. "5" -> "05"-->
+    <CutsceneEvent date="2017-03-24">
       <Preconditions>
       </Preconditions>
       <ImagePath>Endings/event_intro</ImagePath>
       <Text>Gratulujeme! Stal se z tebe novinář. Od teď budeš informovat veřejnost o tom nejdůležitějším, co se stalo.
       </Text>
     </CutsceneEvent>
-    <CutsceneEvent date="12/24/2017">
+    <CutsceneEvent date="2017-12-24">
       <Preconditions>
         <Precondition attribute = "Credibility" operation="lessOrEqual" value="500"/>
       </Preconditions>
@@ -16,7 +20,7 @@
       <Text>Gratulujeme! Svou odvahou popsat věci bez politické korektnosti a tak jak si každý myslí, že to je... YOU’VE MADE THE WORLD GREAT AGAIN!
       </Text>
     </CutsceneEvent>
-    <CutsceneEvent date="12/24/2017">
+    <CutsceneEvent date="2017-12-24">
       <Preconditions>
         <Precondition attribute = "Credibility" operation="greater" value="500"/>
       </Preconditions>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scenario name="name, only for the designer"
+          xmlns="http://presstoplaygame.com/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://presstoplaygame.com/scenario ../../../Resources/Scenarios/scenario_schema.xsd"
+          >
+  <Events>
+      <MultipleChoiceEvent>
+          <Description>Event 1 description
+          </Description>
+          <Choices>
+              <Choice>
+                  <Effects>
+                  </Effects>
+                  <Title>Choice 1</Title>
+                  <Description>
+                      Choice 1 description
+                  </Description>
+              </Choice>
+              <Choice>
+                  <Effects>
+                      <ModifyEffect attribute="abc" value="150"/>
+                      <MoveTowardsEffect amount="100" attribute="attrib_name" value="500"/>
+                  </Effects>
+                  <Title>Choice 2 title</Title>
+                  <Description>
+                      Choice 2 long description
+                  </Description>
+              </Choice>
+          </Choices>
+      </MultipleChoiceEvent>
+  </Events>
+</Scenario>

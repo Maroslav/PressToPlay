@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="scenario_schema"
+    targetNamespace="http://presstoplaygame.com/scenario"
+    elementFormDefault="qualified"
+    xmlns="http://presstoplaygame.com/scenario"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:simpleType name="attributenametype">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:pattern value="[a-zA-Z_]*"/>
+      <xs:maxLength value="30" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="attributeoperationtype" >
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="greater"/>
+      <xs:enumeration value="less"/>
+      <xs:enumeration value="lessOrEqual"/>
+      <xs:enumeration value="equal"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="attributevaluetype" >
+    <xs:restriction base="xs:int"> 
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="1000"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="preconditiontype">
+    <xs:attribute name="attribute" type="attributenametype"  use="required"/>
+    <xs:attribute name="operation" type="attributeoperationtype" use="required"/>
+    <xs:attribute name="value" type="attributevaluetype" use="required"/>
+  </xs:complexType>
+
+
+  <xs:complexType name="pressevent">
+    <xs:sequence>
+      <xs:element name="Preconditions" type="preconditionlist" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="date" type="xs:date" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="preconditionlist">
+    <xs:sequence>
+      <xs:element name="Precondition" type ="preconditiontype" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="effecttype">
+    <xs:attribute name="attribute" type="attributenametype"/>
+  </xs:complexType>
+  <xs:simpleType name="modifyvaluetype">
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="-1000"/>
+      <xs:maxInclusive value="+1000"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="movetowardseffecttype">
+    <xs:complexContent>
+      <xs:extension base="effecttype">
+        <xs:attribute name="value" type="attributevaluetype"/>
+        <xs:attribute name="amount" type="attributevaluetype"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="seteffecttype">
+    <xs:complexContent>
+      <xs:extension base="effecttype">
+        <xs:attribute name="value" type="attributevaluetype"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="modifyeffecttype">
+    <xs:complexContent>
+      <xs:extension base="effecttype">
+        <xs:attribute name="value" type="modifyvaluetype"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="effectlisttype">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="MoveTowardsEffect" type="movetowardseffecttype"/>
+      <xs:element name="ModifyEffect" type="modifyeffecttype"/>
+      <xs:element name="SetEffect" type="seteffecttype"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="choicetype">
+    <xs:sequence>
+      <xs:element name="Effects" type="effectlisttype"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="textchoicetype">
+    <xs:complexContent>
+      <xs:extension base="choicetype">
+        <xs:sequence>
+          <xs:element name="Title" type="xs:string"/>
+          <xs:element name="Description" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="textchoiceslist">
+    <xs:sequence>
+      <xs:element name="Choice" type="textchoicetype" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="multiplechoiceeventtype">
+    <xs:complexContent>
+      <xs:extension base="pressevent">
+        <xs:sequence>
+          <xs:element name="Description" type="xs:string"/>
+          <xs:element name="Choices" type="textchoiceslist"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:simpleType name="pathtoimagetype" >
+    <xs:restriction base="xs:anyURI">
+      <xs:annotation>
+        <xs:documentation>
+          Path without file suffix!
+        </xs:documentation>
+      </xs:annotation>
+      <xs:pattern  value="[a-zA-Z0-9_ /]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="imagechoicetype">
+    <xs:complexContent>
+      <xs:extension base="choicetype">
+        <xs:sequence>
+          <xs:element name="ImagePath" type="pathtoimagetype"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="imagechoicelisttype">
+    <xs:sequence>
+      <xs:element name="Choice" type="imagechoicetype" minOccurs="0" maxOccurs="unbounded"/> 
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="imagechoiceeventtype">
+    <xs:complexContent>
+      <xs:extension base="pressevent">
+        <xs:sequence>
+          <xs:element name="Description" type="xs:string"/>
+          <xs:element name="Choices" type="imagechoicelisttype"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="cutsceneeventtype">
+    <xs:complexContent>
+      <xs:extension base="pressevent">
+        <xs:sequence>
+          <xs:element name="ImagePath" type="pathtoimagetype" />
+          <xs:element name="Text" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="eventlisttype">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="MultipleChoiceEvent" type="multiplechoiceeventtype" />
+      <xs:element name="ImageChoiceEvent" type="imagechoiceeventtype" />
+      <xs:element name="CutsceneEvent" type="cutsceneeventtype" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="Scenario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Events" type="eventlisttype"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
