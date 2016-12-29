@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Assets.Code.Model;
 using Assets.Code.Model.Events;
+using Assets.Code.Model.Events.Choices;
+using Assets.Code.Model.Events.Effects;
 using Assets.Code.PressEvents.Choices;
 using Assets.Code.PressEvents.Preconditions;
 
-namespace Assets.Code.PressEvents
+namespace Assets.Code.PressEvents.Construction
 {
     /// <summary>
     /// Converts data access objects loaded from database to events.
@@ -17,21 +19,34 @@ namespace Assets.Code.PressEvents
         /// The date that is assigned to events if the event has no date itself.
         /// </summary>
         public DateTime AssignedDate { get; set; }
+        private readonly DaoToEffectsConverter _effectsConverter = new DaoToEffectsConverter();
         public PressEvent Process(MultipleChoiceEventDao evt)
         {
             var d = GetDate(evt);
-            var choices = (from x in evt.Choices select new TextChoice(x)).ToList();
+            List<TextChoice> choices = new List<TextChoice>(evt.Choices.Length);
+            foreach (var choiceDao in evt.Choices)
+            {
+                var effects = GetEffects(choiceDao);
+                choices.Add(new TextChoice(effects,choiceDao.Title,choiceDao.Description));
+            }
             var descr = evt.Description;
             var precond = GetPreconditions(evt);
             return new MultipleChoiceEvent(descr,d,choices,precond);
         }
 
+
         public PressEvent Process(ImageChoiceEventDao evt)
         {
             var d = GetDate(evt);
+            List<ImageChoice> choices = new List<ImageChoice>(evt.Choices.Length);
+            foreach (var choiceDao in evt.Choices)
+            {
+                var effects = GetEffects(choiceDao);
+                choices.Add(new ImageChoice(effects, choiceDao.Path));
+            }
+            var description = evt.Description;
             var preconditions = GetPreconditions(evt);
-            var choices = (from x in evt.Choices select new ImageChoice(x)).ToList();
-            return new ImageChoiceEvent(d,preconditions,choices);
+            return new ImageChoiceEvent(d,preconditions,choices,description);
         }
 
         public PressEvent Process(CutsceneEventDao evt)
@@ -60,5 +75,10 @@ namespace Assets.Code.PressEvents
             return (from x in dao.Preconditions select Precondition.FromDao(x)).ToList();
 
         }
+        private List<Effect> GetEffects(ChoiceDao choiceDao)
+        {
+            return (from x in choiceDao.Effects select x.Process(_effectsConverter)).ToList();
+        }
+
     }
 }

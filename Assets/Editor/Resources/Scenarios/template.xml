@@ -5,17 +5,22 @@
   <Description> Event description </Description>
 	<Preconditions>
 		<Precondition attribute="attribute_name" operation="greater" value="150"/> 
-		<Precondition attribute="credibility" operation="less" value="400"/>
+		<Precondition attribute="Credibility" operation="less" value="400"/>
     <Precondition attribute="other_attribute" operation="lessOrEqual" value="210"/>
   </Preconditions>
 	<Choices>
 	<Choice>
-		<Effect attribute="credibility" value = "250"/>
+    <Effects>
+		  <MoveTowardsEffect attribute="Credibility" value = "250"/>  
+    </Effects>
 		<Description> Description of the Choice.</Description>
     <Title> Short choice title.</Title>
 	</Choice>	
 	<Choice>
-		<Effect attribute="credibility" value = "600"/>
+    <Effects>
+      <MoveTowardsEffect attribute="Credibility" value = "600" amount="50"/>
+      <ModifyEffect attribute="Money" value ="-50"/>
+    </Effects>
 		<Description> Description of the Choice 2.</Description>
     <Title> Short choice title.</Title>
 	</Choice>
@@ -26,7 +31,7 @@
 	<Choices>
 		<Choice>
 			<Effects>
-				<Effect attribute="credibility" value = "600"/>
+				<SetEffect attribute="Credibility" value = "600"/>
 			</Effects>
 			<Description> Description of the Choice.</Description>
       <Title> Short choice title.</Title>
@@ -35,7 +40,7 @@
   </MultipleChoiceEvent>
   <CutsceneEvent>
   <Preconditions>
-	<Precondition attribute = "credibility" operation="equal" value="1"/>
+	<Precondition attribute = "Credibility" operation="equal" value="1"/>
   </Preconditions>
 	<ImagePath> Assets/Images/ImageName.png</ImagePath>
 	<Text> Event text </Text>
@@ -43,18 +48,20 @@
   <ImageChoiceEvent>
     <Description>Description of the image choice event</Description>
     <Preconditions>
-      <Precondition attribute="credibility" operation="greater" value="500"/>
+      <Precondition attribute="Credibility" operation="greater" value="500"/>
     </Preconditions>
     <Choices>
       <Choice>
         <Effects>
-          <Effect attribute="credibility" value = "600"/>
+          <ModifyEffect attribute="Credibility" value = "60"/>
+          <ModifyEffect attribute="Money" value = "-60"/>
         </Effects>
         <ImagePath>Path/To/ImageChoiceEvents/imageName</ImagePath>
       </Choice>
       <Choice>
         <Effects>
-          <Effect attribute="credibility" value = "120"/>
+          <SetEffect attribute="Credibility" value = "500"/>
+          <SetEffect attribute="Money" value = "500"/>
         </Effects>
         <ImagePath>Path/To/ImageChoiceEvents/imageName2</ImagePath>
       </Choice>

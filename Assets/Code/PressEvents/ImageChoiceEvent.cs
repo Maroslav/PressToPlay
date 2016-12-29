@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Assets.Code.GameState;
 using Assets.Code.PressEvents.Choices;
 using Assets.Code.PressEvents.Preconditions;
 
@@ -12,9 +13,11 @@ namespace Assets.Code.PressEvents
     /// 
     public class ImageChoiceEvent:PressEvent
     {
-        public ImageChoiceEvent(DateTime date, List<Precondition> preconditions, List<ImageChoice> choices) : base(date, preconditions)
+        public ImageChoiceEvent(DateTime date, List<Precondition> preconditions, List<ImageChoice> choices, string description
+            ) : base(date, preconditions)
         {
             Choices = choices;
+            Description = description;
         }
 
         public string Description { get; set; }
@@ -24,9 +27,9 @@ namespace Assets.Code.PressEvents
             processor.ProcessEvent(this);
         }
 
-        public void Finish(ImageChoice selectedChoice)
+        public void Finish(ImageChoice selectedChoice, WorldState worldState)
         {
-            //TODO: Evaluate decision
+            selectedChoice.ApplyEffects(worldState);
             IsFinished = true;
         }
     }
