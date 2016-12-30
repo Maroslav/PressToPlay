@@ -5,14 +5,48 @@
     xmlns="http://presstoplaygame.com/scenario"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
-  <xs:simpleType name="attributenametype">
+  <xs:simpleType name="knownattributenametype">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Credibility"/>
+      <xs:enumeration value="Money"/>
+      <!--Here new attribute names can be inserted in order to see them as hints in XML editors.-->
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="anyattributenametype">
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
       <xs:pattern value="[a-zA-Z_]*"/>
       <xs:maxLength value="30" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="attributenametype">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>Name of Attribute</h2>
+        <p>
+          Either choose one from the list of predefined values or type an arbitrary name.
+        </p>
+        <p>
+          Make sure the attribute is registered in the Resources/Scenarios/attributes.xml file.
+        </p>
+        <p>
+          The list of predefined attributes can be modified (new attributes can be added) by the list
+          of enumerations in the Resources/Scenarios/scenario_schema.xsd file.
+        </p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="anyattributenametype knownattributenametype"/>
+  </xs:simpleType>
   <xs:simpleType name="attributeoperationtype" >
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>Operation</h2>
+        <p>
+          Possible values: greater, less, lessOrEqual, equal
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="greater"/>
       <xs:enumeration value="less"/>
@@ -21,13 +55,32 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="attributevaluetype" >
-    <xs:restriction base="xs:int"> 
+    <xs:annotation>
+    <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Attribute value</h2>
+      <p>
+        Value from 0 to 1000
+      </p>
+    </xs:documentation>
+      </xs:annotation>
+    <xs:restriction base="xs:int">
       <xs:minInclusive value="0"/>
       <xs:maxInclusive value="1000"/>
     </xs:restriction>
   </xs:simpleType>
 
   <xs:complexType name="preconditiontype">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>Precondition</h2>
+        <p>
+          Precondition that needs to be satisfied before the associated event can be started.
+        </p>
+        <p>
+          <b> ATTRIBUTES:</b> attribute (the name of the attribute), operation (&lt;,&gt;,&lt;=,=), value
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:attribute name="attribute" type="attributenametype"  use="required"/>
     <xs:attribute name="operation" type="attributeoperationtype" use="required"/>
     <xs:attribute name="value" type="attributevaluetype" use="required"/>
@@ -41,13 +94,24 @@
     <xs:attribute name="date" type="xs:date" use="optional"/>
   </xs:complexType>
   <xs:complexType name="preconditionlist">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>List of Preconditions</h2>
+        <p>
+          A list of preconditions that need to be satisfied before the associated event can be started.
+        </p>
+        <p>
+          <b>CHILDREN</b>: Precondition (multiple)
+        </p>
+      </xs:documentation>
+    </xs:annotation>  
     <xs:sequence>
       <xs:element name="Precondition" type ="preconditiontype" maxOccurs="unbounded" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="effecttype">
-    <xs:attribute name="attribute" type="attributenametype"/>
+    <xs:attribute name="attribute" type="attributenametype"  use="required"/>
   </xs:complexType>
   <xs:simpleType name="modifyvaluetype">
     <xs:restriction base="xs:int">
@@ -57,43 +121,93 @@
   </xs:simpleType>
 
   <xs:complexType name="movetowardseffecttype">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>Move-towards Effect</h2>
+        <p>
+          Modifies the current value of the attribute such that it gets closer to the given value.
+          Amount can be specified by the optional 'amount' attribute, default is 150.
+        </p>
+        <p>
+          <b> ATTRIBUTES:</b> attribute (the name of the affected attribute), value, amount (optional)
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="effecttype">
-        <xs:attribute name="value" type="attributevaluetype"/>
+        <xs:attribute name="value" type="attributevaluetype"  use="required"/>
         <xs:attribute name="amount" type="attributevaluetype"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
   <xs:complexType name="seteffecttype">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>Set Attribute Effect</h2>
+        <p>
+          Replaces the value of the attribute by the given value.
+        </p>
+        <p>
+          <b> ATTRIBUTES:</b> attribute (the name of the affected attribute), value
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="effecttype">
-        <xs:attribute name="value" type="attributevaluetype"/>
+        <xs:attribute name="value" type="attributevaluetype"  use="required"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="modifyeffecttype">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>Modify Attribute Effect</h2>
+        <p>
+          Adds or subtracts the given value from the current value of the attribute.
+        </p>
+        <p>
+          <b> ATTRIBUTES:</b> attribute (the name of the affected attribute), value
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="effecttype">
-        <xs:attribute name="value" type="modifyvaluetype"/>
+        <xs:attribute name="value" type="modifyvaluetype" use="required"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="effectlisttype">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>List of effects</h2>
+        <p>
+          <b>CHILDREN</b>: a list of effects (MoveTowardsEffect, ModifyEffect, SetEffect)
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:choice minOccurs="0" maxOccurs="unbounded">
       <xs:element name="MoveTowardsEffect" type="movetowardseffecttype"/>
       <xs:element name="ModifyEffect" type="modifyeffecttype"/>
       <xs:element name="SetEffect" type="seteffecttype"/>
     </xs:choice>
   </xs:complexType>
-  <xs:complexType name="choicetype">
+  <xs:complexType name="choicetype"><!--Parent of image choice and text choice-->
     <xs:sequence>
-      <xs:element name="Effects" type="effectlisttype"/>
+      <xs:element name="Effects" type="effectlisttype" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="textchoicetype">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>An answer choice</h2>
+        <p>
+          <b>CHILDREN</b> (in this order): Effects (optional), Title, Description
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="choicetype">
         <xs:sequence>
@@ -103,14 +217,34 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="textchoiceslist">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>List of choices</h2>
+        <p>
+          <b>CHILDREN</b>: Choice (multiple)
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="Choice" type="textchoicetype" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
+
   <xs:complexType name="multiplechoiceeventtype">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+          <h2>Multiple choice event</h2>
+          <p>
+            <b> ATTRIBUTES:</b> date (optional)
+          </p>
+          <p>
+            <b>CHILDREN</b> (in this order): Preconditions (optional), Description, Choices
+          </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="pressevent">
         <xs:sequence>
@@ -122,6 +256,14 @@
   </xs:complexType>
 
   <xs:simpleType name="pathtoimagetype" >
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>Path to an image</h2>
+        <p>
+          Path relative to the default folder, <b>without suffix</b>.
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:restriction base="xs:anyURI">
       <xs:annotation>
         <xs:documentation>
@@ -140,13 +282,32 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:complexType name="imagechoicelisttype">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>List of choices</h2>
+        <p>
+          <b>CHILDREN</b>: Choice (multiple)
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element name="Choice" type="imagechoicetype" minOccurs="0" maxOccurs="unbounded"/> 
+      <xs:element name="Choice" type="imagechoicetype" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="imagechoiceeventtype">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>Image choice event</h2>
+        <p>
+          <b> ATTRIBUTES:</b> date (optional)
+        </p>
+        <p>
+          <b>CHILDREN</b> (in this order): Preconditions (optional), Description, Choices
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="pressevent">
         <xs:sequence>
@@ -157,6 +318,17 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="cutsceneeventtype">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>Cutscene event</h2>
+        <p>
+          <b> ATTRIBUTES:</b> date (optional)
+        </p>
+        <p>
+          <b>CHILDREN</b> (in this order): Preconditions (optional), ImagePath, Text
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="pressevent">
         <xs:sequence>
@@ -167,6 +339,14 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="eventlisttype">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>Events list</h2>
+        <p>
+          A list of events such as Multiple Choice Event or Cutscene Event
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:choice minOccurs="0" maxOccurs="unbounded">
       <xs:element name="MultipleChoiceEvent" type="multiplechoiceeventtype" />
       <xs:element name="ImageChoiceEvent" type="imagechoiceeventtype" />
