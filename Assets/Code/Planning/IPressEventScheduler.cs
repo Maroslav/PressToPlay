@@ -9,7 +9,7 @@ namespace Assets.Code.Planning
     public interface IPressEventScheduler
     {
         
-        void AddScenario(PressScenario scenario);
+        void AddScenario(IPressScenario scenario);
         //Gets the next event and removes it from the queue.
         PressEvent PopNextEvent();
     }

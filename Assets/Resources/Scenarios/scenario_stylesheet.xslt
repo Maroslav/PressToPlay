@@ -55,6 +55,11 @@
         
     <xsl:apply-templates select="p:Preconditions"/> <!--preconditions-->
       </p>
+       <xsl:if test="@isTerminating='true'">
+        <br/>
+        <b><xsl:text>[TERMINATING]</xsl:text></b>
+       <br/>
+      </xsl:if>
    <b>Description: </b>
     <xsl:value-of select="p:Description"/>
       <xsl:if test="@date">
@@ -72,6 +77,11 @@
       <p class="preconditionclass">
         <xsl:apply-templates select="p:Preconditions"/>
       </p>
+      <xsl:if test="@isTerminating='true'">
+        <br/>
+        <b><xsl:text>[TERMINATING]</xsl:text></b>
+      <br/>
+      </xsl:if>
       <b>Text: </b>
       <xsl:value-of select="p:Text"/>
       <xsl:if test="@date">
@@ -88,6 +98,12 @@
       <h3>Image Choice Event</h3>
       <xsl:apply-templates select="p:Preconditions"/>
     
+       <xsl:apply-templates select="p:Preconditions"/> <!--preconditions-->
+       <xsl:if test="@isTerminating='true'">
+        <br/>
+        <b><xsl:text>[TERMINATING]</xsl:text></b>
+       <br/>
+      </xsl:if>
         <xsl:for-each select="p:Choices/p:Choice">
       <ul>
         <li>

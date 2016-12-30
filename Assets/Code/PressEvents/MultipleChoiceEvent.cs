@@ -8,8 +8,8 @@ namespace Assets.Code.PressEvents
 {
     public class MultipleChoiceEvent : PressEvent
     {
-        public MultipleChoiceEvent(string descr, DateTime d, List<TextChoice> choices, List<Precondition> precond = null)
-            : base(d, precond ?? new List<Precondition>())
+        public MultipleChoiceEvent(string descr, DateTime d, List<TextChoice> choices, bool isTerminating, List<Precondition> precond = null)
+            : base(d,isTerminating, precond ?? new List<Precondition>())
         {
             Description = descr;
             Choices = choices;

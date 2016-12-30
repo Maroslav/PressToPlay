@@ -13,6 +13,7 @@ namespace Assets.Code.Gameplay
         //The scenario source files locations:
         public const string RandomEventsScenarioLoc = "Scenarios/random";
         public const string StoryEventsScenarioLoc = "Scenarios/story";
+        public const string ConditionalScenarioLoc = "Scenarios/conditional";
         
         //Attributes definition source file:
         public const string AttributesDefinitionLoc = "Scenarios/attributes";
@@ -21,5 +22,6 @@ namespace Assets.Code.Gameplay
         
         public static DateTime StartDate = new DateTime(2017,3,24);
         public static DateTime EndDate = new DateTime(2017, 12, 31);
+
     }
 }

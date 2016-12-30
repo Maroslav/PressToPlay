@@ -42,6 +42,7 @@ namespace Assets.Code.Planning
             else
             {
                 _currentEvent = null;
+                IsTerminated = true;
             }
         }
 
@@ -56,5 +57,7 @@ namespace Assets.Code.Planning
             PrepareNextEvent();
             return evt;
         }
+
+        public bool IsTerminated { get; private set; }
     }
 }

@@ -9,5 +9,6 @@ namespace Assets.Code.Planning
         PressEvent PeekNextEvent();
         //Gets the next event and removes it from the scenario.
         PressEvent PopNextEvent();
+        bool IsTerminated { get; }
     }
 }

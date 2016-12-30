@@ -6,14 +6,14 @@
           >
   <Events>
     <!--Warning! Day and month values have to be padded to two digits eg. "5" -> "05"-->
-    <CutsceneEvent date="2017-03-24">
+    <CutsceneEvent date="2017-03-24" isTerminating="false">
       <Preconditions>
       </Preconditions>
       <ImagePath>Endings/event_intro</ImagePath>
       <Text>Gratulujeme! Stal se z tebe novinář. Od teď budeš informovat veřejnost o tom nejdůležitějším, co se stalo.
       </Text>
     </CutsceneEvent>
-    <CutsceneEvent date="2017-12-24">
+    <CutsceneEvent date="2017-12-24" isTerminating="true">
       <Preconditions>
         <Precondition attribute = "Credibility" operation="lessOrEqual" value="500"/>
       </Preconditions>
@@ -21,7 +21,7 @@
       <Text>Gratulujeme! Svou odvahou popsat věci bez politické korektnosti a tak jak si každý myslí, že to je... YOU’VE MADE THE WORLD GREAT AGAIN!
       </Text>
     </CutsceneEvent>
-    <CutsceneEvent date="2017-12-24">
+    <CutsceneEvent date="2017-12-24" isTerminating="true">
       <Preconditions>
         <Precondition attribute = "Credibility" operation="greater" value="500"/>
       </Preconditions>

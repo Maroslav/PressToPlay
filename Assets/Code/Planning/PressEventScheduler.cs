@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using Assets.Code.GameState;
 using Assets.Code.PressEvents;
 
@@ -39,13 +38,24 @@ namespace Assets.Code.Planning
                 }
                 _currentDate = pressEvent.Date;
                 //Remove scenario if empty:
-                if (minScenario.PeekNextEvent() == null)
+                if (minScenario.IsTerminated)
                 {
                     _scenarios.Remove(minScenario);
                 }
             } while (!pressEvent.CheckConditions(_worldState));
+            StartEvent(pressEvent);
             return pressEvent;
         }
+
+        private void StartEvent(PressEvent pressEvent)
+        {
+            _worldState.Date = pressEvent.Date;
+            if (pressEvent.IsTerminating)
+            {
+                _scenarios.Clear();
+            }
+        }
+
         // Gets the scenario that contains event with smallest time value
         private IPressScenario GetClosestEventScenario()
         {
@@ -54,7 +64,8 @@ namespace Assets.Code.Planning
             foreach (var scenario in _scenarios)
             {
                 var nextEvent = scenario.PeekNextEvent();
-                if (min > nextEvent.Date)
+                if (nextEvent == null) continue;
+                if (min >= nextEvent.Date)
                 {
                     min = nextEvent.Date;
                     minScenario = scenario;
@@ -63,7 +74,7 @@ namespace Assets.Code.Planning
             return minScenario;
         }
 
-        public void AddScenario(PressScenario scenario)
+        public void AddScenario(IPressScenario scenario)
         {
             while (scenario.PeekNextEvent().Date < _currentDate)
             {

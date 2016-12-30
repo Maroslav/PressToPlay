@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="scenario_stylesheet.xslt"?>
+<Scenario name="Conditional events scenario" xmlns="http://presstoplaygame.com/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://presstoplaygame.com/scenario scenario_schema.xsd"
+          >
+  <Events>
+  </Events>
+</Scenario>

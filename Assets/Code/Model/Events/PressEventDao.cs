@@ -21,6 +21,9 @@ namespace Assets.Code.Model
         [XmlAttribute("date")]
         public string Date { get; private set; }
 
+        [XmlAttribute("isTerminating")]
+        public bool IsTerminating { get; private set; }
+
         [XmlArray("Preconditions")]
         [XmlArrayItem("Precondition",typeof(PreconditionDao))]
         public PreconditionDao[] Preconditions { get; set; }

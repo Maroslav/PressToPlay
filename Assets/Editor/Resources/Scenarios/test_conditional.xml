@@ -3,12 +3,15 @@
 <Scenario name="name, only for the designer" xmlns="http://presstoplaygame.com/scenario" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://presstoplaygame.com/scenario ../../../Resources/Scenarios/scenario_schema.xsd">
   <Events>
     <MultipleChoiceEvent date="2016-11-30">
+      <Preconditions>
+        <Precondition attribute="Credibility" operation="equal" value="999" />
+      </Preconditions>
       <Description>Event 1 description
           </Description>
       <Choices>
         <Choice>
           <Effects>
-            <SetEffect attribute="Credibility" value="125" />
+            <SetEffect attribute="Money" value="0" />
           </Effects>
           <Title>Choice 1</Title>
           <Description>
@@ -27,12 +30,15 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2016-12-01" isTerminating="true">
-      <Description>Event 2 descr.</Description>
+    <MultipleChoiceEvent date="2016-11-30">
+      <Preconditions>
+        <Precondition attribute="Credibility" operation="equal" value="250" />
+      </Preconditions>
+      <Description>Credibility is 250.</Description>
       <Choices>
         <Choice>
           <Effects>
-            <MoveTowardsEffect amount="25" attribute="Credibility" value="500" />
+            <SetEffect attribute="Money" value="0" />
           </Effects>
           <Title>Choice 1</Title>
           <Description>
@@ -40,9 +46,7 @@
                   </Description>
         </Choice>
         <Choice>
-          <Effects>
-            <ModifyEffect attribute="Credibility" value="150" />
-          </Effects>
+          <Effects></Effects>
           <Title>Choice 2 title</Title>
           <Description>
                       Choice 2 long description
@@ -51,11 +55,14 @@
       </Choices>
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2016-12-01">
-      <Description>Event that will never happen</Description>
+      <Preconditions>
+        <Precondition attribute="Credibility" operation="greater" value="549" />
+      </Preconditions>
+      <Description>High credibility!</Description>
       <Choices>
         <Choice>
           <Effects>
-            <MoveTowardsEffect amount="25" attribute="Credibility" value="500" />
+            <MoveTowardsEffect amount="25" attribute="Money" value="500" />
           </Effects>
           <Title>Choice 1</Title>
           <Description>
@@ -64,7 +71,7 @@
         </Choice>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Credibility" value="150" />
+            <ModifyEffect attribute="Money" value="150" />
           </Effects>
           <Title>Choice 2 title</Title>
           <Description>
@@ -73,5 +80,9 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
+    <CutsceneEvent>
+      <ImagePath>Some/Image/Path</ImagePath>
+      <Text>Unconditional conditional!</Text>
+    </CutsceneEvent>
   </Events>
 </Scenario>

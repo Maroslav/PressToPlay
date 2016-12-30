@@ -41,7 +41,7 @@ public class WorldStateProvider : MonoBehaviour
 
     private void DeserializeAttributes()
     {
-        State = GameInit.CreateWorldState();
+        State = GameInit.CreateWorldState(Constants.AttributesDefinitionLoc);
     }
 
 

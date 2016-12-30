@@ -14,10 +14,13 @@ namespace Assets.Code.Planning
         private readonly Queue<PressEventDao> _eventQueue;
         private PressEvent _nextEvent;
         private readonly DaoToEventsConverter _processor= new DaoToEventsConverter();
+
         public StoryEventsScenario(string path)
         {
+            IsTerminated = false;
             var scenario = XmlUtils.LoadScenario(path);
             _eventQueue=new Queue<PressEventDao>(scenario.Events);
+
             PrepareNextEvent();
 
         }
@@ -27,6 +30,7 @@ namespace Assets.Code.Planning
             if (_eventQueue.Count == 0)
             {
                 _nextEvent = null;
+                IsTerminated = true;
                 return;
             }
             var pressEventDao = _eventQueue.Dequeue();
@@ -46,5 +50,7 @@ namespace Assets.Code.Planning
             PrepareNextEvent();
             return evt;
         }
+
+        public bool IsTerminated { get; private set; }
     }
 }

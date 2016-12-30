@@ -11,6 +11,7 @@ namespace Assets.Code.GameState
         {
         }
         public Attribs JournalistState { get; set; }
+        public DateTime Date { get; set; }
 
         public Dictionary<AttribsCategory, Attribs> AllStates;
 

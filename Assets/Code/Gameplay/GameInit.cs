@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using Assets.Code.GameState;
 using Assets.Code.Model;
 using Assets.Code.Model.Attribs;
 using Assets.Code.Planning;
-using UnityEngine.Assertions;
 
 namespace Assets.Code.Gameplay
 {
@@ -17,12 +14,13 @@ namespace Assets.Code.Gameplay
         {
             IPressScenario randomEventsScenario = new RandomEventsScenario(Constants.StartDate,Constants.RandomEventsScenarioLoc);
             IPressScenario storyScenario= new StoryEventsScenario(Constants.StoryEventsScenarioLoc);
-            return new PressEventScheduler(worldState, Constants.StartDate,Constants.EndDate, storyScenario,randomEventsScenario);
+            IPressScenario condScenario = new ConditionalEventsScenario(Constants.ConditionalScenarioLoc, worldState);
+            return new PressEventScheduler(worldState, Constants.StartDate,Constants.EndDate, storyScenario,randomEventsScenario,condScenario);
         }
 
-        public static WorldState CreateWorldState()
+        public static WorldState CreateWorldState(string attributesDefinitionPath=Constants.AttributesDefinitionLoc)
         {
-            AttributesDefinition attribsDef = XmlUtils.LoadAttributes(Constants.AttributesDefinitionLoc);
+            AttributesDefinition attribsDef = XmlUtils.LoadAttributes(attributesDefinitionPath);
             Dictionary<AttribsCategory, Attribs> stateVariables = new Dictionary<AttribsCategory, Attribs>();
 
             Dictionary<string, Attrib> attribsByName = new Dictionary<string, Attrib>();

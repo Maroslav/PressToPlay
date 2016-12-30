@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Attributes>
+  <!-- TEST FILE, USED ONLY FOR TESTING-->
+  <Category name="Journalist">
+    <Attribute name="Credibility" description="Descr" isDisplayed="true" initialValue="500" />
+  </Category>
+ 
+</Attributes>

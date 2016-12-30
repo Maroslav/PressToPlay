@@ -9,18 +9,20 @@ namespace Assets.Code.PressEvents
 {
     public abstract class PressEvent
     {
-        public DateTime Date { get; private set; }
+        public DateTime Date { get; set; }
         public bool IsFinished { get;protected set; }
-        public List<Precondition> Preconditions{ get; set; }
+        public List<Precondition> Preconditions{ get; private set; }
+        public bool IsTerminating { get; private set; }
 
         private PressEvent(DateTime date)
         {
             Date = date;
             IsFinished = false;
         }
-        protected PressEvent(DateTime date, List<Precondition> preconditions) : this(date)
+        protected PressEvent(DateTime date, bool isTerminating, List<Precondition> preconditions) : this(date)
         {
             Preconditions = preconditions;
+            IsTerminating = isTerminating;
         }
         
         public bool CheckConditions(WorldState state)

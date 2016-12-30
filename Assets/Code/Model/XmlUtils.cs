@@ -25,6 +25,7 @@ namespace Assets.Code.Model
         {
             XmlSerializer xmlReader = new XmlSerializer(typeof(T));
             TextAsset xmlFile = Resources.Load(path) as TextAsset;
+            Debug.Assert(xmlFile!=null, "Unable to load resource from path: "+path);
             using (var reader = new StringReader(xmlFile.text))
             {
                 return (T)xmlReader.Deserialize(reader);
