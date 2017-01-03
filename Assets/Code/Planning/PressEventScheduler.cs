@@ -65,11 +65,11 @@ namespace Assets.Code.Planning
             {
                 var nextEvent = scenario.PeekNextEvent();
                 if (nextEvent == null) continue;
-                if (min >= nextEvent.Date)
+                if ((minScenario == null) || (min > nextEvent.Date))
                 {
                     min = nextEvent.Date;
                     minScenario = scenario;
-                }
+                } 
             }
             return minScenario;
         }
