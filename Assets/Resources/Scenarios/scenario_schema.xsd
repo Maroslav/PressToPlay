@@ -197,6 +197,10 @@
   <xs:complexType name="choicetype"><!--Parent of image choice and text choice-->
     <xs:sequence>
       <xs:element name="Effects" type="effectlisttype" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Title" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ImagePath" type="pathtoimagetype" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ArticleText" type="xs:string" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -205,15 +209,15 @@
       <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
         <h2>An answer choice</h2>
         <p>
-          <b>CHILDREN</b> (in this order): Effects (optional), Title, Description
+          <b>CHILDREN</b> (in this order): Effects (optional), Title (title of the resulting article), Description (first paragraph of the article)
+          ImagePath, ArticleText (text of the article)
         </p>
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="choicetype">
         <xs:sequence>
-          <xs:element name="Title" type="xs:string"/>
-          <xs:element name="Description" type="xs:string"/>
+          <xs:element name="ChoiceText" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -278,7 +282,6 @@
     <xs:complexContent>
       <xs:extension base="choicetype">
         <xs:sequence>
-          <xs:element name="ImagePath" type="pathtoimagetype"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

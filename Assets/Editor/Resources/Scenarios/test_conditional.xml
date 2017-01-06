@@ -13,20 +13,20 @@
           <Effects>
             <SetEffect attribute="Money" value="0" />
           </Effects>
-          <Title>Choice 1</Title>
           <Description>
                       Choice 1 description
                   </Description>
+          <ChoiceText>Choice 1</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
             <ModifyEffect attribute="Credibility" value="150" />
             <MoveTowardsEffect amount="100" attribute="Credibility" value="500" />
           </Effects>
-          <Title>Choice 2 title</Title>
           <Description>
                       Choice 2 long description
                   </Description>
+          <ChoiceText>Choice 2 ChoiceText</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
@@ -40,17 +40,17 @@
           <Effects>
             <SetEffect attribute="Money" value="0" />
           </Effects>
-          <Title>Choice 1</Title>
           <Description>
                       Choice 1 description
                   </Description>
+          <ChoiceText>Choice 1</ChoiceText>
         </Choice>
         <Choice>
           <Effects></Effects>
-          <Title>Choice 2 title</Title>
           <Description>
                       Choice 2 long description
                   </Description>
+          <ChoiceText>Choice 2 ChoiceText</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
@@ -64,19 +64,19 @@
           <Effects>
             <MoveTowardsEffect amount="25" attribute="Money" value="500" />
           </Effects>
-          <Title>Choice 1</Title>
           <Description>
                       Choice 1 description
                   </Description>
+          <ChoiceText>Choice 1</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
             <ModifyEffect attribute="Money" value="150" />
           </Effects>
-          <Title>Choice 2 title</Title>
           <Description>
                       Choice 2 long description
                   </Description>
+          <ChoiceText>Choice 2 ChoiceText</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>

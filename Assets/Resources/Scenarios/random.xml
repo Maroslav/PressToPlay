@@ -13,17 +13,18 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "900"/>
           </Effects>
-          <ChoiceText>Vyjádření policie</ChoiceText>
-          <Description>Dívka odešla z domu po páté hodině odpoledne bez mobilního telefonu. Na sobě měla fialové tepláky a zelenkavou šusťákovou bundu.
+          <Description>
+            Dívka odešla z domu po páté hodině odpoledne bez mobilního telefonu. Na sobě měla fialové tepláky a zelenkavou šusťákovou bundu.
             V případě, že můžete k výskytu pohřešované podat jakékoliv informace, volejte na bezplatnou linku 158.
           </Description>
+          <ChoiceText>Vyjádření policie</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "100"/>
           </Effects>
-          <ChoiceText> Vyjádření sousedů</ChoiceText>
           <Description>Ztracená Anička: Další podezřelý je sexuální deviant! Matka se zhroutila!</Description>
+          <ChoiceText> Vyjádření sousedů</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
@@ -34,16 +35,16 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "1000"/>
           </Effects>
-          <ChoiceText>Administrativní zátěž</ChoiceText>
           <Description>Uprchlická krize především přinesla administrativní zátěž
           </Description>
+          <ChoiceText>Administrativní zátěž</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "0"/>
           </Effects>
-          <ChoiceText>Vlna zločinu</ChoiceText>
           <Description>Co uprchlík to zločinec. Němci se začínají ozbrojovat.</Description>
+          <ChoiceText>Vlna zločinu</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
@@ -54,17 +55,17 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "800"/>
           </Effects>
-          <ChoiceText>Věc řeší advokát</ChoiceText>
           <Description>
             Věc řeší advokát
           </Description>
+          <ChoiceText>Věc řeší advokát</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "200"/>
           </Effects>
-          <ChoiceText>Romská rodina se hádá o peníze ze sbírky</ChoiceText>
           <Description> Romská rodina se hádá o peníze ze sbírky.</Description>
+          <ChoiceText>Romská rodina se hádá o peníze ze sbírky</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
@@ -75,21 +76,21 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "600"/>
           </Effects>
-          <ChoiceText>Vyjádření odborníka</ChoiceText>
           <Description>
             “Je to unikátní projekt, který zvyší prestiž Českých Budějovic na mezinárodní urovni,” říká k návrhu operního sálu ve tvaru Olihně Tomáš Nejedlý z katedry architektury na ČVUT.
           </Description>
+          <ChoiceText>Vyjádření odborníka</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "400"/>
           </Effects>
-          <ChoiceText>Anketa</ChoiceText>
           <Description>
             Prodavačka Jana (28): A peníze pro důchodce nejsou!
             Důchodkyně Věra (79): Já bych všechny ty multiplexy zakázala!
             Student střední školy (15): Mně se to líbí. Vypadá to jako penis.
           </Description>
+          <ChoiceText>Anketa</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
@@ -100,16 +101,16 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "900"/>
           </Effects>
-          <ChoiceText>Velká příležitost</ChoiceText>
           <Description>Do chudého regionu doputují milionové investice. Očekává se 10 000 nových pracovních míst.
           </Description>
+          <ChoiceText>Velká příležitost</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "100"/>
           </Effects>
-          <ChoiceText>Invaze</ChoiceText>
           <Description>Muslimští šejkové kolonizují Česko! Sociolog: Je otázkou času, kdy začnou zahalovat naše ženy!</Description>
+          <ChoiceText>Invaze</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
@@ -121,17 +122,17 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "750"/>
           </Effects>
-          <ChoiceText>Ignorovat</ChoiceText>
           <Description>
             ...
           </Description>
+          <ChoiceText>Ignorovat</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "250"/>
           </Effects>
-          <ChoiceText>Publikovat</ChoiceText>
           <Description>Politik sebral odvahu a řekl natvrdo, co si každý myslí!</Description>
+          <ChoiceText>Publikovat</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>

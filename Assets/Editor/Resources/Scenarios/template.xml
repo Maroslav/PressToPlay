@@ -19,16 +19,16 @@
     <Effects>
 		  <MoveTowardsEffect attribute="Credibility" value = "250"/>  
     </Effects>
-    <Title> Short choice title.</Title>
 		<Description> Description of the Choice.</Description>
+    <ChoiceText> Short choice ChoiceText.</ChoiceText>
 	</Choice>	
 	<Choice>
     <Effects>
       <MoveTowardsEffect attribute="Credibility" value = "600" amount="50"/>
       <ModifyEffect attribute="Money" value ="-50"/>
     </Effects>
-    <Title> Short choice title.</Title>
 		<Description> Description of the Choice 2.</Description>
+    <ChoiceText> Short choice ChoiceText.</ChoiceText>
 	</Choice>
 	</Choices>
   </MultipleChoiceEvent>
@@ -39,8 +39,8 @@
 			<Effects>
 				<SetEffect attribute="Credibility" value = "600"/>
 			</Effects>
-      <Title> Short choice title.</Title>
 			<Description> Description of the Choice.</Description>
+      <ChoiceText> Short choice ChoiceText.</ChoiceText>
 		</Choice>
 	</Choices>
   </MultipleChoiceEvent>
