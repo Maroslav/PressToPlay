@@ -8,11 +8,11 @@ using UnityEngine.UI;
 
 public class MultipleChoiceEventProcessor : MonoBehaviour {
 
-    public GameObject MultipleChoiceEventDescription;
-    public GameObject MultipleChoiceEventDate;
-    public GameObject MultipleChoiceEventBody;
-    public GameObject MultipleChoiceEventViewer;
-    public GameObject MultipleChoiceEventPublish;
+    public GameObject ChoiceDescription;
+    public GameObject ChoiceDate;
+    public GameObject ChoiceBody;
+    public GameObject ChoiceViewer;
+    public GameObject ChoicePublish;
 
     private bool _isShowingSelectedChoice = false;
     private MultipleChoiceEvent _event;
@@ -20,16 +20,16 @@ public class MultipleChoiceEventProcessor : MonoBehaviour {
 
     void OnValidate()
     {
-        Assert.IsNotNull(MultipleChoiceEventDescription, name);
-        Assert.IsNotNull(MultipleChoiceEventDescription.GetComponent<Text>(), name);
+        Assert.IsNotNull(ChoiceDescription, name);
+        Assert.IsNotNull(ChoiceDescription.GetComponent<Text>(), name);
 
-        Assert.IsNotNull(MultipleChoiceEventDate, name);
-        Assert.IsNotNull(MultipleChoiceEventDate.GetComponent<Text>(), name);
+        Assert.IsNotNull(ChoiceDate, name);
+        Assert.IsNotNull(ChoiceDate.GetComponent<Text>(), name);
 
-        Assert.IsNotNull(MultipleChoiceEventBody, name);
+        Assert.IsNotNull(ChoiceBody, name);
         
-        Assert.IsNotNull(MultipleChoiceEventViewer, name);
-        Assert.IsNotNull(MultipleChoiceEventViewer.GetComponent<MultipleChoiceProcessor>(), name);
+        Assert.IsNotNull(ChoiceViewer, name);
+        Assert.IsNotNull(ChoiceViewer.GetComponent<MultipleChoiceProcessor>(), name);
     }
 
     internal void MoveToNextState(TextChoice choice)
@@ -42,14 +42,14 @@ public class MultipleChoiceEventProcessor : MonoBehaviour {
         else
         {
             // Remove old choices and hide not neccesary things
-            MultipleChoiceEventViewer.GetComponent<MultipleChoiceProcessor>().DestroyChoices();
-            MultipleChoiceEventViewer.SetActive(false);
-            MultipleChoiceEventBody.SetActive(false);
-            MultipleChoiceEventDate.SetActive(false);
+            ChoiceViewer.GetComponent<MultipleChoiceProcessor>().DestroyChoices();
+            ChoiceViewer.SetActive(false);
+            ChoiceBody.SetActive(false);
+            ChoiceDate.SetActive(false);
 
-            MultipleChoiceEventDescription.GetComponent<Text>().text = choice.Description;
-            MultipleChoiceEventPublish.SetActive(true);
-            MultipleChoiceData multipleChoiceData = MultipleChoiceEventPublish.GetComponent<MultipleChoiceData>();
+            ChoiceDescription.GetComponent<Text>().text = choice.Description;
+            ChoicePublish.SetActive(true);
+            MultipleChoiceData multipleChoiceData = ChoicePublish.GetComponent<MultipleChoiceData>();
             multipleChoiceData.Choice = choice;
             multipleChoiceData.SetEvent(_event, this);
 
@@ -62,19 +62,19 @@ public class MultipleChoiceEventProcessor : MonoBehaviour {
         _event = e;
         CanFinishEvent = false;
 
-        MultipleChoiceEventPublish.SetActive(false);
-        MultipleChoiceEventViewer.SetActive(true);
+        ChoicePublish.SetActive(false);
+        ChoiceViewer.SetActive(true);
 
         // Set event description in the UI
-        MultipleChoiceEventDescription.GetComponent<Text>().text = e.Description;
+        ChoiceDescription.GetComponent<Text>().text = e.Description;
         CultureInfo csCz = new CultureInfo("cs-CZ");
-        MultipleChoiceEventDate.GetComponent<Text>().text = e.Date.ToString("d", csCz);
+        ChoiceDate.GetComponent<Text>().text = e.Date.ToString("d", csCz);
 
         gameObject.SetActive(true);
-        MultipleChoiceEventBody.SetActive(true);
-        MultipleChoiceEventDate.SetActive(true);
+        ChoiceBody.SetActive(true);
+        ChoiceDate.SetActive(true);
         
         // Let the viewer set its content
-        MultipleChoiceEventViewer.GetComponent<MultipleChoiceProcessor>().ProcessEvent(e, this);
+        ChoiceViewer.GetComponent<MultipleChoiceProcessor>().ProcessEvent(e, this);
     }
 }
