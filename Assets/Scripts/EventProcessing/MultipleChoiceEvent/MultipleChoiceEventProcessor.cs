@@ -35,12 +35,12 @@ public class MultipleChoiceEventProcessor : MonoBehaviour
     {
         _event = e;
 
+        gameObject.SetActive(true);
+
         // Set event description in the UI
         ChoiceDescription.GetComponent<Text>().text = e.Description;
         CultureInfo csCz = new CultureInfo("cs-CZ");
         ChoiceDate.GetComponent<Text>().text = e.Date.ToString("d", csCz);
-
-        gameObject.SetActive(true);
 
         // Let the viewer set its content
         ChoiceViewer.GetComponent<MultipleChoiceProcessor>().ProcessEvent(e, this);
@@ -48,9 +48,7 @@ public class MultipleChoiceEventProcessor : MonoBehaviour
 
     internal void FinishEvent(TextChoice choice)
     {
-        // Let the event apply the changes to the world stat
         Debug.Log("Choosing option " + choice.Title);
-        _event.Finish(choice, WorldStateProvider.State);
 
         // Remove old choices and hide not neccesary things
         ChoiceViewer.GetComponent<MultipleChoiceProcessor>().DestroyChoices();

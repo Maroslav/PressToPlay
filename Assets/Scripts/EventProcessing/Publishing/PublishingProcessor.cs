@@ -1,42 +1,85 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 using Assets.Code.PressEvents;
 using Assets.Code.PressEvents.Choices;
+using UnityEngine.Assertions;
+using UnityEngine.UI;
 
 public class PublishingProcessor : MonoBehaviour
 {
     public GameObject Title;
+    public GameObject Description;
+    public GameObject Image;
+    public GameObject ImageDescription;
+    public GameObject Text;
 
 
+    public string ResourceFolder = "/Cutscenes";
     private PressEvent _event;
+    private Choice _choice;
 
 
-    //void OnValidate()
-    //{
-    //    Assert.IsNotNull(ChoiceDescription, name);
-    //    Assert.IsNotNull(ChoiceDescription.GetComponent<Text>(), name);
+    void OnValidate()
+    {
+        Assert.IsNotNull(Title, name);
+        Assert.IsNotNull(Title.GetComponent<Text>(), name);
 
-    //    Assert.IsNotNull(ChoiceDate, name);
-    //    Assert.IsNotNull(ChoiceDate.GetComponent<Text>(), name);
+        Assert.IsNotNull(Description, name);
+        Assert.IsNotNull(Description.GetComponent<Text>(), name);
 
-    //    Assert.IsNotNull(ChoiceViewer, name);
-    //    Assert.IsNotNull(ChoiceViewer.GetComponent<MultipleChoiceProcessor>(), name);
+        Assert.IsNotNull(Image, name);
+        Assert.IsNotNull(Image.GetComponent<RawImage>(), name);
 
-    //    Assert.IsNotNull(Publishing, name);
-    //    Assert.IsNotNull(Publishing.GetComponent<PublishingProcessor>(), name);
-    //}
+        Assert.IsNotNull(ImageDescription, name);
+        Assert.IsNotNull(ImageDescription.GetComponent<Text>(), name);
+
+        Assert.IsNotNull(Text, name);
+        Assert.IsNotNull(Text.GetComponent<Text>(), name);
+    }
 
 
     public void Publish(PressEvent e, TextChoice choice)
     {
         _event = e;
+        _choice = choice;
 
-        //    ChoiceDescription.GetComponent<Text>().text = choice.Description;
-        //    MultipleChoiceData multipleChoiceData = ChoicePublish.GetComponent<MultipleChoiceData>();
-        //    multipleChoiceData.Choice = choice;
-        //    multipleChoiceData.SetEvent(_event, this);
+        gameObject.SetActive(true);
+
+        Title.GetComponent<Text>().text = choice.Title;
+        Description.GetComponent<Text>().text = choice.Description;
+
+        if (choice.ImagePath != null)
+        {
+            Image.SetActive(true);
+            ImageDescription.SetActive(true);
+
+            string path = Path.Combine(ResourceFolder, choice.ImagePath).Replace('\\', '/');
+            Debug.Log("Loading a publishing image from: " + path);
+            var texture = Resources.Load<Texture>(path);
+            var image = Image.GetComponent<RawImage>();
+            image.texture = texture;
+            GetComponent<AspectRatioFitter>().aspectRatio = texture.width / (float)texture.height;
+
+            ImageDescription.GetComponent<Text>().text = ""; // TODO!!
+        }
+        else
+        {
+            Image.SetActive(false);
+            ImageDescription.SetActive(false);
+        }
+
+        Text.GetComponent<Text>().text = choice.ArticleText;
+    }
+
+    public void Publish(PressEvent e, ImageChoice choice)
+    {
+        // TODO
     }
 
     public void Finish()
     {
+        // Let the event apply the changes to the world state
+        Debug.Log("Publishing option " + _choice.Title);
+        _event.Finish(_choice, WorldStateProvider.State);
     }
 }
