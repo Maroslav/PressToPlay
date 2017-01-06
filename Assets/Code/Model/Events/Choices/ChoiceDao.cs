@@ -11,5 +11,15 @@ namespace Assets.Code.Model.Events.Choices
             XmlArrayItem("ModifyEffect", typeof(ModifyEffectDao))
             ]
         public EffectDao[] Effects { get; set; }
+
+        [XmlElement("ImagePath")]
+        public string ImagePath { get; set; }
+
+        [XmlElement("Description")]
+        public string Description { get; protected set; }
+        [XmlElement("Title")]
+        public string Title { get; private set; }
+        [XmlElement("ArticleText")]
+        public string ArticleText { get; set; }
     }
 }

@@ -13,7 +13,7 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "900"/>
           </Effects>
-          <Title>Vyjádření policie</Title>
+          <ChoiceText>Vyjádření policie</ChoiceText>
           <Description>Dívka odešla z domu po páté hodině odpoledne bez mobilního telefonu. Na sobě měla fialové tepláky a zelenkavou šusťákovou bundu.
             V případě, že můžete k výskytu pohřešované podat jakékoliv informace, volejte na bezplatnou linku 158.
           </Description>
@@ -22,7 +22,7 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "100"/>
           </Effects>
-          <Title> Vyjádření sousedů</Title>
+          <ChoiceText> Vyjádření sousedů</ChoiceText>
           <Description>Ztracená Anička: Další podezřelý je sexuální deviant! Matka se zhroutila!</Description>
         </Choice>
       </Choices>
@@ -34,7 +34,7 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "1000"/>
           </Effects>
-          <Title>Administrativní zátěž</Title>
+          <ChoiceText>Administrativní zátěž</ChoiceText>
           <Description>Uprchlická krize především přinesla administrativní zátěž
           </Description>
         </Choice>
@@ -42,7 +42,7 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "0"/>
           </Effects>
-          <Title>Vlna zločinu</Title>
+          <ChoiceText>Vlna zločinu</ChoiceText>
           <Description>Co uprchlík to zločinec. Němci se začínají ozbrojovat.</Description>
         </Choice>
       </Choices>
@@ -54,7 +54,7 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "800"/>
           </Effects>
-          <Title>Věc řeší advokát</Title>
+          <ChoiceText>Věc řeší advokát</ChoiceText>
           <Description>
             Věc řeší advokát
           </Description>
@@ -63,7 +63,7 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "200"/>
           </Effects>
-          <Title>Romská rodina se hádá o peníze ze sbírky</Title>
+          <ChoiceText>Romská rodina se hádá o peníze ze sbírky</ChoiceText>
           <Description> Romská rodina se hádá o peníze ze sbírky.</Description>
         </Choice>
       </Choices>
@@ -75,7 +75,7 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "600"/>
           </Effects>
-          <Title>Vyjádření odborníka</Title>
+          <ChoiceText>Vyjádření odborníka</ChoiceText>
           <Description>
             “Je to unikátní projekt, který zvyší prestiž Českých Budějovic na mezinárodní urovni,” říká k návrhu operního sálu ve tvaru Olihně Tomáš Nejedlý z katedry architektury na ČVUT.
           </Description>
@@ -84,7 +84,7 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "400"/>
           </Effects>
-          <Title>Anketa</Title>
+          <ChoiceText>Anketa</ChoiceText>
           <Description>
             Prodavačka Jana (28): A peníze pro důchodce nejsou!
             Důchodkyně Věra (79): Já bych všechny ty multiplexy zakázala!
@@ -100,7 +100,7 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "900"/>
           </Effects>
-          <Title>Velká příležitost</Title>
+          <ChoiceText>Velká příležitost</ChoiceText>
           <Description>Do chudého regionu doputují milionové investice. Očekává se 10 000 nových pracovních míst.
           </Description>
         </Choice>
@@ -108,7 +108,7 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "100"/>
           </Effects>
-          <Title>Invaze</Title>
+          <ChoiceText>Invaze</ChoiceText>
           <Description>Muslimští šejkové kolonizují Česko! Sociolog: Je otázkou času, kdy začnou zahalovat naše ženy!</Description>
         </Choice>
       </Choices>
@@ -121,7 +121,7 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "750"/>
           </Effects>
-          <Title>Ignorovat</Title>
+          <ChoiceText>Ignorovat</ChoiceText>
           <Description>
             ...
           </Description>
@@ -130,7 +130,7 @@
           <Effects>
             <MoveTowardsEffect attribute="Credibility" value = "250"/>
           </Effects>
-          <Title>Publikovat</Title>
+          <ChoiceText>Publikovat</ChoiceText>
           <Description>Politik sebral odvahu a řekl natvrdo, co si každý myslí!</Description>
         </Choice>
       </Choices>

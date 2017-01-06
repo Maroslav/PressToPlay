@@ -14,10 +14,7 @@ namespace Assets.Code.Model.Events.Choices
             Description = description;
         }
 
-        [XmlElement("Description")]
-        public string Description { get; private set; }
-        [XmlElement("Title")]
-        public string Title { get; private set; }
-
+        [XmlElement("ChoiceText")]
+        public string ChoiceText { get; set; }
     }
 }

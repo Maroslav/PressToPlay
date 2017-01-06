@@ -9,13 +9,12 @@ namespace Assets.Code.PressEvents.Choices
     public class TextChoice :Choice
     {
 
-        public TextChoice(List<Effect> effects, string title, string description):base(effects)
+        public TextChoice(List<Effect> effects, string choiceText, string title, string description,string articleText=null, string imagePath=null):base(effects,imagePath,title,description,articleText)
         {
-            Title = title;
-            Description = description;
+            ChoiceText = choiceText;
         }
-       
-        public string Title { get; private set; }
-        public string Description { get; private set; }
+
+        public string ChoiceText { get; set; }
+ 
     }
 }

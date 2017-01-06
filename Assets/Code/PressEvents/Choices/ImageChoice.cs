@@ -10,12 +10,11 @@ namespace Assets.Code.PressEvents.Choices
     public class ImageChoice:Choice
     {
 
-        public ImageChoice(List<Effect> effects, string imagePath ):base(effects)
+        public ImageChoice(List<Effect> effects, string imagePath, string title, string description, string articleText):base(effects, imagePath,title,description,articleText)
         {
             this.ImagePath = imagePath;
         }
 
-        //Image path relative to the Resources folder
-        public string ImagePath { get; set; }
+
     }
 }
