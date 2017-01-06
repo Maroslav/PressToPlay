@@ -10,7 +10,6 @@ public class MultipleChoiceEventProcessor : MonoBehaviour {
 
     public GameObject ChoiceDescription;
     public GameObject ChoiceDate;
-    public GameObject ChoiceBody;
     public GameObject ChoiceViewer;
     public GameObject ChoicePublish;
 
@@ -25,8 +24,6 @@ public class MultipleChoiceEventProcessor : MonoBehaviour {
 
         Assert.IsNotNull(ChoiceDate, name);
         Assert.IsNotNull(ChoiceDate.GetComponent<Text>(), name);
-
-        Assert.IsNotNull(ChoiceBody, name);
         
         Assert.IsNotNull(ChoiceViewer, name);
         Assert.IsNotNull(ChoiceViewer.GetComponent<MultipleChoiceProcessor>(), name);
@@ -44,8 +41,6 @@ public class MultipleChoiceEventProcessor : MonoBehaviour {
             // Remove old choices and hide not neccesary things
             ChoiceViewer.GetComponent<MultipleChoiceProcessor>().DestroyChoices();
             ChoiceViewer.SetActive(false);
-            ChoiceBody.SetActive(false);
-            ChoiceDate.SetActive(false);
 
             ChoiceDescription.GetComponent<Text>().text = choice.Description;
             ChoicePublish.SetActive(true);
@@ -71,8 +66,6 @@ public class MultipleChoiceEventProcessor : MonoBehaviour {
         ChoiceDate.GetComponent<Text>().text = e.Date.ToString("d", csCz);
 
         gameObject.SetActive(true);
-        ChoiceBody.SetActive(true);
-        ChoiceDate.SetActive(true);
         
         // Let the viewer set its content
         ChoiceViewer.GetComponent<MultipleChoiceProcessor>().ProcessEvent(e, this);
