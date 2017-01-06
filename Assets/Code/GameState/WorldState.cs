@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Assets.Code.GameState
 {
     public class WorldState
     {
-        public WorldState()
-        {
-        }
+        // A shorthand to the AllStates category
         public Attribs JournalistState { get; set; }
         public DateTime Date { get; set; }
 
