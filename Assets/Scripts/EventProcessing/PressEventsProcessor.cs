@@ -8,7 +8,7 @@ public class PressEventsProcessor : MonoBehaviour, IEventProcessor
 {
     public GameObject MultipleChoiceEvent;
     public GameObject ImageSelectionEvent;
-   
+
     public GameObject CutsceneEventDescription;
     public GameObject CutsceneEventViewer;
 
@@ -17,6 +17,9 @@ public class PressEventsProcessor : MonoBehaviour, IEventProcessor
     {
         Assert.IsNotNull(MultipleChoiceEvent, name);
         Assert.IsNotNull(MultipleChoiceEvent.GetComponent<MultipleChoiceEventProcessor>(), name);
+
+        Assert.IsNotNull(ImageSelectionEvent, name);
+        Assert.IsNotNull(ImageSelectionEvent.GetComponent<ImageChoiceEventProcessor>(), name);
 
         Assert.IsNotNull(CutsceneEventViewer, name);
         Assert.IsNotNull(CutsceneEventViewer.GetComponent<CutsceneProcessor>(), name);

@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class ImageChoiceEventProcessor : MonoBehaviour
 {
-    public GameObject ImageChoiceEventDescription;
-    public GameObject ImageChoiceEventDate;
-    public GameObject ImageChoiceEventBody;
-    public GameObject ImageChoiceEventViewer;
-    public GameObject ImageChoiceEventPublish;
+    public GameObject ChoiceDescription;
+    public GameObject ChoiceDate;
+    public GameObject ChoiceBody;
+    public GameObject ChoiceViewer;
+    public GameObject ChoicePublish;
 
     private bool _isShowingSelectedChoice = false;
     private ImageChoiceEvent _event;
@@ -19,16 +19,16 @@ public class ImageChoiceEventProcessor : MonoBehaviour
 
     void OnValidate()
     {
-        Assert.IsNotNull(ImageChoiceEventDescription, name);
-        Assert.IsNotNull(ImageChoiceEventDescription.GetComponent<Text>(), name);
+        Assert.IsNotNull(ChoiceDescription, name);
+        Assert.IsNotNull(ChoiceDescription.GetComponent<Text>(), name);
 
-        Assert.IsNotNull(ImageChoiceEventDate, name);
-        Assert.IsNotNull(ImageChoiceEventDate.GetComponent<Text>(), name);
+        Assert.IsNotNull(ChoiceDate, name);
+        Assert.IsNotNull(ChoiceDate.GetComponent<Text>(), name);
 
-        Assert.IsNotNull(ImageChoiceEventBody, name);
+        Assert.IsNotNull(ChoiceBody, name);
 
-        Assert.IsNotNull(ImageChoiceEventViewer, name);
-        Assert.IsNotNull(ImageChoiceEventViewer.GetComponent<ImageChoiceProcessor>(), name);
+        Assert.IsNotNull(ChoiceViewer, name);
+        Assert.IsNotNull(ChoiceViewer.GetComponent<ImageChoiceProcessor>(), name);
     }
 
     internal void MoveToNextState(ImageChoice choice)
@@ -41,14 +41,14 @@ public class ImageChoiceEventProcessor : MonoBehaviour
         else
         {
             // Remove old choices and hide not neccesary things
-            ImageChoiceEventViewer.GetComponent<ImageChoiceProcessor>().DestroyChoices();
-            ImageChoiceEventViewer.SetActive(false);
-            ImageChoiceEventBody.SetActive(false);
-            ImageChoiceEventDate.SetActive(false);
+            ChoiceViewer.GetComponent<ImageChoiceProcessor>().DestroyChoices();
+            ChoiceViewer.SetActive(false);
+            ChoiceBody.SetActive(false);
+            ChoiceDate.SetActive(false);
 
             //ImageChoiceEventDescription.GetComponent<Text>().text = choice.Description;
-            ImageChoiceEventPublish.SetActive(true);
-            ImageChoiceData imageChoiceData = ImageChoiceEventPublish.GetComponent<ImageChoiceData>();
+            ChoicePublish.SetActive(true);
+            ImageChoiceData imageChoiceData = ChoicePublish.GetComponent<ImageChoiceData>();
             imageChoiceData.Choice = choice;
             imageChoiceData.SetEvent(_event, this);
 
@@ -62,19 +62,19 @@ public class ImageChoiceEventProcessor : MonoBehaviour
 
         CanFinishEvent = false;
 
-        ImageChoiceEventPublish.SetActive(false);
-        ImageChoiceEventViewer.SetActive(true);
+        ChoicePublish.SetActive(false);
+        ChoiceViewer.SetActive(true);
 
         // Set event description in the UI
-        ImageChoiceEventDescription.GetComponent<Text>().text = e.Description;
+        ChoiceDescription.GetComponent<Text>().text = e.Description;
         CultureInfo csCz = new CultureInfo("cs-CZ");
-        ImageChoiceEventDate.GetComponent<Text>().text = e.Date.ToString("d", csCz);
+        ChoiceDate.GetComponent<Text>().text = e.Date.ToString("d", csCz);
 
         gameObject.SetActive(true);
-        ImageChoiceEventBody.SetActive(true);
-        ImageChoiceEventDate.SetActive(true);
+        ChoiceBody.SetActive(true);
+        ChoiceDate.SetActive(true);
 
         // Let the viewer set its content
-        ImageChoiceEventViewer.GetComponent<ImageChoiceProcessor>().ProcessEvent(e, this);
+        ChoiceViewer.GetComponent<ImageChoiceProcessor>().ProcessEvent(e, this);
     }
 }
