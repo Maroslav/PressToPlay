@@ -58,7 +58,7 @@ public class WorldStateProvider : MonoBehaviour
             if (doSetup)
                 attribChanger.DoSetup(attributePair.Key.Description, Attribs.MinValue, Attribs.MaxValue);
 
-            attribChanger.DoChange(State.JournalistState[attributePair.Key], !doSetup);
+            attribChanger.DoChange(State.AllStates[attributePair.Key.Category][attributePair.Key], !doSetup);
         }
     }
 }
