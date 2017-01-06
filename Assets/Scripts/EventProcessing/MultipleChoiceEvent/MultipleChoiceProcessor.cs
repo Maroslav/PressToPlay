@@ -30,8 +30,7 @@ public class MultipleChoiceProcessor : MonoBehaviour
             choiceGameObject.transform.SetParent(transform, true);
 
             MultipleChoiceData multipleChoiceData = choiceGameObject.GetComponent<MultipleChoiceData>();
-            multipleChoiceData.Choice = choices[i];
-            multipleChoiceData.SetEvent(e, eventManager);
+            multipleChoiceData.SetEvent(choices[i], eventManager);
 
             if (choiceGameObject.GetComponentsInChildren<Text>().Length > 0)
             {

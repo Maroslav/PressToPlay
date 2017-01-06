@@ -8,28 +8,18 @@ using Assets.Code.PressEvents.Choices;
 /// </summary>
 public class MultipleChoiceData : MonoBehaviour
 {
-    private MultipleChoiceEvent _event;
+    private TextChoice _choice;
     private MultipleChoiceEventProcessor _owner;
 
-    public TextChoice Choice;
 
-
-    public void SetEvent(MultipleChoiceEvent newEvent, MultipleChoiceEventProcessor viewProcessor)
+    public void SetEvent(TextChoice choice, MultipleChoiceEventProcessor viewProcessor)
     {
-        _event = newEvent;
+        _choice = choice;
         _owner = viewProcessor;
     }
 
     public void OnClick()
     {
-        Debug.Log("Moving to next state before choosing option " + Choice.Title);
-        _owner.MoveToNextState(Choice);
-
-        if (_owner.CanFinishEvent)
-        {
-            Debug.Log("Choosing option " + Choice.Title);
-            _owner.gameObject.SetActive(false);
-            _event.Finish(Choice,WorldStateProvider.State);
-        }
+        _owner.FinishEvent(_choice);
     }
 }
