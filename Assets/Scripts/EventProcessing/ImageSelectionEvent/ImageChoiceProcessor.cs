@@ -9,12 +9,10 @@ class ImageChoiceProcessor : MonoBehaviour
 {
     private readonly List<Object> _choiceGameObjects = new List<Object>();
 
-    public GameObject ToggledParent;
     public GameObject ImageChoiceButtonPrefab;
 
     void OnValidate()
     {
-        Assert.IsNotNull(ToggledParent);
         Assert.IsNotNull(ImageChoiceButtonPrefab);
         Assert.IsNotNull(ImageChoiceButtonPrefab.GetComponent<ImageChoiceData>());
     }
