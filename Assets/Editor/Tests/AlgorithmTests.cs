@@ -27,10 +27,10 @@ namespace Assets.Editor.Tests
         {
            List<TextChoice>  choices = new List<TextChoice>()
            {
-               new TextChoice(EffectsWithMoveTowardsCredibility(500),"Choice 1","Long description of the choice 1"),
-               new TextChoice(EffectsWithMoveTowardsCredibility(700),"Choice 2","Long description of the choice 2"),
-               new TextChoice(EffectsWithMoveTowardsCredibility(200),"Choice 2","Long description of the choice 3"),
-               new TextChoice(EffectsWithMoveTowardsCredibility(200),"Choice 4","Long description of the choice 4")
+               new TextChoice(EffectsWithMoveTowardsCredibility(500),"Choice 1","Choice 1","Long description of the choice 1"),
+               new TextChoice(EffectsWithMoveTowardsCredibility(700),"Choice 2","Choice 2","Long description of the choice 2"),
+               new TextChoice(EffectsWithMoveTowardsCredibility(200),"Choice 2","Choice 2","Long description of the choice 3"),
+               new TextChoice(EffectsWithMoveTowardsCredibility(200),"Choice 4","Choice 4","Long description of the choice 4")
            };
             var journalist = WorldStateWithCredibility(650);
             var closest = Algorithms.Closest(choices, journalist, 2);
@@ -45,10 +45,10 @@ namespace Assets.Editor.Tests
         {
             List<TextChoice> choices = new List<TextChoice>()
            {
-               new TextChoice(EffectsWithMoveTowardsCredibility(200),"Choice 3","Long description of the choice 1"),
-               new TextChoice(EffectsWithMoveTowardsCredibility(201),"Choice 4","Long description of the choice 2"),
-               new TextChoice(EffectsWithMoveTowardsCredibility(500),"Choice 1","Long description of the choice 3"),
-               new TextChoice(EffectsWithMoveTowardsCredibility(700),"Choice 2","Long description of the choice 4")
+               new TextChoice(EffectsWithMoveTowardsCredibility(200),"Choice 3","Choice 3","Long description of the choice 1"),
+               new TextChoice(EffectsWithMoveTowardsCredibility(201),"Choice 4","Choice 4","Long description of the choice 2"),
+               new TextChoice(EffectsWithMoveTowardsCredibility(500),"Choice 1","Choice 1","Long description of the choice 3"),
+               new TextChoice(EffectsWithMoveTowardsCredibility(700),"Choice 2","Choice 2","Long description of the choice 4")
            };
             var journalist = WorldStateWithCredibility(900);
             var closest = Algorithms.Closest(choices, journalist, 6);
@@ -65,10 +65,10 @@ namespace Assets.Editor.Tests
         {
             List<TextChoice> choices = new List<TextChoice>()
            {
-               new TextChoice(EffectsWithMoveTowardsCredibility(200),"Choice 3","Long description of the choice 1"),
-               new TextChoice(EffectsWithMoveTowardsCredibility(201),"Choice 4","Long description of the choice 2"),
-               new TextChoice(EffectsWithMoveTowardsCredibility(500),"Choice 1","Long description of the choice 3"),
-               new TextChoice(EffectsWithMoveTowardsCredibility(700),"Choice 2","Long description of the choice 4")
+               new TextChoice(EffectsWithMoveTowardsCredibility(200),"Choice 3","Choice 3","Long description of the choice 1"),
+               new TextChoice(EffectsWithMoveTowardsCredibility(201),"Choice 4","Choice 4","Long description of the choice 2"),
+               new TextChoice(EffectsWithMoveTowardsCredibility(500),"Choice 1","Choice 1","Long description of the choice 3"),
+               new TextChoice(EffectsWithMoveTowardsCredibility(700),"Choice 2","Choice 2","Long description of the choice 4")
            };
             var journalist = WorldStateWithCredibility(900);
             var closest = Algorithms.Closest(choices, journalist, 1);
@@ -82,10 +82,10 @@ namespace Assets.Editor.Tests
         {
             List<TextChoice> choices = new List<TextChoice>()
            {
-               new TextChoice(EffectsWithMoveTowardsCredibility(200),"Choice 3","Long description of the choice 1"),
-               new TextChoice(EffectsWithMoveTowardsCredibility(201),"Choice 4","Long description of the choice 2"),
-               new TextChoice(EffectsWithMoveTowardsCredibility(500),"Choice 1","Long description of the choice 3"),
-               new TextChoice(EffectsWithMoveTowardsCredibility(700),"Choice 2","Long description of the choice 4")
+               new TextChoice(EffectsWithMoveTowardsCredibility(200),"Choice 3","Choice 3","Long description of the choice 1"),
+               new TextChoice(EffectsWithMoveTowardsCredibility(201),"Choice 4","Choice 4","Long description of the choice 2"),
+               new TextChoice(EffectsWithMoveTowardsCredibility(500),"Choice 1","Choice 1","Long description of the choice 3"),
+               new TextChoice(EffectsWithMoveTowardsCredibility(700),"Choice 2","Choice 2","Long description of the choice 4")
            };
             var journalist = WorldStateWithCredibility(202);
             var closest = Algorithms.Closest(choices, journalist, 1);

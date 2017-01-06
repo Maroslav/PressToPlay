@@ -37,7 +37,7 @@ public class MultipleChoiceProcessor : MonoBehaviour
 
             if (choiceGameObject.GetComponentsInChildren<Text>().Length > 0)
             {
-                choiceGameObject.GetComponentsInChildren<Text>()[0].text = e.Choices[i].Title;
+                choiceGameObject.GetComponentsInChildren<Text>()[0].text = e.Choices[i].ChoiceText;
             }
 
             _choiceGameObjects.Add(choiceGameObject);

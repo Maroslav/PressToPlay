@@ -27,7 +27,7 @@ namespace Assets.Code.PressEvents.Construction
             foreach (var choiceDao in evt.Choices)
             {
                 var effects = GetEffects(choiceDao);
-                choices.Add(new TextChoice(effects,choiceDao.Title,choiceDao.Description));
+                choices.Add(new TextChoice(effects,choiceDao.ChoiceText,choiceDao.Title,choiceDao.Description,choiceDao.ArticleText,choiceDao.ImagePath));
             }
             var descr = evt.Description;
             var precond = GetPreconditions(evt);
@@ -42,7 +42,7 @@ namespace Assets.Code.PressEvents.Construction
             foreach (var choiceDao in evt.Choices)
             {
                 var effects = GetEffects(choiceDao);
-                choices.Add(new ImageChoice(effects, choiceDao.Path));
+                choices.Add(new ImageChoice(effects, choiceDao.ImagePath,choiceDao.Title,choiceDao.Description,choiceDao.ArticleText));
             }
             var description = evt.Description;
             var preconditions = GetPreconditions(evt);
@@ -78,6 +78,7 @@ namespace Assets.Code.PressEvents.Construction
         }
         private List<Effect> GetEffects(ChoiceDao choiceDao)
         {
+            if (choiceDao.Effects==null) return new List<Effect>();
             return (from x in choiceDao.Effects select x.Process(_effectsConverter)).ToList();
         }
 

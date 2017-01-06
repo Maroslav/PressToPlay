@@ -12,9 +12,13 @@ namespace Assets.Code.PressEvents.Choices
     {
         public List<Effect> Effects { get; private set; }
 
-        public Choice(List<Effect> effects)
+        public Choice(List<Effect> effects, string imagePath, string title, string description, string articleText)
         {
             Effects = effects;
+            ImagePath = imagePath;
+            Title = title;
+            Description = description;
+            ArticleText = articleText;
         }
 
         public void ApplyEffects(WorldState state)
@@ -24,5 +28,11 @@ namespace Assets.Code.PressEvents.Choices
                 effect.Apply(state);
             }
         }
+        //Image path relative to the Resources folder
+        public string ImagePath { get; set; }
+        public string Title { get; private set; }
+        public string Description { get; private set; }
+
+        public string ArticleText { get; private set; }
     }
 }
