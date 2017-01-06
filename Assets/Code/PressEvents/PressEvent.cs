@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Assets.Code.GameState;
 using Assets.Code.Model;
+using Assets.Code.PressEvents.Choices;
 using Assets.Code.PressEvents.Preconditions;
 
 namespace Assets.Code.PressEvents
@@ -36,7 +37,10 @@ namespace Assets.Code.PressEvents
         //Visitor pattern, corresponds to the 'accept' method.
         public abstract void ProcessEvent(IEventProcessor processor);
 
-
-
+        public virtual void Finish(Choice selectedChoice, WorldState worldState)
+        {
+            selectedChoice.ApplyEffects(worldState);
+            IsFinished = true;
+        }
     }
 }

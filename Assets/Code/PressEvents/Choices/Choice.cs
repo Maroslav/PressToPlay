@@ -29,11 +29,12 @@ namespace Assets.Code.PressEvents.Choices
                 effect.Apply(state);
             }
         }
+        public string Title { get; private set; }
+        public string Description { get; private set; }
+
         //Image path relative to the Resources folder
         public string ImagePath { get; set; }
         public string ImageLabel { get; private set; }
-        public string Title { get; private set; }
-        public string Description { get; private set; }
 
         public string ArticleText { get; private set; }
     }

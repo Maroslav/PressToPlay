@@ -27,13 +27,6 @@ namespace Assets.Code.PressEvents
             return Algorithms.Closest(Choices, WorldStateProvider.State, count);
         }
 
-        //Choose the given option and end this event processing.
-        public void Finish(TextChoice selectedChoice,WorldState state)
-        {
-            selectedChoice.ApplyEffects(state);
-            IsFinished = true;
-        }
-
 
         public override void ProcessEvent(IEventProcessor processor)
         {
