@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PressEventsProcessor : MonoBehaviour, IEventProcessor
 {
     public GameObject MultipleChoiceEvent;
+    public GameObject ImageSelectionEvent;
    
     public GameObject CutsceneEventDescription;
     public GameObject CutsceneEventViewer;
@@ -36,6 +37,6 @@ public class PressEventsProcessor : MonoBehaviour, IEventProcessor
 
     public void ProcessEvent(ImageChoiceEvent e)
     {
-        throw new System.NotImplementedException();
+        ImageSelectionEvent.GetComponent<ImageChoiceEventProcessor>().ProcessEvent(e);
     }
 }

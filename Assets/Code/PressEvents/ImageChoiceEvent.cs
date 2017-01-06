@@ -21,7 +21,9 @@ namespace Assets.Code.PressEvents
         }
 
         public string Description { get; set; }
+
         public List<ImageChoice> Choices { get; set; }
+
         public override void ProcessEvent(IEventProcessor processor)
         {
             processor.ProcessEvent(this);

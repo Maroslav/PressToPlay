@@ -28,7 +28,7 @@ public class MultipleChoiceData : MonoBehaviour
         if (_owner.CanFinishEvent)
         {
             Debug.Log("Choosing option " + Choice.Title);
-
+            _owner.gameObject.SetActive(false);
             _event.Finish(Choice,WorldStateProvider.State);
         }
     }
