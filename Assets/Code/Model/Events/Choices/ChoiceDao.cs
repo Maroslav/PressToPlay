@@ -14,6 +14,8 @@ namespace Assets.Code.Model.Events.Choices
 
         [XmlElement("ImagePath")]
         public string ImagePath { get; set; }
+        [XmlElement("ImageLabel")]
+        public string ImageLabel { get; set; }
 
         [XmlElement("Description")]
         public string Description { get; protected set; }

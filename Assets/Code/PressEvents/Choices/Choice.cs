@@ -12,10 +12,11 @@ namespace Assets.Code.PressEvents.Choices
     {
         public List<Effect> Effects { get; private set; }
 
-        public Choice(List<Effect> effects, string imagePath, string title, string description, string articleText)
+        public Choice(List<Effect> effects, string imagePath, string imageLabel, string title, string description, string articleText)
         {
             Effects = effects;
             ImagePath = imagePath;
+            ImageLabel = imageLabel;
             Title = title;
             Description = description;
             ArticleText = articleText;
@@ -30,6 +31,7 @@ namespace Assets.Code.PressEvents.Choices
         }
         //Image path relative to the Resources folder
         public string ImagePath { get; set; }
+        public string ImageLabel { get; private set; }
         public string Title { get; private set; }
         public string Description { get; private set; }
 

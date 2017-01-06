@@ -9,7 +9,7 @@ namespace Assets.Code.PressEvents.Choices
     public class TextChoice :Choice
     {
 
-        public TextChoice(List<Effect> effects, string choiceText, string title, string description,string articleText=null, string imagePath=null):base(effects,imagePath,title,description,articleText)
+        public TextChoice(List<Effect> effects, string choiceText, string title, string description,string articleText=null, string imagePath=null, string imageLabel=null):base(effects,imagePath,imageLabel,title,description,articleText)
         {
             ChoiceText = choiceText;
         }

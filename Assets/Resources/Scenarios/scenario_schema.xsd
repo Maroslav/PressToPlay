@@ -200,6 +200,7 @@
       <xs:element name="Title" type="xs:string" minOccurs="0" maxOccurs="1" />
       <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
       <xs:element name="ImagePath" type="pathtoimagetype" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ImageLabel" type="xs:string" minOccurs="0" maxOccurs="1"/>
       <xs:element name="ArticleText" type="xs:string" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
@@ -209,8 +210,9 @@
       <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
         <h2>An answer choice</h2>
         <p>
-          <b>CHILDREN</b> (in this order): Effects (optional), Title (title of the resulting article), Description (first paragraph of the article)
-          ImagePath, ArticleText (text of the article)
+          <b>CHILDREN</b> (in this order): Effects (optional), Title (title of the resulting article, optional),
+          Description (first paragraph of the article, optional)
+          ImagePath, ArticleText (text of the article, optional), ChoiceText (text of the choice button)
         </p>
       </xs:documentation>
     </xs:annotation>
@@ -279,6 +281,16 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="imagechoicetype">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <h2>An answer choice</h2>
+        <p>
+          <b>CHILDREN</b> (in this order): Effects (optional), Title (title of the resulting article, optional),
+          Description (first paragraph of the article, optional)
+          ImagePath, ArticleText (text of the article, optional)
+        </p>
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="choicetype">
         <xs:sequence>

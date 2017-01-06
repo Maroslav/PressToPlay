@@ -16,5 +16,6 @@ namespace Assets.Code.Model.Events.Choices
 
         [XmlElement("ChoiceText")]
         public string ChoiceText { get; set; }
+       
     }
 }
