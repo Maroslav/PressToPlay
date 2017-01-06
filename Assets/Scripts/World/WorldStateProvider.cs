@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Assets.Code.Gameplay;
 using Assets.Code.GameState;
 using UnityEngine;
@@ -28,12 +29,15 @@ public class WorldStateProvider : MonoBehaviour
         DeserializeAttributes();
 
         // Create UI elements - Attribs
-        foreach (var attributePair in State.JournalistState)
+        foreach (var categoryPair in State.AllStates)
         {
-            GameObject attributeGO = Instantiate(WorldAttributePrefab);
-            attributeGO.transform.SetParent(WorldAttributesGameObject.transform);
-            attributeGOs.Add(attributePair.Key, attributeGO);
-            attributeGO.SetActive(true);
+            foreach (var attributePair in categoryPair.Value.Where(a => a.Key.IsDisplayed))
+            {
+                GameObject attributeGO = Instantiate(WorldAttributePrefab);
+                attributeGO.transform.SetParent(WorldAttributesGameObject.transform);
+                attributeGOs.Add(attributePair.Key, attributeGO);
+                attributeGO.SetActive(true);
+            }
         }
 
         UpdateAttributeGameObjects(true);
