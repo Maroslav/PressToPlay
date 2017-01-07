@@ -12,11 +12,7 @@ namespace Assets.Code.PressEvents.Effects
 
         public override void Apply(WorldState worldState)
         {
-            var oldValue = worldState.GetValue(AffectedAttribute);
-            var newValue = oldValue+Value;
-            if (newValue < Attribs.MinValue) newValue = Attribs.MinValue;
-            else if (newValue > Attribs.MaxValue) newValue = Attribs.MaxValue;
-            worldState.SetValue(AffectedAttribute,newValue);
+            worldState.AddToValue(AffectedAttribute,Value);
         }
     }
 }

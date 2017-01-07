@@ -22,6 +22,15 @@ namespace Assets.Code.GameState
             Attribs states = AllStates[attrib.Category];
             states[attrib] = value;
         }
+
+        public void AddToValue(Attrib attrib, int value)
+        {
+            var oldValue = GetValue(attrib);
+            var newValue = oldValue + value;
+            if (newValue < Attribs.MinValue) newValue = Attribs.MinValue;
+            else if (newValue > Attribs.MaxValue) newValue = Attribs.MaxValue;
+            SetValue(attrib, newValue);
+        }
     }
 }
 
