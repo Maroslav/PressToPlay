@@ -9,13 +9,13 @@ namespace Assets.Code.GameState
     public class Attribs : IEnumerable<KeyValuePair<Attrib,int>>
     {
         //STATIC CONSTANTS:
-        //Values 0 - 1000;
+
         public static readonly string StringCredibility = "Credibility";
         public static readonly Attrib Credibility = new Attrib(StringCredibility);
 
-        public const int MinValue = 0;
-        public const int MaxValue = 1000;
-        public const int MidValue = (MinValue + MaxValue)/2;
+        public static int MinValue = 0;
+        public static int MaxValue = 10;
+        public static int MidValue = (MinValue + MaxValue)/2;
 
         private static Dictionary<string, Attrib> _attribsByName;
         public static Attrib GetAttribByName(string name)

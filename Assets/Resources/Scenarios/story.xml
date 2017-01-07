@@ -1,32 +1,179 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="scenario_stylesheet.xslt"?>
-<Scenario name="Story scenario" xmlns="http://presstoplaygame.com/scenario"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://presstoplaygame.com/scenario scenario_schema.xsd"
-          >
+<Scenario name="Story scenario" xmlns="http://presstoplaygame.com/scenario" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://presstoplaygame.com/scenario scenario_schema.xsd">
   <Events>
-    <!--Warning! Day and month values have to be padded to two digits eg. "5" -> "05"-->
-    <CutsceneEvent date="2017-03-24" isTerminating="false">
-      <Preconditions>
-      </Preconditions>
-      <ImagePath>Endings/event_intro</ImagePath>
-      <Text>Gratulujeme! Stal se z tebe novinář. Od teď budeš informovat veřejnost o tom nejdůležitějším, co se stalo.
-      </Text>
+    <CutsceneEvent date="2019-10-01">
+      <ImagePath>Intro/intro1</ImagePath>
+      <Text>Protivládní demonstrace vedly ke svržení vlády. </Text>
     </CutsceneEvent>
-    <CutsceneEvent date="2017-12-24" isTerminating="true">
-      <Preconditions>
-        <Precondition attribute = "Credibility" operation="lessOrEqual" value="500"/>
-      </Preconditions>
-      <ImagePath>Endings/event bad ending</ImagePath>
-      <Text>Gratulujeme! Svou odvahou popsat věci bez politické korektnosti a tak jak si každý myslí, že to je... YOU’VE MADE THE WORLD GREAT AGAIN!
-      </Text>
+    <CutsceneEvent date="2019-10-01">
+      <ImagePath>Intro/intro2</ImagePath>
+      <Text>Za čtyři měsíce se konají předčasné volby.</Text>
     </CutsceneEvent>
-    <CutsceneEvent date="2017-12-24" isTerminating="true">
-      <Preconditions>
-        <Precondition attribute = "Credibility" operation="greater" value="500"/>
-      </Preconditions>
-      <ImagePath>Endings/event good ending</ImagePath>
-      <Text> Gratulujeme! Vlivem korporátních médií zůstal svět přesně takový, jaký vždy byl - ten nejlepší ze všech možných světů.</Text>
+    <CutsceneEvent date="2019-10-01">
+      <ImagePath>Intro/intro_editor</ImagePath>
+      <Text>Byl/a jsi povýšen na editora -Jmeno Novin-. Tvým úkolem je rozhodovat, jaká bude náplň denního zpravodajství.</Text>
     </CutsceneEvent>
+    <MultipleChoiceEvent date="2019-10-01">
+      <Description>Česko postihla chřipková epidemie. Nový virus chřipky.4 mrtví.
+&lt;color=#585858&gt;(NÁPOVĚDA: Kliknutím vyberte, jaké hlavní téma mají tvé noviny použít v článku o této události. Pozor, volba může ovlivnit čtenost novin i veřejné mínění.)&lt;/color&gt;</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="1" />
+            <ModifyEffect attribute="Panic" value="2" />
+          </Effects>
+          <Title>Virus H4N7 zabíjel</Title>
+          <Description> (Praha) Celkem čtyři lidé podlehli smrtelnému viru chřipky. Desítky dalších jsou nakaženi. Je otázkou čau než virus zmutuje a epidemie přeroste v pandemii. Vědci však tvrdí, že se není čeho obávat. (med)</Description>
+          <ChoiceText>Chřipka zabíjí</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="-2" />
+            <ModifyEffect attribute="Info" value="2" />
+            <ModifyEffect attribute="Panic" value="-1" />
+          </Effects>
+          <Title>Není důvod se chřipkové epidemie obávat</Title>
+          <Description>(Praha) Alespoň tak to tvrdí předseda Hygienické komory. "Úmrtí v řádu jednotek jsou každoročně běžná," ujišťuje veřejnost vědec. (med)</Description>
+          <ChoiceText>Podle lékařů běžný fenomén</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-10-03">
+      <Description>Po pádu vlády se objevil nový mladý podnikatel, který by se rád ucházel o křeslo předsedy vlády. Tom Dvoracek je nejmladším evropským miliardářem. Ke jmění, které čítá přes 14 miliard eur, se dostal ve svých jednatřicetiletech jako manažer Dubajského hedgefundu. Zakládá stranu Liberty2020.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Tom" value="1" />
+            <ModifyEffect attribute="Panic" value="-1" />
+          </Effects>
+          <Title>Úspěšný podnikatel chce napravit reformy</Title>
+          <Description>"Mám praktické zkušenosti z businessu, kterými chci přispět do české politiky," říká sebevědomě teprve jednatřicetiletý Tom Dvoracek. Týden po pádu vlády založil alternativní politický think tank Liberty2020, se kterým chce kandidovat v předčasných volbách.</Description>
+          <ImagePath>tom1</ImagePath>
+          <ImageLabel>Tom Dvoracek, předseda strany Liberty2020</ImageLabel>
+          <ChoiceText>mladá naděje ve vysoké politce</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="1" />
+            <ModifyEffect attribute="Tom" value="-1" />
+            <ModifyEffect attribute="Panic" value="2" />
+          </Effects>
+          <Title>Spasí jednatřicetilý miliardář českou politiku?</Title>
+          <Description>Kontroverzní spekulant Tom Dvoracek kandiduje na post předsedy vlády. Politologové varují, že mladý podnikatel může voliče snadno zmást svým energickým a sebevědomým vystupováním.</Description>
+          <ImagePath>tom1</ImagePath>
+          <ImageLabel>Miliardář Tom Dvoracek</ImageLabel>
+          <ChoiceText>oligarcha kandiduje</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-10-05">
+      <Description>V reakci na nespokojenost lidí s vládnoucími elitami, vzniká nová strana Rodina a Přiroda (RaP). Předsedkyní bude populární umělkyně Alice Kubešová, známá především z filmů Nové české vlny. Spekuluje se, že strana je silně marxisticky zaměřená.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Info" value="1" />
+            <ModifyEffect attribute="Panic" value="1" />
+            <ModifyEffect attribute="Alice" value="-1" />
+          </Effects>
+          <Title>Pád vlády může pomoci levicovým populistům</Title>
+          <Description>Takzvaná "nová levice" se spojila v sociálně-enviromentální koalici Rodina a Příroda.</Description>
+          <ImagePath>alice1</ImagePath>
+          <ImageLabel>Herečka a politička Alice Kubešová</ImageLabel>
+          <ChoiceText>Vzestup extrémní levice?</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="2" />
+            <ModifyEffect attribute="Info" value="1" />
+            <ModifyEffect attribute="Panic" value="-1" />
+            <ModifyEffect attribute="Alice" value="1" />
+          </Effects>
+          <Title>Slavná herečka Alice Kubešová kandiduje na premiérku</Title>
+          <Description>Takzvaně "humanistická" koalice Rodina a Příroda (RaP) vytasila do voleb s legendou České nové vlny. "Musíme radikalně přehodnotit, jak dnes uvažujeme o společnosti. Musíme se nad sebou zamyslet a podívat se do budoucne, co zde hodláme přenechat našim dětem," říká umělkyně.</Description>
+          <ImagePath>alice1</ImagePath>
+          <ImageLabel>Slavná herečka Alice Kubešová</ImageLabel>
+          <ChoiceText>Umělkyně premiérkou?</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-10-05">
+      <Description>Český občan si na Balkáně vyhlásil vlastní stát, kde se nebudou muset platit daně. Svou zemi pojmenoval Liberland. Podle samozvaného prezidenta je existence nového mikrostátu legální. Nachází se totiž na nikým nenárokovaném území mezi dvěma státy bývalé Jugoslávie v takzvané terra nullius neboli zemi nikoho.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="-2" />
+            <ModifyEffect attribute="Liberland" value="0" />
+          </Effects>
+          <Title>Nový stát na Balkáně? Pravděpodobně ne.</Title>
+          <Description>Český občan se pokusil založit vlastní stát na břehu Dunaje pod názvem Svobodná republika Liberland. Stát nikdo neuznal a sousední země se o projektu vyjádřili jako o špatném vtipu.</Description>
+          <ImagePath>liberland1</ImagePath>
+          <ChoiceText>Pravdepodobně nesmysl</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="2" />
+            <ModifyEffect attribute="Liberland" value="1" />
+          </Effects>
+          <Title>Český občan se stal prezidentem nově vznikajícího státu Liberland. </Title>
+          <Description>Svobodná republika Liberland je svou rozlohou dvakrát větší než Monako a již má tisíce žadatelů o občanství. Hlavní lákadlem jsou nulové daně a minimální zásahy státu.</Description>
+          <ImagePath>liberland2</ImagePath>
+          <ImageLabel>Prezident Svobodné republiky Liberland s vlajkou nového státu</ImageLabel>
+          <ChoiceText>Na Balkáně vznikl nový stát</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-10-09">
+      <Description>Část veřejnosti je znepokojena kondenzačními čárami, které se objevují na obloze za proudovými letadly. Oficiální vědecké kapacity tvrdí, že jde o běžný fyzikální jev. Alternativní zdroje mají fotografie zachycující, že je takto rozprašován nervový plyn, který dělá lidi více poddajnými a snáze manipulovatelnými.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="-2" />
+            <ModifyEffect attribute="Info" value="+2" />
+            <ModifyEffect attribute="Panic" value="-2" />
+          </Effects>
+          <Title>Ministerstvo Zdravotnictví: Chemtrails jsou normální jev</Title>
+          <Description>Podle odborníků se lidé nemusí bílých čar za motorovými letadly obávat. “Kondenzační stopy jsou tvořeny drobnými vodními kapkami nebo ledovými krystalky, které vznikají jako přirozený důsledek promíchávání chladného vzduchu s horkými produkty spalování leteckého paliva,“ říká vědec z Ústavu pro klimatickou bezpečnost.</Description>
+          <ImagePath>chemtrails1</ImagePath>
+          <ImageLabel>Kondenzační stopy letadla</ImageLabel>
+          <ChoiceText>Oficiální zdroje</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="2" />
+            <ModifyEffect attribute="Info" value="-4" />
+            <ModifyEffect attribute="Panic" value="+2" />
+          </Effects>
+          <Title>Chemtrails potvrzeny. Co vám elity tají? </Title>
+          <Description>Skupina aktivistů, kteží si říkají The Enlightenment, zveřejnila šokující fotografii interiéru Amerického letounu, který slouží k rozprašování nervového plynu D3bi1. Podle aktivistů vdechování rozptýleného D3bi1 způsobuje dlouhodobé stavy otupělosti. V případě těhotných žen je riziko poškození plodu, kdy se pak u narozených dítětí může vyvinout homosexualita.</Description>
+          <ImagePath>chemtrails2</ImagePath>
+          <ImageLabel>Tajně pořízená fotografie paluby letadla</ImageLabel>
+          <ChoiceText>Alternativní zdroje</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <ImageChoiceEvent>
+      <Description>Hlavním městem o víkendu pochodovali gayové a lesbičky. Našemu fotografovi se podařilo zachytit tyto fotografie.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="3" />
+            <ModifyEffect attribute="Panic" value="1" />
+            <ModifyEffect attribute="Tom" value="1" />
+          </Effects>
+          <Title>Tisíce homosexuálů prošly městem</Title>
+          <ImagePath>prideHC</ImagePath>
+          <ImageLabel>I toto mohly vidět vaše děti!</ImageLabel>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="1" />
+            <ModifyEffect attribute="Alice" value="1" />
+          </Effects>
+          <Title>Pride Parade se letos zúčastnilo přes 50.000 lidí</Title>
+          <ImagePath>prideSOFT</ImagePath>
+        </Choice>
+      </Choices>
+    </ImageChoiceEvent>
   </Events>
 </Scenario>
