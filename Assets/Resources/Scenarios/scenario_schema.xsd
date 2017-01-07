@@ -7,8 +7,11 @@
 >
   <xs:simpleType name="knownattributenametype">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="Credibility"/>
-      <xs:enumeration value="Money"/>
+      <xs:enumeration value="Fun"/>
+      <xs:enumeration value="Panic"/>
+      <xs:enumeration value="Info"/>
+      <xs:enumeration value="Alice"/>
+      <xs:enumeration value="Tom"/>
       <!--Here new attribute names can be inserted in order to see them as hints in XML editors.-->
     </xs:restriction>
   </xs:simpleType>

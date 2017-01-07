@@ -13,6 +13,13 @@ namespace Assets.Editor.Tests
     [TestFixture]
     class ModelTests
     {
+        [SetUp]
+        public void Init()
+        {
+            Attribs.MinValue = 0;
+            Attribs.MaxValue = 1000;
+            Attribs.MidValue = 500;
+        }
         [Test]
         public void TestAttributesAndTermination()
         {
