@@ -13,7 +13,7 @@ public class PublishingProcessor : MonoBehaviour
     public GameObject ImageDescription;
     public GameObject Text;
 
-    public string ResourceFolder = "/Cutscenes";
+    public string ResourceFolder = "/Images/Articles";
     private PressEvent _event;
     private Choice _choice;
 
@@ -28,7 +28,8 @@ public class PublishingProcessor : MonoBehaviour
 
         Assert.IsNotNull(Image, name);
         Assert.IsNotNull(Image.GetComponent<RawImage>(), name);
-
+        Assert.IsNotNull(Image.GetComponent<AspectRatioFitter>(), name);
+        
         Assert.IsNotNull(ImageDescription, name);
         Assert.IsNotNull(ImageDescription.GetComponent<Text>(), name);
 
@@ -37,7 +38,7 @@ public class PublishingProcessor : MonoBehaviour
     }
 
 
-    public void Publish(MultipleChoiceEvent e, TextChoice choice)
+    public void Publish(PressEvent e, Choice choice)
     {
         _event = e;
         _choice = choice;
@@ -59,7 +60,8 @@ public class PublishingProcessor : MonoBehaviour
             var texture = Resources.Load<Texture>(path);
             var image = Image.GetComponent<RawImage>();
             image.texture = texture;
-            GetComponent<AspectRatioFitter>().aspectRatio = texture.width / (float)texture.height;
+
+            Image.GetComponent<AspectRatioFitter>().aspectRatio = texture.width / (float)texture.height;
 
             ImageDescription.GetComponent<Text>().text = ""; // TODO!!
         }
@@ -70,12 +72,6 @@ public class PublishingProcessor : MonoBehaviour
         }
 
         Text.GetComponent<Text>().text = choice.ArticleText;
-    }
-
-    public void Publish(ImageChoiceEvent e, ImageChoice choice)
-    {
-        Debug.Log("Start publishing image event: " + _event.Date + " choice: " + choice.Title);
-        // TODO
     }
 
     public void Finish()
