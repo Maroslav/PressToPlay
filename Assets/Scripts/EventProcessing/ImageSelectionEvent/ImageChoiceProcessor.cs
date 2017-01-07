@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Assets.Code.Gameplay;
 using Assets.Code.PressEvents;
+using Assets.Code.PressEvents.Choices;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
@@ -9,34 +10,27 @@ class ImageChoiceProcessor : MonoBehaviour
 {
     private readonly List<Object> _choiceGameObjects = new List<Object>();
 
-    public GameObject ToggledParent;
     public GameObject ImageChoiceButtonPrefab;
+
 
     void OnValidate()
     {
-        Assert.IsNotNull(ToggledParent);
         Assert.IsNotNull(ImageChoiceButtonPrefab);
         Assert.IsNotNull(ImageChoiceButtonPrefab.GetComponent<ImageChoiceData>());
     }
 
+
     public void ProcessEvent(ImageChoiceEvent e, ImageChoiceEventProcessor eventManager)
     {
-        //var choices = e.GetClosestOptions(Constants.DefaultChoicesCount);
         var choices = e.Choices;
 
-        for (int i = 0; i < choices.Count; ++i)
+        foreach (ImageChoice c in choices)
         {
             GameObject choiceGameObject = Instantiate(ImageChoiceButtonPrefab);
             choiceGameObject.transform.SetParent(transform, true);
 
             ImageChoiceData imageChoiceData = choiceGameObject.GetComponent<ImageChoiceData>();
-            imageChoiceData.Choice = choices[i];
-            imageChoiceData.SetEvent(e, eventManager);
-
-            if (choiceGameObject.GetComponentsInChildren<Text>().Length > 0)
-            {
-                //choiceGameObject.GetComponentsInChildren<Text>()[0].text = e.Choices[i].Title;
-            }
+            imageChoiceData.SetEvent(c, eventManager);
 
             _choiceGameObjects.Add(choiceGameObject);
         }

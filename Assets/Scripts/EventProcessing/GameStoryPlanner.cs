@@ -54,7 +54,7 @@ namespace Assets.Scripts
                 }
                 else
                 {
-                   GetComponent<ScenePicker>().LoadScene();
+                    GetComponent<ScenePicker>().LoadScene();
                 }
             }
         }

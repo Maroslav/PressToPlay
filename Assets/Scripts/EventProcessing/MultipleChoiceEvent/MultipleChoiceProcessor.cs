@@ -9,17 +9,14 @@ public class MultipleChoiceProcessor : MonoBehaviour
 {
     private readonly List<Object> _choiceGameObjects = new List<Object>();
   
-    public GameObject ToggledParent;
     public GameObject MultipleChoiceButtonPrefab;
 
 
     void OnValidate()
     {
-        Assert.IsNotNull(ToggledParent);
         Assert.IsNotNull(MultipleChoiceButtonPrefab);
         Assert.IsNotNull(MultipleChoiceButtonPrefab.GetComponent<MultipleChoiceData>());
     }
-
 
 
     public void ProcessEvent(MultipleChoiceEvent e, MultipleChoiceEventProcessor eventManager)
@@ -32,8 +29,7 @@ public class MultipleChoiceProcessor : MonoBehaviour
             choiceGameObject.transform.SetParent(transform, true);
 
             MultipleChoiceData multipleChoiceData = choiceGameObject.GetComponent<MultipleChoiceData>();
-            multipleChoiceData.Choice = choices[i];
-            multipleChoiceData.SetEvent(e, eventManager);
+            multipleChoiceData.SetEvent(choices[i], eventManager);
 
             if (choiceGameObject.GetComponentsInChildren<Text>().Length > 0)
             {

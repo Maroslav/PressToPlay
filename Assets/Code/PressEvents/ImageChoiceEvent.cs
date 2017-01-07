@@ -24,15 +24,10 @@ namespace Assets.Code.PressEvents
 
         public List<ImageChoice> Choices { get; set; }
 
+
         public override void ProcessEvent(IEventProcessor processor)
         {
             processor.ProcessEvent(this);
-        }
-
-        public void Finish(ImageChoice selectedChoice, WorldState worldState)
-        {
-            selectedChoice.ApplyEffects(worldState);
-            IsFinished = true;
         }
     }
 }
