@@ -37,9 +37,13 @@ namespace Assets.Code.PressEvents
         //Visitor pattern, corresponds to the 'accept' method.
         public abstract void ProcessEvent(IEventProcessor processor);
 
-        public virtual void Finish(Choice selectedChoice, WorldState worldState)
+        public virtual void Apply(Choice selectedChoice, WorldState worldState)
         {
             selectedChoice.ApplyEffects(worldState);
+        }
+
+        public virtual void Finish()
+        {
             IsFinished = true;
         }
     }

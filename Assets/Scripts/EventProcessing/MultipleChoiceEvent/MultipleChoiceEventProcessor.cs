@@ -54,6 +54,9 @@ public class MultipleChoiceEventProcessor : MonoBehaviour
         ChoiceViewer.GetComponent<MultipleChoiceProcessor>().DestroyChoices();
         gameObject.SetActive(false);
 
+        // Let the event apply the changes to the world state
+        _event.Apply(choice, WorldStateProvider.State);
+
         // Let Publishing handle the rest (this component is now finished)
         Publishing.GetComponent<PublishingProcessor>().Publish(_event, choice);
     }

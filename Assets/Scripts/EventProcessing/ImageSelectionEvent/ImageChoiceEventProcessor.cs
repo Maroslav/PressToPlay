@@ -14,6 +14,8 @@ public class ImageChoiceEventProcessor : MonoBehaviour
     public GameObject ChoicePublish;
 
     private bool _isShowingSelectedChoice = false;
+    public GameObject Publishing;
+
     private ImageChoiceEvent _event;
     public bool CanFinishEvent { get; private set; }
 
@@ -76,5 +78,18 @@ public class ImageChoiceEventProcessor : MonoBehaviour
 
         // Let the viewer set its content
         ChoiceViewer.GetComponent<ImageChoiceProcessor>().ProcessEvent(e, this);
+    }
+
+    internal void ProcessChoice(ImageChoice choice)
+    {
+        // Remove old choices and hide not neccesary things
+        ChoiceViewer.GetComponent<ImageChoiceProcessor>().DestroyChoices();
+        gameObject.SetActive(false);
+
+        // Let the event apply the changes to the world state
+        _event.Apply(choice, WorldStateProvider.State);
+
+        // Let Publishing handle the rest (this component is now finished)
+        Publishing.GetComponent<PublishingProcessor>().Publish(_event, choice);
     }
 }

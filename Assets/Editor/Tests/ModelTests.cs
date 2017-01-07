@@ -22,10 +22,10 @@ namespace Assets.Editor.Tests
             var scheduler = new PressEventScheduler(worldState, new DateTime(2016, 1, 1), new DateTime(2017, 2, 2), storyEventsScenario);
             var evt = NextAsMultipleChoice(scheduler);
             Assert.AreEqual(500,worldState.JournalistState[cred]);
-            evt.Finish(evt.Choices[0],worldState);
+            evt.Apply(evt.Choices[0],worldState);
             Assert.AreEqual(125,worldState.JournalistState[cred]);
             evt = NextAsMultipleChoice(scheduler);
-            evt.Finish(evt.Choices[0], worldState);
+            evt.Apply(evt.Choices[0], worldState);
             Assert.AreEqual(150, worldState.JournalistState[cred]);
             Assert.IsNull(scheduler.PopNextEvent());
         }
@@ -39,10 +39,10 @@ namespace Assets.Editor.Tests
             worldState.JournalistState[cred] = 0;
             var scheduler = new PressEventScheduler(worldState, new DateTime(2016, 1, 1), new DateTime(2017, 2, 2), storyEventsScenario);
             var evt = NextAsMultipleChoice(scheduler);
-            evt.Finish(evt.Choices[1], worldState);
+            evt.Apply(evt.Choices[1], worldState);
             Assert.AreEqual(250, worldState.JournalistState[cred]);
             evt = NextAsMultipleChoice(scheduler);
-            evt.Finish(evt.Choices[0], worldState);
+            evt.Apply(evt.Choices[0], worldState);
             Assert.AreEqual(275, worldState.JournalistState[cred]);
             Assert.IsNull(scheduler.PopNextEvent());
         }
@@ -56,10 +56,10 @@ namespace Assets.Editor.Tests
             worldState.JournalistState[cred] = 0;
             var scheduler = new PressEventScheduler(worldState, new DateTime(2016, 1, 1), new DateTime(2017, 2, 2), storyEventsScenario);
             var evt = NextAsMultipleChoice(scheduler);
-            evt.Finish(evt.Choices[1], worldState);
+            evt.Apply(evt.Choices[1], worldState);
             Assert.AreEqual(250, worldState.JournalistState[cred]);
             evt = NextAsMultipleChoice(scheduler);
-            evt.Finish(evt.Choices[1], worldState);
+            evt.Apply(evt.Choices[1], worldState);
             Assert.AreEqual(400, worldState.JournalistState[cred]);
             Assert.IsNull(scheduler.PopNextEvent());
         }
@@ -78,14 +78,14 @@ namespace Assets.Editor.Tests
             Assert.IsNotNull(cond as CutsceneEvent);
             Assert.AreEqual("Unconditional conditional!",(cond as CutsceneEvent).Description);
             var evt = NextAsMultipleChoice(scheduler);
-            evt.Finish(evt.Choices[1], worldState);
+            evt.Apply(evt.Choices[1], worldState);
             Assert.AreEqual(250, worldState.JournalistState[cred]);
             evt = NextAsMultipleChoice(scheduler);
             Assert.AreEqual("Credibility is 250.", evt.Description);
-            evt.Finish(evt.Choices[0], worldState);
+            evt.Apply(evt.Choices[0], worldState);
             Assert.AreEqual(0, worldState.JournalistState[money]);
             evt = NextAsMultipleChoice(scheduler);
-            evt.Finish(evt.Choices[0], worldState);
+            evt.Apply(evt.Choices[0], worldState);
             Assert.AreEqual(275, worldState.JournalistState[cred]);
             Assert.IsNull(scheduler.PopNextEvent());
         }
@@ -104,13 +104,13 @@ namespace Assets.Editor.Tests
             Assert.IsNotNull(cond as CutsceneEvent);
             Assert.AreEqual("Unconditional conditional!", (cond as CutsceneEvent).Description);
             var evt = NextAsMultipleChoice(scheduler);
-            evt.Finish(evt.Choices[1], worldState);
+            evt.Apply(evt.Choices[1], worldState);
             Assert.AreEqual(550, worldState.JournalistState[cred]);
             evt = NextAsMultipleChoice(scheduler);
-            evt.Finish(evt.Choices[1], worldState);
+            evt.Apply(evt.Choices[1], worldState);
             Assert.AreEqual(650, worldState.JournalistState[money]);
             evt = NextAsMultipleChoice(scheduler);
-            evt.Finish(evt.Choices[1], worldState);
+            evt.Apply(evt.Choices[1], worldState);
             Assert.AreEqual(700, worldState.JournalistState[cred]);
             Assert.IsNull(scheduler.PopNextEvent());
         }

@@ -83,8 +83,6 @@ public class PublishingProcessor : MonoBehaviour
     {
         Debug.Log("Finished publishing option " + _choice.Title);
         gameObject.SetActive(false);
-
-        // Let the event apply the changes to the world state
-        _event.Finish(_choice, WorldStateProvider.State);
+        _event.Finish();
     }
 }
