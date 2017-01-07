@@ -34,7 +34,7 @@ public class MultipleChoiceEventProcessor : MonoBehaviour
     public void ProcessEvent(MultipleChoiceEvent e)
     {
         _event = e;
-
+        Debug.Log("Processing new multiple choice event: " + _event.Date);
         gameObject.SetActive(true);
 
         // Set event description in the UI

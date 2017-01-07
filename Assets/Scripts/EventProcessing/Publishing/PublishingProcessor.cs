@@ -43,6 +43,8 @@ public class PublishingProcessor : MonoBehaviour
         _event = e;
         _choice = choice;
 
+        Debug.Log("Start publishing multiple choice event: " + _event.Date + " choice: " + choice.Title);
+
         gameObject.SetActive(true);
 
         Title.GetComponent<Text>().text = choice.Title;
@@ -73,13 +75,16 @@ public class PublishingProcessor : MonoBehaviour
 
     public void Publish(PressEvent e, ImageChoice choice)
     {
+        Debug.Log("Start publishing image event: " + _event.Date + " choice: " + choice.Title);
         // TODO
     }
 
     public void Finish()
     {
+        Debug.Log("Finished publishing option " + _choice.Title);
+        gameObject.SetActive(false);
+
         // Let the event apply the changes to the world state
-        Debug.Log("Publishing option " + _choice.Title);
         _event.Finish(_choice, WorldStateProvider.State);
     }
 }
