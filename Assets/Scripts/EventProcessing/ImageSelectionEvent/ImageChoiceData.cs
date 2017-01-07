@@ -8,26 +8,18 @@ using Assets.Code.PressEvents.Choices;
 /// </summary>
 public class ImageChoiceData : MonoBehaviour
 {
-    private ImageChoiceEvent _event;
+    private ImageChoice _choice;
     private ImageChoiceEventProcessor _owner;
 
-    public ImageChoice Choice;
 
-
-    public void SetEvent(ImageChoiceEvent newEvent, ImageChoiceEventProcessor viewProcessor)
+    public void SetEvent(ImageChoice choice, ImageChoiceEventProcessor viewProcessor)
     {
-        _event = newEvent;
+        _choice = choice;
         _owner = viewProcessor;
     }
 
     public void OnClick()
     {
-        _owner.MoveToNextState(Choice);
-
-        if (_owner.CanFinishEvent)
-        {
-            _owner.gameObject.SetActive(false);
-            _event.Finish(Choice, WorldStateProvider.State);
-        }
+        _owner.ProcessChoice(_choice);
     }
 }
