@@ -63,7 +63,7 @@ public class PublishingProcessor : MonoBehaviour
 
             Image.GetComponent<AspectRatioFitter>().aspectRatio = texture.width / (float)texture.height;
 
-            ImageDescription.GetComponent<Text>().text = ""; // TODO!!
+            ImageDescription.GetComponent<Text>().text = choice.ImageLabel;
         }
         else
         {

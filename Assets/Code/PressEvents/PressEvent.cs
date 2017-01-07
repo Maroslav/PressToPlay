@@ -11,8 +11,8 @@ namespace Assets.Code.PressEvents
     public abstract class PressEvent
     {
         public DateTime Date { get; set; }
-        public bool IsFinished { get;protected set; }
-        public List<Precondition> Preconditions{ get; private set; }
+        public bool IsFinished { get; protected set; }
+        public List<Precondition> Preconditions { get; private set; }
         public bool IsTerminating { get; private set; }
 
         private PressEvent(DateTime date)
@@ -25,12 +25,13 @@ namespace Assets.Code.PressEvents
             Preconditions = preconditions;
             IsTerminating = isTerminating;
         }
-        
+
         public bool CheckConditions(WorldState state)
         {
             foreach (var precondition in Preconditions)
             {
-                if (!precondition.Check(state)) return false;
+                if (!precondition.Check(state))
+                    return false;
             }
             return true;
         }
@@ -40,6 +41,7 @@ namespace Assets.Code.PressEvents
         public virtual void Apply(Choice selectedChoice, WorldState worldState)
         {
             selectedChoice.ApplyEffects(worldState);
+            WorldStateProvider.UpdateAttributeGameObjects();
         }
 
         public virtual void Finish()
