@@ -13,5 +13,6 @@
   </Category>
   <Category name="SupportAttributes" description="Obliba kandidátů">
     <Attribute name="Liberland" description="Existence Liberlandu" initialValue="0" isDisplayed="false" />
+    <Attribute name="Anicka" description="Anicka" initialValue="0" isDisplayed="false" />
   </Category>
 </Attributes>

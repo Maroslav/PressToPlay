@@ -51,7 +51,7 @@
           <Description>"Mám praktické zkušenosti z businessu, kterými chci přispět do české politiky," říká sebevědomě teprve jednatřicetiletý Tom Dvoracek. Týden po pádu vlády založil alternativní politický think tank Liberty2020, se kterým chce kandidovat v předčasných volbách.</Description>
           <ImagePath>tom1</ImagePath>
           <ImageLabel>Tom Dvoracek, předseda strany Liberty2020</ImageLabel>
-          <ChoiceText>mladá naděje ve vysoké politce</ChoiceText>
+          <ChoiceText>mladá naděje ve vysoké politice</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
@@ -152,7 +152,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <ImageChoiceEvent>
+    <ImageChoiceEvent date="2019-10-15">
       <Description>Hlavním městem o víkendu pochodovali gayové a lesbičky. Našemu fotografovi se podařilo zachytit tyto fotografie.</Description>
       <Choices>
         <Choice>
@@ -175,5 +175,216 @@
         </Choice>
       </Choices>
     </ImageChoiceEvent>
+    <MultipleChoiceEvent date="2019-10-17">
+      <Description>Parlament probírá úpravu zákona o držení střelných zbraní. Argumentem pro větší dostupnost zbraní mezi civilním obyvatelstvem je událost z Curychu, kde civilista v nákupním centru zneškodnil legálně drženou pistolí muže hrozícího odpálením výbušniny. Kritici novely argumentují statistikami o počtu úmrtí způsobených střelnou zbraní v různých jurisdikcích.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="2" />
+            <ModifyEffect attribute="Info" value="-2" />
+            <ModifyEffect attribute="Panic" value="-2" />
+            <ModifyEffect attribute="Tom" value="3" />
+          </Effects>
+          <Title>Vyzbrojený civilista zneškodnil teroristu, který se chystal odpálit v nákupním centru v Curychu</Title>
+          <Description> Slavný biatlonista, který je vedle dvou zlatých medailí také nositelem pistole typu Glock 17, zabránil přesnou střelbou z 12 metrů krveprolití. “Každý správný Švýcar by na mém místě udělal to samé. Teda, pokud by zrovna měl u sebe zbraň,” podotýká skromný hrdina, úspěšný sportovec a vášnivý střelec. Tom Dvoracek okamžitě navrhl novelu zákona o zbraních, která se inspirovala právě švýcarským modelem.</Description>
+          <ImagePath>chemtrails1</ImagePath>
+          <ImageLabel>Kondenzační stopy letadla</ImageLabel>
+          <ChoiceText>Příběh o hrdinovi</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="-3" />
+            <ModifyEffect attribute="Info" value="3" />
+            <ModifyEffect attribute="Tom" value="-2" />
+            <ModifyEffect attribute="Panic" value="2" />
+          </Effects>
+          <Title>Mrtvých přibude, pokud projde novela zákona o držení zbraní.</Title>
+          <Description>Statistika OSN ukazuje, že v zemích, kde jsou zbraně dostupnější, je také mnohem větší šance, že budete zastřeleni. </Description>
+          <ImagePath>zbranestat</ImagePath>
+          <ImageLabel>Zdroj: Index lidského rozvoje OSN</ImageLabel>
+          <ChoiceText>Zveřejnit statistiku</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <ImageChoiceEvent date="2019-10-18">
+      <Description>Před vilou lídra strany Liberty2020 Toma Dvoracky demonstrovaly desitky aktivistu. Takto je zachytil náš fotograf</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Panic" value="2" />
+            <ModifyEffect attribute="Fun" value="3" />
+            <ModifyEffect attribute="Tom" value="3" />
+          </Effects>
+          <Title>Vandalové zapálili auto Toma Dvoracka.</Title>
+          <ImagePath>vandalohen</ImagePath>
+          <ImageLabel>Vandalové zapálili auto Toma Dvoracka (foto: psa)</ImageLabel>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="1" />
+            <ModifyEffect attribute="Panic" value="1" />
+            <ModifyEffect attribute="Tom" value="-2" />
+          </Effects>
+          <Title>Brutalni zasah policie na demonstranty pred Dvorackovou vilou.</Title>
+          <ImagePath>vandalzatykani</ImagePath>
+          <ImageLabel />
+        </Choice>
+      </Choices>
+    </ImageChoiceEvent>
+    <MultipleChoiceEvent date="2019-10-23">
+      <Description>Policie pohřešuje osmiletou holčičku Aničku Novákovou.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="2" />
+            <ModifyEffect attribute="Panic" value="1" />
+          </Effects>
+          <Title>Ztracená Anička: Podezřelý je sexuální deviant!</Title>
+          <Description>"Je to strašné, bojím se, že naši Aničku unesel nějaký úchyl," řekla exkluzivně redakci matka pohřešované holčičky.</Description>
+          <ImagePath>anicka1</ImagePath>
+          <ImageLabel>Ilustrační foto (zdroj: Freestock)</ImageLabel>
+          <ChoiceText>rozhovor s matkou</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="-2" />
+            <ModifyEffect attribute="Info" value="1" />
+            <ModifyEffect attribute="Anicka" value="1" />
+          </Effects>
+          <Title>Policejní sdělení: Pátrání po pohřešované osobě</Title>
+          <Description>Statistika OSN ukazuje, že v zemích, kde jsou zbraně dostupnější, je také mnohem větší šance, že budete zastřeleni. </Description>
+          <ChoiceText>Zveřejnit statistiku</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-10-24">
+      <Description>Tom Dvoracek se narodil v roce 1988 českému otci a britské matce v New Yorku. Studoval ekonomii na Columbia University, ze které ale ve druhém ročníku odešel, aby se mohl věnovat své firmě Future Finance, která se věnuje obchodování s rizikovými aktivy.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Info" value="-1" />
+            <ModifyEffect attribute="Tom" value="-1" />
+          </Effects>
+          <Title>Kandidát na premiéra nemá vystudovanou vysokou školu</Title>
+          <Description>Jednatřicetiletý miliardář přišel ke svému jmení pravděpodobně jen díky štěstí při spekulacích. Dvoracek tak dokazuje, že je možné zbohatnout i bez práce.</Description>
+          <ChoiceText>Kandidát na premiéra nemá vystudovanou vysokou školu</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Info" value="1" />
+            <ModifyEffect attribute="Tom" value="1" />
+          </Effects>
+          <Title>Kandidát na premiéra od mládí úspěšně podniká</Title>
+          <Description>Tom Dvoracek vydělal první miliardu teprve ve dvaadvaceti letech. Future Finance tehdy obchodovalo s tzv. "novými aktivy" funujícími na bázi blockchainu.</Description>
+          <ChoiceText>Životopis Toma Dvoracka</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <CutsceneEvent date="2019-10-24">
+      <Preconditions>
+        <Precondition attribute="Anicka" operation="equal" value="1" />
+      </Preconditions>
+      <ImagePath>nalezena</ImagePath>
+      <Text>Ztracená anička byla nalezena díky policejní zprávě zveřejněné na Novinky-rychle.cz</Text>
+    </CutsceneEvent>
+    <MultipleChoiceEvent date="2019-10-27">
+      <Description>Na Vyšehradě se uskutečnil sjezd nové politické strany, která si říká Řád bílých kališníků. Jsou údajně ochotni bránit české hodnoty a bojovat proti establishmentu všemu prostředky.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Info" value="-1" />
+          </Effects>
+          <Title>Boží bojovníci míří do politiky</Title>
+          <Description>"Chceme napravit, co tu ostatní politici za ta léta napáchali. My nejsme jako oni. Nejedná se o typickou politickou stranu, ale o řád," říká předseda kališníků Ivan Řemdich.</Description>
+          <ImagePath>kkk</ImagePath>
+          <ImageLabel>"Kališník" Ivan Řemdych (Foto: Paul Walsch)</ImageLabel>
+          <ChoiceText>Nacionální extremismus</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Info" value="2" />
+            <ModifyEffect attribute="Panic" value="2" />
+            <ModifyEffect attribute="Fun" value="2" />
+          </Effects>
+          <Title>V Česku vznika nebezpečné polovojenské uskupení</Title>
+          <Description>Tajná policie varuje před novým politickým uskupením. "Podle našeho expertného šetření jsme odhalili jisté indicie, že by se mohlo jednat o extrémistické hnutí," říká elitní policista.</Description>
+          <ImagePath>kkk</ImagePath>
+          <ImageLabel>Ivan Řemdych (Foto: Paul Walsch)</ImageLabel>
+          <ChoiceText>Návrat k husitské tradici</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-11-05">
+      <Description>Podnikatel Tom Dvoracek začal skupovat ve velkém české dluhopisy. Jejich cena kleska tak nízko, že mají zápornou hodnotu. "Dělám to z lásky k Česku. Platím státu za to, že mu půjčuji peníze," zdůvodňuje nákup Tom Dvoracek.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Info" value="-1" />
+            <ModifyEffect attribute="Tom" value="3" />
+          </Effects>
+          <Title>Tom Dvoracek pomáhá splácet český dluh</Title>
+          <Description>Zdá se to neuvěřitelné, ale charismatický miliardář dobrovolně přispívá do státní kasy. Dvoracek nakoupil české dluhopisy s negativním úrokem. "Přijde mi to jako dobrý způsob, jak státu pomoci," říká podnikatel.</Description>
+          <ChoiceText>Dvoracek je filantrop</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="-2" />
+            <ModifyEffect attribute="Info" value="2" />
+            <ModifyEffect attribute="Tom" value="-3" />
+          </Effects>
+          <Title>Dvoracek spekuluje proti české koruně</Title>
+          <Description>"Pan Dvoracek nakoupil státní dluhopisy v době, kdy byla koruna uměle podhodnocená. Až Národní banka kurz zvýší a stát bude muset dluh splatit, tak na tom proděláme všichni kromě Dvoracka," říká profesor ekonomie.</Description>
+          <ChoiceText>Vyjádření ekonoma</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-11-08">
+      <Description>Alice Kubešová, která se proslavila jako herečka v 60. letech minulého století, kandiduje v roce 2020 na premiérku. Něco zde nehraje. Objevují se spekulace o jejím mladém vzhledu.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="3" />
+            <ModifyEffect attribute="Alice" value="-3" />
+            <ModifyEffect attribute="Panic" value="1" />
+          </Effects>
+          <Title>Šokující odhalení. Víme, proč Kubešová vypadá tak mladě.</Title>
+          <Description>Přední český záhadolog je přesvědčen, že Kubešová je mimopozemského původu. "Nasvědčují tomu i její příliš dobré vztahy se zahraničními elitami," naznačuje.</Description>
+          <ChoiceText>Mohou za tím být Reptaliáni</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Alice" value="2" />
+            <ModifyEffect attribute="Panic" value="-3" />
+          </Effects>
+          <Title>Šokující odhalení. Víme, proč Kubešová vypadá tak mladě.</Title>
+          <Description>Nikdy jsem nebyla na žádné plastické operaci. Pouze cvičím jógu a pravidelně snídám müsli cereálie.</Description>
+          <ChoiceText>Zdravý životní styl</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-11-22">
+      <Description>Podnikatel Tom Dvoracek začal skupovat ve velkém české dluhopisy. Jejich cena kleska tak nízko, že mají zápornou hodnotu. "Dělám to z lásky k Česku. Platím státu za to, že mu půjčuji peníze," zdůvodňuje nákup Tom Dvoracek.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Info" value="-1" />
+            <ModifyEffect attribute="Tom" value="3" />
+          </Effects>
+          <Title>Tom Dvoracek pomáhá splácet český dluh</Title>
+          <Description>Zdá se to neuvěřitelné, ale charismatický miliardář dobrovolně přispívá do státní kasy. Dvoracek nakoupil české dluhopisy s negativním úrokem. "Přijde mi to jako dobrý způsob, jak státu pomoci," říká podnikatel.</Description>
+          <ChoiceText>Dvoracek je filantrop</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="-2" />
+            <ModifyEffect attribute="Info" value="2" />
+            <ModifyEffect attribute="Tom" value="-3" />
+          </Effects>
+          <Title>Dvoracek spekuluje proti české koruně</Title>
+          <Description>"Pan Dvoracek nakoupil státní dluhopisy v době, kdy byla koruna uměle podhodnocená. Až Národní banka kurz zvýší a stát bude muset dluh splatit, tak na tom proděláme všichni kromě Dvoracka," říká profesor ekonomie.</Description>
+          <ChoiceText>vyjádření ekonoma</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
   </Events>
 </Scenario>
