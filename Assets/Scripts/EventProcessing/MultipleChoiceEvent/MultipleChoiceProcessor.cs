@@ -19,7 +19,6 @@ public class MultipleChoiceProcessor : MonoBehaviour
     }
 
 
-
     public void ProcessEvent(MultipleChoiceEvent e, MultipleChoiceEventProcessor eventManager)
     {
         var choices = e.GetClosestOptions(Constants.DefaultChoicesCount);

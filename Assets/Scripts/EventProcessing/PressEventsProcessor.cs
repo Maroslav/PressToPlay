@@ -25,6 +25,7 @@ public class PressEventsProcessor : MonoBehaviour, IEventProcessor
         Assert.IsNotNull(CutsceneEventViewer.GetComponent<CutsceneProcessor>(), name);
     }
 
+
     public void ProcessEvent(MultipleChoiceEvent e)
     {
         MultipleChoiceEvent.GetComponent<MultipleChoiceEventProcessor>().ProcessEvent(e);

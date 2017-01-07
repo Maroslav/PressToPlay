@@ -13,7 +13,6 @@ public class PublishingProcessor : MonoBehaviour
     public GameObject ImageDescription;
     public GameObject Text;
 
-
     public string ResourceFolder = "/Cutscenes";
     private PressEvent _event;
     private Choice _choice;
@@ -38,7 +37,7 @@ public class PublishingProcessor : MonoBehaviour
     }
 
 
-    public void Publish(PressEvent e, TextChoice choice)
+    public void Publish(MultipleChoiceEvent e, TextChoice choice)
     {
         _event = e;
         _choice = choice;
@@ -73,7 +72,7 @@ public class PublishingProcessor : MonoBehaviour
         Text.GetComponent<Text>().text = choice.ArticleText;
     }
 
-    public void Publish(PressEvent e, ImageChoice choice)
+    public void Publish(ImageChoiceEvent e, ImageChoice choice)
     {
         Debug.Log("Start publishing image event: " + _event.Date + " choice: " + choice.Title);
         // TODO

@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class MultipleChoiceEventProcessor : MonoBehaviour
 {
-
     public GameObject ChoiceDescription;
     public GameObject ChoiceDate;
     public GameObject ChoiceViewer;
@@ -15,6 +14,7 @@ public class MultipleChoiceEventProcessor : MonoBehaviour
     public GameObject Publishing;
 
     private MultipleChoiceEvent _event;
+
 
     void OnValidate()
     {
@@ -31,6 +31,7 @@ public class MultipleChoiceEventProcessor : MonoBehaviour
         Assert.IsNotNull(Publishing.GetComponent<PublishingProcessor>(), name);
     }
 
+
     public void ProcessEvent(MultipleChoiceEvent e)
     {
         _event = e;
@@ -46,7 +47,7 @@ public class MultipleChoiceEventProcessor : MonoBehaviour
         ChoiceViewer.GetComponent<MultipleChoiceProcessor>().ProcessEvent(e, this);
     }
 
-    internal void FinishEvent(TextChoice choice)
+    internal void ProcessChoice(TextChoice choice)
     {
         Debug.Log("Choosing option " + choice.Title);
 

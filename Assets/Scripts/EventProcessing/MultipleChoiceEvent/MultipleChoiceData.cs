@@ -20,6 +20,6 @@ public class MultipleChoiceData : MonoBehaviour
 
     public void OnClick()
     {
-        _owner.FinishEvent(_choice);
+        _owner.ProcessChoice(_choice);
     }
 }

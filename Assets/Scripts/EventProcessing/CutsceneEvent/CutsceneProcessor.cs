@@ -24,6 +24,7 @@ public class CutsceneProcessor : MonoBehaviour
         Assert.IsNotNull(ToggledParent, name);
     }
 
+
     public void ProcessEvent(CutsceneEvent e)
     {
         ToggledParent.SetActive(true);
