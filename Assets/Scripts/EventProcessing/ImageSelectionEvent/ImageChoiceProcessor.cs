@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using Assets.Code.Gameplay;
 using Assets.Code.PressEvents;
 using Assets.Code.PressEvents.Choices;
@@ -31,6 +32,15 @@ class ImageChoiceProcessor : MonoBehaviour
 
             ImageChoiceData imageChoiceData = choiceGameObject.GetComponent<ImageChoiceData>();
             imageChoiceData.SetEvent(c, eventManager);
+            string path = Path.Combine(Constants.ArticleImagesResourceFolder, c.ImagePath).Replace('\\', '/');
+            Debug.Log("Image path for choice" + c.Title + "=" + path);
+            Sprite image = Resources.Load<Sprite>(path);
+            ;
+            imageChoiceData.ImageButton.GetComponent<Image>().sprite = image;
+            var texture = image.texture;
+            float aspectRatio = texture.width / (float)texture.height;
+            imageChoiceData.ImageButton.GetComponent<AspectRatioFitter>().aspectRatio = aspectRatio;
+            imageChoiceData.ImageMargin.GetComponent<AspectRatioFitter>().aspectRatio = aspectRatio;
 
             _choiceGameObjects.Add(choiceGameObject);
         }

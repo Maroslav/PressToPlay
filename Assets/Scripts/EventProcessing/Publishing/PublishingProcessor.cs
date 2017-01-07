@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Assets.Code.Gameplay;
 using UnityEngine;
 using Assets.Code.PressEvents;
 using Assets.Code.PressEvents.Choices;
@@ -13,7 +14,6 @@ public class PublishingProcessor : MonoBehaviour
     public GameObject ImageDescription;
     public GameObject Text;
 
-    public string ResourceFolder = "/Images/Articles";
     private PressEvent _event;
     private Choice _choice;
 
@@ -55,7 +55,7 @@ public class PublishingProcessor : MonoBehaviour
             Image.SetActive(true);
             ImageDescription.SetActive(true);
 
-            string path = Path.Combine(ResourceFolder, choice.ImagePath).Replace('\\', '/');
+            string path = Path.Combine(Constants.ArticleImagesResourceFolder, choice.ImagePath).Replace('\\', '/');
             Debug.Log("Loading a publishing image from: " + path);
             var texture = Resources.Load<Texture>(path);
             var image = Image.GetComponent<RawImage>();
