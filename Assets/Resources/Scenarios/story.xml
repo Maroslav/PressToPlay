@@ -13,6 +13,23 @@
       <Text>Gratulujeme! Stal se z tebe novinář. Od teď budeš informovat veřejnost o tom nejdůležitějším, co se stalo.
       </Text>
     </CutsceneEvent>
+    <ImageChoiceEvent date="2017-03-25" isTerminating="false">
+      <Description>Testovaci event pro zobrazovani obrazku.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <MoveTowardsEffect attribute="Credibility" value = "900"/>
+          </Effects>
+          <ImagePath>Endings/event_intro</ImagePath>
+        </Choice>
+        <Choice>
+          <Effects>
+            <MoveTowardsEffect attribute="Credibility" value = "100"/>
+          </Effects>
+          <ImagePath>Endings/event_intro</ImagePath>
+        </Choice>
+      </Choices>
+    </ImageChoiceEvent>
     <CutsceneEvent date="2017-12-24" isTerminating="true">
       <Preconditions>
         <Precondition attribute = "Credibility" operation="lessOrEqual" value="500"/>
