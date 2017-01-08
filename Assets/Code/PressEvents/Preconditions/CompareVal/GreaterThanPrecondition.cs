@@ -2,7 +2,7 @@
 
 namespace Assets.Code.PressEvents.Preconditions
 {
-    internal class GreaterThanPrecondition : Precondition
+    internal class GreaterThanPrecondition : PreconditionCompareValue
     {
         public GreaterThanPrecondition(Attrib attribute, int value) : base(attribute, value)
         {

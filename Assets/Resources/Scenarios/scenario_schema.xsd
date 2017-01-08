@@ -71,7 +71,9 @@
       <xs:maxInclusive value="1000"/>
     </xs:restriction>
   </xs:simpleType>
-
+  <xs:simpleType name="preconditionvaluetype">
+    <xs:union memberTypes="xs:int attributenametype xs:date"/>
+  </xs:simpleType>
   <xs:complexType name="preconditiontype">
     <xs:annotation>
       <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
@@ -86,7 +88,7 @@
     </xs:annotation>
     <xs:attribute name="attribute" type="attributenametype"  use="required"/>
     <xs:attribute name="operation" type="attributeoperationtype" use="required"/>
-    <xs:attribute name="value" type="attributevaluetype" use="required"/>
+    <xs:attribute name="value" type="preconditionvaluetype" use="required"/>
   </xs:complexType>
 
 

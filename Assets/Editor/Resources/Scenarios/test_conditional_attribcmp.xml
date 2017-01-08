@@ -2,13 +2,16 @@
 <?xml-stylesheet type="text/xsl" href="../../../Resources/Scenarios/scenario_stylesheet.xslt"?>
 <Scenario name="name, only for the designer" xmlns="http://presstoplaygame.com/scenario" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://presstoplaygame.com/scenario ../../../Resources/Scenarios/scenario_schema.xsd">
   <Events>
-    <MultipleChoiceEvent date="2016-11-30">
+    <MultipleChoiceEvent name="More credibility">
+      <Preconditions>
+        <Precondition attribute="Credibility" operation="greater" value="Money" />
+      </Preconditions>
       <Description>Event 1 description
           </Description>
       <Choices>
         <Choice>
           <Effects>
-            <SetEffect attribute="Credibility" value="125" />
+            <SetEffect attribute="Money" value="0" />
           </Effects>
           <Description>
                       Choice 1 description
@@ -23,16 +26,19 @@
           <Description>
                       Choice 2 long description
                   </Description>
-          <ChoiceText>Choice 2 title</ChoiceText>
+          <ChoiceText>Choice 2 ChoiceText</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2016-12-01" isTerminating="true">
-      <Description>Event 2 descr.</Description>
+    <MultipleChoiceEvent name="More money">
+      <Preconditions>
+        <Precondition attribute="Credibility" operation="less" value="Money" />
+      </Preconditions>
+      <Description>More money</Description>
       <Choices>
         <Choice>
           <Effects>
-            <MoveTowardsEffect amount="25" attribute="Credibility" value="500" />
+            <SetEffect attribute="Money" value="0" />
           </Effects>
           <Description>
                       Choice 1 description
@@ -42,20 +48,25 @@
         <Choice>
           <Effects>
             <ModifyEffect attribute="Credibility" value="150" />
+            <MoveTowardsEffect amount="100" attribute="Credibility" value="500" />
           </Effects>
           <Description>
                       Choice 2 long description
                   </Description>
-          <ChoiceText>Choice 2 title</ChoiceText>
+          <ChoiceText>Choice 2 ChoiceText</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2016-12-01">
-      <Description>Event that will never happen</Description>
+    <MultipleChoiceEvent name="Little of both">
+      <Preconditions>
+        <Precondition attribute="Credibility" operation="less" value="200" />
+        <Precondition attribute="Money" operation="lessOrEqual" value="Credibility" />
+      </Preconditions>
+      <Description>More money</Description>
       <Choices>
         <Choice>
           <Effects>
-            <MoveTowardsEffect amount="25" attribute="Credibility" value="500" />
+            <SetEffect attribute="Money" value="0" />
           </Effects>
           <Description>
                       Choice 1 description
@@ -65,11 +76,39 @@
         <Choice>
           <Effects>
             <ModifyEffect attribute="Credibility" value="150" />
+            <MoveTowardsEffect amount="100" attribute="Credibility" value="500" />
           </Effects>
           <Description>
                       Choice 2 long description
                   </Description>
-          <ChoiceText>Choice 2 title</ChoiceText>
+          <ChoiceText>Choice 2 ChoiceText</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent name="Late">
+      <Preconditions>
+        <Precondition attribute="date" operation="greater" value="2016-09-09" />
+      </Preconditions>
+      <Description>More money</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <SetEffect attribute="Money" value="0" />
+          </Effects>
+          <Description>
+                      Choice 1 description
+                  </Description>
+          <ChoiceText>Choice 1</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Credibility" value="150" />
+            <MoveTowardsEffect amount="100" attribute="Credibility" value="500" />
+          </Effects>
+          <Description>
+                      Choice 2 long description
+                  </Description>
+          <ChoiceText>Choice 2 ChoiceText</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>

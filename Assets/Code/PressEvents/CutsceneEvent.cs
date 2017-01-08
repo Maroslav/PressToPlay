@@ -30,9 +30,5 @@ namespace Assets.Code.PressEvents
         }
 
 
-        public void Finish()
-        {
-            IsFinished = true;
-        }
     }
 }
