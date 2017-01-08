@@ -31,7 +31,7 @@ namespace Assets.Code.PressEvents.Construction
             }
             var descr = evt.Description;
             var precond = GetPreconditions(evt);
-            return new MultipleChoiceEvent(descr,d,choices,evt.IsTerminating,precond);
+            return new MultipleChoiceEvent(descr,evt.Name,d,choices,evt.IsTerminating,precond);
         }
 
 
@@ -47,14 +47,14 @@ namespace Assets.Code.PressEvents.Construction
             var description = evt.Description;
             var preconditions = GetPreconditions(evt);
             var terminating = evt.IsTerminating;
-            return new ImageChoiceEvent(d,terminating,preconditions,choices,description);
+            return new ImageChoiceEvent(d,evt.Name,terminating,preconditions,choices,description);
         }
 
         public PressEvent Process(CutsceneEventDao evt)
         {
             var d = GetDate(evt);
             var preconditions = GetPreconditions(evt);
-            return new CutsceneEvent(evt.ImagePath, evt.Text,d, evt.IsTerminating,preconditions);
+            return new CutsceneEvent(evt.ImagePath,evt.Name, evt.Text,d, evt.IsTerminating,preconditions);
         }
         private DateTime GetDate(PressEventDao evt)
         {

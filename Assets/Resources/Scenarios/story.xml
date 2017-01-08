@@ -14,7 +14,7 @@
       <ImagePath>Intro/intro_editor</ImagePath>
       <Text>Byl/a jsi povýšen/a na editora zpravodajského serveru Novinky-rychle.cz. Tvým úkolem je rozhodovat, jaká bude náplň denního zpravodajství.</Text>
     </CutsceneEvent>
-    <MultipleChoiceEvent date="2019-10-01">
+    <MultipleChoiceEvent date="2019-10-01" name="Chřipková epidemie">
       <Description>Česko postihla chřipková epidemie. Nový virus chřipky.4 mrtví.
 
 &lt;color=#585858&gt;(NÁPOVĚDA: Kliknutím vyberte, jaké hlavní téma mají tvé noviny použít v článku o této události. Pozor, volba může ovlivnit čtenost novin i veřejné mínění.)&lt;/color&gt;</Description>
@@ -40,7 +40,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-10-03">
+    <MultipleChoiceEvent date="2019-10-03" name="Liberty2020 chce osvobodit Česko">
       <Description>Po pádu vlády se objevil nový mladý podnikatel, který by se rád ucházel o křeslo předsedy vlády. Tom Dvoracek je nejmladším evropským miliardářem. Ke jmění, které čítá přes 14 miliard eur, se dostal ve svých jednatřicetiletech jako manažer Dubajského hedgefundu. Zakládá stranu Liberty2020.</Description>
       <Choices>
         <Choice>
@@ -68,7 +68,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-10-05">
+    <MultipleChoiceEvent date="2019-10-05" name="Rodina a příroda vyráží do boje">
       <Description>V reakci na nespokojenost lidí s vládnoucími elitami, vzniká nová strana Rodina a Přiroda (RaP). Předsedkyní bude populární umělkyně Alice Kubešová, známá především z filmů Nové české vlny. Spekuluje se, že strana je silně marxisticky zaměřená.</Description>
       <Choices>
         <Choice>
@@ -98,7 +98,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-10-05">
+    <MultipleChoiceEvent date="2019-10-05" name="Liberland">
       <Description>Český občan si na Balkáně vyhlásil vlastní stát, kde se nebudou muset platit daně. Svou zemi pojmenoval Liberland. Podle samozvaného prezidenta je existence nového mikrostátu legální. Nachází se totiž na nikým nenárokovaném území mezi dvěma státy bývalé Jugoslávie v takzvané terra nullius neboli zemi nikoho.</Description>
       <Choices>
         <Choice>
@@ -124,7 +124,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-10-09">
+    <MultipleChoiceEvent date="2019-10-09" name="Konspirátoři útočí">
       <Description>Část veřejnosti je znepokojena kondenzačními čárami, které se objevují na obloze za proudovými letadly. Oficiální vědecké kapacity tvrdí, že jde o běžný fyzikální jev. Alternativní zdroje mají fotografie zachycující, že je takto rozprašován nervový plyn, který dělá lidi více poddajnými a snáze manipulovatelnými.</Description>
       <Choices>
         <Choice>
@@ -153,7 +153,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <ImageChoiceEvent date="2019-10-15">
+    <ImageChoiceEvent date="2019-10-15" name="Reportáž z Prague Pride">
       <Description>Hlavním městem o víkendu pochodovali gayové a lesbičky. Našemu fotografovi se podařilo zachytit tyto fotografie.
 
 &lt;color=#585858&gt;(NÁPOVĚDA: Kliknutím vyberte, kterou fotografii chcete použít v článku o této události.)&lt;/color&gt;</Description>
@@ -178,7 +178,7 @@
         </Choice>
       </Choices>
     </ImageChoiceEvent>
-    <MultipleChoiceEvent date="2019-10-17">
+    <MultipleChoiceEvent date="2019-10-17" name="Milovníci střelných zbraní">
       <Description>Parlament probírá úpravu zákona o držení střelných zbraní. Argumentem pro větší dostupnost zbraní mezi civilním obyvatelstvem je událost z Curychu, kde civilista v nákupním centru zneškodnil legálně drženou pistolí muže hrozícího odpálením výbušniny. Kritici novely argumentují statistikami o počtu úmrtí způsobených střelnou zbraní v různých jurisdikcích.</Description>
       <Choices>
         <Choice>
@@ -207,7 +207,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <ImageChoiceEvent date="2019-10-18">
+    <ImageChoiceEvent date="2019-10-18" name="Oligarcha v ohrožení">
       <Description>Před vilou lídra strany Liberty2020 Toma Dvoracka demonstrovaly desítky aktivistů. Takto je zachytil náš fotograf.</Description>
       <Choices>
         <Choice>
@@ -232,7 +232,7 @@
         </Choice>
       </Choices>
     </ImageChoiceEvent>
-    <MultipleChoiceEvent date="2019-10-23">
+    <MultipleChoiceEvent date="2019-10-23" name="Ztracená Anička">
       <Description>Policie pohřešuje osmiletou holčičku Aničku Novákovou.</Description>
       <Choices>
         <Choice>
@@ -258,7 +258,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-10-24">
+    <MultipleChoiceEvent date="2019-10-24" name="Životopis mladého finančníka">
       <Description>Tom Dvoracek se narodil v roce 1988 českému otci a britské matce v New Yorku. Studoval ekonomii na Columbia University, ze které ale ve druhém ročníku odešel, aby se mohl věnovat své firmě Future Finance, která se věnuje obchodování s rizikovými aktivy.</Description>
       <Choices>
         <Choice>
@@ -288,7 +288,7 @@
       <ImagePath>nalezena</ImagePath>
       <Text>Ztracená anička byla nalezena díky policejní zprávě zveřejněné na Novinky-rychle.cz</Text>
     </CutsceneEvent>
-    <MultipleChoiceEvent date="2019-10-27">
+    <MultipleChoiceEvent date="2019-10-27" name="Řád bílých kališníků">
       <Description>Na Vyšehradě se uskutečnil sjezd nové politické strany, která si říká Řád bílých kališníků. Jsou údajně ochotni bránit české hodnoty a bojovat proti establishmentu všemu prostředky.</Description>
       <Choices>
         <Choice>
@@ -315,7 +315,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-11-05">
+    <MultipleChoiceEvent date="2019-11-05" name="Tom Dvoracek, filantrop">
       <Description>Podnikatel Tom Dvoracek začal skupovat ve velkém české dluhopisy. Jejich cena kleska tak nízko, že mají zápornou hodnotu. "Dělám to z lásky k Česku. Platím státu za to, že mu půjčuji peníze," zdůvodňuje nákup Tom Dvoracek.</Description>
       <Choices>
         <Choice>
@@ -339,7 +339,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-11-08">
+    <MultipleChoiceEvent date="2019-11-08" name="Pevné zdraví herečky Kubešové">
       <Description>Alice Kubešová, která se proslavila jako herečka v 60. letech minulého století, kandiduje v roce 2020 na premiérku. Něco zde nehraje. Objevují se spekulace o jejím mladém vzhledu.</Description>
       <Choices>
         <Choice>
@@ -363,11 +363,11 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-11-22">
+    <MultipleChoiceEvent date="2019-11-22" name="Daňová úspora Toma Dvoracka">
       <Preconditions>
         <Precondition attribute="Liberland" value="1" operation="equal" />
       </Preconditions>
-      <Description>Tom Dvoracek je velký fanoušek Liberlandu. Jeho firma Future Finance tam letos z důvodů daňové optimalizace přesídlila do Liberlandu. Nižší náklady prý firmě dovolí přimout více zaměstanců. RaP toto kritizuje.</Description>
+      <Description>Tom Dvoracek je velký fanoušek Liberlandu. Jeho firma Future Finance tam letos z důvodů daňové optimalizace přesídlila. Nižší náklady prý firmě dovolí přimout více zaměstanců. RaP toto kritizuje.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -389,7 +389,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-11-22">
+    <MultipleChoiceEvent date="2019-11-22" name="Tom Dvoracek, zastánce země svobody">
       <Preconditions>
         <Precondition attribute="Liberland" value="0" operation="equal" />
       </Preconditions>

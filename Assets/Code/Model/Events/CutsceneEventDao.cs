@@ -15,7 +15,7 @@ namespace Assets.Code.Model
         [XmlElement("Text")]
         public string Text { get; set; }
 
-      
+
 
         public override T Process<T>(IPressEventDaoProcessor<T> processor)
         {

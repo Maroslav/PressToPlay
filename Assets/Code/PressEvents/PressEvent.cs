@@ -10,17 +10,19 @@ namespace Assets.Code.PressEvents
 {
     public abstract class PressEvent
     {
+        public string Name { get; set; }
         public DateTime Date { get; set; }
         public bool IsFinished { get; protected set; }
         public List<Precondition> Preconditions { get; private set; }
         public bool IsTerminating { get; private set; }
 
-        private PressEvent(DateTime date)
+        private PressEvent(DateTime date, string name)
         {
             Date = date;
+            Name = name;
             IsFinished = false;
         }
-        protected PressEvent(DateTime date, bool isTerminating, List<Precondition> preconditions) : this(date)
+        protected PressEvent(DateTime date, string name, bool isTerminating, List<Precondition> preconditions) : this(date, name)
         {
             Preconditions = preconditions;
             IsTerminating = isTerminating;

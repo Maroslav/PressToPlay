@@ -12,8 +12,8 @@ namespace Assets.Code.PressEvents
         public string Description { get; private set; }
 
 
-        public CutsceneEvent(string imagePath, string description, DateTime date, bool isTerminating, List<Precondition> preconditions = null)
-            : base(date, isTerminating,preconditions ?? new List<Precondition>())
+        public CutsceneEvent(string imagePath, string name, string description, DateTime date, bool isTerminating, List<Precondition> preconditions = null)
+            : base(date,name, isTerminating,preconditions ?? new List<Precondition>())
         {
             Assert.IsNotNull(imagePath);
             Assert.IsFalse(imagePath.StartsWith("/"), "The image path cannot start with a slash.");

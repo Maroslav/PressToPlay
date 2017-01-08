@@ -13,8 +13,8 @@ namespace Assets.Code.PressEvents
     /// 
     public class ImageChoiceEvent:PressEvent
     {
-        public ImageChoiceEvent(DateTime date, bool isTerminating, List<Precondition> preconditions, List<ImageChoice> choices, string description
-            ) : base(date, isTerminating, preconditions)
+        public ImageChoiceEvent(DateTime date, string name, bool isTerminating, List<Precondition> preconditions, List<ImageChoice> choices, string description
+            ) : base(date,name, isTerminating, preconditions)
         {
             Choices = choices;
             Description = description;

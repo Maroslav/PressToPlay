@@ -95,6 +95,7 @@
       <xs:element name="Preconditions" type="preconditionlist" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
     <xs:attribute name="date" type="xs:date" use="optional"/>
+    <xs:attribute name="name" type="xs:string" use="optional"/>
     <xs:attribute name="isTerminating" type="xs:boolean" use="optional"/>
   </xs:complexType>
   <xs:complexType name="preconditionlist">

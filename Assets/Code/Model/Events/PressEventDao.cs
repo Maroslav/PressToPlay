@@ -18,6 +18,9 @@ namespace Assets.Code.Model
         {
             
         }
+        [XmlAttribute("name")]
+        public string Name { get; set; }
+
         [XmlAttribute("date")]
         public string Date { get; private set; }
 
