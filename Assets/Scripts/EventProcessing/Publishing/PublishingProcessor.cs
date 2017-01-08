@@ -10,6 +10,7 @@ public class PublishingProcessor : MonoBehaviour
 {
     public GameObject Title;
     public GameObject Description;
+    public GameObject ImageFixedARParent;
     public GameObject Image;
     public GameObject ImageDescription;
     public GameObject Text;
@@ -26,10 +27,15 @@ public class PublishingProcessor : MonoBehaviour
         Assert.IsNotNull(Description, name);
         Assert.IsNotNull(Description.GetComponent<Text>(), name);
 
+        Assert.IsNotNull(ImageFixedARParent, name);
+        var child = ImageFixedARParent.transform.GetChild(0);
+        Assert.IsNotNull(child, name);
+        Assert.AreEqual(child.gameObject, Image, name);
+
         Assert.IsNotNull(Image, name);
         Assert.IsNotNull(Image.GetComponent<RawImage>(), name);
         Assert.IsNotNull(Image.GetComponent<AspectRatioFitter>(), name);
-        
+
         Assert.IsNotNull(ImageDescription, name);
         Assert.IsNotNull(ImageDescription.GetComponent<Text>(), name);
 
@@ -47,14 +53,17 @@ public class PublishingProcessor : MonoBehaviour
 
         gameObject.SetActive(true);
 
+        // Title and desc
         Title.GetComponent<Text>().text = choice.Title;
         Description.GetComponent<Text>().text = choice.Description;
 
-        if (choice.ImagePath != null)
-        {
-            Image.SetActive(true);
-            ImageDescription.SetActive(true);
+        // Image
+        bool isImage = choice.ImagePath != null;
+        ImageFixedARParent.SetActive(isImage);
+        ImageDescription.SetActive(isImage);
 
+        if (isImage)
+        {
             string path = Path.Combine(Constants.ArticleImagesResourceFolder, choice.ImagePath).Replace('\\', '/');
             Debug.Log("Loading a publishing image from: " + path);
             var texture = Resources.Load<Texture>(path);
@@ -65,13 +74,13 @@ public class PublishingProcessor : MonoBehaviour
 
             ImageDescription.GetComponent<Text>().text = choice.ImageLabel;
         }
-        else
-        {
-            Image.SetActive(false);
-            ImageDescription.SetActive(false);
-        }
 
-        Text.GetComponent<Text>().text = choice.ArticleText;
+        // Article text
+        bool isArticleText = !string.IsNullOrEmpty(choice.ArticleText);
+        Text.SetActive(isArticleText);
+
+        if (isArticleText)
+            Text.GetComponent<Text>().text = choice.ArticleText;
     }
 
     public void Finish()

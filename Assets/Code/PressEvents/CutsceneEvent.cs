@@ -28,7 +28,5 @@ namespace Assets.Code.PressEvents
         {
             processor.ProcessEvent(this);
         }
-
-
     }
 }

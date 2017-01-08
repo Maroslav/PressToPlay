@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ImageChoiceEventProcessor : MonoBehaviour
 {
+    public GameObject ChoiceName;
     public GameObject ChoiceDescription;
     public GameObject ChoiceDate;
     public GameObject ChoiceViewer;
@@ -18,6 +19,9 @@ public class ImageChoiceEventProcessor : MonoBehaviour
 
     void OnValidate()
     {
+        Assert.IsNotNull(ChoiceName, name);
+        Assert.IsNotNull(ChoiceName.GetComponent<Text>(), name);
+
         Assert.IsNotNull(ChoiceDescription, name);
         Assert.IsNotNull(ChoiceDescription.GetComponent<Text>(), name);
 
@@ -38,9 +42,9 @@ public class ImageChoiceEventProcessor : MonoBehaviour
         gameObject.SetActive(true);
 
         // Set event description in the UI
+        ChoiceName.GetComponent<Text>().text = e.Name;
         ChoiceDescription.GetComponent<Text>().text = e.Description;
-        CultureInfo csCz = new CultureInfo("cs-CZ");
-        ChoiceDate.GetComponent<Text>().text = e.Date.ToString("d", csCz);
+        ChoiceDate.GetComponent<Text>().text = e.Date.ToString("d", new CultureInfo("cs-CZ"));
 
         // Let the viewer set its content
         ChoiceViewer.GetComponent<ImageChoiceProcessor>().ProcessEvent(e, this);
