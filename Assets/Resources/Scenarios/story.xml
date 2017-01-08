@@ -146,7 +146,7 @@
             <ModifyEffect attribute="Panic" value="+2" />
           </Effects>
           <Title>Chemtrails potvrzeny. Co vám elity tají? </Title>
-          <Description>Skupina aktivistů, kteží si říkají The Enlightenment, zveřejnila šokující fotografii interiéru Amerického letounu, který slouží k rozprašování nervového plynu D3bi1. Podle aktivistů vdechování rozptýleného D3bi1 způsobuje dlouhodobé stavy otupělosti. V případě těhotných žen je riziko poškození plodu, kdy se pak u narozených dítětí může vyvinout homosexualita.</Description>
+          <Description>Skupina aktivistů, kteží si říkají The Enlightenment, zveřejnila šokující fotografii interiéru Amerického letounu, který slouží k rozprašování nervového plynu D3bi1. Podle aktivistů vdechování rozptýleného D3bi1 způsobuje dlouhodobé stavy otupělosti. V případě těhotných žen je riziko poškození plodu, kdy se pak u narozených dětí může vyvinout homosexualita.</Description>
           <ImagePath>chemtrails2</ImagePath>
           <ImageLabel>Tajně pořízená fotografie paluby letadla</ImageLabel>
           <ChoiceText>Alternativní zdroje</ChoiceText>
@@ -208,7 +208,7 @@
       </Choices>
     </MultipleChoiceEvent>
     <ImageChoiceEvent date="2019-10-18">
-      <Description>Před vilou lídra strany Liberty2020 Toma Dvoracka demonstrovaly desitky aktivistů. Takto je zachytil náš fotograf.</Description>
+      <Description>Před vilou lídra strany Liberty2020 Toma Dvoracka demonstrovaly desítky aktivistů. Takto je zachytil náš fotograf.</Description>
       <Choices>
         <Choice>
           <Effects>
