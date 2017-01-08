@@ -12,10 +12,11 @@
     </CutsceneEvent>
     <CutsceneEvent date="2019-10-01">
       <ImagePath>Intro/intro_editor</ImagePath>
-      <Text>Byl/a jsi povýšen na editora -Jmeno Novin-. Tvým úkolem je rozhodovat, jaká bude náplň denního zpravodajství.</Text>
+      <Text>Byl/a jsi povýšen/a na editora zpravodajského serveru Novinky-rychle.cz. Tvým úkolem je rozhodovat, jaká bude náplň denního zpravodajství.</Text>
     </CutsceneEvent>
     <MultipleChoiceEvent date="2019-10-01">
       <Description>Česko postihla chřipková epidemie. Nový virus chřipky.4 mrtví.
+
 &lt;color=#585858&gt;(NÁPOVĚDA: Kliknutím vyberte, jaké hlavní téma mají tvé noviny použít v článku o této události. Pozor, volba může ovlivnit čtenost novin i veřejné mínění.)&lt;/color&gt;</Description>
       <Choices>
         <Choice>
@@ -153,7 +154,9 @@
       </Choices>
     </MultipleChoiceEvent>
     <ImageChoiceEvent date="2019-10-15">
-      <Description>Hlavním městem o víkendu pochodovali gayové a lesbičky. Našemu fotografovi se podařilo zachytit tyto fotografie.</Description>
+      <Description>Hlavním městem o víkendu pochodovali gayové a lesbičky. Našemu fotografovi se podařilo zachytit tyto fotografie.
+
+&lt;color=#585858&gt;(NÁPOVĚDA: Kliknutím vyberte, kterou fotografii chcete použít v článku o této události.)&lt;/color&gt;</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -187,8 +190,6 @@
           </Effects>
           <Title>Vyzbrojený civilista zneškodnil teroristu, který se chystal odpálit v nákupním centru v Curychu</Title>
           <Description> Slavný biatlonista, který je vedle dvou zlatých medailí také nositelem pistole typu Glock 17, zabránil přesnou střelbou z 12 metrů krveprolití. “Každý správný Švýcar by na mém místě udělal to samé. Teda, pokud by zrovna měl u sebe zbraň,” podotýká skromný hrdina, úspěšný sportovec a vášnivý střelec. Tom Dvoracek okamžitě navrhl novelu zákona o zbraních, která se inspirovala právě švýcarským modelem.</Description>
-          <ImagePath>chemtrails1</ImagePath>
-          <ImageLabel>Kondenzační stopy letadla</ImageLabel>
           <ChoiceText>Příběh o hrdinovi</ChoiceText>
         </Choice>
         <Choice>
@@ -207,7 +208,7 @@
       </Choices>
     </MultipleChoiceEvent>
     <ImageChoiceEvent date="2019-10-18">
-      <Description>Před vilou lídra strany Liberty2020 Toma Dvoracky demonstrovaly desitky aktivistu. Takto je zachytil náš fotograf</Description>
+      <Description>Před vilou lídra strany Liberty2020 Toma Dvoracka demonstrovaly desitky aktivistů. Takto je zachytil náš fotograf.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -240,10 +241,10 @@
             <ModifyEffect attribute="Panic" value="1" />
           </Effects>
           <Title>Ztracená Anička: Podezřelý je sexuální deviant!</Title>
-          <Description>"Je to strašné, bojím se, že naši Aničku unesel nějaký úchyl," řekla exkluzivně redakci matka pohřešované holčičky.</Description>
-          <ImagePath>anicka1</ImagePath>
+          <Description>"Je to strašné, bojím se, že naši Aničku unesl nějaký úchyl," řekla exkluzivně redakci matka pohřešované holčičky.</Description>
+          <ImagePath>anicka</ImagePath>
           <ImageLabel>Ilustrační foto (zdroj: Freestock)</ImageLabel>
-          <ChoiceText>rozhovor s matkou</ChoiceText>
+          <ChoiceText>Rozhovor s matkou</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
@@ -252,8 +253,8 @@
             <ModifyEffect attribute="Anicka" value="1" />
           </Effects>
           <Title>Policejní sdělení: Pátrání po pohřešované osobě</Title>
-          <Description>Statistika OSN ukazuje, že v zemích, kde jsou zbraně dostupnější, je také mnohem větší šance, že budete zastřeleni. </Description>
-          <ChoiceText>Zveřejnit statistiku</ChoiceText>
+          <Description>Dívka odešla z domu po páté hodině odpoledne bez mobilního telefonu. Na sobě měla fialové tepláky a zelenkavou šusťákovou bundu. V případě, že můžete k výskytu pohřešované podat jakékoliv informace, volejte na bezplatnou linku 158.</Description>
+          <ChoiceText>Vyjádření policie</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
@@ -356,33 +357,62 @@
             <ModifyEffect attribute="Alice" value="2" />
             <ModifyEffect attribute="Panic" value="-3" />
           </Effects>
-          <Title>Šokující odhalení. Víme, proč Kubešová vypadá tak mladě.</Title>
+          <Title>Recept na dlouhověkost? Nevynechat snídani, říká bývalá herečka</Title>
           <Description>Nikdy jsem nebyla na žádné plastické operaci. Pouze cvičím jógu a pravidelně snídám müsli cereálie.</Description>
           <ChoiceText>Zdravý životní styl</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-11-22">
-      <Description>Podnikatel Tom Dvoracek začal skupovat ve velkém české dluhopisy. Jejich cena kleska tak nízko, že mají zápornou hodnotu. "Dělám to z lásky k Česku. Platím státu za to, že mu půjčuji peníze," zdůvodňuje nákup Tom Dvoracek.</Description>
+      <Preconditions>
+        <Precondition attribute="Liberland" value="1" operation="equal" />
+      </Preconditions>
+      <Description>Tom Dvoracek je velký fanoušek Liberlandu. Jeho firma Future Finance tam letos z důvodů daňové optimalizace přesídlila do Liberlandu. Nižší náklady prý firmě dovolí přimout více zaměstanců. RaP toto kritizuje.</Description>
       <Choices>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Info" value="-1" />
-            <ModifyEffect attribute="Tom" value="3" />
+            <ModifyEffect attribute="Info" value="2" />
+            <ModifyEffect attribute="Tom" value="-2" />
+            <ModifyEffect attribute="Alice" value="1" />
           </Effects>
-          <Title>Tom Dvoracek pomáhá splácet český dluh</Title>
-          <Description>Zdá se to neuvěřitelné, ale charismatický miliardář dobrovolně přispívá do státní kasy. Dvoracek nakoupil české dluhopisy s negativním úrokem. "Přijde mi to jako dobrý způsob, jak státu pomoci," říká podnikatel.</Description>
-          <ChoiceText>Dvoracek je filantrop</ChoiceText>
+          <Title>Dvoracek připravil Česko o miliardy na daních</Title>
+          <Description>Oligarcha Dvoracek přesunul svou firmu Future Finance do daňového ráje Liberlandu, aby se vyhnul placení daní. Alice Kubešová svolala na zítřek demonstraci proti daňovým rájům.</Description>
+          <ChoiceText>Dvoracek neplatí daně</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Fun" value="-2" />
-            <ModifyEffect attribute="Info" value="2" />
-            <ModifyEffect attribute="Tom" value="-3" />
+            <ModifyEffect attribute="Tom" value="2" />
           </Effects>
-          <Title>Dvoracek spekuluje proti české koruně</Title>
-          <Description>"Pan Dvoracek nakoupil státní dluhopisy v době, kdy byla koruna uměle podhodnocená. Až Národní banka kurz zvýší a stát bude muset dluh splatit, tak na tom proděláme všichni kromě Dvoracka," říká profesor ekonomie.</Description>
-          <ChoiceText>vyjádření ekonoma</ChoiceText>
+          <Title>Future Finance otevře na Ústecku novou počítárnu bankovek, práci získá až 200 lidí</Title>
+          <Description>(Ústí nad Labem) "Naše firma rychle expanduje a tudíž si můžeme dovolit více zaměstanců. Myslím, že to bude vzpruha pro tento region," říká mladý podnikatel Tom Dvoracek.</Description>
+          <ChoiceText>Nová pracovní místa od Future Finance</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-11-22">
+      <Preconditions>
+        <Precondition attribute="Liberland" value="0" operation="equal" />
+      </Preconditions>
+      <Description>Tom Dvoracek chce Chorvatsku domluvit a podpořit vznikající sousední stát Liberland. "Je potřeba se zastat slabšího," říká Dvoracek.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Panic" value="1" />
+            <ModifyEffect attribute="Tom" value="-1" />
+          </Effects>
+          <Title>Možný budoucí premiér útočí na Suverenitu Chorvatska.</Title>
+          <Description></Description>
+          <ImagePath>liberland3</ImagePath>
+          <ChoiceText>Konflikt s Chorvatskem</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Tom" value="1" />
+          </Effects>
+          <Title>Dvoracek podporuje mikrostát na Balkáně.</Title>
+          <Description></Description>
+          <ImagePath>liberland4</ImagePath>
+          <ChoiceText>Podpora mikrostátu</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>

@@ -4,6 +4,10 @@ namespace Assets.Code.Model.Attribs
 {
     public class AttribTypeDao
     {
+        public AttribTypeDao()
+        {
+            InitialValue = GameState.Attribs.MidValue;
+        }
         [XmlAttribute("name")]
         public string Name { get; set; }
         [XmlAttribute("description")]
