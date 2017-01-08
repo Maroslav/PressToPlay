@@ -6,7 +6,7 @@ using Assets.Code.PressEvents.Preconditions;
 
 namespace Assets.Code.PressEvents
 {
-    public class MultipleChoiceEvent : PressEvent
+    public class MultipleChoiceEvent : ChoicePressEvent
     {
         public MultipleChoiceEvent(string descr, string name, DateTime d, List<TextChoice> choices, bool isTerminating, List<Precondition> precond = null)
             : base(d,name,isTerminating, precond ?? new List<Precondition>())

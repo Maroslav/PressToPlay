@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Assets.Code.GameState;
 using Assets.Code.PressEvents.Choices;
 using Assets.Code.PressEvents.Preconditions;
 
@@ -11,7 +8,7 @@ namespace Assets.Code.PressEvents
     ///
     /// Paths to images are stored in the choices property.
     /// 
-    public class ImageChoiceEvent:PressEvent
+    public class ImageChoiceEvent:ChoicePressEvent
     {
         public ImageChoiceEvent(DateTime date, string name, bool isTerminating, List<Precondition> preconditions, List<ImageChoice> choices, string description
             ) : base(date,name, isTerminating, preconditions)
