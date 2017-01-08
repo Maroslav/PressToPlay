@@ -25,7 +25,7 @@
             <ModifyEffect attribute="Panic" value="2" />
           </Effects>
           <Title>Virus H4N7 zabíjel</Title>
-          <Description> (Praha) Celkem čtyři lidé podlehli smrtelnému viru chřipky. Desítky dalších jsou nakaženi. Je otázkou čau než virus zmutuje a epidemie přeroste v pandemii. Vědci však tvrdí, že se není čeho obávat. (med)</Description>
+          <Description> (Praha) Celkem čtyři lidé podlehli smrtelnému viru chřipky. Desítky dalších jsou nakaženi. Je otázkou času než virus zmutuje a epidemie přeroste v pandemii. Vědci však tvrdí, že se není čeho obávat. (med)</Description>
           <ChoiceText>Chřipka zabíjí</ChoiceText>
         </Choice>
         <Choice>
