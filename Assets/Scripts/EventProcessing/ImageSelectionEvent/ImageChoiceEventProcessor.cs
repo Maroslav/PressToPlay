@@ -54,7 +54,7 @@ public class ImageChoiceEventProcessor : MonoBehaviour
 
         // Let the event apply the changes to the world state
         _event.Apply(choice, WorldStateProvider.State);
-
+        WorldStateProvider.UpdateAttributeGameObjects();
         // Let Publishing handle the rest (this component is now finished)
         Publishing.GetComponent<PublishingProcessor>().Publish(_event, choice);
     }

@@ -43,7 +43,6 @@ namespace Assets.Code.PressEvents
         public virtual void Apply(Choice selectedChoice, WorldState worldState)
         {
             selectedChoice.ApplyEffects(worldState);
-            WorldStateProvider.UpdateAttributeGameObjects();
         }
 
         public virtual void Finish()
