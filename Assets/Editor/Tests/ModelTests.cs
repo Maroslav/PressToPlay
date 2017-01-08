@@ -138,6 +138,40 @@ namespace Assets.Editor.Tests
             Assert.IsNull(scheduler.PopNextEvent());
         }
 
+        [Test]
+        public void TestConditionalAttribsCompare()
+        {
+            var worldState = GameInit.CreateWorldState("Attributes/credibility_and_money");
+            var condScenario = new ConditionalEventsScenario("Scenarios/test_conditional_attribcmp", worldState);
+            var cred = Attribs.GetAttribByName("Credibility");
+            var money = Attribs.GetAttribByName("Money");
+            worldState.JournalistState[cred] = 500;
+            worldState.SetValue(money,500);
+            var scheduler = new PressEventScheduler(worldState, new DateTime(1605, 1, 1), new DateTime(2020, 2, 2), condScenario);
+
+            Assert.IsNull(scheduler.PopNextEvent());
+            worldState.SetValue(money,499);
+            Assert.AreEqual("More credibility",scheduler.PopNextEvent().Name);
+            Assert.IsNull(scheduler.PopNextEvent());
+            worldState.SetValue(money,501);
+            Assert.AreEqual("More money",scheduler.PopNextEvent().Name);
+            Assert.IsNull(scheduler.PopNextEvent());
+            worldState.SetValue(cred,100);
+            worldState.SetValue(money,101);
+            Assert.IsNull(scheduler.PopNextEvent());
+            worldState.SetValue(money,100);
+            Assert.AreEqual("Little of both", scheduler.PopNextEvent().Name);
+            Assert.IsNull(scheduler.PopNextEvent());
+            worldState.Date=new DateTime(2016,12,12);
+            Assert.AreEqual("Late", scheduler.PopNextEvent().Name);
+            Assert.IsNull(scheduler.PopNextEvent());
+            Assert.IsTrue(condScenario.IsTerminated);
+
+
+            
+            
+
+        }
         private static MultipleChoiceEvent NextAsMultipleChoice(PressEventScheduler scheduler)
         {
             var evt = scheduler.PopNextEvent() as MultipleChoiceEvent;

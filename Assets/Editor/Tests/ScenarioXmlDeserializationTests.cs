@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 using Assets.Code.Model;
@@ -44,9 +45,9 @@ namespace Assets.Editor.Tests
             Assert.AreEqual(PreconditionOp.LessThan,preconditions[1].Operation);
             Assert.AreEqual(PreconditionOp.LessOrEqual,preconditions[2].Operation);
 
-            Assert.AreEqual(150, preconditions[0].Value);
-            Assert.AreEqual(400, preconditions[1].Value);
-            Assert.AreEqual(210, preconditions[2].Value);
+            Assert.AreEqual(150, Int32.Parse(preconditions[0].Value));
+            Assert.AreEqual(400, int.Parse(preconditions[1].Value));
+            Assert.AreEqual(210, int.Parse(preconditions[2].Value));
 
             Assert.AreEqual("Credibility", preconditions[1].AttributeName);
         }
