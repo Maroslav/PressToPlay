@@ -19,6 +19,7 @@ namespace Assets.Code.Planning
             _endDate = endDate;
             _currentDate = startDate;
             _scenarios = scenarios.ToList();
+            worldState.Date = startDate;
         }
 
         private PressEvent GetNextEvent()

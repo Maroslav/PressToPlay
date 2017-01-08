@@ -14,6 +14,6 @@ namespace Assets.Code.Model
         [XmlAttribute("operation")]
         public PreconditionOp Operation { get; set; }
         [XmlAttribute("value")]
-        public int Value { get; set; }
+        public string Value { get; set; }
     }
 }

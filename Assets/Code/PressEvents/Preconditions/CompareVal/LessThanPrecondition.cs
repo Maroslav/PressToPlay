@@ -6,7 +6,7 @@ using Assets.Code.GameState;
 
 namespace Assets.Code.PressEvents.Preconditions
 {
-    class LessThanPrecondition:Precondition
+    class LessThanPrecondition:PreconditionCompareValue
     {
         public override bool Check(WorldState state)
         {

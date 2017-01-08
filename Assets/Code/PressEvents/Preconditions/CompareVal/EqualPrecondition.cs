@@ -2,7 +2,7 @@
 
 namespace Assets.Code.PressEvents.Preconditions
 {
-    internal class EqualPrecondition : Precondition
+    internal class EqualPrecondition : PreconditionCompareValue
     {
         public EqualPrecondition(Attrib attribute, int value) : base(attribute, value)
         {
