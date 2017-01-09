@@ -156,7 +156,7 @@
       </Choices>
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-10-03" name="Rozhovor s Dvořáčkem">
-      <Description>"Lidská práva v Čině vyřeší kapitalismus," říká podnikatel a pokračuje: "svobodná společnost je ta, kde má každý obyvatel dost peněz, aby si mohl pořídit zbraň. Daně se snažím neplatit. A jsem na to hrdý," uzavírá podnikatel.</Description>
+      <Description>"Lidská práva v Číně vyřeší kapitalismus," říká podnikatel a pokračuje: "svobodná společnost je ta, kde má každý obyvatel dost peněz, aby si mohl pořídit zbraň. Daně se snažím neplatit. A jsem na to hrdý," uzavírá podnikatel.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -202,7 +202,7 @@
             <ModifyEffect attribute="Fun" value="1" />
             <ModifyEffect attribute="Panic" value="-1" />
           </Effects>
-          <Title>Pride Parade se letos vydařila a zúčastnilo přes 50.000 lidí.</Title>
+          <Title>Pride Parade se letos vydařila a zúčastnilo jí přes 50.000 lidí.</Title>
           <Description>Je vidět, že z akce se stává čím dál větší mainstream. LGBTQ téma dnes není tabu ani ničím okrajovým.</Description>
           <ImagePath>prideSOFT</ImagePath>
         </Choice>
@@ -288,7 +288,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-10-27" name="Řád bílých kališníků">
+    <MultipleChoiceEvent date="2019-10-28" name="Řád bílých kališníků">
       <Description>Na Vyšehradě se uskutečnil sjezd nové politické strany, která si říká Řád bílých kališníků. Jsou údajně ochotni bránit české hodnoty a bojovat proti establishmentu všemu prostředky.</Description>
       <Choices>
         <Choice>
@@ -300,8 +300,8 @@
           <Title>Boží bojovníci míří do politiky</Title>
           <Description>"Chceme napravit, co tu ostatní politici za ta léta napáchali. My nejsme jako oni. Nejedná se o typickou politickou stranu, ale o řád," říká předseda kališníků Ivan Řemdih.</Description>
           <ImagePath>kkk</ImagePath>
-          <ImageLabel>"Kališník" Ivan Řemdoh (Foto: Paul Walsch)</ImageLabel>
-          <ChoiceText>Nacionální extremismus</ChoiceText>
+          <ImageLabel>"Kališník" Ivan Řemdih (Foto: Paul Walsch)</ImageLabel>
+          <ChoiceText>Návrat k husitské tradici</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
@@ -312,7 +312,7 @@
           <Title>V Česku vznika nebezpečné polovojenské uskupení</Title>
           <Description>Tajná policie varuje před novým politickým uskupením. "Podle našeho expertného šetření jsme odhalili jisté indicie, že by se mohlo jednat o extrémistické hnutí," říká elitní policista.</Description>
           <ImagePath>kkk</ImagePath>
-          <ImageLabel>Ivan Řemdych (Foto: Paul Walsch)</ImageLabel>
+          <ImageLabel>Ivan Řemdih (Foto: Paul Walsch)</ImageLabel>
           <ChoiceText>Návrat k husitské tradici</ChoiceText>
         </Choice>
       </Choices>
@@ -322,10 +322,10 @@
         <Precondition attribute="Anicka" operation="equal" value="1" />
       </Preconditions>
       <ImagePath>nalezena</ImagePath>
-      <Text>Ztracená anička byla nalezena díky policejní zprávě zveřejněné na Novinky-rychle.cz</Text>
+      <Text>Ztracená Anička byla nalezena díky policejní zprávě zveřejněné na Novinky-rychle.cz</Text>
     </CutsceneEvent>
-    <MultipleChoiceEvent date="2019-10-24" name="Demonstrace proti kapitalismus">
-      <Description>Rap pořádá demonstraci proti daňovým únikům (provizorní text)</Description>
+    <MultipleChoiceEvent date="2019-11-17" name="Demonstrace proti kapitalismus">
+      <Description>Rap uspořádal pochod proti daňovým únikům. Demonstrace probíhala poklidně, až na samotný závěr, kdy se někteří demonstranti střetli spolicijí a vypukly nepokoje.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -333,8 +333,8 @@
             <ModifyEffect attribute="Tom" value="-1" />
             <ModifyEffect attribute="Alice" value="2" />
           </Effects>
-          <Title>Tisíce lidí demonstrovali proti daňovým únikům</Title>
-          <Description>text fotka</Description>
+          <Title>Tisíce lidí demonstrovaly proti daňovým únikům</Title>
+          <Description>Městem prošla relativně poklidná demonstrace proti korporátní chamtivosti.</Description>
           <ImagePath>demo1</ImagePath>
           <ChoiceText>Městem prošel pochod za solidaritu</ChoiceText>
         </Choice>
@@ -345,7 +345,7 @@
             <ModifyEffect attribute="Panic" value="3" />
           </Effects>
           <Title>Demonstrace RaP se změnila v masakr!</Title>
-          <Description>text fotka</Description>
+          <Description>Levicový radikálové se střetli s policijí a začali kontejnery v ulicích.</Description>
           <ImagePath>demo2</ImagePath>
           <ChoiceText>Anarchisté zapalovali město</ChoiceText>
         </Choice>
@@ -480,7 +480,7 @@
       </Choices>
     </ImageChoiceEvent>
     <MultipleChoiceEvent date="2019-10-01" name="Liberland Leaks">
-      <Description>Anonymní whitleblower zveřejnil tisíce dokumentů z daňového offshoru. Mezi subjekty figurují i nečekaná jména jako Alice Kubešová a Ivan Řemdih. Kubešová má na offshorových účtech nepřiznané miliony. Zatímco Řemdih prováděl z Liberlandu podezřelé transkace se Saudsko arabskou zrojařskou firmou.</Description>
+      <Description>Anonymní whitleblower zveřejnil tisíce dokumentů z daňového offshoru. Mezi subjekty figurují i nečekaná jména jako Alice Kubešová a Ivan Řemdih. Kubešová má na offshorových účtech nepřiznané miliony od firmy propagující zdravou výživu a placebo léčiva. Zatímco Řemdih prováděl z Liberlandu podezřelé transkace se Saudsko arabskou zrojařskou firmou.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -498,7 +498,7 @@
             <ModifyEffect attribute="Panic" value="+3" />
           </Effects>
           <Title>Bílí kališníci se připravují na krvavý puč!</Title>
-          <Description>Objevily se okumenty, které dokazují, že Řád bílích kališniků si objednával samopaly AK-47 ze Saudké Arábie. V následujících volbách bude důležité se semknout a nedovolit populistům zvítězit.</Description>
+          <Description>Objevily se dokumenty, které dokazují, že Řád bílích kališniků si objednával samopaly AK-47 ze Saudké Arábie. V následujících volbách bude důležité se semknout a nedovolit populistům zvítězit.</Description>
           <ImagePath>kkk</ImagePath>
           <ChoiceText>Řemdih buduje armádu z offshoru</ChoiceText>
         </Choice>
@@ -513,7 +513,7 @@
         <Precondition attribute="Tom" operation="greater" value="Alice" />
       </Preconditions>
       <ImagePath>tom1</ImagePath>
-      <Text>Volby vyhrála strana Liberty 2020 v čele s miliardářem Tomem Dvorackem. Strana první měsíc po volbách snížila daně daně na symbolické 1%, zrušila veřejné školství a zdravotnictví. Národní Muzeum bylo pro nevýdělečnost privatizováno.</Text>
+      <Text>Volby vyhrála strana Liberty 2020 v čele s miliardářem Tomem Dvorackem. Strana první měsíc po volbách snížila daně na symbolické 1%, zrušila veřejné školství a zdravotnictví. Národní Muzeum bylo pro nevýdělečnost privatizováno.</Text>
     </CutsceneEvent>
     <CutsceneEvent date="2019-10-24">
       <Preconditions>
