@@ -365,6 +365,32 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-11-08" name="Kubešová mění image">
+      <Description>Ozývají se názory, že kandidátka za hnutí Rodina a Příroda není dost liberální. V rámci kampaně tak vhnikl nový vizuál, hrající si se zkratkou RaP, a kde je Kubešová vyobrazena s jointem.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="3" />
+            <ModifyEffect attribute="Alice" value="-3" />
+            <ModifyEffect attribute="Panic" value="1" />
+          </Effects>
+          <Title>Kubešová má nový vizuál. "Na západě běžné," říká expert.</Title>
+          <Description>"Toto je typická ukázka moderního politického marketingu. Kontroverzní montáž vyvolá zvýšený zájem médií a kandidátovi nejspíš jinak neuškodí," říká politolog.</Description>
+          <ImagePath>alice2</ImagePath>
+          <ChoiceText>Vyjádření experta na marketing</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Alice" value="2" />
+            <ModifyEffect attribute="Panic" value="-3" />
+          </Effects>
+          <Title>Tak tuhle Kubešovou jste ještě neviděli</Title>
+          <Description>Hnutí Rodina a Příroda má nový vizuál od známého moderního umělce. "Chtěl jsem ukázat její lidskost. A taky že v RaP všichni pořádně hulíme," říká výtvarník a laurát ceny Jindřicha Chalupeckého za rok 2018</Description>
+          <ImagePath>alice2</ImagePath>
+          <ChoiceText>Kubešová je pro konzumaci marihuany</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-11-22" name="Daňová úspora Toma Dvoracka">
       <Preconditions>
         <Precondition attribute="Liberland" value="1" operation="equal" />
