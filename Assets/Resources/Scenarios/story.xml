@@ -26,6 +26,7 @@
           </Effects>
           <Title>Virus H4N7 zabíjel</Title>
           <Description> (Praha) Celkem čtyři lidé podlehli smrtelnému viru chřipky. Desítky dalších jsou nakaženi. Je otázkou času než virus zmutuje a epidemie přeroste v pandemii. Vědci však tvrdí, že se není čeho obávat. (med)</Description>
+          <ImagePath>chripka1</ImagePath>
           <ChoiceText>Chřipka zabíjí</ChoiceText>
         </Choice>
         <Choice>
@@ -36,6 +37,7 @@
           </Effects>
           <Title>Není důvod se chřipkové epidemie obávat</Title>
           <Description>(Praha) Alespoň tak to tvrdí předseda Hygienické komory. "Úmrtí v řádu jednotek jsou každoročně běžná," ujišťuje veřejnost vědec. (med)</Description>
+          <ImagePath>chripka2</ImagePath>
           <ChoiceText>Podle lékařů běžný fenomén</ChoiceText>
         </Choice>
       </Choices>
@@ -416,5 +418,23 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
+    <CutsceneEvent date="2019-10-24">
+      <ImagePath>elections</ImagePath>
+      <Text>Je den voleb. Brzy bude rozhodnuto, jakým směrem se republika vydá na další roky.</Text>
+    </CutsceneEvent>
+    <CutsceneEvent date="2019-10-24">
+      <Preconditions>
+        <Precondition attribute="Tom" operation="greater" value="Alice" />
+      </Preconditions>
+      <ImagePath>tom1</ImagePath>
+      <Text>Volby vyhrála strana Liberty 2020 v čele s miliardářem Tomem Dvorackem. Strana první měsíc po volbách snížila daně daně na symbolické 1%, zrušila veřejné školství a zdravotnictví. Národní Muzeum bylo pro nevýdělečnost privatizováno.</Text>
+    </CutsceneEvent>
+    <CutsceneEvent date="2019-10-24">
+      <Preconditions>
+        <Precondition attribute="Tom" operation="lessOrEqual" value="Alice" />
+      </Preconditions>
+      <ImagePath>alice1</ImagePath>
+      <Text>Volby vzhrála strana RaP v čele s umělkyní Alicí Kubešovou. Zavedena bude speciální daň na veškeré neveganské potraviny.</Text>
+    </CutsceneEvent>
   </Events>
 </Scenario>
