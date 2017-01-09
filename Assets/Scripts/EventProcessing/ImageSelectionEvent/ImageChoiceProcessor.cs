@@ -28,6 +28,7 @@ class ImageChoiceProcessor : MonoBehaviour
         foreach (ImageChoice c in choices)
         {
             GameObject choiceGameObject = Instantiate(ImageChoiceButtonPrefab);
+            choiceGameObject.SetActive(true);
             choiceGameObject.transform.SetParent(transform, true);
 
             ImageChoiceData imageChoiceData = choiceGameObject.GetComponent<ImageChoiceData>();

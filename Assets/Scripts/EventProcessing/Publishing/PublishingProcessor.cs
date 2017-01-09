@@ -67,6 +67,7 @@ public class PublishingProcessor : MonoBehaviour
             string path = Path.Combine(Constants.ArticleImagesResourceFolder, choice.ImagePath).Replace('\\', '/');
             Debug.Log("Loading a publishing image from: " + path);
             var texture = Resources.Load<Texture>(path);
+            Assert.IsNotNull(texture, "Wrongly specified image in " + name);
             var image = Image.GetComponent<RawImage>();
             image.texture = texture;
 

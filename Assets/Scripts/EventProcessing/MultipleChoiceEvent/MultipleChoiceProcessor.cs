@@ -8,7 +8,7 @@ using Assets.Code.Gameplay;
 public class MultipleChoiceProcessor : MonoBehaviour
 {
     private readonly List<Object> _choiceGameObjects = new List<Object>();
-  
+
     public GameObject MultipleChoiceButtonPrefab;
 
 
@@ -26,6 +26,7 @@ public class MultipleChoiceProcessor : MonoBehaviour
         for (int i = 0; i < choices.Count; ++i)
         {
             GameObject choiceGameObject = Instantiate(MultipleChoiceButtonPrefab);
+            choiceGameObject.SetActive(true);
             choiceGameObject.transform.SetParent(transform, true);
 
             MultipleChoiceData multipleChoiceData = choiceGameObject.GetComponent<MultipleChoiceData>();

@@ -9,18 +9,14 @@ namespace Assets.Code.PressEvents
     public class MultipleChoiceEvent : ChoicePressEvent
     {
         public MultipleChoiceEvent(string descr, string name, DateTime d, List<TextChoice> choices, bool isTerminating, List<Precondition> precond = null)
-            : base(d,name,isTerminating, precond ?? new List<Precondition>())
+            : base(descr, d,name,isTerminating, precond ?? new List<Precondition>())
         {
-            Description = descr;
             Choices = choices;
         }
 
 
         //The list of decision options.
         public List<TextChoice> Choices { get; private set; }
-
-        // The question / event description displayed to the player.
-        public string Description { get; private set; }
 
         public List<TextChoice> GetClosestOptions(int count)
         {
