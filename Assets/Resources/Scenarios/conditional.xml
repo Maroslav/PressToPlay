@@ -4,7 +4,7 @@
   <Events>
     <MultipleChoiceEvent date="2019-11-22" name="Panika přerostla únosnou mez" xmlns="http://presstoplaygame.com/scenario">
       <Preconditions>
-        <Precondition attribute="Panic" value="12" operation="greater" />
+        <Precondition attribute="Panic" value="9" operation="greater" />
       </Preconditions>
       <Description>Populace je zděšena negativními událostmi v poslední době. Měli bychom vydat prohlášení, které veřejnost uklidní.</Description>
       <Choices>
@@ -45,7 +45,7 @@
         </Choice>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Panic" value="-10" />
+            <ModifyEffect attribute="Fun" value="-10" />
           </Effects>
           <Title>Důležité sdělení</Title>
           <Description>Bohužel provoz redakce něco stojí. Abychom Vám i nadále mohli přinášet kvalitní obsah, prosíme Vás o zaslání finančního daru.</Description>

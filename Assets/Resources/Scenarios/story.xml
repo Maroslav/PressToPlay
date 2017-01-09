@@ -12,12 +12,12 @@
     </CutsceneEvent>
     <CutsceneEvent date="2019-10-01">
       <ImagePath>Intro/intro_editor</ImagePath>
-      <Text>Byl/a jsi povýšen/a na editora zpravodajského serveru Novinky-rychle.cz. Tvým úkolem je rozhodovat, jaká bude náplň denního zpravodajství.</Text>
+      <Text>Stal se z vás editor zpravodajského serveru Novinky-rychle.cz. Vaším úkolem je rozhodovat, jaká bude náplň denního zpravodajství.</Text>
     </CutsceneEvent>
     <MultipleChoiceEvent date="2019-10-01" name="Chřipková epidemie">
-      <Description>Česko postihla chřipková epidemie. Nový virus chřipky.4 mrtví.
+      <Description>Česko postihla chřipková epidemie. Zemí se šíří nový virus. Jsou hlášení již 4 mrtví.
 
-&lt;color=#585858&gt;(NÁPOVĚDA: Kliknutím vyberte, jaké hlavní téma mají tvé noviny použít v článku o této události. Pozor, volba může ovlivnit čtenost novin i veřejné mínění.)&lt;/color&gt;</Description>
+&lt;color=#585858&gt;(Vyberte, jaké hlavní téma mají tvé noviny použít v článku o této události. Volba může ovlivnit čtenost novin i veřejné mínění.)&lt;/color&gt;</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -43,7 +43,7 @@
       </Choices>
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-10-03" name="Liberty2020 chce osvobodit Česko">
-      <Description>Po pádu vlády se objevil nový mladý podnikatel, který by se rád ucházel o křeslo předsedy vlády. Tom Dvoracek je nejmladším evropským miliardářem. Ke jmění, které čítá přes 14 miliard eur, se dostal ve svých jednatřicetiletech jako manažer Dubajského hedgefundu. Zakládá stranu Liberty2020.</Description>
+      <Description>Po pádu vlády se objevil nový mladý podnikatel, který by se rád ucházel o křeslo předsedy vlády. Tom Dvořáček je nejmladším evropským miliardářem. Ke jmění, které čítá přes 14 miliard eur, se dostal ve svých jednatřicetiletech jako majitel skupiny Future Finance. Zakládá stranu Liberty2020.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -51,10 +51,10 @@
             <ModifyEffect attribute="Panic" value="-1" />
           </Effects>
           <Title>Úspěšný podnikatel chce napravit reformy</Title>
-          <Description>"Mám praktické zkušenosti z businessu, kterými chci přispět do české politiky," říká sebevědomě teprve jednatřicetiletý Tom Dvoracek. Týden po pádu vlády založil alternativní politický think tank Liberty2020, se kterým chce kandidovat v předčasných volbách.</Description>
+          <Description>"Mám praktické zkušenosti z businessu, kterými chci přispět do české politiky," říká sebevědomě teprve jednatřicetiletý Tom Dvořáček. Týden po pádu vlády založil alternativní politický think tank Liberty2020, se kterým chce kandidovat v předčasných volbách.</Description>
           <ImagePath>tom1</ImagePath>
-          <ImageLabel>Tom Dvoracek, předseda strany Liberty2020</ImageLabel>
-          <ChoiceText>mladá naděje ve vysoké politice</ChoiceText>
+          <ImageLabel>Tom Dvořáček, předseda strany Liberty2020</ImageLabel>
+          <ChoiceText>Mladá naděje ve vysoké politice</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
@@ -63,15 +63,15 @@
             <ModifyEffect attribute="Panic" value="2" />
           </Effects>
           <Title>Spasí jednatřicetilý miliardář českou politiku?</Title>
-          <Description>Kontroverzní spekulant Tom Dvoracek kandiduje na post předsedy vlády. Politologové varují, že mladý podnikatel může voliče snadno zmást svým energickým a sebevědomým vystupováním.</Description>
+          <Description>Kontroverzní spekulant Tom Dvořáček kandiduje na post předsedy vlády. Politologové varují, že mladý podnikatel může voliče snadno zmást svým energickým a sebevědomým vystupováním. Hrozí, že jako majitel Future Finance bude ve střetu zájmů.</Description>
           <ImagePath>tom1</ImagePath>
-          <ImageLabel>Miliardář Tom Dvoracek</ImageLabel>
-          <ChoiceText>oligarcha kandiduje</ChoiceText>
+          <ImageLabel>Miliardář Tom Dvořáček</ImageLabel>
+          <ChoiceText>Oligarcha kandiduje</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-10-05" name="Rodina a příroda vyráží do boje">
-      <Description>V reakci na nespokojenost lidí s vládnoucími elitami, vzniká nová strana Rodina a Přiroda (RaP). Předsedkyní bude populární umělkyně Alice Kubešová, známá především z filmů Nové české vlny. Spekuluje se, že strana je silně marxisticky zaměřená.</Description>
+      <Description>V reakci na nespokojenost lidí s vládnoucími elitami, vzniká nová strana Rodina a Přiroda (RaP). Předsedkyní bude populární umělkyně Alice Kubešová, známá především z nekonečného seriálu Hodná doktorka. Spekuluje se, že strana je silně levicově zaměřená.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -80,7 +80,7 @@
             <ModifyEffect attribute="Alice" value="-1" />
           </Effects>
           <Title>Pád vlády může pomoci levicovým populistům</Title>
-          <Description>Takzvaná "nová levice" se spojila v sociálně-enviromentální koalici Rodina a Příroda.</Description>
+          <Description>Takzvaná "nová levice" se spojila v sociálně-enviromentální koalici Rodina a Příroda. "Naší budoucností jsou děti a stromy," říká předsedkyně Kubešová.</Description>
           <ImagePath>alice1</ImagePath>
           <ImageLabel>Herečka a politička Alice Kubešová</ImageLabel>
           <ChoiceText>Vzestup extrémní levice?</ChoiceText>
@@ -93,7 +93,7 @@
             <ModifyEffect attribute="Alice" value="1" />
           </Effects>
           <Title>Slavná herečka Alice Kubešová kandiduje na premiérku</Title>
-          <Description>Takzvaně "humanistická" koalice Rodina a Příroda (RaP) vytasila do voleb s legendou České nové vlny. "Musíme radikalně přehodnotit, jak dnes uvažujeme o společnosti. Musíme se nad sebou zamyslet a podívat se do budoucne, co zde hodláme přenechat našim dětem," říká umělkyně.</Description>
+          <Description>Takzvaně "humanistická" koalice Rodina a Příroda (RaP) vytasila do voleb s oblíbenou seriálovou herečkou. "Víte, za ta léta, co hraji v seriálu doktorku, jsem toho o životě a smrti hodně pochopila," říká umělkyně.</Description>
           <ImagePath>alice1</ImagePath>
           <ImageLabel>Slavná herečka Alice Kubešová</ImageLabel>
           <ChoiceText>Umělkyně premiérkou?</ChoiceText>
@@ -101,7 +101,7 @@
       </Choices>
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-10-05" name="Liberland">
-      <Description>Český občan si na Balkáně vyhlásil vlastní stát, kde se nebudou muset platit daně. Svou zemi pojmenoval Liberland. Podle samozvaného prezidenta je existence nového mikrostátu legální. Nachází se totiž na nikým nenárokovaném území mezi dvěma státy bývalé Jugoslávie v takzvané terra nullius neboli zemi nikoho.</Description>
+      <Description>Český občan si na Balkáně vyhlásil vlastní stát, kde se nebudou muset platit daně. Svou zemi pojmenoval Liberland. Podle samozvaného prezidenta je existence nového mikrostátu legální. Nachází se totiž na nikým nenárokovaném území mezi dvěma státy bývalé Jugoslávie v zemi nikoho.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -126,8 +126,8 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-10-09" name="Konspirátoři útočí">
-      <Description>Část veřejnosti je znepokojena kondenzačními čárami, které se objevují na obloze za proudovými letadly. Oficiální vědecké kapacity tvrdí, že jde o běžný fyzikální jev. Alternativní zdroje mají fotografie zachycující, že je takto rozprašován nervový plyn, který dělá lidi více poddajnými a snáze manipulovatelnými.</Description>
+    <MultipleChoiceEvent date="2019-10-09" name="Chemtrails">
+      <Description>Část veřejnosti je znepokojena kondenzačními čárami, které se objevují na obloze za proudovými letadly. Oficiální vědecké kapacity tvrdí, že jde o běžný fyzikální jev. Alternativní zdroje mají fotografie zachycující, že je takto rozprašován záhadný nervový plyn.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -148,7 +148,7 @@
             <ModifyEffect attribute="Panic" value="+2" />
           </Effects>
           <Title>Chemtrails potvrzeny. Co vám elity tají? </Title>
-          <Description>Skupina aktivistů, kteží si říkají The Enlightenment, zveřejnila šokující fotografii interiéru Amerického letounu, který slouží k rozprašování nervového plynu D3bi1. Podle aktivistů vdechování rozptýleného D3bi1 způsobuje dlouhodobé stavy otupělosti. V případě těhotných žen je riziko poškození plodu, kdy se pak u narozených dětí může vyvinout homosexualita.</Description>
+          <Description>Skupina aktivistů, kteží si říkají The Chalice of Truth zveřejnila šokující fotografii interiéru amerického letounu, který slouží k rozprašování nebezpečného plynu D3bi1. Podle aktivistů toxin způsobuje dlouhodobé stavy otupělosti. V případě těhotných žen je riziko poškození plodu, kdy se pak u narozených dětí může vyvinout homosexualita.</Description>
           <ImagePath>chemtrails2</ImagePath>
           <ImageLabel>Tajně pořízená fotografie paluby letadla</ImageLabel>
           <ChoiceText>Alternativní zdroje</ChoiceText>
@@ -166,7 +166,8 @@
             <ModifyEffect attribute="Panic" value="1" />
             <ModifyEffect attribute="Tom" value="1" />
           </Effects>
-          <Title>Tisíce homosexuálů prošly městem</Title>
+          <Title>Homosexuální lobby opět zaútočila.</Title>
+          <Description> Tisíce vyznavačů sadomasochismu prošly městem! Nevkusné!</Description>
           <ImagePath>prideHC</ImagePath>
           <ImageLabel>I toto mohly vidět vaše děti!</ImageLabel>
         </Choice>
@@ -175,7 +176,8 @@
             <ModifyEffect attribute="Fun" value="1" />
             <ModifyEffect attribute="Alice" value="1" />
           </Effects>
-          <Title>Pride Parade se letos zúčastnilo přes 50.000 lidí</Title>
+          <Title>Pride Parade se letos vydařila a zúčastnilo přes 50.000 lidí.</Title>
+          <Description>Je vidět, že z akce se stává čím dál větší mainstream. LGBTQ téma dnes není tabu ani ničím okrajovým.</Description>
           <ImagePath>prideSOFT</ImagePath>
         </Choice>
       </Choices>
