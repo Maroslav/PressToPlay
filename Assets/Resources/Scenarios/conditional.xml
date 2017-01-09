@@ -1,9 +1,79 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="scenario_stylesheet.xslt"?>
-<Scenario name="Conditional events scenario" xmlns="http://presstoplaygame.com/scenario"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://presstoplaygame.com/scenario scenario_schema.xsd"
-          >
+<Scenario name="Conditional events scenario" xmlns="http://presstoplaygame.com/scenario" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://presstoplaygame.com/scenario scenario_schema.xsd">
   <Events>
+    <MultipleChoiceEvent date="2019-11-22" name="Panika přerostla únosnou mez" xmlns="http://presstoplaygame.com/scenario">
+      <Preconditions>
+        <Precondition attribute="Panic" value="12" operation="greater" />
+      </Preconditions>
+      <Description>Populace je zděšena negativními událostmi v poslední době. Měli bychom vydat prohlášení, které veřejnost uklidní.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Panic" value="-10" />
+          </Effects>
+          <Title>Výběr těch nejroztomilejších koťátek na internetu</Title>
+          <Description></Description>
+          <ImagePath>cats</ImagePath>
+          <ChoiceText>Kočičky</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Panic" value="-7" />
+          </Effects>
+          <Title>Výběr těch nejroztomilejších pejsků na internetu</Title>
+          <Description></Description>
+          <ImagePath>dogs</ImagePath>
+          <ChoiceText>Štěňátka</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-11-22" name="Čtenost je na nule." xmlns="http://presstoplaygame.com/scenario">
+      <Preconditions>
+        <Precondition attribute="Fun" value="0" operation="lessOrEqual" />
+      </Preconditions>
+      <Description>Máme problém, naše noviny skoro nikdo nečte. Abychom vyvážili nízkou čtenost, musíme udělat udělat určitá opatření.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="+10" />
+          </Effects>
+          <Title>Reklamní sdělení</Title>
+          <Description></Description>
+          <ImagePath>reklama1</ImagePath>
+          <ChoiceText>Přidat reklamu</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Panic" value="-10" />
+          </Effects>
+          <Title>Důležité sdělení</Title>
+          <Description>Bohužel provoz redakce něco stojí. Abychom Vám i nadále mohli přinášet kvalitní obsah, prosíme Vás o zaslání finančního daru.</Description>
+          <ImagePath>donations</ImagePath>
+          <ChoiceText>Požádat čtenáře o dobrovolné příspěvky</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <CutsceneEvent date="2019-10-24" xmlns="http://presstoplaygame.com/scenario" isTerminating="true">
+      <Preconditions>
+        <Precondition attribute="Info" operation="lessOrEqual" value="0" />
+      </Preconditions>
+      <ImagePath>gameoverinfo</ImagePath>
+      <Text>Lidé jsou ze zpráv v médiích natolik vyděšeni a v neustále depresi, že nejsou schopni číst ani zprávy na Noviny-rychle.cz. GAME OVER.</Text>
+    </CutsceneEvent>
+    <CutsceneEvent date="2019-10-24" xmlns="http://presstoplaygame.com/scenario" isTerminating="true">
+      <Preconditions>
+        <Precondition attribute="Fun" operation="lessOrEqual" value="0" />
+      </Preconditions>
+      <ImagePath>gameoverfun</ImagePath>
+      <Text>Obsah na Novinky-rychle.cz je příliš odborný a málo zábavný. Nikdo to nečte a tvá práce přestala mít smysl. GAME OVER.</Text>
+    </CutsceneEvent>
+    <CutsceneEvent date="2019-10-24" xmlns="http://presstoplaygame.com/scenario" isTerminating="true">
+      <Preconditions>
+        <Precondition attribute="Panic" operation="greater" value="12" />
+      </Preconditions>
+      <ImagePath>gameoverpanic</ImagePath>
+      <Text>Lidé jsou ze zpráv v médiích natolik vyděšeni a v neustále depresi, že nejsou schopni nadále číst Novinky-rychle.cz. GAME OVER.</Text>
+    </CutsceneEvent>
   </Events>
 </Scenario>
