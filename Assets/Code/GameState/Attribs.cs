@@ -14,7 +14,7 @@ namespace Assets.Code.GameState
         public static readonly Attrib Credibility = new Attrib(StringCredibility);
 
         public static int MinValue = 0;
-        public static int MaxValue = 16;
+        public static int MaxValue = 10;
         public static int MidValue = (MinValue + MaxValue)/2;
 
         private static Dictionary<string, Attrib> _attribsByName;
