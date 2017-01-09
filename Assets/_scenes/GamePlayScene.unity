@@ -563,8 +563,8 @@ MonoBehaviour:
   ChoiceDescription: {fileID: 2142828567}
   ChoiceDate: {fileID: 930190098}
   Publishing: {fileID: 1231343958}
-  AudioPlayer: {fileID: 0}
-  Clip: {fileID: 0}
+  AudioPlayer: {fileID: 975230377}
+  Clip: {fileID: 8300000, guid: dd68493bba326b140965316ab4a81321, type: 3}
   ChoiceViewer: {fileID: 773293487}
 --- !u!114 &107304028
 MonoBehaviour:
@@ -2597,8 +2597,8 @@ MonoBehaviour:
   ChoiceDescription: {fileID: 872118563}
   ChoiceDate: {fileID: 399043539}
   Publishing: {fileID: 1231343958}
-  AudioPlayer: {fileID: 0}
-  Clip: {fileID: 0}
+  AudioPlayer: {fileID: 975230377}
+  Clip: {fileID: 8300000, guid: dd68493bba326b140965316ab4a81321, type: 3}
   ChoiceViewer: {fileID: 595992643}
 --- !u!114 &934109285
 MonoBehaviour:
