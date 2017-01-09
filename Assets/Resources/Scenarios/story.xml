@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="scenario_stylesheet.xslt"?>
 <Scenario name="Story scenario" xmlns="http://presstoplaygame.com/scenario" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://presstoplaygame.com/scenario scenario_schema.xsd">
   <Events>
@@ -313,7 +313,7 @@
           <Description>Tajná policie varuje před novým politickým uskupením. "Podle našeho expertného šetření jsme odhalili jisté indicie, že by se mohlo jednat o extrémistické hnutí," říká elitní policista.</Description>
           <ImagePath>kkk</ImagePath>
           <ImageLabel>Ivan Řemdih (Foto: Paul Walsch)</ImageLabel>
-          <ChoiceText>Návrat k husitské tradici</ChoiceText>
+          <ChoiceText>Militantní nacionalismus</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
