@@ -14,34 +14,6 @@
       <ImagePath>Intro/intro_editor</ImagePath>
       <Text>Stal se z vás editor zpravodajského serveru Novinky-rychle.cz. Vaším úkolem je rozhodovat, jaká bude náplň denního zpravodajství.</Text>
     </CutsceneEvent>
-    <MultipleChoiceEvent date="2019-10-01" name="Chřipková epidemie">
-      <Description>Česko postihla chřipková epidemie. Zemí se šíří nový virus. Jsou hlášení již 4 mrtví.
-
-&lt;color=#585858&gt;(Vyberte, jaké hlavní téma mají tvé noviny použít v článku o této události. Volba může ovlivnit čtenost novin i veřejné mínění.)&lt;/color&gt;</Description>
-      <Choices>
-        <Choice>
-          <Effects>
-            <ModifyEffect attribute="Fun" value="1" />
-            <ModifyEffect attribute="Panic" value="2" />
-          </Effects>
-          <Title>Virus H4N7 zabíjel</Title>
-          <Description> (Praha) Celkem čtyři lidé podlehli smrtelnému viru chřipky. Desítky dalších jsou nakaženi. Je otázkou času než virus zmutuje a epidemie přeroste v pandemii. Vědci však tvrdí, že se není čeho obávat. (med)</Description>
-          <ImagePath>chripka1</ImagePath>
-          <ChoiceText>Chřipka zabíjí</ChoiceText>
-        </Choice>
-        <Choice>
-          <Effects>
-            <ModifyEffect attribute="Fun" value="-2" />
-            <ModifyEffect attribute="Info" value="2" />
-            <ModifyEffect attribute="Panic" value="-1" />
-          </Effects>
-          <Title>Není důvod se chřipkové epidemie obávat</Title>
-          <Description>(Praha) Alespoň tak to tvrdí předseda Hygienické komory. "Úmrtí v řádu jednotek jsou každoročně běžná," ujišťuje veřejnost vědec. (med)</Description>
-          <ImagePath>chripka2</ImagePath>
-          <ChoiceText>Podle lékařů běžný fenomén</ChoiceText>
-        </Choice>
-      </Choices>
-    </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-10-03" name="Liberty2020 chce osvobodit Česko">
       <Description>Po pádu vlády se objevil nový mladý podnikatel, který by se rád ucházel o křeslo předsedy vlády. Tom Dvořáček je nejmladším evropským miliardářem. Ke jmění, které čítá přes 14 miliard eur, se dostal ve svých jednatřicetiletech jako majitel skupiny Future Finance. Zakládá stranu Liberty2020.</Description>
       <Choices>
@@ -443,6 +415,32 @@
           <Description></Description>
           <ImagePath>liberland4</ImagePath>
           <ChoiceText>Podpora mikrostátu</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-10-01" name="Liberland Leaks">
+      <Description>Anonymní whitleblower zveřejnil tisíce dokumentů z daňového offshoru. Mezi subjekty figurují i nečekaná jména jako Alice Kubešová a Ivan Řemdih. Kubešová má na offshorových účtech nepřiznané miliony. Zatímco Řemdih prováděl z Liberlandu podezřelé transkace se Saudsko arabskou zrojařskou firmou.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="1" />
+            <ModifyEffect attribute="Panic" value="2" />
+          </Effects>
+          <Title>Kubešová schovávala v daňovém ráji miliony!</Title>
+          <Description>Věc je o to kontroverznější, že slavná herečka v minulosti vystupovala jako bojovnice proti podobným praktikám. "Jsem lepší než ona, protože daně krátím naprosto transparentně," přísadil si Tom Dvořáček. (red)</Description>
+          <ImagePath>alice2</ImagePath>
+          <ChoiceText>Pokrytectví Kubešové</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="-2" />
+            <ModifyEffect attribute="Info" value="2" />
+            <ModifyEffect attribute="Panic" value="-1" />
+          </Effects>
+          <Title>Bílí kališníci se připravují na krvavý puč!</Title>
+          <Description>V následujících volbách bude důležité se semknout a nedovolit populistům zvítězit.</Description>
+          <ImagePath>kkk</ImagePath>
+          <ChoiceText>Podle lékařů běžný fenomén</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
