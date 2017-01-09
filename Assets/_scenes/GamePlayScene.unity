@@ -807,8 +807,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 112d3cd6ff49d0542923bbba3c63e8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WorldAttributesGameObject: {fileID: 1244446038}
-  WorldAttributePrefab: {fileID: 1000010161036054, guid: 5ba31a1965785fb4eb7c7650ef34c580,
+  AttributesGameObject: {fileID: 1244446038}
+  CategoryPrefab: {fileID: 1000010953556484, guid: 19d2fd8c61d36744288d9040b4b814e4,
+    type: 2}
+  AttributePrefab: {fileID: 1000010161036054, guid: 5ba31a1965785fb4eb7c7650ef34c580,
     type: 2}
 --- !u!4 &145534385
 Transform:
@@ -4417,94 +4419,9 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224000012984867856, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012984867856, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012691917052, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012691917052, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012691917052, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 39.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012691917052, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012691917052, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000011419529510, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000011419529510, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000011419529510, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 45.333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000011419529510, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -33
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000011419529510, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 86.66667
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000011419529510, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012691917052, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 1000010161036054, guid: 5ba31a1965785fb4eb7c7650ef34c580, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000013657303450, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000013657303450, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000013657303450, guid: 5ba31a1965785fb4eb7c7650ef34c580,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
+      propertyPath: m_Name
+      value: Attribute
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ba31a1965785fb4eb7c7650ef34c580, type: 2}

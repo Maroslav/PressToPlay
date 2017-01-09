@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Assets.Code.Gameplay;
 using Assets.Code.GameState;
@@ -12,15 +11,17 @@ public class WorldStateProvider : MonoBehaviour
 
     private static Dictionary<Attrib, GameObject> attributeGOs = new Dictionary<Attrib, GameObject>();
 
-    public GameObject WorldAttributesGameObject;
-    public GameObject WorldAttributePrefab;
+    public GameObject AttributesGameObject;
+    public GameObject CategoryPrefab;
+    public GameObject AttributePrefab;
 
 
     private void OnValidate()
     {
-        Assert.IsNotNull(WorldAttributesGameObject, name);
-        Assert.IsNotNull(WorldAttributePrefab, name);
-        Assert.IsNotNull(WorldAttributePrefab.GetComponent<WorldAttributeChanger>(), name);
+        Assert.IsNotNull(AttributesGameObject, name);
+        Assert.IsNotNull(CategoryPrefab, name);
+        Assert.IsNotNull(AttributePrefab, name);
+        Assert.IsNotNull(AttributePrefab.GetComponent<WorldAttributeChanger>(), name);
     }
 
     void Awake()
@@ -31,10 +32,14 @@ public class WorldStateProvider : MonoBehaviour
         // Create UI elements - Attribs
         foreach (var categoryPair in State.AllStates)
         {
+            Debug.Log("Adding a new category: " + categoryPair.Key.Name);
+            GameObject categoryGO = Instantiate(CategoryPrefab);
+            categoryGO.transform.SetParent(AttributesGameObject.transform);
+
             foreach (var attributePair in categoryPair.Value.Where(a => a.Key.IsDisplayed))
             {
-                GameObject attributeGO = Instantiate(WorldAttributePrefab);
-                attributeGO.transform.SetParent(WorldAttributesGameObject.transform);
+                GameObject attributeGO = Instantiate(AttributePrefab);
+                attributeGO.transform.SetParent(categoryGO.transform);
                 attributeGOs.Add(attributePair.Key, attributeGO);
                 attributeGO.SetActive(true);
             }
