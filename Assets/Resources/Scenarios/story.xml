@@ -14,8 +14,37 @@
       <ImagePath>Intro/intro_editor</ImagePath>
       <Text>Stal se z vás editor zpravodajského serveru Novinky-rychle.cz. Vaším úkolem je rozhodovat, jaká bude náplň denního zpravodajství.</Text>
     </CutsceneEvent>
-    <MultipleChoiceEvent date="2019-10-03" name="Liberty2020 chce osvobodit Česko">
-      <Description>Po pádu vlády se objevil nový mladý podnikatel, který by se rád ucházel o křeslo předsedy vlády. Tom Dvořáček je nejmladším evropským miliardářem. Ke jmění, které čítá přes 14 miliard eur, se dostal ve svých jednatřicetiletech jako majitel skupiny Future Finance. Zakládá stranu Liberty2020.</Description>
+    <MultipleChoiceEvent date="2019-10-01" name="Chřipková epidemie">
+      <Description>Česko postihla chřipková epidemie. Nový virus chřipky si vyžádal první smrtelné obět. Jsou hlášeni nejméně čtyři mrtví.
+
+&lt;color=#585858&gt;(Vyberte, jaké hlavní téma mají noviny použít v článku o této události. Volba může ovlivnit čtenost novin i veřejné mínění.)&lt;/color&gt;</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="2" />
+            <ModifyEffect attribute="Panic" value="3" />
+            <ModifyEffect attribute="Info" value="-3" />
+          </Effects>
+          <Title>Virus H4N7 zabíjel</Title>
+          <Description> (Praha) Celkem čtyři lidé podlehli smrtelnému viru chřipky. Desítky dalších jsou nakaženi. Je otázkou času než virus zmutuje a epidemie přeroste v pandemii. Vědci však tvrdí, že se není čeho obávat. (med)</Description>
+          <ImagePath>chripka1</ImagePath>
+          <ChoiceText>Chřipka zabíjí</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="-4" />
+            <ModifyEffect attribute="Info" value="1" />
+            <ModifyEffect attribute="Panic" value="-2" />
+          </Effects>
+          <Title>Není důvod se chřipkové epidemie obávat</Title>
+          <Description>(Praha) Alespoň tak to tvrdí předseda Hygienické komory. "Úmrtí v řádu jednotek jsou každoročně běžná," ujišťuje veřejnost vědec. (med)</Description>
+          <ImagePath>chripka2</ImagePath>
+          <ChoiceText>Podle lékařů běžný fenomén</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-10-03" name="Podnikatel chce osvobodit česko">
+      <Description>Po pádu vlády se objevil nový mladý podnikatel, který by se rád ucházel o křeslo předsedy vlády. Tom Dvořáček je nejmladším evropským miliardářem. Ke jmění, které čítá přes 14 miliard eur, se dostal ve svých jednatřiceti letech jako majitel skupiny Future Finance. Zakládá stranu Liberty2020.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -31,7 +60,7 @@
         <Choice>
           <Effects>
             <ModifyEffect attribute="Fun" value="1" />
-            <ModifyEffect attribute="Tom" value="-1" />
+            <ModifyEffect attribute="Tom" value="-2" />
             <ModifyEffect attribute="Panic" value="2" />
           </Effects>
           <Title>Spasí jednatřicetilý miliardář českou politiku?</Title>
@@ -47,7 +76,7 @@
       <Choices>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Info" value="1" />
+            <ModifyEffect attribute="Fun" value="1" />
             <ModifyEffect attribute="Panic" value="1" />
             <ModifyEffect attribute="Alice" value="-1" />
           </Effects>
@@ -60,9 +89,8 @@
         <Choice>
           <Effects>
             <ModifyEffect attribute="Fun" value="2" />
-            <ModifyEffect attribute="Info" value="1" />
             <ModifyEffect attribute="Panic" value="-1" />
-            <ModifyEffect attribute="Alice" value="1" />
+            <ModifyEffect attribute="Alice" value="2" />
           </Effects>
           <Title>Slavná herečka Alice Kubešová kandiduje na premiérku</Title>
           <Description>Takzvaně "humanistická" koalice Rodina a Příroda (RaP) vytasila do voleb s oblíbenou seriálovou herečkou. "Víte, za ta léta, co hraji v seriálu doktorku, jsem toho o životě a smrti hodně pochopila," říká umělkyně.</Description>
@@ -73,7 +101,7 @@
       </Choices>
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-10-05" name="Liberland">
-      <Description>Český občan si na Balkáně vyhlásil vlastní stát, kde se nebudou muset platit daně. Svou zemi pojmenoval Liberland. Podle samozvaného prezidenta je existence nového mikrostátu legální. Nachází se totiž na nikým nenárokovaném území mezi dvěma státy bývalé Jugoslávie v zemi nikoho.</Description>
+      <Description>Český občan si na Balkáně vyhlásil vlastní stát, kde se nebudou muset platit daně. Podle samozvaného prezidenta je existence nového mikrostátu legální. Nachází se totiž na nikým nenárokovaném území mezi dvěma státy bývalé Jugoslávie v zemi nikoho.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -103,7 +131,7 @@
       <Choices>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Fun" value="-2" />
+            <ModifyEffect attribute="Fun" value="-6" />
             <ModifyEffect attribute="Info" value="+2" />
             <ModifyEffect attribute="Panic" value="-2" />
           </Effects>
@@ -116,14 +144,41 @@
         <Choice>
           <Effects>
             <ModifyEffect attribute="Fun" value="2" />
-            <ModifyEffect attribute="Info" value="-4" />
-            <ModifyEffect attribute="Panic" value="+2" />
+            <ModifyEffect attribute="Info" value="-5" />
+            <ModifyEffect attribute="Panic" value="+6" />
           </Effects>
           <Title>Chemtrails potvrzeny. Co vám elity tají? </Title>
           <Description>Skupina aktivistů, kteží si říkají The Chalice of Truth zveřejnila šokující fotografii interiéru amerického letounu, který slouží k rozprašování nebezpečného plynu D3bi1. Podle aktivistů toxin způsobuje dlouhodobé stavy otupělosti. V případě těhotných žen je riziko poškození plodu, kdy se pak u narozených dětí může vyvinout homosexualita.</Description>
           <ImagePath>chemtrails2</ImagePath>
           <ImageLabel>Tajně pořízená fotografie paluby letadla</ImageLabel>
           <ChoiceText>Alternativní zdroje</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
+    <MultipleChoiceEvent date="2019-10-03" name="Rozhovor s Dvořáčkem">
+      <Description>"Lidská práva v Čině vyřeší kapitalismus," říká podnikatel a pokračuje: "svobodná společnost je ta, kde má každý obyvatel dost peněz, aby si mohl pořídit zbraň. Daně se snažím neplatit. A jsem na to hrdý," uzavírá podnikatel.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Tom" value="1" />
+            <ModifyEffect attribute="Panic" value="-1" />
+          </Effects>
+          <Title>Pokud ve volbách vyhraje Dvořáček, měly bychom se začít ozbrojovat.</Title>
+          <Description>V rozhovoru pro Novinky-rychle.cz uvedl, že svobodu je potřeba si každý den tvrdě vybojovat. Ve společnosti chce narovnat pravidla hry a jeho motto zní: "Každý sám za sebe."</Description>
+          <ImagePath>tom1</ImagePath>
+          <ImageLabel>Tom Dvořáček, předseda strany Liberty2020</ImageLabel>
+          <ChoiceText>Korporátní demagog</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Tom" value="+2" />
+            <ModifyEffect attribute="Panic" value="-1" />
+          </Effects>
+          <Title>Dvořáček chce bohatství pro všechny.</Title>
+          <Description>Podle Dvořáčka může být každý milionář, pokud bude dostatečně odhodlaný. Vizionářksý podnikatel tvrdí, že otázka lidských práv, například i v Číně, může být vyřešena, pouze když bude každý člověk bohatý.</Description>
+          <ImagePath>tom1</ImagePath>
+          <ImageLabel>Miliardář Tom Dvořáček</ImageLabel>
+          <ChoiceText>Progresivní podnikatel</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
@@ -135,8 +190,7 @@
         <Choice>
           <Effects>
             <ModifyEffect attribute="Fun" value="3" />
-            <ModifyEffect attribute="Panic" value="1" />
-            <ModifyEffect attribute="Tom" value="1" />
+            <ModifyEffect attribute="Panic" value="4" />
           </Effects>
           <Title>Homosexuální lobby opět zaútočila.</Title>
           <Description> Tisíce vyznavačů sadomasochismu prošly městem! Nevkusné!</Description>
@@ -146,7 +200,7 @@
         <Choice>
           <Effects>
             <ModifyEffect attribute="Fun" value="1" />
-            <ModifyEffect attribute="Alice" value="1" />
+            <ModifyEffect attribute="Panic" value="-1" />
           </Effects>
           <Title>Pride Parade se letos vydařila a zúčastnilo přes 50.000 lidí.</Title>
           <Description>Je vidět, že z akce se stává čím dál větší mainstream. LGBTQ téma dnes není tabu ani ničím okrajovým.</Description>
@@ -154,15 +208,40 @@
         </Choice>
       </Choices>
     </ImageChoiceEvent>
+    <MultipleChoiceEvent date="2019-11-08" name="Pevné zdraví herečky Kubešové">
+      <Description>Alice Kubešová, která se proslavila jako herečka v 60. letech minulého století, kandiduje v roce 2020 na premiérku. Něco zde nehraje. Objevují se spekulace o jejím mladém vzhledu.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="3" />
+            <ModifyEffect attribute="Alice" value="-3" />
+            <ModifyEffect attribute="Panic" value="1" />
+          </Effects>
+          <Title>Šokující odhalení. Víme, proč Kubešová vypadá tak mladě.</Title>
+          <Description>Přední český záhadolog je přesvědčen, že Kubešová je mimopozemského původu. "Nasvědčují tomu i její příliš dobré vztahy se zahraničními elitami," naznačuje.</Description>
+          <ChoiceText>Mohou za tím být Reptaliáni</ChoiceText>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Alice" value="2" />
+            <ModifyEffect attribute="Panic" value="-3" />
+            <ModifyEffect attribute="Fun" value="-4" />
+          </Effects>
+          <Title>Recept na dlouhověkost? Nevynechat snídani, říká bývalá herečka</Title>
+          <Description>Nikdy jsem nebyla na žádné plastické operaci. Pouze cvičím jógu a pravidelně snídám müsli cereálie.</Description>
+          <ChoiceText>Zdravý životní styl</ChoiceText>
+        </Choice>
+      </Choices>
+    </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-10-17" name="Milovníci střelných zbraní">
       <Description>Parlament probírá úpravu zákona o držení střelných zbraní. Argumentem pro větší dostupnost zbraní mezi civilním obyvatelstvem je událost z Curychu, kde civilista v nákupním centru zneškodnil legálně drženou pistolí muže hrozícího odpálením výbušniny. Kritici novely argumentují statistikami o počtu úmrtí způsobených střelnou zbraní v různých jurisdikcích.</Description>
       <Choices>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Fun" value="2" />
+            <ModifyEffect attribute="Fun" value="1" />
             <ModifyEffect attribute="Info" value="-2" />
             <ModifyEffect attribute="Panic" value="-2" />
-            <ModifyEffect attribute="Tom" value="3" />
+            <ModifyEffect attribute="Tom" value="2" />
           </Effects>
           <Title>Vyzbrojený civilista zneškodnil teroristu, který se chystal odpálit v nákupním centru v Curychu</Title>
           <Description> Slavný biatlonista, který je vedle dvou zlatých medailí také nositelem pistole typu Glock 17, zabránil přesnou střelbou z 12 metrů krveprolití. “Každý správný Švýcar by na mém místě udělal to samé. Teda, pokud by zrovna měl u sebe zbraň,” podotýká skromný hrdina, úspěšný sportovec a vášnivý střelec. Tom Dvoracek okamžitě navrhl novelu zákona o zbraních, která se inspirovala právě švýcarským modelem.</Description>
@@ -170,10 +249,10 @@
         </Choice>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Fun" value="-3" />
+            <ModifyEffect attribute="Fun" value="-4" />
             <ModifyEffect attribute="Info" value="3" />
             <ModifyEffect attribute="Tom" value="-2" />
-            <ModifyEffect attribute="Panic" value="2" />
+            <ModifyEffect attribute="Panic" value="3" />
           </Effects>
           <Title>Mrtvých přibude, pokud projde novela zákona o držení zbraní.</Title>
           <Description>Statistika OSN ukazuje, že v zemích, kde jsou zbraně dostupnější, je také mnohem větší šance, že budete zastřeleni. </Description>
@@ -183,38 +262,13 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <ImageChoiceEvent date="2019-10-18" name="Oligarcha v ohrožení">
-      <Description>Před vilou lídra strany Liberty2020 Toma Dvoracka demonstrovaly desítky aktivistů. Takto je zachytil náš fotograf.</Description>
-      <Choices>
-        <Choice>
-          <Effects>
-            <ModifyEffect attribute="Panic" value="2" />
-            <ModifyEffect attribute="Fun" value="3" />
-            <ModifyEffect attribute="Tom" value="3" />
-          </Effects>
-          <Title>Vandalové zapálili auto Toma Dvoracka.</Title>
-          <ImagePath>vandalohen</ImagePath>
-          <ImageLabel>Vandalové zapálili auto Toma Dvoracka (foto: psa)</ImageLabel>
-        </Choice>
-        <Choice>
-          <Effects>
-            <ModifyEffect attribute="Fun" value="1" />
-            <ModifyEffect attribute="Panic" value="1" />
-            <ModifyEffect attribute="Tom" value="-2" />
-          </Effects>
-          <Title>Brutalni zasah policie na demonstranty pred Dvorackovou vilou.</Title>
-          <ImagePath>vandalzatykani</ImagePath>
-          <ImageLabel />
-        </Choice>
-      </Choices>
-    </ImageChoiceEvent>
     <MultipleChoiceEvent date="2019-10-23" name="Ztracená Anička">
       <Description>Policie pohřešuje osmiletou holčičku Aničku Novákovou.</Description>
       <Choices>
         <Choice>
           <Effects>
             <ModifyEffect attribute="Fun" value="2" />
-            <ModifyEffect attribute="Panic" value="1" />
+            <ModifyEffect attribute="Panic" value="2" />
           </Effects>
           <Title>Ztracená Anička: Podezřelý je sexuální deviant!</Title>
           <Description>"Je to strašné, bojím se, že naši Aničku unesl nějaký úchyl," řekla exkluzivně redakci matka pohřešované holčičky.</Description>
@@ -234,26 +288,32 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-10-24" name="Životopis mladého finančníka">
-      <Description>Tom Dvoracek se narodil v roce 1988 českému otci a britské matce v New Yorku. Studoval ekonomii na Columbia University, ze které ale ve druhém ročníku odešel, aby se mohl věnovat své firmě Future Finance, která se věnuje obchodování s rizikovými aktivy.</Description>
+    <MultipleChoiceEvent date="2019-10-27" name="Řád bílých kališníků">
+      <Description>Na Vyšehradě se uskutečnil sjezd nové politické strany, která si říká Řád bílých kališníků. Jsou údajně ochotni bránit české hodnoty a bojovat proti establishmentu všemu prostředky.</Description>
       <Choices>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Info" value="-1" />
-            <ModifyEffect attribute="Tom" value="-1" />
+            <ModifyEffect attribute="Info" value="-3" />
+            <ModifyEffect attribute="Panic" value="4" />
+            <ModifyEffect attribute="Fun" value="2" />
           </Effects>
-          <Title>Kandidát na premiéra nemá vystudovanou vysokou školu</Title>
-          <Description>Jednatřicetiletý miliardář přišel ke svému jmení pravděpodobně jen díky štěstí při spekulacích. Dvoracek tak dokazuje, že je možné zbohatnout i bez práce.</Description>
-          <ChoiceText>Kandidát na premiéra nemá vystudovanou vysokou školu</ChoiceText>
+          <Title>Boží bojovníci míří do politiky</Title>
+          <Description>"Chceme napravit, co tu ostatní politici za ta léta napáchali. My nejsme jako oni. Nejedná se o typickou politickou stranu, ale o řád," říká předseda kališníků Ivan Řemdih.</Description>
+          <ImagePath>kkk</ImagePath>
+          <ImageLabel>"Kališník" Ivan Řemdoh (Foto: Paul Walsch)</ImageLabel>
+          <ChoiceText>Nacionální extremismus</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Info" value="1" />
-            <ModifyEffect attribute="Tom" value="1" />
+            <ModifyEffect attribute="Info" value="2" />
+            <ModifyEffect attribute="Panic" value="2" />
+            <ModifyEffect attribute="Fun" value="-2" />
           </Effects>
-          <Title>Kandidát na premiéra od mládí úspěšně podniká</Title>
-          <Description>Tom Dvoracek vydělal první miliardu teprve ve dvaadvaceti letech. Future Finance tehdy obchodovalo s tzv. "novými aktivy" funujícími na bázi blockchainu.</Description>
-          <ChoiceText>Životopis Toma Dvoracka</ChoiceText>
+          <Title>V Česku vznika nebezpečné polovojenské uskupení</Title>
+          <Description>Tajná policie varuje před novým politickým uskupením. "Podle našeho expertného šetření jsme odhalili jisté indicie, že by se mohlo jednat o extrémistické hnutí," říká elitní policista.</Description>
+          <ImagePath>kkk</ImagePath>
+          <ImageLabel>Ivan Řemdych (Foto: Paul Walsch)</ImageLabel>
+          <ChoiceText>Návrat k husitské tradici</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
@@ -264,30 +324,30 @@
       <ImagePath>nalezena</ImagePath>
       <Text>Ztracená anička byla nalezena díky policejní zprávě zveřejněné na Novinky-rychle.cz</Text>
     </CutsceneEvent>
-    <MultipleChoiceEvent date="2019-10-27" name="Řád bílých kališníků">
-      <Description>Na Vyšehradě se uskutečnil sjezd nové politické strany, která si říká Řád bílých kališníků. Jsou údajně ochotni bránit české hodnoty a bojovat proti establishmentu všemu prostředky.</Description>
+    <MultipleChoiceEvent date="2019-10-24" name="Demonstrace proti kapitalismus">
+      <Description>Rap pořádá demonstraci proti daňovým únikům (provizorní text)</Description>
       <Choices>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Info" value="-1" />
+            <ModifyEffect attribute="Fun" value="-1" />
+            <ModifyEffect attribute="Tom" value="-1" />
+            <ModifyEffect attribute="Alice" value="2" />
           </Effects>
-          <Title>Boží bojovníci míří do politiky</Title>
-          <Description>"Chceme napravit, co tu ostatní politici za ta léta napáchali. My nejsme jako oni. Nejedná se o typickou politickou stranu, ale o řád," říká předseda kališníků Ivan Řemdich.</Description>
-          <ImagePath>kkk</ImagePath>
-          <ImageLabel>"Kališník" Ivan Řemdych (Foto: Paul Walsch)</ImageLabel>
-          <ChoiceText>Nacionální extremismus</ChoiceText>
+          <Title>Tisíce lidí demonstrovali proti daňovým únikům</Title>
+          <Description>text fotka</Description>
+          <ImagePath>demo1</ImagePath>
+          <ChoiceText>Městem prošel pochod za solidaritu</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Info" value="2" />
-            <ModifyEffect attribute="Panic" value="2" />
             <ModifyEffect attribute="Fun" value="2" />
+            <ModifyEffect attribute="Alice" value="-4" />
+            <ModifyEffect attribute="Panic" value="3" />
           </Effects>
-          <Title>V Česku vznika nebezpečné polovojenské uskupení</Title>
-          <Description>Tajná policie varuje před novým politickým uskupením. "Podle našeho expertného šetření jsme odhalili jisté indicie, že by se mohlo jednat o extrémistické hnutí," říká elitní policista.</Description>
-          <ImagePath>kkk</ImagePath>
-          <ImageLabel>Ivan Řemdych (Foto: Paul Walsch)</ImageLabel>
-          <ChoiceText>Návrat k husitské tradici</ChoiceText>
+          <Title>Demonstrace RaP se změnila v masakr!</Title>
+          <Description>text fotka</Description>
+          <ImagePath>demo2</ImagePath>
+          <ChoiceText>Anarchisté zapalovali město</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
@@ -306,7 +366,7 @@
         <Choice>
           <Effects>
             <ModifyEffect attribute="Fun" value="-2" />
-            <ModifyEffect attribute="Info" value="2" />
+            <ModifyEffect attribute="Info" value="3" />
             <ModifyEffect attribute="Tom" value="-3" />
           </Effects>
           <Title>Dvoracek spekuluje proti české koruně</Title>
@@ -315,38 +375,13 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-11-08" name="Pevné zdraví herečky Kubešové">
-      <Description>Alice Kubešová, která se proslavila jako herečka v 60. letech minulého století, kandiduje v roce 2020 na premiérku. Něco zde nehraje. Objevují se spekulace o jejím mladém vzhledu.</Description>
-      <Choices>
-        <Choice>
-          <Effects>
-            <ModifyEffect attribute="Fun" value="3" />
-            <ModifyEffect attribute="Alice" value="-3" />
-            <ModifyEffect attribute="Panic" value="1" />
-          </Effects>
-          <Title>Šokující odhalení. Víme, proč Kubešová vypadá tak mladě.</Title>
-          <Description>Přední český záhadolog je přesvědčen, že Kubešová je mimopozemského původu. "Nasvědčují tomu i její příliš dobré vztahy se zahraničními elitami," naznačuje.</Description>
-          <ChoiceText>Mohou za tím být Reptaliáni</ChoiceText>
-        </Choice>
-        <Choice>
-          <Effects>
-            <ModifyEffect attribute="Alice" value="2" />
-            <ModifyEffect attribute="Panic" value="-3" />
-          </Effects>
-          <Title>Recept na dlouhověkost? Nevynechat snídani, říká bývalá herečka</Title>
-          <Description>Nikdy jsem nebyla na žádné plastické operaci. Pouze cvičím jógu a pravidelně snídám müsli cereálie.</Description>
-          <ChoiceText>Zdravý životní styl</ChoiceText>
-        </Choice>
-      </Choices>
-    </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-11-08" name="Kubešová mění image">
       <Description>Ozývají se názory, že kandidátka za hnutí Rodina a Příroda není dost liberální. V rámci kampaně tak vhnikl nový vizuál, hrající si se zkratkou RaP, a kde je Kubešová vyobrazena s jointem.</Description>
       <Choices>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Fun" value="3" />
-            <ModifyEffect attribute="Alice" value="-3" />
-            <ModifyEffect attribute="Panic" value="1" />
+            <ModifyEffect attribute="Fun" value="-1" />
+            <ModifyEffect attribute="Alice" value="-2" />
           </Effects>
           <Title>Kubešová má nový vizuál. "Na západě běžné," říká expert.</Title>
           <Description>"Toto je typická ukázka moderního politického marketingu. Kontroverzní montáž vyvolá zvýšený zájem médií a kandidátovi nejspíš jinak neuškodí," říká politolog.</Description>
@@ -356,7 +391,8 @@
         <Choice>
           <Effects>
             <ModifyEffect attribute="Alice" value="2" />
-            <ModifyEffect attribute="Panic" value="-3" />
+            <ModifyEffect attribute="Panic" value="2" />
+            <ModifyEffect attribute="Fun" value="2" />
           </Effects>
           <Title>Tak tuhle Kubešovou jste ještě neviděli</Title>
           <Description>Hnutí Rodina a Příroda má nový vizuál od známého moderního umělce. "Chtěl jsem ukázat její lidskost. A taky že v RaP všichni pořádně hulíme," říká výtvarník a laurát ceny Jindřicha Chalupeckého za rok 2018</Description>
@@ -366,24 +402,22 @@
       </Choices>
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-11-22" name="Daňová úspora Toma Dvoracka">
-      <Preconditions>
-        <Precondition attribute="Liberland" value="1" operation="equal" />
-      </Preconditions>
       <Description>Tom Dvoracek je velký fanoušek Liberlandu. Jeho firma Future Finance tam letos z důvodů daňové optimalizace přesídlila. Nižší náklady prý firmě dovolí přimout více zaměstanců. RaP toto kritizuje.</Description>
       <Choices>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Info" value="2" />
+            <ModifyEffect attribute="Info" value="1" />
             <ModifyEffect attribute="Tom" value="-2" />
             <ModifyEffect attribute="Alice" value="1" />
           </Effects>
           <Title>Dvoracek připravil Česko o miliardy na daních</Title>
-          <Description>Oligarcha Dvoracek přesunul svou firmu Future Finance do daňového ráje Liberlandu, aby se vyhnul placení daní. Alice Kubešová svolala na zítřek demonstraci proti daňovým rájům.</Description>
+          <Description>Oligarcha Dvoracek přesunul svou firmu Future Finance do daňového ráje Liberlandu, aby se vyhnul placení daní. Alice Kubešová svolala na zítřek další demonstraci proti daňovým rájům.</Description>
           <ChoiceText>Dvoracek neplatí daně</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
             <ModifyEffect attribute="Tom" value="2" />
+            <ModifyEffect attribute="Panic" value="-2" />
           </Effects>
           <Title>Future Finance otevře na Ústecku novou počítárnu bankovek, práci získá až 200 lidí</Title>
           <Description>(Ústí nad Labem) "Naše firma rychle expanduje a tudíž si můžeme dovolit více zaměstanců. Myslím, že to bude vzpruha pro tento region," říká mladý podnikatel Tom Dvoracek.</Description>
@@ -393,14 +427,14 @@
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-11-22" name="Tom Dvoracek, zastánce země svobody">
       <Preconditions>
-        <Precondition attribute="Liberland" value="0" operation="equal" />
+        <Precondition attribute="Liberland" value="2" operation="equal" />
       </Preconditions>
       <Description>Tom Dvoracek chce Chorvatsku domluvit a podpořit vznikající sousední stát Liberland. "Je potřeba se zastat slabšího," říká Dvoracek.</Description>
       <Choices>
         <Choice>
           <Effects>
             <ModifyEffect attribute="Panic" value="1" />
-            <ModifyEffect attribute="Tom" value="-1" />
+            <ModifyEffect attribute="Tom" value="-2" />
           </Effects>
           <Title>Možný budoucí premiér útočí na Suverenitu Chorvatska.</Title>
           <Description></Description>
@@ -418,13 +452,40 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
+    <ImageChoiceEvent date="2019-10-18" name="Aktivistů před Dvořáčkovou vilou">
+      <Description>Před vilou lídra strany Liberty2020 demonstrovaly desítky aktivistů. Takto je zachytil náš fotograf.</Description>
+      <Choices>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Panic" value="4" />
+            <ModifyEffect attribute="Fun" value="3" />
+            <ModifyEffect attribute="Tom" value="3" />
+          </Effects>
+          <Title>Vandalové zapálili auto Toma Dvořáčka.</Title>
+          <Description>Stoupenci Kubešové vnikly do garáže miliardáře.</Description>
+          <ImagePath>vandalohen</ImagePath>
+          <ImageLabel>Vandalové zapálili auto Toma Dvoracka (foto: psa)</ImageLabel>
+        </Choice>
+        <Choice>
+          <Effects>
+            <ModifyEffect attribute="Fun" value="1" />
+            <ModifyEffect attribute="Panic" value="2" />
+            <ModifyEffect attribute="Tom" value="-4" />
+          </Effects>
+          <Title>Brutálni zásah policie na demonstranty před Dvořáčkovou vilou.</Title>
+          <Description>"Policejní stát! Policejní stát!," sknadovali aktivisté. Policie použila hmaty a chvaty, aby spacifikovala demonstrany. </Description>
+          <ImagePath>vandalzatykani</ImagePath>
+          <ImageLabel />
+        </Choice>
+      </Choices>
+    </ImageChoiceEvent>
     <MultipleChoiceEvent date="2019-10-01" name="Liberland Leaks">
       <Description>Anonymní whitleblower zveřejnil tisíce dokumentů z daňového offshoru. Mezi subjekty figurují i nečekaná jména jako Alice Kubešová a Ivan Řemdih. Kubešová má na offshorových účtech nepřiznané miliony. Zatímco Řemdih prováděl z Liberlandu podezřelé transkace se Saudsko arabskou zrojařskou firmou.</Description>
       <Choices>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Fun" value="1" />
-            <ModifyEffect attribute="Panic" value="2" />
+            <ModifyEffect attribute="Alice" value="-3" />
+            <ModifyEffect attribute="Info" value="2" />
           </Effects>
           <Title>Kubešová schovávala v daňovém ráji miliony!</Title>
           <Description>Věc je o to kontroverznější, že slavná herečka v minulosti vystupovala jako bojovnice proti podobným praktikám. "Jsem lepší než ona, protože daně krátím naprosto transparentně," přísadil si Tom Dvořáček. (red)</Description>
@@ -433,14 +494,13 @@
         </Choice>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Fun" value="-2" />
-            <ModifyEffect attribute="Info" value="2" />
-            <ModifyEffect attribute="Panic" value="-1" />
+            <ModifyEffect attribute="Fun" value="+2" />
+            <ModifyEffect attribute="Panic" value="+3" />
           </Effects>
           <Title>Bílí kališníci se připravují na krvavý puč!</Title>
-          <Description>V následujících volbách bude důležité se semknout a nedovolit populistům zvítězit.</Description>
+          <Description>Objevily se okumenty, které dokazují, že Řád bílích kališniků si objednával samopaly AK-47 ze Saudké Arábie. V následujících volbách bude důležité se semknout a nedovolit populistům zvítězit.</Description>
           <ImagePath>kkk</ImagePath>
-          <ChoiceText>Podle lékařů běžný fenomén</ChoiceText>
+          <ChoiceText>Řemdih buduje armádu z offshoru</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>

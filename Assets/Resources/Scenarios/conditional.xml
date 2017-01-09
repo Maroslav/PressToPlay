@@ -36,7 +36,7 @@
       <Choices>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Fun" value="+10" />
+            <ModifyEffect attribute="Fun" value="+6" />
           </Effects>
           <Title>Reklamní sdělení</Title>
           <Description></Description>
@@ -45,7 +45,7 @@
         </Choice>
         <Choice>
           <Effects>
-            <ModifyEffect attribute="Fun" value="-10" />
+            <ModifyEffect attribute="Fun" value="+6" />
           </Effects>
           <Title>Důležité sdělení</Title>
           <Description>Bohužel provoz redakce něco stojí. Abychom Vám i nadále mohli přinášet kvalitní obsah, prosíme Vás o zaslání finančního daru.</Description>
@@ -59,7 +59,7 @@
         <Precondition attribute="Info" operation="lessOrEqual" value="0" />
       </Preconditions>
       <ImagePath>gameoverinfo</ImagePath>
-      <Text>Lidé jsou ze zpráv v médiích natolik vyděšeni a v neustále depresi, že nejsou schopni číst ani zprávy na Noviny-rychle.cz. GAME OVER.</Text>
+      <Text>Populace je čtením senzačních internetových článků zcela vygumovaná. Došlo k anarcho-nihilistickému rozpadu společnosti. GAME OVER.</Text>
     </CutsceneEvent>
     <CutsceneEvent date="2019-10-24" xmlns="http://presstoplaygame.com/scenario" isTerminating="true">
       <Preconditions>
@@ -70,7 +70,7 @@
     </CutsceneEvent>
     <CutsceneEvent date="2019-10-24" xmlns="http://presstoplaygame.com/scenario" isTerminating="true">
       <Preconditions>
-        <Precondition attribute="Panic" operation="greater" value="12" />
+        <Precondition attribute="Panic" operation="greater" value="9" />
       </Preconditions>
       <ImagePath>gameoverpanic</ImagePath>
       <Text>Lidé jsou ze zpráv v médiích natolik vyděšeni a v neustále depresi, že nejsou schopni nadále číst Novinky-rychle.cz. GAME OVER.</Text>
