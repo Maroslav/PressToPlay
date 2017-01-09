@@ -8,8 +8,10 @@ public class MultipleChoiceEventProcessor : ChoiceEventProcessorBase<MultipleCho
     public GameObject ChoiceViewer;
 
 
-    void OnValidate()
+    protected override void OnValidate()
     {
+        base.OnValidate();
+
         Assert.IsNotNull(ChoiceViewer, name);
         Assert.IsNotNull(ChoiceViewer.GetComponent<MultipleChoiceProcessor>(), name);
     }

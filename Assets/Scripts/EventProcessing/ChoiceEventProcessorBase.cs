@@ -10,7 +10,7 @@ public class ChoiceEventProcessorBase<TChoiceEvent, TChoice> : MonoBehaviour
     where TChoice : Choice
 {
     public GameObject ChoiceName;
-    public GameObject ChoiceDescription;
+    public GameObject ChoiceDescription; 
     public GameObject ChoiceDate;
 
     public GameObject Publishing;
@@ -21,7 +21,7 @@ public class ChoiceEventProcessorBase<TChoiceEvent, TChoice> : MonoBehaviour
     protected TChoiceEvent Event;
 
 
-    void OnValidate()
+    protected virtual void OnValidate()
     {
         Assert.IsNotNull(ChoiceName, name);
         Assert.IsNotNull(ChoiceName.GetComponent<Text>(), name);
