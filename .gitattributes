@@ -1,0 +1,12 @@
+# Default to automatic choice by git
+* text=auto
+
+# Declare native line endings and showing of diff
+*.txt text
+*.unity text diff
+*.prefab text diff
+*.sln text 
+
+# These are binary
+*.png binary
+*.jpg binary
