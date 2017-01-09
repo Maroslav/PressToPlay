@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="scenario_stylesheet.xslt"?>
 <Scenario name="Story scenario" xmlns="http://presstoplaygame.com/scenario" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://presstoplaygame.com/scenario scenario_schema.xsd">
   <Events>
@@ -72,7 +72,7 @@
       </Choices>
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-10-05" name="Rodina a příroda vyráží do boje">
-      <Description>V reakci na nespokojenost lidí s vládnoucími elitami, vzniká nová strana Rodina a Přiroda (RaP). Předsedkyní bude populární umělkyně Alice Kubešová, známá především z nekonečného seriálu Hodná doktorka. Spekuluje se, že strana je silně levicově zaměřená.</Description>
+      <Description>V reakci na nespokojenost lidí s vládnoucími elitami, vzniká nová strana Rodina a Příroda (RaP). Předsedkyní bude populární umělkyně Alice Kubešová, známá především z nekonečného seriálu Hodná doktorka. Spekuluje se, že strana je silně levicově zaměřená.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -163,7 +163,7 @@
             <ModifyEffect attribute="Tom" value="1" />
             <ModifyEffect attribute="Panic" value="-1" />
           </Effects>
-          <Title>Pokud ve volbách vyhraje Dvořáček, měly bychom se začít ozbrojovat.</Title>
+          <Title>Pokud ve volbách vyhraje Dvořáček, měli bychom se začít ozbrojovat.</Title>
           <Description>V rozhovoru pro Novinky-rychle.cz uvedl, že svobodu je potřeba si každý den tvrdě vybojovat. Ve společnosti chce narovnat pravidla hry a jeho motto zní: "Každý sám za sebe."</Description>
           <ImagePath>tom1</ImagePath>
           <ImageLabel>Tom Dvořáček, předseda strany Liberty2020</ImageLabel>
@@ -202,7 +202,7 @@
             <ModifyEffect attribute="Fun" value="1" />
             <ModifyEffect attribute="Panic" value="-1" />
           </Effects>
-          <Title>Pride Parade se letos vydařila a zúčastnilo jí přes 50.000 lidí.</Title>
+          <Title>Pride Parade se letos vydařila a zúčastnilo se jí přes 50.000 lidí.</Title>
           <Description>Je vidět, že z akce se stává čím dál větší mainstream. LGBTQ téma dnes není tabu ani ničím okrajovým.</Description>
           <ImagePath>prideSOFT</ImagePath>
         </Choice>
@@ -352,7 +352,7 @@
       </Choices>
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-11-05" name="Tom Dvoracek, filantrop">
-      <Description>Podnikatel Tom Dvoracek začal skupovat ve velkém české dluhopisy. Jejich cena kleska tak nízko, že mají zápornou hodnotu. "Dělám to z lásky k Česku. Platím státu za to, že mu půjčuji peníze," zdůvodňuje nákup Tom Dvoracek.</Description>
+      <Description>Podnikatel Tom Dvoracek začal skupovat ve velkém české dluhopisy. Jejich cena klesla tak nízko, že mají zápornou hodnotu. "Dělám to z lásky k Česku. Platím státu za to, že mu půjčuji peníze," zdůvodňuje nákup Tom Dvoracek.</Description>
       <Choices>
         <Choice>
           <Effects>
