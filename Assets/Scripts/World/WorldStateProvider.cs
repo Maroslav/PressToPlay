@@ -36,13 +36,16 @@ public class WorldStateProvider : MonoBehaviour
             GameObject categoryGO = Instantiate(CategoryPrefab);
             categoryGO.transform.SetParent(AttributesGameObject.transform);
 
+            bool anyVisible = false;
             foreach (var attributePair in categoryPair.Value.Where(a => a.Key.IsDisplayed))
             {
                 GameObject attributeGO = Instantiate(AttributePrefab);
                 attributeGO.transform.SetParent(categoryGO.transform);
                 attributeGOs.Add(attributePair.Key, attributeGO);
                 attributeGO.SetActive(true);
+                anyVisible = true;
             }
+            categoryGO.SetActive(anyVisible);
         }
 
         UpdateAttributeGameObjects(true);
