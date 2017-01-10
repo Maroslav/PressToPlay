@@ -183,6 +183,7 @@ MonoBehaviour:
   DescriptionGameObject: {fileID: 1000012470352954}
   SliderGameObject: {fileID: 1000010723756426}
   PopupGameObject: {fileID: 1000011409804834}
+  FillGameObject: {fileID: 1000010766607168}
 --- !u!114 &114000011072410896
 MonoBehaviour:
   m_ObjectHideFlags: 1

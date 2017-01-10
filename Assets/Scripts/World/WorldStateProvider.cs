@@ -4,6 +4,7 @@ using Assets.Code.Gameplay;
 using Assets.Code.GameState;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.UI;
 
 public class WorldStateProvider : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class WorldStateProvider : MonoBehaviour
                 attributeGO.transform.SetParent(categoryGO.transform);
                 attributeGOs.Add(attributePair.Key, attributeGO);
                 attributeGO.SetActive(true);
+
+                GameObject filler = attributeGO.GetComponent<WorldAttributeChanger>().FillGameObject;
+                filler.GetComponent<Image>().color = attributePair.Key.Color;
+
                 anyVisible = true;
             }
             categoryGO.SetActive(anyVisible);

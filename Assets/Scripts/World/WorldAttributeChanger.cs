@@ -11,6 +11,7 @@ public class WorldAttributeChanger : MonoBehaviour
     public GameObject DescriptionGameObject;
     public GameObject SliderGameObject;
     public GameObject PopupGameObject;
+    public GameObject FillGameObject;
 
 
     private void OnValidate()
@@ -23,6 +24,9 @@ public class WorldAttributeChanger : MonoBehaviour
         Assert.IsNotNull(PopupGameObject, name);
         Assert.IsNotNull(PopupGameObject.GetComponent<Text>(), name);
         Assert.IsNotNull(PopupGameObject.GetComponent<Vector3Tweener>(), name);
+        Assert.IsNotNull(FillGameObject, name);
+        Assert.IsNotNull(FillGameObject.GetComponent<Image>(), name);
+
     }
 
     void Start()
