@@ -68,12 +68,16 @@ public class PublishingProcessor : MonoBehaviour
             Debug.Log("Loading a publishing image from: " + path);
             var texture = Resources.Load<Texture>(path);
             Assert.IsNotNull(texture, "Wrongly specified image in " + name);
-            var image = Image.GetComponent<RawImage>();
-            image.texture = texture;
+            if (texture != null)
+            {
 
-            Image.GetComponent<AspectRatioFitter>().aspectRatio = texture.width / (float)texture.height;
+                var image = Image.GetComponent<RawImage>();
+                image.texture = texture;
 
-            ImageDescription.GetComponent<Text>().text = choice.ImageLabel;
+                Image.GetComponent<AspectRatioFitter>().aspectRatio = texture.width / (float)texture.height;
+
+                ImageDescription.GetComponent<Text>().text = choice.ImageLabel;
+            }
         }
 
         // Article text

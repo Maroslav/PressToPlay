@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace Assets.Code.GameState
 {
@@ -17,5 +18,6 @@ namespace Assets.Code.GameState
         public string Description { get; private set; }
         public AttribsCategory Category { get; set; }
         public bool IsDisplayed { get; set; }
+        public Color Color { get; set; }
     }
 }

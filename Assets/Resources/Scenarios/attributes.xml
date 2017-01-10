@@ -8,8 +8,8 @@
     </Category>
 
   <Category name="Politicians" description="Obliba kandidátů">
-    <Attribute name="Alice" description="Popularita RaP"  isDisplayed="true" />
-    <Attribute name="Tom" description="Popularita Liberty2020" isDisplayed="true" />
+    <Attribute name="Alice" description="Popularita RaP"  isDisplayed="true" color="#ff0000" />
+    <Attribute name="Tom" description="Popularita Liberty2020" isDisplayed="true" color="#0000ff"/>
   </Category>
   <Category name="SupportAttributes" description="Obliba kandidátů">
     <Attribute name="Liberland" description="Existence Liberlandu" initialValue="0" isDisplayed="false" />

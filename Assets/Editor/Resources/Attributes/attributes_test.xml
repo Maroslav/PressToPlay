@@ -2,7 +2,7 @@
 <Attributes>
   <!-- TEST FILE, USED ONLY FOR TESTING-->
   <Category name="Cat A">
-    <Attribute name="Att1" description="Descr1" isDisplayed="true" initialValue="500" />
+    <Attribute name="Att1" description="Descr1" isDisplayed="true" initialValue="500" color="#ff0000" />
   </Category>
   <Category name="Cat B">
     <Attribute name="Att2" description="Descr2" isDisplayed="false" initialValue="500"/>
@@ -10,7 +10,7 @@
   <Category name="Cat C">
   </Category>
   <Category name="Cat D">
-    <Attribute name="Att3" description="Descr3" initialValue="0"/>
+    <Attribute name="Att3" description="Descr3" initialValue="0" color="#a65959"/>
     <Attribute name="Att4" description="Descr4" initialValue="1000"/>
   </Category>
 </Attributes>

@@ -30,6 +30,24 @@ namespace Assets.Code.Model
             {
                 return (T)xmlReader.Deserialize(reader);
             }
-        } 
+        }
+        public static Color ColorFromHtml(string htmlColor)
+        {
+            Color c = new Color();
+
+            // empty color
+            if ((htmlColor == null) || (htmlColor.Length == 0))
+                return c;
+
+            if ((htmlColor[0] == '#') &&
+                ((htmlColor.Length == 7)))
+            {
+                c = new Color((float) (Convert.ToInt32(htmlColor.Substring(1, 2), 16)/255.0),
+                    (float) (Convert.ToInt32(htmlColor.Substring(3, 2), 16) / 255.0),
+                    Convert.ToInt32(htmlColor.Substring(5, 2), 16) / (float)255.0) ;
+            }
+            else System.Diagnostics.Debug.Assert(false, "Wrong color format, expected #xxxxxx");
+            return c;
+        }
     }
 }

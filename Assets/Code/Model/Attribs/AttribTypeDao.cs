@@ -16,5 +16,8 @@ namespace Assets.Code.Model.Attribs
         public int InitialValue { get; set; }
         [XmlAttribute("isDisplayed")]
         public bool IsDisplayed { get; set; }
+
+        [XmlAttribute("color")]
+        public string Color { get; set; }
     }
 }
