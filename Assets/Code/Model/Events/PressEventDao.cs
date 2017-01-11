@@ -27,6 +27,10 @@ namespace Assets.Code.Model
         [XmlAttribute("isTerminating")]
         public bool IsTerminating { get; private set; }
 
+        [XmlAttribute("soundPath")]
+        public string SoundPath { get; set; }
+
+
         [XmlArray("Preconditions")]
         [XmlArrayItem("Precondition",typeof(PreconditionDao))]
         public PreconditionDao[] Preconditions { get; set; }
