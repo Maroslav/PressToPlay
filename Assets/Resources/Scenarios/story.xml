@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="scenario_stylesheet.xslt"?>
 <Scenario name="Story scenario" xmlns="http://presstoplaygame.com/scenario" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://presstoplaygame.com/scenario scenario_schema.xsd">
   <Events>
-    <CutsceneEvent date="2019-10-01">
+    <CutsceneEvent date="2019-10-01" soundPath1="riot1">
       <ImagePath>Intro/intro1</ImagePath>
       <Text>Protivládní demonstrace vedly ke svržení vlády. </Text>
     </CutsceneEvent>
@@ -14,7 +14,7 @@
       <ImagePath>Intro/intro_editor</ImagePath>
       <Text>Stal se z vás editor zpravodajského serveru Novinky-rychle.cz. Vaším úkolem je rozhodovat, jaká bude náplň denního zpravodajství.</Text>
     </CutsceneEvent>
-    <MultipleChoiceEvent date="2019-10-01" name="Chřipková epidemie">
+    <MultipleChoiceEvent date="2019-10-01" name="Chřipková epidemie" soundPath="riot1">
       <Description>Česko postihla chřipková epidemie. Nový virus chřipky si vyžádal první smrtelné oběti. Jsou hlášeni nejméně čtyři mrtví.
 
 &lt;color=#585858&gt;(Vyberte, jaké hlavní téma mají noviny použít v článku o této události. Volba může ovlivnit čtenost novin i veřejné mínění.)&lt;/color&gt;</Description>
