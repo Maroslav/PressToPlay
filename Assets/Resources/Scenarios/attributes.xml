@@ -1,15 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Attributes>
   <Category name="Journalist" description="Vlastnosti novináře a společnosti">
-    <Attribute name="Fun" description="Čtenost"  isDisplayed="true" />
-    
+    <Attribute name="Fun" description="Čtenost" isDisplayed="true" />
     <Attribute name="Info" description="Informativnost" isDisplayed="true" />
     <Attribute name="Panic" description="Panika" isDisplayed="true" />
-    </Category>
-
+  </Category>
   <Category name="Politicians" description="Obliba kandidátů">
-    <Attribute name="Alice" description="Popularita RaP"  isDisplayed="true" color="#ff0000" />
-    <Attribute name="Tom" description="Popularita Liberty2020" isDisplayed="true" color="#0000ff"/>
+    <Attribute name="Alice" description="Popularita RaP" isDisplayed="true" color="#FB9393" />
+    <Attribute name="Tom" description="Popularita Liberty2020" isDisplayed="true" color="#9D9DFF" />
   </Category>
   <Category name="SupportAttributes" description="Obliba kandidátů">
     <Attribute name="Liberland" description="Existence Liberlandu" initialValue="0" isDisplayed="false" />
