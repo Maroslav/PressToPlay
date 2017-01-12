@@ -73,7 +73,7 @@
         <Precondition attribute="Panic" operation="greater" value="9" />
       </Preconditions>
       <ImagePath>gameoverpanic</ImagePath>
-      <Text>Lidé jsou ze zpráv v médiích natolik vyděšeni a v neustále depresi, že nejsou schopni nadále číst Novinky-rychle.cz. GAME OVER.</Text>
+      <Text>Lidé jsou ze zpráv v médiích natolik vyděšeni a v neustálé depresi, že nejsou schopni nadále číst Novinky-rychle.cz. GAME OVER.</Text>
     </CutsceneEvent>
   </Events>
 </Scenario>

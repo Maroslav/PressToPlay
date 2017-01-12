@@ -15,7 +15,7 @@
       <Text>Stal se z vás editor zpravodajského serveru Novinky-rychle.cz. Vaším úkolem je rozhodovat, jaká bude náplň denního zpravodajství.</Text>
     </CutsceneEvent>
     <MultipleChoiceEvent date="2019-10-01" name="Chřipková epidemie">
-      <Description>Česko postihla chřipková epidemie. Nový virus chřipky si vyžádal první smrtelné obět. Jsou hlášeni nejméně čtyři mrtví.
+      <Description>Česko postihla chřipková epidemie. Nový virus chřipky si vyžádal první smrtelné oběti. Jsou hlášeni nejméně čtyři mrtví.
 
 &lt;color=#585858&gt;(Vyberte, jaké hlavní téma mají noviny použít v článku o této události. Volba může ovlivnit čtenost novin i veřejné mínění.)&lt;/color&gt;</Description>
       <Choices>
@@ -72,7 +72,7 @@
       </Choices>
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-10-05" name="Rodina a příroda vyráží do boje">
-      <Description>V reakci na nespokojenost lidí s vládnoucími elitami, vzniká nová strana Rodina a Příroda (RaP). Předsedkyní bude populární umělkyně Alice Kubešová, známá především z nekonečného seriálu Hodná doktorka. Spekuluje se, že strana je silně levicově zaměřená.</Description>
+      <Description>V reakci na nespokojenost lidí s vládnoucími elitami, vzniká nová strana Rodina a Příroda (RaP). Předsedkyní je populární umělkyně Alice Kubešová, známá především z nekonečného seriálu Hodná doktorka. Spekuluje se, že strana je silně levicově zaměřená.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -244,7 +244,7 @@
             <ModifyEffect attribute="Tom" value="2" />
           </Effects>
           <Title>Vyzbrojený civilista zneškodnil teroristu, který se chystal odpálit v nákupním centru v Curychu</Title>
-          <Description> Slavný biatlonista, který je vedle dvou zlatých medailí také nositelem pistole typu Glock 17, zabránil přesnou střelbou z 12 metrů krveprolití. “Každý správný Švýcar by na mém místě udělal to samé. Teda, pokud by zrovna měl u sebe zbraň,” podotýká skromný hrdina, úspěšný sportovec a vášnivý střelec. Tom Dvoracek okamžitě navrhl novelu zákona o zbraních, která se inspirovala právě švýcarským modelem.</Description>
+          <Description> Slavný biatlonista, který je vedle dvou zlatých medailí také nositelem pistole typu Glock 17, zabránil přesnou střelbou z 12 metrů krveprolití. “Každý správný Švýcar by na mém místě udělal to samé. Teda, pokud by zrovna měl u sebe zbraň,” podotýká skromný hrdina. Tom Dvořáček okamžitě navrhl novelu zákona o zbraních, která se inspirovala právě švýcarským modelem.</Description>
           <ChoiceText>Příběh o hrdinovi</ChoiceText>
         </Choice>
         <Choice>
@@ -289,7 +289,7 @@
       </Choices>
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-10-28" name="Řád bílých kališníků">
-      <Description>Na Vyšehradě se uskutečnil sjezd nové politické strany, která si říká Řád bílých kališníků. Jsou údajně ochotni bránit české hodnoty a bojovat proti establishmentu všemu prostředky.</Description>
+      <Description>Na Vyšehradě se uskutečnil sjezd nové politické strany, která si říká Řád bílých kališníků. Jsou údajně ochotni bránit české hodnoty a bojovat proti establishmentu všemi prostředky.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -310,7 +310,7 @@
             <ModifyEffect attribute="Fun" value="-2" />
           </Effects>
           <Title>V Česku vznika nebezpečné polovojenské uskupení</Title>
-          <Description>Tajná policie varuje před novým politickým uskupením. "Podle našeho expertného šetření jsme odhalili jisté indicie, že by se mohlo jednat o extrémistické hnutí," říká elitní policista.</Description>
+          <Description>Tajná policie varuje před novou politickou stranou. "Podle našeho expertního šetření jsme odhalili jisté indicie, že by se mohlo jednat o extrémistické hnutí," říká elitní policista.</Description>
           <ImagePath>kkk</ImagePath>
           <ImageLabel>Ivan Řemdih (Foto: Paul Walsch)</ImageLabel>
           <ChoiceText>Militantní nacionalismus</ChoiceText>
@@ -325,7 +325,7 @@
       <Text>Ztracená Anička byla nalezena díky policejní zprávě zveřejněné na Novinky-rychle.cz</Text>
     </CutsceneEvent>
     <MultipleChoiceEvent date="2019-11-17" name="Demonstrace proti kapitalismus">
-      <Description>Rap uspořádal pochod proti daňovým únikům. Demonstrace probíhala poklidně, až na samotný závěr, kdy se někteří demonstranti střetli spolicijí a vypukly nepokoje.</Description>
+      <Description>Rap uspořádal pochod proti daňovým únikům. Demonstrace probíhala poklidně, až na samotný závěr, kdy se někteří demonstranti střetli s policijí a vypukly nepokoje.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -345,23 +345,23 @@
             <ModifyEffect attribute="Panic" value="3" />
           </Effects>
           <Title>Demonstrace RaP se změnila v masakr!</Title>
-          <Description>Levicový radikálové se střetli s policijí a začali kontejnery v ulicích.</Description>
+          <Description>Levicoví radikálové se střetli s policijí a zapalovali kontejnery v ulicích.</Description>
           <ImagePath>demo2</ImagePath>
           <ChoiceText>Anarchisté zapalovali město</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-11-05" name="Tom Dvoracek, filantrop">
-      <Description>Podnikatel Tom Dvoracek začal skupovat ve velkém české dluhopisy. Jejich cena klesla tak nízko, že mají zápornou hodnotu. "Dělám to z lásky k Česku. Platím státu za to, že mu půjčuji peníze," zdůvodňuje nákup Tom Dvoracek.</Description>
+    <MultipleChoiceEvent date="2019-11-05" name="Tom Dvořáček, filantrop">
+      <Description>Podnikatel Tom Dvořáček začal skupovat ve velkém české dluhopisy. Jejich cena klesla tak nízko, že mají zápornou hodnotu. "Dělám to z lásky k Česku. Platím státu za to, že mu půjčuji peníze," zdůvodňuje nákup Tom Dvořáček.</Description>
       <Choices>
         <Choice>
           <Effects>
             <ModifyEffect attribute="Info" value="-1" />
             <ModifyEffect attribute="Tom" value="3" />
           </Effects>
-          <Title>Tom Dvoracek pomáhá splácet český dluh</Title>
-          <Description>Zdá se to neuvěřitelné, ale charismatický miliardář dobrovolně přispívá do státní kasy. Dvoracek nakoupil české dluhopisy s negativním úrokem. "Přijde mi to jako dobrý způsob, jak státu pomoci," říká podnikatel.</Description>
-          <ChoiceText>Dvoracek je filantrop</ChoiceText>
+          <Title>Tom Dvořáček pomáhá splácet český dluh</Title>
+          <Description>Zdá se to neuvěřitelné, ale charismatický miliardář dobrovolně přispívá do státní kasy. Dvořáček nakoupil české dluhopisy s negativním úrokem. "Přijde mi to jako dobrý způsob, jak státu pomoci," říká podnikatel.</Description>
+          <ChoiceText>Dvořáček je filantrop</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
@@ -369,14 +369,14 @@
             <ModifyEffect attribute="Info" value="3" />
             <ModifyEffect attribute="Tom" value="-3" />
           </Effects>
-          <Title>Dvoracek spekuluje proti české koruně</Title>
-          <Description>"Pan Dvoracek nakoupil státní dluhopisy v době, kdy byla koruna uměle podhodnocená. Až Národní banka kurz zvýší a stát bude muset dluh splatit, tak na tom proděláme všichni kromě Dvoracka," říká profesor ekonomie.</Description>
+          <Title>Dvořáček spekuluje proti české koruně</Title>
+          <Description>"Pan Dvořáček nakoupil státní dluhopisy v době, kdy byla koruna uměle podhodnocená. Až Národní banka kurz zvýší a stát bude muset dluh splatit, tak na tom proděláme všichni kromě Dvořáčka," říká profesor ekonomie.</Description>
           <ChoiceText>Vyjádření ekonoma</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
     <MultipleChoiceEvent date="2019-11-08" name="Kubešová mění image">
-      <Description>Ozývají se názory, že kandidátka za hnutí Rodina a Příroda není dost liberální. V rámci kampaně tak vhnikl nový vizuál, hrající si se zkratkou RaP, a kde je Kubešová vyobrazena s jointem.</Description>
+      <Description>Ozývají se názory, že kandidátka za hnutí Rodina a Příroda není dost liberální. V rámci kampaně tak vznikl nový vizuál, hrající si se zkratkou RaP, kde je Kubešová vyobrazena s jointem.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -401,8 +401,8 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-11-22" name="Daňová úspora Toma Dvoracka">
-      <Description>Tom Dvoracek je velký fanoušek Liberlandu. Jeho firma Future Finance tam letos z důvodů daňové optimalizace přesídlila. Nižší náklady prý firmě dovolí přimout více zaměstanců. RaP toto kritizuje.</Description>
+    <MultipleChoiceEvent date="2019-11-22" name="Daňová úspora Toma Dvořáčka">
+      <Description>Tom Dvořáček je velký fanoušek Liberlandu. Jeho firma Future Finance tam letos z důvodů daňové optimalizace přesídlila. Nižší náklady prý firmě dovolí přimout více zaměstanců. RaP toto kritizuje.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -410,9 +410,9 @@
             <ModifyEffect attribute="Tom" value="-2" />
             <ModifyEffect attribute="Alice" value="1" />
           </Effects>
-          <Title>Dvoracek připravil Česko o miliardy na daních</Title>
-          <Description>Oligarcha Dvoracek přesunul svou firmu Future Finance do daňového ráje Liberlandu, aby se vyhnul placení daní. Alice Kubešová svolala na zítřek další demonstraci proti daňovým rájům.</Description>
-          <ChoiceText>Dvoracek neplatí daně</ChoiceText>
+          <Title>Dvořáček připravil Česko o miliardy na daních</Title>
+          <Description>Oligarcha Dvořáček přesunul svou firmu Future Finance do daňového ráje Liberlandu, aby se vyhnul placení daní. Alice Kubešová svolala na zítřek další demonstraci proti daňovým rájům.</Description>
+          <ChoiceText>Dvořáček neplatí daně</ChoiceText>
         </Choice>
         <Choice>
           <Effects>
@@ -420,16 +420,16 @@
             <ModifyEffect attribute="Panic" value="-2" />
           </Effects>
           <Title>Future Finance otevře na Ústecku novou počítárnu bankovek, práci získá až 200 lidí</Title>
-          <Description>(Ústí nad Labem) "Naše firma rychle expanduje a tudíž si můžeme dovolit více zaměstanců. Myslím, že to bude vzpruha pro tento region," říká mladý podnikatel Tom Dvoracek.</Description>
+          <Description>(Ústí nad Labem) "Naše firma rychle expanduje a tudíž si můžeme dovolit více zaměstanců. Myslím, že to bude vzpruha pro tento region," říká mladý podnikatel Tom Dvořáček.</Description>
           <ChoiceText>Nová pracovní místa od Future Finance</ChoiceText>
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-11-22" name="Tom Dvoracek, zastánce země svobody">
+    <MultipleChoiceEvent date="2019-11-22" name="Tom Dvořáček, zastánce země svobody">
       <Preconditions>
         <Precondition attribute="Liberland" value="2" operation="equal" />
       </Preconditions>
-      <Description>Tom Dvoracek chce Chorvatsku domluvit a podpořit vznikající sousední stát Liberland. "Je potřeba se zastat slabšího," říká Dvoracek.</Description>
+      <Description>Tom Dvořáček chce Chorvatsku domluvit a podpořit vznikající sousední stát Liberland. "Je potřeba se zastat slabšího," říká Dvořáček.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -445,7 +445,7 @@
           <Effects>
             <ModifyEffect attribute="Tom" value="1" />
           </Effects>
-          <Title>Dvoracek podporuje mikrostát na Balkáně.</Title>
+          <Title>Dvořáček podporuje mikrostát na Balkáně.</Title>
           <Description></Description>
           <ImagePath>liberland4</ImagePath>
           <ChoiceText>Podpora mikrostátu</ChoiceText>
@@ -464,7 +464,7 @@
           <Title>Vandalové zapálili auto Toma Dvořáčka.</Title>
           <Description>Stoupenci Kubešové vnikly do garáže miliardáře.</Description>
           <ImagePath>vandalohen</ImagePath>
-          <ImageLabel>Vandalové zapálili auto Toma Dvoracka (foto: psa)</ImageLabel>
+          <ImageLabel>Vandalové zapálili auto Toma Dvořáčka(foto: psa)</ImageLabel>
         </Choice>
         <Choice>
           <Effects>
@@ -473,14 +473,14 @@
             <ModifyEffect attribute="Tom" value="-4" />
           </Effects>
           <Title>Brutálni zásah policie na demonstranty před Dvořáčkovou vilou.</Title>
-          <Description>"Policejní stát! Policejní stát!," sknadovali aktivisté. Policie použila hmaty a chvaty, aby spacifikovala demonstrany. </Description>
+          <Description>"Policejní stát! Policejní stát!," sknadovali aktivisté. Policie použila hmaty a chvaty, aby zpacifikovala demonstrany. </Description>
           <ImagePath>vandalzatykani</ImagePath>
           <ImageLabel />
         </Choice>
       </Choices>
     </ImageChoiceEvent>
     <MultipleChoiceEvent date="2019-10-01" name="Liberland Leaks">
-      <Description>Anonymní whitleblower zveřejnil tisíce dokumentů z daňového offshoru. Mezi subjekty figurují i nečekaná jména jako Alice Kubešová a Ivan Řemdih. Kubešová má na offshorových účtech nepřiznané miliony od firmy propagující zdravou výživu a placebo léčiva. Zatímco Řemdih prováděl z Liberlandu podezřelé transkace se Saudsko arabskou zrojařskou firmou.</Description>
+      <Description>Anonymní whistleblower zveřejnil tisíce dokumentů z daňového offshoru. Mezi subjekty figurují i nečekaná jména jako Alice Kubešová a Ivan Řemdih. Kubešová má na offshorových účtech nepřiznané miliony od firmy propagující zdravou výživu a placebo léčiva. Zatímco Řemdih prováděl z Liberlandu podezřelé transkace se Saudsko arabskou zrojařskou firmou.</Description>
       <Choices>
         <Choice>
           <Effects>
@@ -513,7 +513,7 @@
         <Precondition attribute="Tom" operation="greater" value="Alice" />
       </Preconditions>
       <ImagePath>tom1</ImagePath>
-      <Text>Volby vyhrála strana Liberty 2020 v čele s miliardářem Tomem Dvorackem. Strana první měsíc po volbách snížila daně na symbolické 1%, zrušila veřejné školství a zdravotnictví. Národní Muzeum bylo pro nevýdělečnost privatizováno.</Text>
+      <Text>Volby vyhrála strana Liberty 2020 v čele s miliardářem Tomem Dvořáčkem. Strana první měsíc po volbách snížila daně na symbolické 1%, zrušila veřejné školství a zdravotnictví. Národní Muzeum bylo pro nevýdělečnost privatizováno.</Text>
     </CutsceneEvent>
     <CutsceneEvent date="2019-10-24">
       <Preconditions>
