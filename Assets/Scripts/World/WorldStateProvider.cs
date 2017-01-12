@@ -4,7 +4,6 @@ using Assets.Code.Gameplay;
 using Assets.Code.GameState;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.UI;
 
 public class WorldStateProvider : MonoBehaviour
 {
@@ -45,11 +44,9 @@ public class WorldStateProvider : MonoBehaviour
                 attributeGOs.Add(attributePair.Key, attributeGO);
                 attributeGO.SetActive(true);
 
-                GameObject filler = attributeGO.GetComponent<WorldAttributeChanger>().FillGameObject;
-                filler.GetComponent<Image>().color = attributePair.Key.Color;
-
                 anyVisible = true;
             }
+
             categoryGO.SetActive(anyVisible);
         }
 
@@ -69,7 +66,7 @@ public class WorldStateProvider : MonoBehaviour
             var attribChanger = attributePair.Value.GetComponent<WorldAttributeChanger>();
 
             if (doSetup)
-                attribChanger.DoSetup(attributePair.Key.Description, Attribs.MinValue, Attribs.MaxValue);
+                attribChanger.DoSetup(attributePair.Key, Attribs.MinValue, Attribs.MaxValue);
 
             attribChanger.DoChange(State.AllStates[attributePair.Key.Category][attributePair.Key], !doSetup);
         }

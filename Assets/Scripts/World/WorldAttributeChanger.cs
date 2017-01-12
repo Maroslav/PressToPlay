@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Code.GameState;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
@@ -35,11 +36,15 @@ public class WorldAttributeChanger : MonoBehaviour
     }
 
 
-    public void DoSetup(string description, int minValue, int maxValue)
+    public void DoSetup(Attrib attrib, int minValue, int maxValue)
     {
+        // Color
+        FillGameObject.GetComponent<Image>().color = attrib.Color;
+        PopupGameObject.GetComponent<Text>().color = attrib.Color;
+
         // Desc
         Text desc = DescriptionGameObject.GetComponent<Text>();
-        desc.text = description;
+        desc.text = attrib.Description;
 
         // Slider
         Slider s = SliderGameObject.GetComponent<Slider>();
