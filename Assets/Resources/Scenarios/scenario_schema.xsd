@@ -98,6 +98,7 @@
     </xs:sequence>
     <xs:attribute name="date" type="xs:date" use="optional"/>
     <xs:attribute name="name" type="xs:string" use="optional"/>
+    <xs:attribute name="soundPath" type="pathtoresourcetype" use="optional"/>
     <xs:attribute name="isTerminating" type="xs:boolean" use="optional"/>
   </xs:complexType>
   <xs:complexType name="preconditionlist">
@@ -205,7 +206,7 @@
       <xs:element name="Effects" type="effectlisttype" minOccurs="0" maxOccurs="1"/>
       <xs:element name="Title" type="xs:string" minOccurs="0" maxOccurs="1" />
       <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="ImagePath" type="pathtoimagetype" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ImagePath" type="pathtoresourcetype" minOccurs="0" maxOccurs="1"/>
       <xs:element name="ImageLabel" type="xs:string" minOccurs="0" maxOccurs="1"/>
       <xs:element name="ArticleText" type="xs:string" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
@@ -268,7 +269,7 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:simpleType name="pathtoimagetype" >
+  <xs:simpleType name="pathtoresourcetype" >
     <xs:annotation>
       <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
         <h2>Path to an image</h2>
@@ -354,7 +355,7 @@
     <xs:complexContent>
       <xs:extension base="pressevent">
         <xs:sequence>
-          <xs:element name="ImagePath" type="pathtoimagetype" />
+          <xs:element name="ImagePath" type="pathtoresourcetype" />
           <xs:element name="Text" type="xs:string" />
         </xs:sequence>
       </xs:extension>

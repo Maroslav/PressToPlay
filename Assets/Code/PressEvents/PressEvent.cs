@@ -12,7 +12,7 @@ namespace Assets.Code.PressEvents
         public bool IsFinished { get; protected set; }
         public List<Precondition> Preconditions { get; private set; }
         public bool IsTerminating { get; private set; }
-
+        public string SoundPath { get; set; }
         private PressEvent(DateTime date, string name)
         {
             Date = date;

@@ -31,7 +31,10 @@ namespace Assets.Code.PressEvents.Construction
             }
             var descr = evt.Description;
             var precond = GetPreconditions(evt);
-            return new MultipleChoiceEvent(descr,evt.Name,d,choices,evt.IsTerminating,precond);
+            return new MultipleChoiceEvent(descr, evt.Name, d, choices, evt.IsTerminating, precond)
+            {
+                SoundPath = evt.SoundPath
+            };
         }
 
 
@@ -47,14 +50,20 @@ namespace Assets.Code.PressEvents.Construction
             var description = evt.Description;
             var preconditions = GetPreconditions(evt);
             var terminating = evt.IsTerminating;
-            return new ImageChoiceEvent(d,evt.Name,terminating,preconditions,choices,description);
+            return new ImageChoiceEvent(d,evt.Name,terminating,preconditions,choices,description)
+            {
+                SoundPath = evt.SoundPath
+            };
         }
 
         public PressEvent Process(CutsceneEventDao evt)
         {
             var d = GetDate(evt);
             var preconditions = GetPreconditions(evt);
-            return new CutsceneEvent(evt.ImagePath,evt.Name, evt.Text,d, evt.IsTerminating,preconditions);
+            return new CutsceneEvent(evt.ImagePath,evt.Name, evt.Text,d, evt.IsTerminating,preconditions)
+            {
+                SoundPath = evt.SoundPath
+            };
         }
         private DateTime GetDate(PressEventDao evt)
         {

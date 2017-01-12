@@ -35,8 +35,7 @@ namespace Assets.Code.Model
         {
             Color c = new Color();
 
-            // empty color
-            if ((htmlColor == null) || (htmlColor.Length == 0))
+            if (string.IsNullOrEmpty(htmlColor))
                 return c;
 
             if ((htmlColor[0] == '#') &&
