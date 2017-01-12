@@ -22,6 +22,7 @@ namespace Assets.Code.Gameplay
         public const int RandomEventsMeanVal = 5;
 
         public const string ArticleImagesResourceFolder = "Images/Articles";
+        public const string SoundsResFolder = "Sounds";
 
         public static DateTime StartDate = new DateTime(2019,1,1);
         public static DateTime EndDate = new DateTime(2030, 12, 31);

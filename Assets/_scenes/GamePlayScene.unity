@@ -4163,6 +4163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackgroundDarkener: {fileID: 682291647}
   ToggledParent: {fileID: 120722033}
+  AudioPlayer: {fileID: 975230377}
   ResourceFolder: Images/Cutscenes
   FinishTransitionDuration: 0.25
 --- !u!114 &1521708597
