@@ -44,7 +44,7 @@ public class CutsceneProcessor : MonoBehaviour
         GetComponent<AspectRatioFitter>().aspectRatio = texture.width / (float)texture.height;
     }
 
-    private void PlaySound(CutsceneEvent e)
+    private void PlaySound(PressEvent e)
     {
         if (string.IsNullOrEmpty(e.SoundPath)) return;
         string path = Path.Combine(Constants.SoundsResFolder, e.SoundPath).Replace('\\', '/');

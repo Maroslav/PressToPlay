@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Globalization;
+using System.IO;
+using Assets.Code.Gameplay;
 using Assets.Code.PressEvents;
 using Assets.Code.PressEvents.Choices;
 using UnityEngine.Assertions;
@@ -44,7 +46,7 @@ public class ChoiceEventProcessorBase<TChoiceEvent, TChoice> : MonoBehaviour
     public virtual void ProcessEvent(TChoiceEvent e)
     {
         Event = e;
-
+        PlaySound(e);
         Debug.Log(string.Format("Processing a new {0} choice event: {1}", typeof(TChoiceEvent).Name, Event.Date));
         gameObject.SetActive(true);
 
@@ -68,5 +70,16 @@ public class ChoiceEventProcessorBase<TChoiceEvent, TChoice> : MonoBehaviour
         WorldStateProvider.UpdateAttributeGameObjects();
         // Let Publishing handle the rest (this component is now finished)
         Publishing.GetComponent<PublishingProcessor>().Publish(Event, choice);
+    }
+    private void PlaySound(PressEvent e)
+    {
+        if (string.IsNullOrEmpty(e.SoundPath)) return;
+        string path = Path.Combine(Constants.SoundsResFolder, e.SoundPath).Replace('\\', '/');
+        var audioSource = AudioPlayer.GetComponent<AudioSource>();
+        var ac = Resources.Load(path) as AudioClip;
+        Debug.Assert(ac != null, "Wrong sound name.");
+        if (ac == null)
+            return;
+        audioSource.PlayOneShot(ac);
     }
 }
