@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="scenario_stylesheet.xslt"?>
 <Scenario name="Story scenario" xmlns="http://presstoplaygame.com/scenario" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://presstoplaygame.com/scenario scenario_schema.xsd">
   <Events>
-    <CutsceneEvent date="2019-10-01" soundPath1="riot1">
+    <CutsceneEvent date="2019-10-01" soundPath="riot1">
       <ImagePath>Intro/intro1</ImagePath>
       <Text>Protivládní demonstrace vedly ke svržení vlády. </Text>
     </CutsceneEvent>
@@ -14,7 +14,7 @@
       <ImagePath>Intro/intro_editor</ImagePath>
       <Text>Stal se z vás editor zpravodajského serveru Novinky-rychle.cz. Vaším úkolem je rozhodovat, jaká bude náplň denního zpravodajství.</Text>
     </CutsceneEvent>
-    <MultipleChoiceEvent date="2019-10-01" name="Chřipková epidemie" soundPath="riot1">
+    <MultipleChoiceEvent date="2019-10-01" name="Chřipková epidemie">
       <Description>Česko postihla chřipková epidemie. Nový virus chřipky si vyžádal první smrtelné oběti. Jsou hlášeni nejméně čtyři mrtví.
 
 &lt;color=#585858&gt;(Vyberte, jaké hlavní téma mají noviny použít v článku o této události. Volba může ovlivnit čtenost novin i veřejné mínění.)&lt;/color&gt;</Description>
@@ -182,7 +182,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <ImageChoiceEvent date="2019-10-15" name="Reportáž z Prague Pride">
+    <ImageChoiceEvent date="2019-10-15" name="Reportáž z Prague Pride" soundPath="pride">
       <Description>Hlavním městem o víkendu pochodovali gayové a lesbičky. Našemu fotografovi se podařilo zachytit tyto fotografie.
 
 &lt;color=#585858&gt;(NÁPOVĚDA: Kliknutím vyberte, kterou fotografii chcete použít v článku o této události.)&lt;/color&gt;</Description>
@@ -288,7 +288,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <MultipleChoiceEvent date="2019-10-28" name="Řád bílých kališníků">
+    <MultipleChoiceEvent date="2019-10-28" name="Řád bílých kališníků" soundPath="husiti">
       <Description>Na Vyšehradě se uskutečnil sjezd nové politické strany, která si říká Řád bílých kališníků. Jsou údajně ochotni bránit české hodnoty a bojovat proti establishmentu všemi prostředky.</Description>
       <Choices>
         <Choice>
@@ -324,7 +324,7 @@
       <ImagePath>nalezena</ImagePath>
       <Text>Ztracená Anička byla nalezena díky policejní zprávě zveřejněné na Novinky-rychle.cz</Text>
     </CutsceneEvent>
-    <MultipleChoiceEvent date="2019-11-17" name="Demonstrace proti kapitalismus">
+    <MultipleChoiceEvent date="2019-11-17" name="Demonstrace proti kapitalismu" soundPath="riot1">
       <Description>Rap uspořádal pochod proti daňovým únikům. Demonstrace probíhala poklidně, až na samotný závěr, kdy se někteří demonstranti střetli s policijí a vypukly nepokoje.</Description>
       <Choices>
         <Choice>
@@ -452,7 +452,7 @@
         </Choice>
       </Choices>
     </MultipleChoiceEvent>
-    <ImageChoiceEvent date="2019-10-18" name="Aktivistů před Dvořáčkovou vilou">
+    <ImageChoiceEvent date="2019-10-18" name="Aktivistů před Dvořáčkovou vilou" soundPath="riot1">
       <Description>Před vilou lídra strany Liberty2020 demonstrovaly desítky aktivistů. Takto je zachytil náš fotograf.</Description>
       <Choices>
         <Choice>
@@ -508,14 +508,14 @@
       <ImagePath>elections</ImagePath>
       <Text>Je den voleb. Brzy bude rozhodnuto, jakým směrem se republika vydá na další roky.</Text>
     </CutsceneEvent>
-    <CutsceneEvent date="2019-10-24">
+    <CutsceneEvent date="2019-10-24" soundPath="electionend">
       <Preconditions>
         <Precondition attribute="Tom" operation="greater" value="Alice" />
       </Preconditions>
       <ImagePath>tom1</ImagePath>
       <Text>Volby vyhrála strana Liberty 2020 v čele s miliardářem Tomem Dvořáčkem. Strana první měsíc po volbách snížila daně na symbolické 1%, zrušila veřejné školství a zdravotnictví. Národní Muzeum bylo pro nevýdělečnost privatizováno.</Text>
     </CutsceneEvent>
-    <CutsceneEvent date="2019-10-24">
+    <CutsceneEvent date="2019-10-24" soundPath="electionend">
       <Preconditions>
         <Precondition attribute="Tom" operation="lessOrEqual" value="Alice" />
       </Preconditions>
