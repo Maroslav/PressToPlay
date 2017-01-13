@@ -50,7 +50,7 @@
   </xsl:template>
   <xsl:template match="p:MultipleChoiceEvent">
     <div class="event">
-    <h3>MultipleChoiceEvent</h3>
+    <h3>MultipleChoiceEvent: <xsl:value-of select="@name"/></h3>
       <p class ="preconditionclass">
         
     <xsl:apply-templates select="p:Preconditions"/> <!--preconditions-->
@@ -89,7 +89,7 @@
         <b>Date: </b>
         <xsl:value-of select="@date"/>
       </xsl:if>
-      <img src="../Cutscenes/{p:ImagePath}.jpg" alt="../Cutscenes/{p:ImagePath}.jpg"></img>
+      <img src="../Images/Cutscenes/{p:ImagePath}.jpg" alt="../Images/Cutscenes/{p:ImagePath}.jpg"></img>
     </div>
   </xsl:template>
   
@@ -109,6 +109,7 @@
         <li>
           <xsl:value-of select="p:ImagePath"/>
          <img src="../ImageChoiceEvents/{p:ImagePath}.jpg" alt="../ImageChoiceEvents/{p:ImagePath}.jpg"></img>
+          
       </li>
       </ul>
     </xsl:for-each>
@@ -150,6 +151,10 @@
     <xsl:for-each select="p:Choice">
       <ul>
         <li>
+          <i>
+          <xsl:value-of select="p:ChoiceText"/>
+          </i>
+          <br/>
           <xsl:value-of select="p:Title"/>
           <br/>
           <xsl:value-of select="p:Description"/>
