@@ -69,5 +69,6 @@ public class CutsceneProcessor : MonoBehaviour
         ToggledParent.SetActive(false);
         Debug.Log("Destroying cutscene");
         _event.Finish();
+        AudioPlayer.GetComponent<AudioSource>().Stop();
     }
 }

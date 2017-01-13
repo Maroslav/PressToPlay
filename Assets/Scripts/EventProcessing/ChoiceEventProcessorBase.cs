@@ -63,6 +63,7 @@ public class ChoiceEventProcessorBase<TChoiceEvent, TChoice> : MonoBehaviour
 
         // Play the typing sound
         var audioSource = AudioPlayer.GetComponent<AudioSource>();
+        audioSource.Stop();
         audioSource.PlayOneShot(Clip);
 
         // Let the event apply the changes to the world state
